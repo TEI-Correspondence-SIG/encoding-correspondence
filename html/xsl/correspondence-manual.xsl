@@ -126,7 +126,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Publication</h4>    
-                                <p>Encoding Correspondence. A Manual for encoding letters and postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.</p>
+                                <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.</p>
                                 <p>Source files on <i class="fab fa-github"></i>&#160;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
                                 <p>
                                     <a href="legal.html">Legal notice &amp; privacy</a></p>
@@ -428,7 +428,7 @@
                     <xsl:value-of select="ec:seperator(., position())"/>
                 </xsl:for-each><xsl:text>: </xsl:text>
                 <xsl:value-of select="//tei:titleStmt/tei:title"/>
-                <xsl:text>. In: Encoding Correspondence. A Manual for encoding letters and postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.</xsl:text>
+                <xsl:text>. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.</xsl:text>
                 <!--<xsl:text> Version </xsl:text><xsl:value-of select="$version"/><xsl:text> from </xsl:text><xsl:value-of select="format-date(//tei:change[@n=$version]/@when, '[D].[M].[Y]')"/>-->
                 <xsl:text> URL: </xsl:text><a href="{$url}"><xsl:value-of select="$url"/></a>
                 <xsl:text> URN:&#160;</xsl:text><a href="https://nbn-resolving.org/{//tei:publicationStmt/tei:idno[@type='urn']/text()}"><xsl:value-of select="//tei:publicationStmt/tei:idno[@type='urn']"/></a>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="introduction">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Introduction</title>
+				<author key="dumont">Stefan Dumont</author>
+				<author key="haaf">Susanne Haaf</author>
+				<author key="seifert">Sabine Seifert</author>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
+				<date when="2019-12-15"/>
+				<idno type="urn">urn:nbn:de:kobv:b4-20200110163942154-1974512-7</idno>
+				<idno type="url">https://encoding-correspondence.bbaw.de/v1/introduction.html</idno>
+				<idno type="zotero"
+					>https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/CGIQCIKJ</idno>
+			</publicationStmt>
+			<seriesStmt>
+				<title type="main">Encoding Correspondence.</title>
+				<title type="sub">A Manual for encoding letters and postcards in TEI-XML and
+					DTABf</title>
+				<editor>Stefan Dumont</editor>
+				<editor>Susanne Haaf</editor>
+				<editor>Sabine Seifert</editor>
+				<idno type="urn">urn:nbn:de:kobv:b4-20200110163329488-8695229-7</idno>
+				<idno type="url">https://encoding-correspondence.bbaw.de/v1/</idno>
+				<biblScope unit="edition">v1</biblScope>
+			</seriesStmt>
+			<sourceDesc>
+				<p>Born digital.</p>
+			</sourceDesc>
+		</fileDesc>
+		<revisionDesc>
+			<listChange>
+				<change n="1" when="2019-10-10" status="draft">Initial Version</change>
+			</listChange>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div xml:id="c-1">
+				<p n="1">Whether letters, postcards, telegrams, e-mails, sms, or
+					chats—correspondence between different agents is and for a very long time has
+					been a crucial part of everyday’s life with just as much impact on private as on
+					work and public lives. Naturally, already before the permeation of technology in
+					our society, written correspondence captured vast amounts of people’s time. And
+					today, the direct and simple ways of digital communication are used even more
+					extensively.</p>
+				<p n="2">As for historical correspondence, we gain insight in this extremely
+					productive area by letters passed on to us which were written by scholars,
+					politicians, artists, celebrities, or private persons. This way, we do not only
+					learn about the impact of correspondence by the sheer amount of documents
+					available in archives. These documents are also witnesses of peoples’ broad
+					networks and of the topics which concerned them. They deliver insight in private
+					views on public affairs as well as in everyday’s problems of historical persons
+					of interest.</p>
+				<p n="3">Thus, and not surprisingly, historical documents of communication quite
+					frequently have become the subject of humanities’ research and are prepared in
+					scholarly editions in order to enable and facilitate further research. Since
+					nowadays editions are usually digital-born and, most of the time, also remain
+					digital, this area has increasingly been attracting the attention of the <ref
+						target="https://tei-c.org/">Text Encoding Initiative</ref> community.
+					Letters, for instance, may appear quite homogeneously structured at first sight
+					but—as transient documents—tend to exhibit various peculiarities and exceptions
+					from customary practice. And more generally, the available text types for
+					communication changed over time, the text types themselves changed in their
+					specific style and structuring as did the contexts in which these text types
+					were typically used.</p>
+				<p n="4">As conveners of the <ref
+						target="https://tei-c.org/Activities/SIG/Correspondence/">TEI Correspondence
+						Special Interest Group (SIG)</ref><note n="1" xml:id="fn1">See also <ref
+							target="https://wiki.tei-c.org/index.php/SIG:Correspondence">the Wiki
+							page of the TEI Correspondence SIG</ref>.</note> and representative for
+					the <ref target="http://deutschestextarchiv.de/doku/basisformat/">Deutsches
+						Textarchiv (DTA) Base Format</ref> (Haaf/Geyken/Wiegand 2014/15), we were
+					repeatedly asked about the TEI encoding of correspondence-specific phenomena. In
+					2015, the TEI Correspondence SIG had already addressed some of the problems with
+					TEI encoding correspondence by introducing a new correspondence model to the TEI
+					Guidelines with <gi>correspDesc</gi> and its several child elements
+					(Stadler/Illetschko/Seifert 2016).<note n="2" xml:id="fn2">Also cf. the TEI
+						Guidelines, <ref
+							target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD"
+							>chapter 2.4.6: Correspondence Description</ref>.</note> The DTA Base
+					Format, which had started off as a format for printed texts, was opened to
+					manuscript texts and enriched with markup for manuscript-specific phenomena in
+					2016 so that, among other things, it enables the integration of handwritten or
+					typed (in addition to printed) letters in the DTA text corpus (Haaf/Thomas
+					2017).</p>
+				<p n="5">Apart from mere correspondence annotation, there also was and is a growing
+					demand to effectively link correspondence editions and projects in order to
+					reveal correspondence networks of the ‘Republic of Letters’ and beyond. This
+					desideratum led to the creation of the <ref
+						target="https://github.com/TEI-Correspondence-SIG/CMIF">Correspondence
+						Metadata Interchange Format (CMIF)</ref>—a constrained subset of the full
+					TEI standard of the <gi>correspDesc</gi> element—and to the development of the
+					web service <ref target="https://correspsearch.net/">correspSearch</ref> (Dumont
+					2016) with CMIF as exchange format. In 2018, the Rahtz Prize for TEI Ingenuity
+					was granted to the developers of the <gi>correspDesc</gi> encoding model, the
+					CMIF and correspSearch.<note n="3" xml:id="fn3">Namely to Stefan Dumont, Sascha
+						Grabsch, Marcel Illetschko, Jonas Müller-Laackman, Sabine Seifert, and Peter
+						Stadler, <ref
+							target="https://tei-c.org/activities/rahtz-prize-for-tei-ingenuity/."
+							>https://tei-c.org/activities/rahtz-prize-for-tei-ingenuity/</ref>.</note></p>
+				<p n="6">However, there are still open questions on how to deal with several
+					structural and textual occurrences, and work on creating an exhaustive
+					environment for the TEI encoding of letters is not yet finished. As a next step,
+					we decided to hold a workshop on these “Challenges of Letter Encoding” which
+					would provide a forum for further discussions on problematic cases of
+					correspondence encoding in TEI. The aim was to develop solutions and best
+					practices within the range of possibilities already offered by the TEI, and, if
+					necessary, to produce suggestions of potential extensions to the TEI.</p>
+				<p n="7">The workshop was funded by CLARIN-D and was held at the Berlin-Brandenburg
+					Academy of Sciences and Humanities (BBAW) in Berlin (Germany) in October 2018.
+					We invited early-career researchers who deal with TEI encoding and/or especially
+					correspondence encoding in the course of their daily work, as well as one member
+					of the TEI Council for advice on proposals for TEI extensions. Some 20
+					participants from 15 institutions in Germany, Austria and Switzerland got
+					together for the workshop.</p>
+				<p n="8">Before the event, we gathered examples of insecurities or problems with
+					applying TEI to correspondence texts from the participants, which were then
+					dealt with in the course of the workshop. Based on this material, we formed five
+					groups of (roughly) related encoding issues, and 4-5 participants per group were
+					asked to discuss the given issues: <list>
+						<item>Group I: Text structures I (dealing with openers, closers,
+							postscripts)</item>
+						<item>Group II: Text structures II (dealing with pre-printed parts like
+							letterheads, addresses, stamps, seals, postcards etc.)</item>
+						<item>Group III: Metadata I (dealing with attachments, roles like author,
+							scribe, and sender, actions like commenting etc.)</item>
+						<item>Group IV: Metadata II (dealing with unclear information)</item>
+						<item>Group V: CMIF and Metadata (dealing with the extension of CMIF,
+							authority files and modelling correspondence in RDF)</item>
+					</list></p>
+				<p n="9">The meeting was designed as a hands-on workshop, enabling the groups of
+					participants to discuss the issues and material presented to them and to develop
+					solutions. These sessions of group work were alternating with plenary sessions
+					for discussions of problems and solutions across groups. All issues discussed
+					concerned aspects of letter or postcard encoding: from correspondence-specific
+					text structures to correspondence metadata. Subsequent to the workshop, the
+					problems, discussions, and recommendations were summarized as handbook articles
+					by the workshop participants. The articles underwent an internal review phase,
+					and are now published in successive stages on this website for the community to
+					comment and review. The articles now online and the ones coming soon are all in
+					version 1 and remain as such stable. The public review phase lasts until 30
+					April 2020. Then, all articles will be revised and adapted, and made available
+					in their final version here, as a version 2 of the handbook. </p>
+				<p n="10">This resulting handbook “Encoding Correspondence. A manual for encoding
+					letters and postcards in TEI-XML and DTABf” is meant as a guide for annotators
+					on characteristic and recurring problems of letter encoding in TEI, offering
+					solutions and recommendations based on the TEI Guidelines, as well as possible
+					extensions to the TEI. Next to these articles discussing the respective issues
+					in a more or less longer manner, we plan, as a long-term objective, to provide a
+					best practice guide of how to encode correspondence material for a quick and
+					short overview.</p>
+				<p n="11">The literature used as well as the bibliographic information for each
+					article itself are additionally stored in the <ref
+						target="https://www.zotero.org/groups/2248469/encoding_correspondence/"
+						>Zotero group "Encoding Correspondence"</ref> and embedded as <ref
+						target="https://en.wikipedia.org/wiki/COinS">"COinS"</ref> in the HTML
+					version of this manual. Therefore, one can add the bibliographic data to a
+					literature management software with the appropriate browser extension (e.g. with
+					Zotero or the Citavi Picker).</p>
+				<p n="12">As this is a community effort, we kindly invite you to comment on or
+					review the articles, ask questions, give feedback, add examples of
+					correspondence or encoding, or whatever you find helpful for making this a
+					valuable resource for encoders of correspondence. This can be done with the
+					easy-to-use annotating tool <ref target="https://web.hypothes.is/"
+						>Hypothes.is</ref> or by using the e-mail button at the side of each
+					article.</p>
+				<p n="13">The complete handbook with all articles (but except the comments via
+					Hypothes.is) is availabe for download at GitHub: <ref
+						target="https://github.com/TEI-Correspondence-SIG/encoding-correspondence"
+						>https://github.com/TEI-Correspondence-SIG/encoding-correspondence</ref>.</p>
+			</div>
+			<div type="bibliography">
+				<head>Bibliography</head>
+				<listBibl>
+					<bibl
+						sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/9VYYBMPJ"
+						>Dumont, Stefan. 2016. ‟correspSearch – Connecting Scholarly Editions of
+						Letters.ˮ <hi rendition="#i">Journal of the Text Encoding Initiative</hi>
+						10. <ref target="http://journals.openedition.org/jtei/1742"
+							>http://journals.openedition.org/jtei/1742</ref>.</bibl>
+					<bibl
+						sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/ZJYUY9AL"
+						>Haaf, Susanne, Alexander Geyken, and Frank Wiegand. 2014/15. ‟The DTA 'Base
+						Format': A TEI Subset for the Compilation of a Large Reference Corpus of
+						Printed Text from Multiple Sources.ˮ <hi rendition="#i">Journal of the Text
+							Encoding Initiative</hi> 8. <ref
+							target="http://journals.openedition.org/jtei/1114"
+							>http://journals.openedition.org/jtei/1114</ref>.</bibl>
+					<bibl
+						sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/3KQ6GAUR"
+						>Haaf, Susanne and Christian Thomas. 2017. ‟Enabling the Encoding of
+						Manuscripts within the DTABf: Extension and Modularization of the Format.ˮ
+							<hi rendition="#i">Journal of the Text Encoding Initiative</hi> 10
+						(2016–2019). <ref target="http://journals.openedition.org/jtei/1650"
+							>http://journals.openedition.org/jtei/1650</ref>.</bibl>
+					<bibl
+						sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/KEWAE85C"
+						>Stadler, Peter, Marcel Illetschko, and Sabine Seifert. 2016. ‟Towards a
+						Model for Encoding Correspondence in the TEI: Developing and Implementing
+						&lt;correspDesc&gt;.ˮ <hi rendition="#i">Journal of the Text Encoding
+							Initiative</hi> 9. <ref target="https://dx.doi.org/10.4000/jtei.1742"
+							>https://dx.doi.org/10.4000/jtei.1742</ref>.</bibl>
+					<bibl
+						sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/TMLGNZ5L"
+						>TEI Consortium, ed. 2019. ‟Correspondence Description.ˮ In <hi
+							rendition="#i">TEI P5: Guidelines for Electronic Text Encoding and
+							Interchange</hi>. Version 3.6.0, 63–65. <ref
+							target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD"
+							>https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD</ref>.</bibl>
+				</listBibl>
+			</div>
+		</body>
+	</text>
+</TEI>

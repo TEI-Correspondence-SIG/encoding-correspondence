@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="legal">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Legal Notice</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <head>Publisher</head>
+            <p>Berlin-Brandenburg Academy of Sciences and Humanities <lb/>Jägerstraße 22/23
+               <lb/>10117 Berlin <lb/>Germany</p>
+            <div>
+               <head>Represented by</head>
+               <p>Prof. Dr. Dr. h. c. mult. Martin Grötschel <lb/>Tel.: +49 30 20370-0, E-Mail: <ref
+                  target="mailto:bbaw@bbaw.de">bbaw@bbaw.de</ref></p>
+            </div>
+            <div>
+               <head>Legal status</head>
+               <p>Public law legal entity (Rechtsfähige Körperschaft öffentlichen Rechts)</p>
+            </div>
+            <div>
+               <head>VAT Identification No.</head>
+               <p>DE 167 449 058 (according to §27 a of the Value Added Tax Law of the Federal Republic
+                  of Germany)</p>
+            </div>
+         </div>
+         <div>
+            <head>Editors</head>
+            <p>Stefan Dumont, Susanne Haaf, Sabine Seifert</p>
+            <p>Contact: <ref target="mailto:encoding-correspondence@bbaw.de"
+               >encoding-correspondence@bbaw.de</ref></p>
+         </div>
+         <div>
+            <head>Authors</head>
+            <p>For a full list of all authors see <ref
+               target="authors.xml">here</ref>.</p>
+         </div>
+         <div>
+            <head>Copyright</head>
+            <p>Unless otherwise indicated, is this publications licensed under the terms of the <ref
+                  target="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Licence
+                  CC BY-SA 4.0</ref>.</p>
+            <p>The Berlin-Brandenburg Academy of Sciences and Humanities and its staff make every
+               effort to ensure that information is accurate, but they can accept no legal liability
+               for this. For questions and suggestions regarding content or technical issuses,
+               please contact us. The materials presented by this academic project are the
+               reponsibility of the editorial staff (see below).</p>
+         </div>
+      </body>
+   </text>
+</TEI>

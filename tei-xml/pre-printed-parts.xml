@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pre-printed-parts">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Pre-printed parts: Letterheads and forms</title>
+            <author key="seifert">Sabine Seifert</author>
+            <author key="schenk">Nicolas Schenk</author>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
+            <date when="2019-12-14"/>
+            <idno type="urn">urn:nbn:de:kobv:b4-20200110163911057-9256446-7</idno>
+            <idno type="url">https://encoding-correspondence.bbaw.de/v1/pre-printed-parts.html</idno>
+            <idno type="zotero">https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/HRW8FC25</idno>
+         </publicationStmt>
+         <seriesStmt>
+            <title type="main">Encoding Correspondence.</title>
+            <title type="sub">A manual for encoding letters and postcards in TEI-XML and
+               DTABf</title>
+            <editor>Stefan Dumont</editor>
+            <editor>Susanne Haaf</editor>
+            <editor>Sabine Seifert</editor>
+            <idno type="urn">urn:nbn:de:kobv:b4-20200110163329488-8695229-7</idno>
+            <idno type="url">https://encoding-correspondence.bbaw.de/v1/</idno>
+            <biblScope unit="edition">v1</biblScope>
+         </seriesStmt>
+         <sourceDesc>
+            <p>Born digital.</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <listChange>
+            <change n="1" when="2019-12-14" status="draft">Initial Version</change>
+         </listChange>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xml:id="c-1">
+            <head xml:id="introduction">Introduction</head>
+            <p n="1">Correspondence materials often contain pre-printed parts for which there are no
+               sufficient or satisfying encoding recommendations in the TEI Guidelines. These
+               pre-printed parts can be divided into two categories. First, there is the typical
+               case of letterheads, usually with name and address of the sender, maybe including a
+               company emblem, family crest or other kind of symbol. And second, there are
+               pre-printed parts similar to printed forms, for example address fields with labels
+               and dotted lines to fill in on postcards, envelopes, or letters.</p>
+            <p n="2">Both cases represent pre-printed parts but constitute semantically different
+               phenomena. It is, therefore, necessary to make a basic distinction between these two
+               cases regarding their encoding in TEI.</p>
+         </div>
+         <div xml:id="c-2">
+            <head xml:id="letterheads">Case 1: Letterheads</head>
+            <div xml:id="c-2-1">
+               <head xml:id="issue1-1">Issue 1: Using <gi>fw</gi></head>
+               <p n="3"> One suggested possibility to encode letterheads is using the element
+                     <gi>fw</gi>.<note n="1" xml:id="fn1">For this and the discussion of encoding
+                     letterheads see the TEI-L Mailinglist: <ref target="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</ref>.
+                  </note> The TEI Guidelines define <gi>fw</gi> as follows:</p>
+               <cit>
+                  <quote><gi>fw</gi> (forme work) contains a running head (e.g. a header, footer),
+                     catchword, or similar material appearing on the current page.</quote>
+                  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html</ref>
+               </cit>
+               <p n="4">Next to running heads and footers, i.e. titles of chapters in printed books,
+                  this element is also intended for page numbers, catchwords, and "other material
+                  repeated from page to page, which falls outside the stream of the text".<note n="2" xml:id="fn2">
+                     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSK">Chapter 11.6 "Headers, Footers, and Similar Matter"</ref> of the TEI
+                     Guidelines.</note> The question is whether letterheads fall in these categories
+                  or whether this is an overexpansion of the definition and therefore a misuse of
+                     <gi>fw</gi>.</p>
+               <figure>
+                  <head>Example 1: Letter with letterhead (source: Théophile Peyron to Vincent van
+                     Gogh, 1 July 1890. Amsterdam, Van Gogh Museum, inv. no. b1064 V/1962, <ref target="http://vangoghletters.org/vg/letters/let895/letter.html">http://vangoghletters.org/vg/letters/let895/letter.html</ref>).</head>
+                  <graphic url="../images/pre-printed-parts/example1.png"/>
+               </figure>
+               <p n="5">A possible encoding using <gi>fw</gi> might look like this (example 1):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <fw type="letterhead" place="top-left">Maison de
+                        Santé<lb/>de<lb/>Saint-Rémy<lb/>de Provence<lb/>Bouches-du-Rhône</fw>
+                  </egXML>
+               <p n="6">The element <gi>fw</gi> is quite flexible and allows names, places, and
+                  addresses to be marked up with <gi>address</gi>, <gi>name</gi>, <gi>placeName</gi>
+                  etc. to further specify the content of the letterhead. <gi>figure</gi> can also be
+                  included to capture images that are part of the letterhead (for this, see <ref target="#c-2-4">Case 1: Letterheads, issue 4</ref>). There is, however, the
+                  question whether <gi>fw</gi> being an inline element is problematic or not as
+                  letterheads in their layout are usually set apart from the rest of the text.</p>
+               <p n="7">The encoding of a combined letterhead and—as one might call it—letterfooter
+                  might look like this:<note n="3" xml:id="fn3">Encoding example (slightly changed)
+                     taken from <ref target="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</ref>.</note>
+               </p>
+               
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <div>
+                        <pb n="1"/>
+                        <fw type="letterhead">[...]</fw>
+                        <opener>[...]</opener>
+                        <p>[...]</p>
+                        <fw type="letterfooter">[...]</fw>
+                        <pb n="2"/>
+                        <fw type="letterhead">[...]</fw>
+                        <p>[...]</p>
+                        <closer>[...]</closer>
+                        <fw type="letterfooter">[...]</fw>
+                     </div>
+                  </egXML>
+               <p n="8">Here, you can see this structure in an example encoding of a letter from
+                  Johnny Cash to Saul Holiff, written in 1961:<note n="4" xml:id="fn4">Letter from
+                     Johnny Cash to Saul Holiff, 6 June 1961: <ref target="https://exhibits.library.uvic.ca/spotlight/holiff/catalog/11-12904">https://exhibits.library.uvic.ca/spotlight/holiff/catalog/11-12904</ref>.
+                     Another example for writing paper with letterhead and footer is the letter from
+                     Eugene Belmont to Harry Ault, 2 July 1932: <ref target="https://digitalcollections.lib.washington.edu/digital/collection/pioneerlife/id/8634/">https://digitalcollections.lib.washington.edu/digital/collection/pioneerlife/id/8634/</ref>.</note></p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples"><div>
+                        <pb n="1"/>
+                        <fw type="letterhead">A Few Very Rural, Badly Phrased But Well Meant Words
+                           From<lb/>Johnny Cash</fw>
+                        <opener>
+                           <address>
+                              <addrLine>4259 Hayvenhurst Ave</addrLine>
+                              <addrLine>[...]</addrLine>
+                           </address>
+                           <salute>Dear Mr. Volatile,</salute>
+                        </opener>
+                        <p>Thanks very much for the pictures. [...]</p>
+                        <fw type="letterfooter">Singer - Song Writer - Guitar Picker - Cotton
+                           Picker</fw>
+                        <pb n="2"/>
+                        <fw type="letterhead">A Few Very Rural, Badly Phrased But Well Meant Words
+                           From<lb/>Johnny Cash</fw>
+                        <p>Concerning the cities proposed, [...]</p>
+                        <closer>
+                           <salute>Gotta go. Thanks again for the pictures. If you need any help
+                              from this end, let me know.</salute>
+                           <signed>J.R.</signed>
+                        </closer>
+                        <fw type="letterfooter">Singer - Song Writer - Guitar Picker - Cotton
+                           Picker</fw>
+                        <pb n="3"/>
+                        <fw type="letterhead">A Few Very Rural, Badly Phrased But Well Meant Words
+                           From<lb/>Johnny Cash</fw>
+                        <postscript>
+                           <label>P.S.</label>
+                           <p>Gordon went to Las Vegas over the weekend [...]</p>
+                           <signed>J.R.</signed>
+                        </postscript>
+                        <fw type="letterfooter">Singer - Song Writer - Guitar Picker - Cotton
+                           Picker</fw>
+                     </div>
+                  </egXML>
+               <p n="9">While this encoding might be suitable for letterheads with names and
+                  addresses, it seems not so fitting for pre-printed parts with gaps to be filled in
+                  by the letter writer (for this, see <ref target="#c-3-2">Case 2: Pre-printed parts
+                     like forms, issue 2</ref>).</p>
+            </div>
+            <div xml:id="c-2-2">
+               <head xml:id="issue1-2">Issue 2: Using <gi>opener</gi> or <gi>head</gi></head>
+               <p n="10">As letterheads are often positioned at the top or bottom of the paper, one
+                  might think about using the elements <gi>opener</gi> or <gi>closer</gi> with a
+                  type attribute that contains, for example, the value letterhead. While
+                     <gi>opener</gi> with rend="letterhead" and <gi>closer</gi> with
+                  rend="letterhead" before and after the actual <gi>opener</gi> and <gi>closer</gi>
+                  might seem like viable solutions, they represent in fact a tag abuse as
+                  letterheads are not covered by the definitions of these two elements.<note n="5" xml:id="fn5"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html</ref>, and
+                        <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html</ref>.
+                  </note></p>
+               <p n="11">The same is true for the element <gi>head</gi><note n="6" xml:id="fn6"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html</ref>.</note>
+                  which, moreover, cannot capture letterheads at other places than the top of the
+                  page. As printed letterheads need not necessarily be on the top of the letter
+                  paper above the letter text, they can be positioned at the bottom, on the left or
+                  right side, or centered. Therefore, the encoding of letterheads should be
+                  independent of their position on the paper but solely based on their content.</p>
+            </div>
+            <div xml:id="c-2-3">
+               <head xml:id="issue1-3">Issue 3: Using <gi>div</gi>, <gi>seg</gi> or
+                  <gi>ab</gi></head>
+               <p n="12">There is also the possibility of encoding printed letterheads not with an
+                  'individual' element but in a more general way as divisions, segments, or even as
+                  anonymous blocks. The definitions of these elements <gi>div</gi>, <gi>seg</gi>,
+                  and <gi>ab</gi> do not exactly apply to letterheads but could be considered
+                  semantically close:</p>
+               <cit>
+                  <quote><gi>div</gi> (text division) contains a subdivision of the front, body, or
+                     back of a text.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html)</ref>
+               </cit>
+               <cit>
+                  <quote><gi>seg</gi> (arbitrary segment) represents any segmentation of text below
+                     the 'chunk' level.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html)</ref>
+               </cit>
+               <cit>
+                  <quote><gi>ab</gi> (anonymous block) contains any arbitrary component-level unit
+                     of text, acting as an anonymous container for phrase or inter level elements
+                     analogous to, but without the semantic baggage of, a paragraph.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html)</ref>
+               </cit>
+               <p n="13">The <gi>div</gi> element can be further specified with a type attribute
+                  containing "letterhead", "letterfooter", and "pre-printed-form" as possible
+                  values, or, in a similar manner, a type attribute containing a general value
+                  "pre-printed" accompanied by additional subtypes "letterhead", "letterfooter", or
+                  "pre-printed-form". Next to a type attribute, a rend attribute with a value like
+                  "pre-printed" also seems possible. However, these encodings pose problems as, for
+                  example, <gi>div</gi> and <gi>ab</gi> are not allowed before <gi>opener</gi> or
+                  after <gi>closer</gi>. Putting them after <gi>opener</gi> and before
+                     <gi>closer</gi>, respectively, is in many cases not a faithful encoding of the
+                  source. <gi>seg</gi> is an inline element and cannot be used outside <gi>div</gi>
+                  that again is not allowed before <gi>opener</gi> or after <gi>closer</gi>. It
+                  should, however, not be put inside <gi>opener</gi> or <gi>closer</gi>,
+                  respectively, as it cannot be considered a part of these.</p>
+               <p n="14">Another problem arises when dealing with letters several pages long and
+                  with a recurring (or even changing) letterhead on each page. An encoding like
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="letter">
+                        <div type="letterhead"/>
+                        <div type="letterbody"/>
+                     </div>
+                  </egXML> would result in several <gi>div</gi> with type="letterbody", one for each
+                  single page, interrupted by the recurring <gi>div</gi> with type="letterhead".
+                  This seems neither practical nor appropriate.</p>
+               <p n="15">Finally, all three elements <gi>div</gi>, <gi>seg</gi>, and <gi>ab</gi>
+                  seem rather unspecific regarding the encoding of letterheads, and are probably too
+                  general.</p>
+            </div>
+            <div xml:id="c-2-4">
+               <head xml:id="issue1-4">Issue 4: Using <gi>figure</gi></head>
+               <p n="16">As letterheads very often include an image or graphical element, and are
+                  "typically the result of a lay-out process in the design of the letter paper"<note n="7" xml:id="fn7"><ref target="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</ref>.</note>,
+                  an encoding using <gi>figure</gi> with type="letterhead" comes to mind. The
+                  element <gi>figure</gi> can occur in many different places and can be used in
+                  varying depth. On the one hand, it can be used as an empty element for merely
+                  signalling the presence of a letterhead. On the other hand, it can contain a
+                  description (in <gi>figDesc</gi>), a digital image (in <gi>graphic</gi>), and/or a
+                  transcription of its text.</p>
+               <figure>
+                  <head>Example 2: Letter with image in letterhead (source: Theodor Fontane to
+                     Emilie Fontane, 14 August 1856. Potsdam, Theodor-Fontane-Archiv, shelf number
+                     TFA V III,4 (Andr), <ref target="https://www.fontanearchiv.de/handschriften/12000250/">https://www.fontanearchiv.de/handschriften/12000250/</ref>. </head>
+                  <graphic url="../images/pre-printed-parts/example2.png"/>
+               </figure>
+               <p n="17">A possible encoding using <gi>figure</gi> might look like this (example
+                  2):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <div type="letter">
+                        <figure type="letterhead">
+                           <figDesc>The figure shows a drawing of Shakespeare's birthplace in
+                              Stratford-upon-Avon, England.</figDesc>
+                           <graphic url="fig1.jpg"/>
+                           <head>Shakspeare's birth place</head>
+                           <p>Published by E. Adams</p>
+                        </figure>
+                        <opener>Meine liebe Frau. [...]</opener>
+                        <p>[...]</p>
+                     </div>
+                  </egXML>
+               <p n="18">Its use is very flexible but the definition suggests that using
+                     <gi>figure</gi> like that is rather a tag abuse:</p>
+               <cit>
+                  <quote><gi>figure</gi> groups elements representing or containing graphic
+                     information such as an illustration, formula, or figure.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html)</ref>
+               </cit>
+               <p n="19">Any text contained within <gi>figure</gi> is being understood as
+                  "commentary on the figure in the source"<note n="8" xml:id="fn8"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA">https://tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA</ref>.</note>
+                  which is not the case in each and every letterhead. Sometimes, there may be text
+                  accompanying and commenting the image, as in example 2. However, it usually is the
+                  case that text and image are on a parallel level to each other, or the image is an
+                  illustration of the text, not the text a commentary on the image. The image might
+                  also be just an additional, beautifying feature, like an ornamental decoration as
+                  in the letterhead in example 1. Therefore, the text of letterheads should not be
+                  subordinate to its image and be transcribed within <gi>figure</gi>. If there is no
+                  image at all, as in example 3, an encoding of the letterhead—although perhaps
+                  containing a graphical layout—with <gi>figure</gi> seems counterintuitive.</p>
+               <figure>
+                  <head>Example 3: Letter with letterhead (source: Vincent van Gogh to Theo van
+                     Gogh, 24 March 1873. Amsterdam, Van Gogh Museum, inv. no. b6 V/1962, <ref target="http://vangoghletters.org/vg/letters/let006/letter.html">http://vangoghletters.org/vg/letters/let006/letter.html</ref>).</head>
+                  <graphic url="../images/pre-printed-parts/example3.png"/>
+               </figure>
+               <p n="20"><gi>figure</gi> is also not suitable for pre-printed parts with, for
+                  example, a place and a dotted line to fill in the date (see <ref target="#c-3-3">Case 2: Pre-printed parts like forms, issue 3</ref>).</p>
+               <p n="21">Even though <gi>figure</gi> is not suitable for complete letterheads, it
+                  can be used for just the image. It can be part of <gi>fw</gi> and a possible
+                  encoding of example 2 might look like this:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="letter">
+                        <fw type="letterhead">
+                           <figure>
+                              <figDesc>The figure shows a drawing of Shakespeare's birthplace in
+                                 Stratford-upon-Avon, England.</figDesc>
+                              <graphic url="fig1.jpg"/>
+                              <head>Shakspeare's birth place</head>
+                              <p>Published by E. Adams</p>
+                           </figure>
+                        </fw>
+                        <opener>Meine liebe Frau. [...]</opener>
+                        <p>[...]</p>
+                     </div>
+                  </egXML>
+            </div>
+            <div xml:id="c-2-5">
+               <head xml:id="issue1-5">Issue 5: Using <gi>layoutDesc</gi></head>
+               <p n="22">A basic decision is whether the information of the existence of a
+                  letterhead and its content are needed in the transcription or whether abstracting
+                  these information and putting them in the meta data is sufficient. The latter may
+                  be more convenient for projects that consider the exact transcription of
+                  letterheads not semantically important, and for projects with large corpuses of
+                  letters with numerous letterheads.</p>
+               <p n="23">For including these information in the meta data, <gi>layoutDesc</gi> as
+                  part of <gi>objectDesc</gi> is a suitable place:</p>
+               <cit>
+                  <quote><gi>layoutDesc</gi> (layout description) collects the set of layout
+                     descriptions applicable to a manuscript or other object.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html)</ref>
+               </cit>
+               <p n="24">A simple encoding example might look like this:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples"><objectDesc>
+                     <layoutDesc>
+                        <layout>A letterhead is printed at the top of the paper with the company's
+                           name and address.</layout>
+                     </layoutDesc>
+                  </objectDesc>
+               </egXML>
+               <p n="25">Additionally, it might be useful to link the information encoded in
+                     <gi>layoutDesc</gi> with the transcription of the letterhead in the
+                     <gi>body</gi>. For the letter to Vincent van Gogh in example 1, we recommend an
+                  encoding like this in the <gi>teiHeader</gi> as well as in <gi>body</gi>:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples"><objectDesc>
+                        <layoutDesc>
+                           <layout xml:id="lh">A letterhead is printed in the top left corner of the
+                              paper with the hotel's name and address in which the sender was
+                              staying.</layout>
+                        </layoutDesc>
+                     </objectDesc>
+                     <!-- [...] -->
+                     <div>
+                        <fw type="letterhead" place="top-left" corresp="#lh">Maison de
+                           Santé<lb/>de<lb/>Saint-Rémy<lb/>de Provence<lb/>Bouches-du-Rhône</fw>
+                     </div>
+                  </egXML>
+               <p n="26">For the linking of the letterhead in the <gi>body</gi> part with the
+                  header, one cannot use @ref within <gi>fw</gi>, as this is not allowed according
+                  to the TEI Guidelines. It is also not allowed to use the <gi>ref</gi> element
+                  inside <gi>div</gi>. Therefore, the <gi>ref</gi> element needs to be put inside
+                     <gi>fw</gi> containing the transcription of the letterhead. The target
+                  attribute then points to the <gi>layout</gi> element in the header:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples"><div>
+                        <fw type="letterhead" place="top-left">
+                           <ref target="#lh">Maison de Santé<lb/>de<lb/>Saint-Rémy<lb/>de
+                              Provence<lb/>Bouches-du-Rhône</ref>
+                        </fw>
+                     </div>
+                  </egXML>
+            </div>
+            <div xml:id="c-2-6">
+               <head xml:id="issue1-6">Using <gi>supportDesc</gi></head>
+               <p n="27">If one understands the information on pre-printed letterheads on the paper
+                  as information about the supporting material on which the letter is written or
+                  typed, the element <gi>supportDesc</gi> (as part of <gi>objectDesc</gi>) might
+                  first look like a suitable place:</p>
+               <cit>
+                  <quote><gi>supportDesc</gi> (support description) groups elements describing the
+                     physical support for the written part of a manuscript or other object.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html)</ref>
+               </cit>
+               <p n="28">This is a handling of letterheads similar to, for example, watermarks.
+                  However, this rather relates to the actual material and its physical aspects<note n="9" xml:id="fn9">Cf. the definition of <gi>support</gi>: "<gi>support</gi>
+                     contains a description of the materials etc. which make up the physical support
+                     for the written part of a manuscript or other object" <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html</ref>.</note>
+                  than to information printed on these materials. Therefore, <gi>supportDesc</gi>
+                  cannot be recommended for encoding letterheads.</p>
+            </div>
+         </div>
+         <div xml:id="c-3">
+            <head xml:id="forms">Case 2: Pre-printed parts like forms</head>
+            <p n="29">Pre-printed parts are a recurring phenomenon in correspondence materials, and
+               can be found on telegrams and postcards. A proper markup in order to distinguish
+               pre-printed text from handwritten text may be helpful when it comes to research
+               questions focusing, for example, on the relation of pre-printed and handwritten text
+               in letters and how the first may influence the (genesis of) the latter.</p>
+            <figure>
+               <head>Example 4: field postcard (source: Franz Marc to Herwarth Walden, 17 April
+                  1915, in: DER STURM. Digitale Quellenedition zur Geschichte der internationalen
+                  Avantgarde, <ref target="https://sturm-​edition.de/id/Q.01.19150417.FMA.01">https://sturm-​edition.de/id/Q.01.19150417.FMA.01</ref>).</head>
+               <graphic url="../images/pre-printed-parts/example4.png"/>
+            </figure>
+            <div xml:id="c-3-1">
+               <head xml:id="issue2-1">Issue 1: Using <gi>ab</gi></head>
+               <p n="30">On the textual level, one solution might be the use of the block element
+                     <gi>ab</gi><note n="10" xml:id="fn10"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html</ref>.</note>
+                  in order to distinguish between pre-printed and non-pre-printed parts. <gi>ab</gi>
+                  then might use the attribute–value pair type="pre-printed" for pre-printed parts,
+                  type="typed" for text which is produced by a typewriter and type="handwritten" for
+                  handwritten text to make the distinction.</p>
+               <p n="31">An encoding of the field postcard in example 4 might look as follows
+                  (simplified, deletions by sender not encoded):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <ab type="pre-printed">Absender:</ab>
+                     <ab type="handwritten">Vizewachtm. Marc</ab>
+                     <ab type="handwritten">Galde<lb/>Fuchs</ab>
+                     <ab type="pre-printed">Armeekorps<lb/>Division</ab>
+                     <ab type="handwritten"><lb/><lb/>Ersatz</ab>
+                     <ab type="pre-printed">Regiment No<lb/>Bataillon<lb/>Abteilung</ab>
+                     <ab type="pre-printed">Kompagnie<lb/>Batterie<lb/>Eskadron<lb/>Kolonne</ab>
+                     <ab type="pre-printed">Besondere Formationen: (Flieger, Funker usw.)</ab>
+                     <ab type="handwritten">Schilling der 1. bayr. Feld-​Art. Rgt. Leichte-​Mun.
+                        Kol.</ab>
+                  </egXML>
+               <p n="32">When encoded like this, we cannot see which handwritten addition belongs to
+                  which pre-printed part. One could solve this problem by an encoding like the
+                  following (with a different segmentation of the text used in order to group the
+                  associated parts):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <div>
+                        <ab type="pre-printed">Absender:</ab>
+                        <ab type="handwritten">Vizewachtm. Marc</ab>
+                     </div>
+                     <div>
+                        <ab type="handwritten">Galde</ab>
+                        <ab type="pre-printed">Armeekorps</ab>
+                     </div>
+                     <div>
+                        <ab type="handwritten">Fuchs</ab>
+                        <ab type="pre-printed">Division</ab>
+                     </div>
+                     <div>
+                        <ab type="pre-printed">Regiment No</ab>
+                     </div>
+                     <div>
+                        <ab type="handwritten">Ersatz</ab>
+                        <ab type="pre-printed">Bataillon<lb/>Abteilung</ab>
+                     </div>
+                     <div>
+                        <ab type="pre-printed">Kompagnie<lb/>Batterie<lb/>Eskadron<lb/>Kolonne</ab>
+                     </div>
+                     <div>
+                        <ab type="pre-printed">Besondere Formationen: (Flieger, Funker usw.)</ab>
+                        <ab type="handwritten">Schilling der 1. bayr. Feld-​Art. Rgt. Leichte-​Mun.
+                           Kol.</ab>
+                     </div>
+                  </egXML>
+               <p n="33">The attribute-value pairs mentioned above do not follow any conventions in
+                  TEI; the type attribute can be used in order to annotate completely different
+                  phenomena. Thus, this solution seems unspecific with regard to the various ways in
+                  which <gi>ab</gi> can be used.</p>
+               <p n="34">Cases might arise in which pre-printed parts express a date or a location
+                  and, therefore, belong in <gi>opener</gi>.<note n="11" xml:id="fn11">E.g. <ref target="https://doi.org/10.7925/drs1.ivrla_4071">https://doi.org/10.7925/drs1.ivrla_4071</ref>.</note> When using
+                     <gi>ab</gi> for the encoding of pre-printed, typed and handwritten parts, it
+                  could make sense to place these encodings within <gi>opener</gi>. Since
+                     <gi>ab</gi> is not allowed within <gi>opener</gi>, this is another reason not
+                  to use <gi>ab</gi>.</p>
+            </div>
+
+            <div xml:id="c-3-2">
+               <head xml:id="issue2-2">Issue 2: Using <gi>fw</gi></head>
+               <p n="35">The forme work element might be fitting for letterheads with names and
+                  addresses, as has already been described in <ref target="#c-2-1">Case 1:
+                     Letterheads, issue 1</ref>. However, it seems not applicable for pre-printed
+                  parts like forms. First, documents like the field postcard in example 4 do not
+                  consist of a running head but the pre-printed text rather occurs on a single page
+                  and is, therefore, not a continuous feature. Thus, the definition of <gi>fw</gi>
+                  cannot be applied to this case. Second, the type attribute could be used to
+                  distinguish between pre-printed, handwritten or typed text, but, analogous to the
+                  case in Issue 1, there is no such usage convention of @type in TEI.</p>
+            </div>
+            <div xml:id="c-3-3">
+               <head xml:id="issue2-3">Issue 3: Using <gi>figure</gi></head>
+               <p n="36">The use of <gi>figure</gi> for pre-printed parts has already been discussed
+                  letterheads (see <ref target="#c-2-4">Case 1: Letterheads, issue 4</ref>. There
+                  are two main reasons why <gi>figure</gi> should not be used for pre-printed text.
+                  First of all, such documents as in example 4 do not contain an illustration,
+                  formula, or figure in a narrow sense, so using <gi>figure</gi> is excluded due to
+                  its definition. Furthermore—as is the case in issue 1: Using <gi>ab</gi> and issue
+                  2: Using <gi>fw</gi>—there is no convention in TEI of using the type attribute to
+                  express a distinction between handwritten (or typed) and pre-printed text.</p>
+            </div>
+            <div xml:id="c-3-4">
+               <head xml:id="issue2-4">Issue 4: Using <gi>seg</gi></head>
+               <p n="37">The element <gi>seg</gi> marks arbitrary segments within a text. It is
+                  designed for the encoder to mark any segmentation of interest.<note n="12" xml:id="fn12"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html</ref>.</note>
+                  The attribute–value pairs described in <ref target="#c-3-1">Case 2, issue 1: Using
+                        <gi>ab</gi></ref> could be applied to <gi>seg</gi>. Thus, a possible
+                  encoding of the field postcard might be done as follows (simplified, deletions by
+                  sender not encoded):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <ab>
+                        <seg type="pre-printed">Absender:</seg>
+                        <seg type="handwritten">Vizewachtm. Marc</seg>
+                        <seg type="handwritten">Galde<lb/>Fuchs</seg>
+                        <seg type="pre-printed">Armeekorps<lb/>Division</seg>
+                        <seg type="handwritten"><lb/><lb/>Ersatz</seg>
+                        <seg type="pre-printed">Regiment No<lb/>Bataillon<lb/>Abteilung</seg>
+                        <seg type="pre-printed">Kompagnie<lb/>Batterie<lb/>Eskadron<lb/>Kolonne</seg>
+                        <seg type="pre-printed">Besondere Formationen: (Flieger, Funker usw.)</seg>
+                        <seg type="handwritten">Schilling der 1. bayr. Feld-​Art. Rgt. Leichte-​Mun.
+                           Kol.</seg>
+                     </ab>
+                  </egXML>
+               <p n="38">There is a clear advantage compared to the usage of <gi>ab</gi>: In the TEI
+                  description of <gi>seg</gi>, it is specifically stated that the encoder is free to
+                  define his or her own segments of text. But again, as in issue 1: using
+                     <gi>ab</gi>, there is no convention in TEI to use @type in order to categorize
+                  pre-printed, typed and handwritten text. In addition to that, <gi>seg</gi> is an
+                  inline element and therefore cannot be used in the same way as <gi>ab</gi>, for
+                  example. The necessity to enclose <gi>seg</gi> with a block element might be
+                  problematic.</p>
+            </div>
+            <div xml:id="c-3-5">
+               <head xml:id="issue2-5">Issue 5: Using <gi>handShift</gi>, and proposal of new
+                  element <gi>formShift</gi></head>
+               <p n="39">Another possible solution is the use of <gi>handShift</gi>. This turns out
+                  to cause problems regarding the definition of <gi>handShift</gi> in the TEI
+                  Guidelines:</p>
+               <cit>
+                  <quote><gi>handShift</gi> marks the beginning of a sequence of text written in a
+                     new hand, or the beginning of a scribal stint.</quote>
+                  <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html)</ref>
+               </cit>
+               <p n="40">As we do not only deal with the shift between different hands but between a
+                  hand and a pre-printed form or machine-written part and pre-printed form, the use
+                  of <gi>handShift</gi> does not cover all these possible shifts and is, therefore,
+                  not an option.</p>
+               <p n="41">This is why we propose a new element <gi>formShift</gi>. This new element
+                  could then be used at the point of transition from pre-printed text to
+                  non-pre-printed text and vice versa. To indicate these different shifts, we would
+                  recommend the attribute type with the predefined values handwritten (shift from
+                  pre-printed or typed to handwritten), typed (shift from handwritten or pre-printed
+                  to typed) and pre-printed (shift from handwritten or typed to pre-printed).
+                  Compared to the previous cases, we would have an element created specifically for
+                  the task of describing such shifts. The type attribute would then have the sole
+                  and specific function to indicate the shifts.</p>
+               <p n="42">The description of how the pre-printed parts look like could be encoded in
+                     <gi>layoutDesc</gi> as part of <gi>objectDesc</gi>: For example 4, the
+                     <gi>layoutDesc</gi> might look like this:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <objectDesc>
+                        <layoutDesc>
+                           <p>Turned 90 degrees to the left, there is pre-printed text combined with
+                              dotted lines where handwritten entries were made.</p>
+                        </layoutDesc>
+                     </objectDesc>
+                  </egXML>
+               
+               <p n="43">Here is a possible solution for example 4, using the suggested element
+                     <gi>formShift</gi> (simplified, deletions by sender not encoded):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <objectDesc>
+                        <layoutDesc>
+                           <p xml:id="pre-printed">Turned 90 degrees to the left, there is
+                              pre-printed text combined with dotted lines where handwritten entries
+                              were made.</p>
+                        </layoutDesc>
+                     </objectDesc>
+                     <!-- [...] -->
+                     <div corresp="#pre-printed">
+                        <p>Absender: <formShift type="handwritten"/>Vizewachtm. Marc <lb/>Galde
+                           <lb/>Fuchs <formShift type="pre-printed"/>Armeekorps <lb/>Division
+                              <formShift type="handwritten"/>
+                           <lb/>
+                           <lb/>Ersatz <formShift type="pre-printed"/>Regiment No
+                           <lb/>Bataillon<lb/>Abteilung <formShift type="handwritten"/>
+                           <lb/>
+                           <lb/>
+                           <formShift type="pre-printed"/>Kompagnie <lb/>Batterie <lb/>Eskadron
+                           <lb/>Kolonne </p>
+                        <p> Besondere Formationen: (Flieger, Funker usw.) <formShift type="handwritten"/>Schilling der 1. bayr. Feld-​Art. Rgt.
+                           Leichte-​Mun. Kol.</p>
+                     </div>
+                  </egXML>
+               <p n="44">The attribute-value pair corresp="pre-printed" would indicate the linking
+                  between the pre-printed text and the description in the meta data.</p>
+            </div>
+            <div type="bibliography">
+               <head>Bibliography</head>
+               <listBibl>
+                  <bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/TMLGNZ5L">TEI Consortium, ed. 2019. ‟Correspondence Description.ˮ In <hi rendition="#i">TEI P5: Guidelines for Electronic Text Encoding and Interchange</hi>.
+                     Version 3.6.0, 63–65. <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD</ref>.</bibl>
+                  <bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/A3F94BIQ">TEI Consortium, ed. 2019. ‟Headers, Footers, and Similar Matter.ˮ In <hi rendition="#i">TEI P5: Guidelines for Electronic Text Encoding and
+                        Interchange</hi>. Version 3.6.0, 419–420. <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSK">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSK</ref>.</bibl>
+               </listBibl>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

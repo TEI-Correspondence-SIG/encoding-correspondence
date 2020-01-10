@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="CMIF">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Correspondence Metadata Interchange Format (CMIF)</title>
+                <author key="dumont">Stefan Dumont</author>
+                <author key="boerner">Ingo Börner</author>
+                <author key="mueller-laackman">Jonas Müller-Laackman</author>
+                <author key="leipold">Dominik Leipold</author>
+                <author key="schneider">Gerlinde Schneider</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
+                <date when="2019-10-28"/>
+                <idno type="urn">urn:nbn:de:kobv:b4-20200110163712891-8511250-2</idno>
+                <idno type="url">https://encoding-correspondence.bbaw.de/v1/CMIF.html</idno>
+                <idno type="zotero"
+                    >https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/355VRRNR</idno>
+            </publicationStmt>
+            <seriesStmt>
+                <title type="main">Encoding Correspondence.</title>
+                <title type="sub">A Manual for TEI-XML-based encoding of letters and postcards In
+                    TEI-XML and DTABf</title>
+                <editor>Stefan Dumont</editor>
+                <editor>Susanne Haaf</editor>
+                <editor>Sabine Seifert</editor>
+                <idno type="urn">urn:nbn:de:kobv:b4-20200110163329488-8695229-7</idno>
+                <idno type="url">https://encoding-correspondence.bbaw.de/v1/</idno>
+                <biblScope unit="edition">v1</biblScope>
+            </seriesStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <listChange>
+                <change n="1" when="2019-10-28" status="draft">Initial Version</change>
+            </listChange>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div xml:id="c-1">
+                <head>Objectives and principles</head>
+                <p n="1">The Correspondence Metadata Interchange Format (CMIF) was developed for
+                    editors of digital and printed scholarly editions to provide the most important
+                    metadata about edited letters online and in a machine-readable form. This allows
+                    for research, linking and analysis of correspondence across projects and
+                    editions.</p>
+                <p n="2">On the basis of CMIF, researchers are able to search for letters from or to
+                    specific persons, places or within specific timespans across separate edition
+                    projects, which makes new comprehensive searches possible. For example, it makes
+                    it easier to search for letters by senders or recipients who do not have their
+                    correspondence covered in an individual letter edition. It is also possible to
+                    search for letters from a certain period, if necessary in connection with a
+                    certain place of dispatch or reception. With the implementation of version 2 one
+                    should be able to mark the entities mentioned in the letter (persons, places,
+                    publications, events etc.). As a result, it will be possible for the first time
+                    to use large collections of letters to answer systematic research questions such
+                    as how the music business was organized in the 19th century or how a certain
+                    event was received by contemporaries.</p>
+                <p n="3">The CMIF - as a dedicated exchange format - covers exclusively metadata and
+                    these only in a focused form. It does not include full text data, not least to
+                    avoid legal problems. For the same reason, it can be distributed under a free
+                    license. It cannot be seen as a replacement for a complete and detailed
+                    teiHeader, which is specifically defined and used for individual editorial
+                    projects. The CMIF file is provided as an addition to a scholarly edition and is
+                    independent from the technologies and formats used for a given digital edition.
+                    Therefore, for the provision of the CMIF data, it does not matter whether the
+                    digital edition itself is based on XML, a relational database, or a graph
+                    database. After all, CMIF can also be used to provide the metadata of edited
+                    letters within a printed edition.</p>
+                <p n="4">CMIF is intended exclusively for the exchange of relevant metadata beyond
+                    project boundaries. It includes only those metadata that appear useful for
+                    cross-project research, cross-linking and analysis. Put simply, the idea behind
+                    CMIF is that information found in the index of letters, person, places etc. of
+                    printed scholarly editions of correspondence can be provided digitally and in
+                    machine-readable form.</p>
+                <p n="5">The CMIF should enable fully automated exchange of data without needing
+                    human intervention. To ensure this, the format must be restrictive and clearly
+                    defined. Accordingly, when developing the format, the guiding principle was
+                    "Keep it simple". By concentrating on essential metadata, the effort to provide
+                    a CMIF file should also be kept as small as possible. In addition, an online
+                    tool, the CMIF Creator, and detailed documentation are available.</p>
+            </div>
+            <div xml:id="c-2">
+                <head>Background</head>
+                <p n="6">CMIF is based on the guidelines of the Text Encoding Initiative (TEI) and
+                    was developed within the <ref
+                        target="https://tei-c.org/activities/sig/correspondence/">TEI Correspondence
+                        Special Interest Group (SIG)</ref>. The initiative for the format was
+                    started in 2014 in the workshop "Briefeditionen um 1800: Schnittstellen finden
+                    und vernetzen", which was organized by Anne Baillot and Markus Schnöpf at the
+                    Berlin-Brandenburg Academy of Sciences and Humanities. Shortly before, a task
+                    force of the TEI Correspondence SIG (namely Marcel Illetschko, Sabine Seifert
+                    and Peter Stadler) had started to develop a new concept for encoding
+                    correspondence metadata for the TEI guidelines - realized in the new element
+                    &lt;correspDesc&gt; (Correspondence Description). It is supposed to encode the
+                    most important communication-specific "header data" of a letter in TEI-XML in a
+                    standardized way, in particular sender, recipient, place of writing and date.
+                    The proposal for correspDesc was accepted by the TEI Council, revised and
+                    incorporated into the TEI guidelines in April 2015. (Stadler, Illetschko, and
+                    Seifert 2016; TEI Consortium 2019).</p>
+                <p n="7">Already during the development of correspDesc, Peter Stadler outlined the
+                    idea of developing a format for the exchange of correspondence metadata across
+                    editions based on this new element. The element correspDesc should be used in a
+                    significantly reduced and restrictive way to ensure an automated exchange of
+                    data. A first draft of CMIF was developed following the workshop mentioned
+                    above. Since then, CMIF has been developed and maintained within the framework
+                    of the TEI Correspondence SIG. The schema definition using ODD and examples can
+                    be found in the <ref target="https://github.com/TEI-Correspondence-SIG/CMIF"
+                        >GitHub repository of the SIG</ref>.</p>
+                <p n="8">The TELOTA working group of the Berlin-Brandenburg Academy of Sciences and
+                    Humanities developed the web service <ref target="https://correspsearch.net/"
+                        >correspSearch</ref> in order to "fill CMIF with life", i.e. to demonstrate
+                    the possible application scenarios. It aggregates CMIF files available online
+                    and offers the metadata for convenient research or automatic retrieval via an
+                    API. The web service currently aggregates (as of 1.10.2019) 110 CMIF files with
+                    metadata to almost 54,000 edited letters in 178 publications. (Dumont 2016)</p>
+                <p n="9">The Correspondence Metadata Interchange Format was awarded the <ref
+                        target="https://tei-c.org/activities/rahtz-prize-for-tei-ingenuity/">"Rahtz
+                        Prize for TEI Ingenuity 2018"</ref> together with the element correspDesc
+                    and the web service correspSearch.</p>
+                <p n="10">In the course of the workshop “Herausforderungen der Briefkodierung”
+                    (“Challenges of letter encoding”) at the Berlin-Brandenburg Academy of Sciences
+                    and Humanities in October 2018, version 2 of the CMIF was developed based on the
+                    initial considerations. </p>
+            </div>
+            <div xml:id="c-3">
+                <head>General encoding principles</head>
+                <p n="11">The formulated principle also has implications for a decision between two
+                    variants for encoding. With regard to CMIF, two possible encoding variants exist
+                    within the framework of the TEI guidelines:</p>
+                <p n="12">On the one hand, it is possible to create one (albeit reduced) teiHeader
+                    per letter and to use its capabilities (profileDesc, msDesc, keywords etc.) to
+                    cover all necessary information. For an index of letters which includes the most
+                    important metadata, several teiHeaders could then - to put it simply - be
+                    combined in the element teiCorpus. Meta information on the letter index itself
+                    could then be stored in the teiHeader of the teiCorpus element itself.</p>
+                <p n="13">On the other hand, it is possible to create one single TEI document and
+                    provide one correspDesc element per letter there. With this variant, meta
+                    information on the CMIF file is directly indicated in the document's
+                    teiHeader.</p>
+                <p n="14">For the first version of CMIF, the second variant was chosen because it
+                    posed hardly any problems as the element correspDesc (together with its child
+                    elements) was completely sufficient for the desired metadata. In CMIF v1, only
+                    the sender, the recipient, places of writing and receiving, date and the URL or
+                    number of the letter are specified. This is what the TEI element correspDesc was
+                    and is designed for. All other information - which is very manageable in terms
+                    of numbers - can easily be placed in the teiHeader.</p>
+                <p n="15">With the further development of CMIF to version 2, however, further
+                    metadata - such as persons mentioned in a letter - for which the correspDesc
+                    element is not intended per se can now be noted. In this context it was
+                    discussed again whether one should not use the entire teiHeader per letter. At
+                    first glance, this seems to be a clean solution, but one creates a large
+                    "overhead" of TEI-XML encoding, which one would like to avoid for the reasons
+                    already mentioned - "keep it simple". In addition, such a teiHeader would still
+                    be greatly reduced compared to the teiHeader in the digital edition itself, but
+                    would at the same time suggest completeness. In addition, with the second
+                    encoding variant - i.e. the exclusive use of correspDesc - the CMIF can be
+                    further developed to be downward compatible. All further considerations are now
+                    based on the premise that the previously chosen encoding variant, which is
+                    essentially based on the use of correspDesc, will be retained.</p>
+                <p n="16">Here the fundamental question follows to what extent the CMIF should be
+                    conform to the TEI guidelines. So far, no major problems occured with the use of
+                    the TEI, which was essentially limited to the element correspDesc. But now - as
+                    already discussed (Dumont 2015) - various further aspects have to be integrated
+                    in correspDesc, which initially do not have their original location there. For
+                    certain purposes, new attributes of their own would appear desirable, but they
+                    would only be valid in CMIF and not generally in the TEI guidelines. Taking into
+                    account the fact that the CMIF is rooted in the TEI community and the acceptance
+                    based on it, the working group decided to focus on TEI conformity in the further
+                    development of the format. According to the definitions of the TEI guidelines,
+                    this includes, on the one hand, that the CMIF is validated against TEI All and,
+                    on the other hand, that the TEI Abstract Model is implemented correctly. A
+                    possible solution must take this into account.</p>
+            </div>
+            <div xml:id="c-4">
+                <head>Information to be included</head>
+                <p n="17">Following these preliminary considerations, the question arises as to
+                    which information should be included in the CMIF in addition to the information
+                    already available in version 1. Hereof it is necessary to take the objectives of
+                    the format postulated at the beginning into account: CMIF should enable both,
+                    cross-project searches for letters and automated analysis of metadata, for
+                    example for network research. The CMIF should not, as already mentioned, contain
+                    the full range of metadata that is generated within a letter edition. The
+                    relevance of the respective information for CMIF must be evaluated regarding its
+                    necessity and usefulness in cross-project research or analysis. This is not
+                    always a clear-cut decision. Of course, any information can increase the
+                    research and analysis benefit of the data. However, previous experience has
+                    shown that a cross-project metadata format is more accepted and used if only
+                    absolutely necessary information has to be provided. On the other hand, the
+                    effort for the project to provide its own metadata is the greater, the more
+                    information has to be provided. An information-saturated, but complex metadata
+                    format may seem ideal, but will find far less usage, which in turn greatly
+                    diminishes its usefulness. Consequently, for pragmatic reasons, the format
+                    should be kept manageable and simple.</p>
+                <div xml:id="c-4-1">
+                    <head>Information Contained in CMIF v1</head>
+                    <p n="18">Until now, CMIF mainly contained the communication-specific metadata
+                        of an edited letter: Sender, recipient, place of writing and receiving as
+                        well as corresponding date information. In addition, number and/or the URL
+                        of the letter can be noted. In addition, a bibliographic reference of the
+                        scholarly edition is listed in the teiHeader.</p>
+                    <p n="19">Apart from these letter- or edition-related details, the CMIF file
+                        also contains metadata about the CMIF file itself (publisher, editor,
+                        creation or modification date and URL of the file).</p>
+                </div>
+                <div xml:id="c-4-2">
+                    <head>Information to be included in CMIF v2</head>
+                    <div xml:id="c-4-2-1">
+                        <head>Archives and Editions</head>
+                        <p n="20">In CMIF v2, it should be possible to note information on the
+                            identity of the letter in order to unambiguously identify or
+                            disambiguate it. This can be an archival signature, or a unique ID of a
+                            letter that is only printed. Such information is important in order to
+                            research other editions of the same letter (or to recognize them as
+                            such). The correspSearch web service already provides examples for this
+                            from the currently aggregated CMIF files, but these are not yet
+                            recognizable as such. The information is also important for the analysis
+                            of metadata from CMIF files, to prevent letters from being redundantly
+                            counted.</p>
+                        <p n="21">Thus, references to the underlying archival document as well as to
+                            other editions of the same letter should be able to be noted in CMIF v2.
+                            This is relevant as <hi rendition="#i">automated</hi> differentiation or
+                            linking of letters is not possible without high error rates since there
+                            are too many cases in which different letters share the same basic data
+                            (sender, recipient, location, date). The archival information would be
+                            sufficient for identification, but there are also numerous cases in
+                            which the original letter (or its draft or copy) is lost or in (unknown)
+                            private possession. In these cases no archival information can be
+                            provided and references must be made from one edition to the other.</p>
+                    </div>
+                    <div xml:id="c-4-2-2">
+                        <head>Uncertainty</head>
+                        <p n="22">The labelling of uncertain information is an important part of
+                            humanities scholarship - also when working with edited letters.
+                            Considering the use of CMIF metadata for digital research methods, such
+                            as historical network research, it should be possible for this
+                            information to be noted in the CMIF for the concerned data.</p>
+                        <p n="23">This includes the labelling of information that could not be
+                            derived from the letter itself, but was taken from other sources or
+                            originates the researcher’s conclusion. Primarily this concerns the
+                            "header data" of a letter, such as sender and recipient, place of
+                            writing and receipt as well as the corresponding date information. Here
+                            it has always been common practice to place the respective data in the
+                            letterhead in square brackets to indicate that this information was
+                            "deduced" and could not be obtained from the original source itself.</p>
+                        <p n="24">Deduced Information that does not originate from other sources but
+                            from the investigations of the editor, can appear to have less or more
+                            certainty. . For example, if the editor is not sure about a particular
+                            information, it is not only marked with square brackets, but also with a
+                            question mark. This makes it possible to offer the reader a suggestion
+                            without specifying it is definitely correct. This practice of marking
+                            uncertain assumptions is not only used for the header data of a letter,
+                            but also in the body of the letter, if mentioned persons or places
+                            cannot be identified unambiguously.</p>
+                        <p n="25">In addition to these two practices to label uncertainty, there is
+                            another one that concerns the letter as a whole: the copy text (textual
+                            basis). In general, a letter should be edited on the original
+                            manuscript. In case the original is lost, this is obviously not
+                            possible. For this reason, the textual basis is always specified in
+                            letter editions. Besides the original handwriting, this can be a copy by
+                            the author (or their scribe), a copy by the recipient, a concept, a
+                            draft or a later print. In any case, the existing textual basis
+                            implicitly indicates the certainty by which it can be assumed that the
+                            letter has reached its intended recipient and with what content.</p>
+                    </div>
+                    <div xml:id="c-4-2-3">
+                        <head>Entities mentioned</head>
+                        <p n="26">The user of an edition of correspondence is inevitably very
+                            interested in which letters certain persons, places, etc. are mentioned
+                            This is why properly prepared indexes are an important component of
+                            letter editions. The information contained in these registers is
+                            therefore also of great interest to CMIF. Information about which
+                            entities are mentioned in which letters would greatly facilitate
+                            research across editions or even make possible in the first place. In
+                            addition to “traditional” entity types found in the indexes of scholarly
+                            editions, such as persons and places, other types of entities are
+                            becoming increasingly of interest in recent years. These include
+                            primarily publications, however, also events, objects and quotations are
+                            feasible. The prerequisite for this would be the existence of authority
+                            files that provide identifiers for these types of entities so that they
+                            can be addressed across projects. </p>
+                    </div>
+                    <div xml:id="c-4-2-4">
+                        <head>Type of publication</head>
+                        <p n="27">So far, mainly edited letters have been discussed. However,
+                            historical correspondence is provided on different editorial levels by
+                            scholarship. These can range from simple archival repertories to regesta
+                            to fully edited letters which include commentaries and facsimiles.
+                            Information about the form in which a letter is ‘recorded’ is less
+                            relevant for scholarly questions that can be answered using metadata,
+                            however,it would support research in a meaningful way by enabling the
+                            user to see whatto expect at the end - whether it is printed or
+                            available online. This information would be particularly useful for
+                            scholars who want to build a corpus. In addition, it can easily happen
+                            that a letter is recorded differently in different projects. If data
+                            sets from both projects are to be used in a research interface, it is
+                            useful to be able to estimate the rough degree of recording there.</p>
+                    </div>
+                </div>
+            </div>
+            <div xml:id="c-5">
+                <head>Encoding</head>
+                <p n="28">Yet, it has to be answered how the desired information can be accommodated
+                    considering the background of the basic encoding (see above) and in a
+                    TEI-compliant way. If one wants to stick with the chosen approach and place all
+                    information in the element correspDesc, only the attributes in correspDesc and
+                    the child element correspDesc/note remain. The other two child elements
+                    correspAction and correspContext are semantically and uniquely assigned to the
+                    communication process so that they cannot be used as carriers for the additional
+                    information, as described above.</p>
+                <p n="29">In addition to the attributes, the element note, containing an
+                    "annotation" according to the TEI definition, remains in place. Although the
+                    information to be coded might not be covered by the proper meaning of
+                    “annotation” , the broader field of meanings attributed to “annotation” in the
+                    academic field is indeed much larger. Note can thus also be understood as an
+                    annotation of the correspondence description (correspDesc), which includes the
+                    information mentioned above.</p>
+                <p n="30">Once note has been chosen as a container, the question remains to what
+                    extent the listed information can be accommodated. Especially with regard to the
+                    mentioned entities it seems obvious to use the relevant TEI elements, such as
+                    persName. A coding would then look like this:</p>
+                <figure>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <note type="mentioned">
+                            <persName ref="http://viaf.org/viaf/24602065">Johann Wolfgang von
+                                Goethe</persName>
+                            <placeName ref="http://www.geonames.org/2874225">Mainz</placeName>
+                            <orgName ref="http://asa">Verlag XY</orgName>
+                            <bibl sameAs="http://viaf.org/viaf/186077286">Die Leiden des jungen
+                                Werthers</bibl>
+                            <term ref="urn:lsid:ipni.org:names:164558-3:1.1">Kalanchoe
+                                pinnata</term>
+                            <date from="1793-04-14" to="1793-07-23">Belagerung von Mainz</date>
+                        </note>
+                    </egXML>
+                    <figDesc>Example 1: Encoding mentioned entities with specific TEI
+                        elements</figDesc>
+                </figure>
+                <p n="31">With this encoding, however, the question quickly arises as to whether one
+                    should go along in a more general way with rs (referencing string), which is
+                    specified via a @type attribute. An example based on a person would look like
+                    this:</p>
+
+                <figure>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <rs type="person" ref="http://viaf.org/viaf/24602065"> Johann Wolfgang von
+                            Goethe</rs>
+                    </egXML>
+                    <figDesc>Example 2: Encoding information with generalized &lt;rs&gt;</figDesc>
+                </figure>
+                <p n="32">One advantage of this type of encoding would be a better flexibility when
+                    using different entity types. These will become more differentiated in the
+                    future and new ones will be added. For example, objects mentioned in letters
+                    that have actually been handed down in museums and collections are
+                    conceivable.</p>
+                <p n="33">Based on this generic approach, the working group came up with the idea of
+                    whether it would be possible to encode the references based on the triple
+                    notation of the Semantic Web. The references are noted as simple statements
+                    according to the pattern "subject - predicate - object". A natural linguistic
+                    analogy of a triple would be: "Letter XY mentions Johann Wolfgang von Goethe".
+                    For the purpose of machine-readable identification, corresponding URIs are used
+                    for subject and object, which are best defined across projects, e.g. in the
+                    common standards file. The predicate is also defined as a machine-readable URI.
+                    Eventually, this vocabulary would be part of CMIF v2. To encode such triples
+                    with TEI elements, the element relation is provided in the TEI guidelines. The
+                    example could then look like this:</p>
+                <figure>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <note type="mentioned">
+                            <listRelation>
+                                <relation active="http://example.org/letter-123"
+                                    name="cmif:mentionsPerson"
+                                    passive="http://viaf.org/viaf/24602065"> Johann Wolfgang von
+                                    Goethe</relation>
+                            </listRelation>
+                        </note>
+                    </egXML>
+                    <figDesc>Example 3: Encoding information as triple with the help of
+                        &lt;relation&gt;</figDesc>
+                </figure>
+                <p n="34">The example 3 shows an accurate and convincing encoding in terms of
+                    content. An advantage would also be that not only the mentioned entities, but
+                    also other desired information could be coded, such as the URI of the archival
+                    letter manuscript. </p>
+                <p n="35">In the beginning, various attributes in the element correspDesc were
+                    discussed, but it became clear that it would be difficult to find suitable ones
+                    for archival information etc. To give an example, the @corresp attribute could
+                    be used for the archive URI. The definition would allow this without further
+                    ado, but it is also ambiguous for it does not make a clear statement about the
+                    content. Beyond that it is desired to accommodate not only the URI of the
+                    archival document, but also URIs of other editions of the letter. All URIs could
+                    be noted in @corresp, but they could only be distinguished by their own names,
+                    e.g. by calling them or registering them in a processing web service, such as
+                    correspSearch. As a result, this would mean that this information would no
+                    longer be contained in CMIF itself.</p>
+                <p n="36">The proposed encoding with relations would therefore have the great
+                    advantage of accommodating all desired information specifically. However, it
+                    also has one disadvantage: this encoding is much more complicate than the other
+                    encoding approaches. CMIF should be as simple as possible - both in terms of the
+                    information to be included as well as the sort of encoding. Even so, could this
+                    not be solved more easily? If one were to encode all the desired information as
+                    in example 3, it would become apparent that the @active attribute always has the
+                    same URI - namely that of the edited letter. But this is already clearly defined
+                    by the element correspDesc as a whole and its attribute @ref. One idea would be
+                    to use the TEI element ref instead of relation:</p>
+                <figure>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <ref type="cmif:mentionsPerson" target="http://viaf.org/viaf/24602065"
+                            >Johann Wolfgang von Goethe</ref>
+                    </egXML>
+                    <figDesc>Example 4: Encoding information without the “subject” part.</figDesc>
+                </figure>
+                <p n="37">This way, one would stick to the approach with the exception that the
+                    redundant "subject", i.e. the edited letter in the form of a URI, would be
+                    omitted. The CMIF would remain clear and easy for people to understand.</p>
+            </div>
+            <div xml:id="c-6">
+                <head>Vocabulary and URIs</head>
+                <p n="38">If the ref element is used generically for further information in CMIF v2,
+                    it can be specified by the @type attribute to provide the differentiation
+                    required for research and analysis. The attribute value consists of a URI from a
+                    common vocabulary proposed in Table 1.</p>
+                <table rend="rules">
+                    <head>Table 1: Vocabulary for relationships (predicates)</head>
+                    <row role="label">
+                        <cell>URI<note xml:id="fn1" n="1"><p>Der Namensraum-Präfix “cmif” steht hier
+                                    für einen noch zu definierenden Namensraum.</p></note></cell>
+                        <cell>Description</cell>
+                        <cell>@target (object)</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:mentionsPerson</cell>
+                        <cell>Person mentioned in the letter</cell>
+                        <cell>URI of the person (VIAF, GND etc.)</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:mentionsPlace</cell>
+                        <cell>Place mentioned in the letter</cell>
+                        <cell>URI of the place (GeoNames)</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:mentionsOrg</cell>
+                        <cell>Institution mentioned in the letter</cell>
+                        <cell>URI of the institution</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:mentionsBibl</cell>
+                        <cell>Publication mentioned in the letter</cell>
+                        <cell>URI of the publication</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:mentionsObject</cell>
+                        <cell>Object mentioned in the letter</cell>
+                        <cell>URI of the object</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:mentionsEvent</cell>
+                        <cell>Event mentioned in the letter</cell>
+                        <cell>URI of the event</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:isEditionOf</cell>
+                        <cell>The letter is an edition of an archival document</cell>
+                        <cell>URI of the archival document (e.g. Kalliope-URI)</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:seeAlso</cell>
+                        <cell>Other data record (e.g. in another edition) for the same letter</cell>
+                        <cell>URI of the (other) edited letter or record</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:hasTextBase</cell>
+                        <cell>Edited letter hat as textbase</cell>
+                        <cell>CMIF-URI (see table 2)</cell>
+                    </row>
+                    <row>
+                        <cell>cmif:isPublishedWith</cell>
+                        <cell>Edited letter is published only as record or with regest,
+                            transcription, commentary.</cell>
+                        <cell>CMIF-URI (see table 3)</cell>
+                    </row>
+                </table>
+                <p n="39">As in CMIF v1, URIs must be used for the targets (in ref/@target) in order
+                    to ensure machine-readable identification of persons, locations, etc. This
+                    assumes that there are suitable URIs for persons, places, etc. at all, which, if
+                    possible, originate from an authority file. This is certainly problematic as
+                    being discussed in the article on authority files. However, there are also
+                    numerous cases in which entities do not have to be defined across projects. In
+                    these cases, edition-internal URIs that identify or address corresponding
+                    entities are also conceivable, even if little is known about the entity.
+                    However, web services, which process CMIF files (e.g. correspSearch), have to
+                    retrieve data (names, life dates etc.) in a standardized way via the URI. This
+                    is currently neither customary nor sufficiently defined, so that further
+                    development is necessary. Nevertheless, CMIF v2 should already provide this
+                    option.</p>
+                <p n="40">In addition to URIs from authority files, a specific vocabulary is
+                    required that converts technical terms of scholarly editions of correspondence
+                    into a machine-readable format.</p>
+                <table rend="rules">
+                    <head>Table 2: Definition of Text Basis Types</head>
+                    <row role="label">
+                        <cell rend="left">URI</cell>
+                        <cell rend="left">Definition</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:noTextBase</cell>
+                        <cell rend="left">Conjectured from mentions in other letters, diaries
+                            etc.</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:draft</cell>
+                        <cell rend="left">Draft</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:manuscript</cell>
+                        <cell rend="left">Manuscript</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:copy</cell>
+                        <cell rend="left">Copy (unspecified)</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:copy-by-sender</cell>
+                        <cell rend="left">Transcript (initiated or written) by the sender</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:copy-by-addressee</cell>
+                        <cell rend="left">Transcript (initiated or written) by the addressee</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:copy-by-third</cell>
+                        <cell rend="left">Transcript (initiated or written) by a third person</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:print</cell>
+                        <cell rend="left">Letter only survived in printed form</cell>
+                    </row>
+                </table>
+                <table rend="rules">
+                    <head>Table 3: Type of information about the letter, provided in the scholarly
+                        edition</head>
+                    <row>
+                        <cell rend="left">URI</cell>
+                        <cell rend="left">Definition</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:record</cell>
+                        <cell rend="left">Record (only metadata)</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:abstract</cell>
+                        <cell rend="left">Regest</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:transcription</cell>
+                        <cell rend="left">Transcription</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:comment</cell>
+                        <cell rend="left">Commentary</cell>
+                    </row>
+                    <row>
+                        <cell rend="left">cmif:facsimile</cell>
+                        <cell rend="left">Digital facsimile</cell>
+                    </row>
+                </table>
+                <p n="41">The encoding of a text base and the information, the edited letter is
+                    published with, would then look like this:</p>
+                <figure>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <ref type="cmif:hasTextBase" target="cmif:manuscript"/><ref
+                            type="cmif:isPublishedWith" target="cmif:abstract"/>
+                    </egXML>
+                    <figDesc>Example 5: Text basis and type of available information about the
+                        letter</figDesc>
+                </figure>
+            </div>
+            <div xml:id="c-7">
+                <head>Conclusion </head>
+                <p n="42">This proposal for version 2 of the Correspondence Metadata Interchange
+                    Format is based on the principle that it should remain a lightweight,
+                    restrictive format. The CMI format provides only the most relevant information
+                    for research and analysis in order to maintain and further promote broad
+                    acceptance and usage in the community. In this context, attention is also paid
+                    to ensure fundamental conformance with the TEI guidelines.</p>
+                <p n="43">As in CMIF v1, the correspDesc element remains at the core of the format
+                    and includes all additional metadata. The proposed solution, based on
+                    correspDesc/note/ref, uses Semantic Web concepts such as a simplified but
+                    basically TEI-compliant triple notation, the use of URIs, and a controlled
+                    vocabulary in the CMIF namespace. This will allow to capture other important
+                    metadata - such as archival identifiers, uncertainties, and letter content - in
+                    a highly operationalized form and to provide it in a lightweight interchange
+                    format.</p>
+                <p n="44">After evaluating and integrating the feedback from the scholarly
+                    community, the proposal for CMIF v2 will be finalized in spring 2020 and
+                    published with documentation, ODD files and examples in the GitHub repository of
+                    the TEI Correspondence SIG.</p>
+            </div>
+            <div type="bibliography">
+                <head>Bibliography</head>
+                <listBibl>
+                    <bibl
+                        sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/TZFE7DZW"
+                        >Dumont, Stefan. 2015. ‘Perspectives of the Further Development of the
+                        Correspondence Metadata Interchange Format (CMIF)’. <hi rendition="#i"
+                            >Digiversity — Webmagazin Für Informationstechnologie in Den
+                            Geisteswissenschaften (blog).</hi> 2015. <ref
+                            target="https://digiversity.net/2015/perspectives-of-the-further-development-of-the-correspondence-metadata-interchange-format-cmif/"
+                            >https://digiversity.net/2015/perspectives-of-the-further-development-of-the-correspondence-metadata-interchange-format-cmif/</ref>.</bibl>
+                    <bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/9VYYBMPJ">
+                        Dumont, Stefan. 2016. ‘CorrespSearch – Connecting Scholarly Editions of Letters’. In: 
+                        <hi rendition="#i">Journal of the Text Encoding Initiative</hi> 10. <ref target="https://doi.org/10.4000/jtei.1742">https://doi.org/10.4000/jtei.1742</ref>.
+                    </bibl>
+                    <bibl
+                        sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/KEWAE85C"
+                        >Stadler, Peter, Marcel Illetschko, and Sabine Seifert. 2016. ‘Towards a
+                        Model for Encoding Correspondence in the TEI: Developing and Implementing
+                        &lt;correspDesc&gt;. In: <hi rendition="#i">Journal of the Text Encoding
+                            Initiative</hi> 9. <ref
+                            target="https://dx.doi.org/10.4000/jtei.1742"
+                            >https://dx.doi.org/10.4000/jtei.1742</ref>.</bibl>
+                    <bibl
+                        sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/TMLGNZ5L"
+                        >TEI Consortium, ed. 2019. ‘Correspondence Description’. In <hi
+                            rendition="#i">TEI P5: Guidelines for Electronic Text Encoding and
+                            Interchange</hi>. Version 3.6.0, 63–65. <ref
+                            target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD"
+                            >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD</ref>.</bibl>
+                </listBibl>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="openers-closers">
+<teiHeader>
+<fileDesc>
+<titleStmt>
+	<title>Letter Openers and Closers</title>
+	<author key="forney">Christian Forney</author>
+	<author key="haaf">Susanne Haaf</author>
+	<author key="kirsten">Linda Kirsten</author>
+	<respStmt>
+		<resp>with contributions by</resp>
+		<persName key="seidel">Henry Seidel</persName>
+	</respStmt>
+</titleStmt>
+	<publicationStmt>
+		<publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
+		<date when="2019-12-14"/>
+		<idno type="urn">urn:nbn:de:kobv:b4-20200110163801810-3945310-7</idno>
+		<idno type="url">https://encoding-correspondence.bbaw.de/v1/openers-closers.html</idno>
+	</publicationStmt>
+	<seriesStmt>
+		<title type="main">Encoding Correspondence.</title>
+		<title type="sub">A manual for encoding letters and postcards in TEI-XML and
+			DTABf</title>
+		<editor>Stefan Dumont</editor>
+		<editor>Susanne Haaf</editor>
+		<editor>Sabine Seifert</editor>
+		<idno type="urn">urn:nbn:de:kobv:b4-20200110163329488-8695229-7</idno>
+		<idno type="url">https://encoding-correspondence.bbaw.de/v1/</idno>
+		<biblScope unit="edition">v1</biblScope>
+	</seriesStmt>
+	<sourceDesc>
+		<p>Born digital.</p>
+	</sourceDesc>
+</fileDesc>
+	<revisionDesc>
+		<listChange>
+			<change n="1" when="2019-12-20" status="draft">Initial Version</change>
+		</listChange>
+	</revisionDesc>
+</teiHeader>
+<text>
+<body>
+<div xml:id="c-1" n="1"><head>Introduction</head>
+<p n="1">Letters and similar forms of written communication typically contain opening or closing passages which may include salutations and valedictions, signatures, date and place of origin, addresses, as well as further statements. As Nickisch (1991: 10) noted, the formal structure of a letter (usually comprising the basic components opening, letter content, and closing) is strongly related to oral communication. Opening and closing passages in letters mark the start and end of a communicative act and tend most likely to formalisation.</p>
+<p n="2">The TEI module textstructure provides several elements to encode such phenomena:</p> <cit><quote><gi>dateline</gi> contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer.</quote> <ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html)</ref></cit>
+<cit><quote><gi>salute</gi> (salutation) contains a salutation or greeting prefixed to a foreword, dedicatory epistle, or other division of a text, or the salutation in the closing of a letter, preface, etc.</quote> <ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-salute.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-salute.html)</ref></cit>
+<cit><quote><gi>signed</gi> (signature) contains the closing salutation, etc., appended to a foreword, dedicatory epistle, or other division of a text.</quote> <ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html)</ref></cit>
+	<p n="3">The descriptions of <gi>dateline</gi>, <gi>salute</gi> and <gi>signed</gi> imply semantic and structural meanings at the same time. The TEI Guidelines determine specific opportunities and restrict the use of those elements: Informally, all three function as block-level elements or so-called <hi rendition="#i">chunks</hi>.<note n="1" xml:id="fn1">See <ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ST.html#STBTC">https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ST.html#STBTC</ref> for a concise description of the informal TEI element classifications.</note> Similar to paragraphs, they can appear directly within texts or divisions, but are usually not allowed within other chunks. In other words: They are siblings of paragraphs and children of text divisions.</p>
+<p n="4">Furthermore, because <gi>dateline</gi> and <gi>salute</gi> are currently members of the model class <hi rendition="#monospace">model.divWrapper</hi>, they can appear either at the top or bottom of a textual division. The element <gi>signed</gi> is member of <hi rendition="#monospace">model.divBottomPart</hi> and <hi rendition="#monospace">model.divTopPart</hi>, therefore it can appear either at the beginning or end of a division. A consequence of this slightly different allocation is that <gi>signed</gi> can be placed directly within <gi>postscript</gi>, while <gi>dateline</gi> and <gi>salute</gi> need an intermediate <gi>opener</gi> or <gi>closer</gi> parent to exist within <gi>postscript</gi>. In this respect, the use of <gi>signed</gi> is less restricted than the use of <gi>dateline</gi> and <gi>salute</gi>.</p>
+<p n="5">The elements <gi>opener</gi> and <gi>closer</gi> enable to group a sequence of opening or closing elements, either at the beginning (<hi rendition="#monospace">model.divTopPart</hi>) or at the end (<hi rendition="#monospace">model.divBottomPart</hi>) of a textual division. The elements <gi>dateline</gi>, <gi>salute</gi> and <gi>signed</gi> have been specifically added to its content models:</p>
+<cit><quote><gi>opener</gi> groups together dateline, byline, salutation, and similar phrases appearing as a preliminary group at the start of a division, especially of a letter.</quote> <ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-opener.html">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-opener.html)</ref></cit>
+<cit><quote><gi>closer</gi> groups together salutations, datelines, and similar phrases appearing as a final group at the end of a division, especially of a letter.</quote>
+<ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html)</ref></cit>
+	<p n="6">Finally, another item worth mentioning here because it is crucial in the context of epistolary documents is the <gi>address</gi> element which is provided by the TEI module <hi rendition="#i">core</hi>:</p>
+<cit><quote><gi>address</gi> contains a postal address, for example of a publisher, an organization, or an individual.</quote> <ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-address.html">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-address.html)</ref></cit>
+<p n="7">Regarding the location in a document, the element <gi>address</gi> is less restricted than <gi>dateline</gi>, <gi>salute</gi> and <gi>signed</gi>. As a member of <hi rendition="#monospace">model.global</hi> it can appear at any point within a TEI text. As they do in many cases, the TEI Guidelines provide different ways to encode the parts of a postal address: For one thing, they can be encoded primarily based on structural or renditional actualities as a sequence of address lines using <gi>addrLine</gi>:</p>
+<cit><quote><gi>addrLine</gi> (address line) contains one line of a postal address.</quote> <ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-addrLine.html">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-addrLine.html)</ref></cit>
+	<p n="8">Alternatively, the encoding of address parts can be more semantically oriented using component elements from <hi rendition="#monospace">model.addrPart</hi>, such as <gi>postCode</gi>, <gi>street</gi> or <gi>state</gi>.<note n="2" xml:id="fn2">See <ref target="See https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/CO.html#CONAAD">https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/CO.html#CONAAD</ref></note></p>
+</div>
+<div xml:id="c-2" n="2"><head>Encoding of Opener and Closer—State of the Art</head>
+<p n="9">This section illustrates possible applications of the elements introduced before and provides a simple example. The picture below shows a letter from the German physician Paul Gottlieb Werlhof (1699–1767) to his intimate, the polymath Albrecht von Haller (1708–1777). The letter is dated 22 July 1746 and is written on a folded sheet on two pages:</p>
+<figure>
+<head>Example 1: Letter with typical correspondence-related text elements (source: Paul Gottlieb Werlhof to Albrecht von Haller, 22 July 1746, Burgerbibliothek Bern, Sign: N Albrecht von Haller 105.74, Werlhof, Paul Gottlieb: 901).</head>
+<graphic url="../images/openers-closers/img01.jpg"/>
+</figure>
+<list><item>Werlhof's letter starts with an informal salutation (“Dear Friend”) clearly offset on the top-left side of the page. The saluting phrase is obviously distinct from the paragraphs making up the letter content. This layout of salutations is very common and can be found in many letters.</item>
+<item>Below the salutation, Werlhof wrote the letter content in prose using two paragraphs (in this example, the division into two paragraphs may not be obvious at a first glance). The paragraphs are slightly indented compared to the opening passage of the letter.</item>
+<item>The closing passage consists of different phrases of greeting, Werlhof's signature and the notification of date and place (the two latter make up a “dateline”). Again, this part is visually offset from the main paragraphs as a block. The closing elements are arranged as differently indented lines.</item>
+<item>On the left page the postal address was entered: It is centered in the middle of the page and arranged in horizontal format. The name of the recipient, title and place of residence are written in a rather formal manner and laid out over a number of lines.</item></list>
+<p n="10">The following reveals one of several possibilities to encode the basic structure and semantics of this letter. This provides an opportunity to discuss the application of the elements introduced above (example 2). The transcriptions are taken from Otto Sonntag (2014):</p>
+<figure>
+	<head>Example 2: Otto Sonntag (ed.), Paul Gottlieb Werlhof's letters to Albrecht von Haller, vol. 1, Basel 2014, p. 1470f.</head>
+	<egXML xmlns="http://www.tei-c.org/ns/Examples">
+	<div>
+		<opener>
+			<salute>Dear Friend,</salute>
+		</opener>
+		<p>Come, when You can and please. <persName>Mecenas</persName> shall be here again y<hi rend="superscript">e</hi> 28<hi rend="superscript">th</hi>. I hope for some Joy, hoping to see Your Face and to speak with You. But You will make some stay here, I think, and I will endeavour to steal some Moments for my Satisfaction. I am sorry for Your Polypes.</p>
+		<p>Mons has surrender’d ye 11th, the Garrison Prisonners. The Defense has been realy as indifferent, as of ye other Places. No news worth ye while from Italy, nor from Scotland, nor any of ye french Fleet.</p>
+		<closer>
+			<salute>I am with all my Heart<lb/>Dear Friend<lb/>Yours most faithfully</salute>
+			<signed>Werlhof</signed>
+			<dateline>H[annover] July 22<lb/>46.</dateline>
+		</closer>
+		<address>
+			<addrLine>à Monsieur</addrLine>
+			<addrLine>Monsieur Haller</addrLine>
+			<addrLine>conseiller aulique et<lb/>professeur roïal</addrLine>
+			<addrLine>à<lb/>Göttingen</addrLine>
+		</address>
+	</div>
+</egXML></figure>
+<p n="11">To get back to the opening part: The salutation is encoded with a <gi>salute</gi>, which in turn is placed in an <gi>opener</gi> grouping element. Apparently, it is not strictly necessary to group a single element and the TEI Guidelines would also allow the <gi>salute</gi> to appear directly in the letter <gi>div</gi>. However, in both cases the saluting phrase is encoded on <hi rendition="#i">block-level</hi>.</p>
+	<p n="12">The letter content consists of two paragraphs, the main unit of prose texts.<note n="3" xml:id="fn3">Paragraphs belong to the elements available in all TEI documents and are described in detail in <ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/CO.html">Chapter 3 of the TEI P5 Guidelines</ref>.</note> In this example, the <gi>p</gi> elements include text and some phrase-level elements. Some <gi>hi</gi> elements have been applied to encode super- and subscript parts and a <gi>persName</gi> element to mark the mentioning of a mutual friend of Werlhof and Haller (for brevity, not all names mentioned or characters emphasized have been encoded in this example).</p>
+	<p n="13">A <gi>closer</gi> groups the elements which form the closing part of the letter. <gi>salute</gi> and <gi>signed</gi> have been applied to encode saluting phrases and the signature of the author. <gi>dateline</gi> marks the letter date and the place of origin. One aspect worth pointing out here is the differentiation between <gi>salute</gi> and <gi>signed</gi>. The difference is not immediately obvious insofar as both can contain salutations (compare the definitions of the two elements in the introduction).<note n="4" xml:id="fn4">See discussion <ref target="http://tei-l.970651.n3.nabble.com/signed-vs-salute-td2350146.html#a2350165">http://tei-l.970651.n3.nabble.com/signed-vs-salute-td2350146.html#a2350165</ref>.</note> While <gi>salute</gi> is intended to encode a phrase containing a salutation, <gi>signed</gi> is applied to phrases containing a signature and possibly some kind of salutation.<note n="5" xml:id="fn5">See comment <ref target="http://tei-l.970651.n3.nabble.com/signed-vs-salute-tp2350146p2350152.html">http://tei-l.970651.n3.nabble.com/signed-vs-salute-tp2350146p2350152.html</ref>.</note> For that reason, the following is also a valid encoding:
+		<egXML xmlns="http://www.tei-c.org/ns/Examples"><salute>I am with all my Heart<lb/>Dear Friend</salute>
+			<signed>Yours most faithfully<lb/>Werlhof</signed></egXML></p>
+<p n="14">The postal address is encoded with an <gi>address</gi> and a number of generic <gi>addrLine</gi>. In this example, Haller's address in Göttingen is distributed over 6 distinct lines of text. Therefore, the simplest approach would be to apply six <gi>addrLine</gi> elements. However, the encoding above includes only 5 <gi>addrLine</gi>, but one of them additionally contains a linebreak element (<gi>lb</gi>). This combination of <gi>addrLine</gi> and <gi>lb</gi> provides a possibility to group basic units (e.g. the title or the location) which are distributed over several lines within one element. In the case where <gi>addrLine</gi> serves as a wrapper for elements which cannot appear in <gi>address</gi> directly, this has clear advantages.</p>
+<p n="15">Opening or closing parts of letters may contain phrases which do not really fit into the TEI elements allowed in <gi>opener</gi> and <gi>closer</gi>. Although renditionally oriented, all child elements of <gi>opener</gi> and <gi>closer</gi> have a semantic meaning (e.g. it is a <hi rendition="#i">salutation</hi> or a <hi rendition="#i">signature</hi>). Of course, it should be stressed here that <gi>opener</gi> and <gi>closer</gi> can also contain text nodes. Therefore, encoders have the possibility to place text nodes directly in <gi>opener</gi> and <gi>closer</gi> on the <hi rendition="#i">block-level</hi>:
+	<egXML xmlns="http://www.tei-c.org/ns/Examples"><closer>
+		Text which does not fit into existing categories […].
+		<salute>Best wishes,</salute>
+		<signed>John</signed>
+	</closer>
+	</egXML></p>
+<p n="16">Nevertheless it is worth considering to allow paragraphs in <gi>opener</gi> or <gi>closer</gi>. This would provide a semantically more free element to encode opening or closing passages which do not fit into existing categories.</p></div>
+<div xml:id="c-3" n="3"><head>Encoding Problems around Opener and Closer</head>
+<div xml:id="c-3-1" n="3.1"><head>Issue 1: Salutations within Paragraphs</head>
+<div xml:id="c-3-1-1" n="3.1.1"><head>Description of Issue 1</head><p n="17">As already shown in the basic example, salutations placed above or below a letter paragraph can be encoded straightforwardly with <gi>salute</gi>. However, in practice, salutations could appear almost everywhere in a letter. In particular, some are embedded within paragraphs, as in example 3, where a salutation phrase (“O my dear Friend, […]”) occurs at the beginning of the first paragraph and its first sentence:</p>
+<figure><head>Example 3: Inline salutation at the start of a paragraph (source: Paul Gottlieb Werlhof to Albrecht von Haller, 8 Mai 1739, Burgerbibliothek Bern, Sign: N Albrecht von Haller 105.71, Werlhof, Paul Gottlieb: 248).</head>
+	<graphic url="../images/openers-closers/img02.jpg"/></figure>
+<p n="18">Example 4 illustrates a salutation phrase (“[…] dear Friend […]”), which is integrated in the first paragraph and moreover enclosed by parts of the first sentence (“Oh, yes, […] that pure, sincere, godly, welldoing Soul […]”):</p>
+<figure><head>Example 4: Inline salutation embedded in a paragraph and enclosed by parts of the first sentence (source: Paul Gottlieb Werlhof to Albrecht von Haller, 11 Juni 1742, Burgerbibliothek Bern, Sign: N Albrecht von Haller 105.72, Werlhof, Paul Gottlieb: 539).</head>
+	<graphic url="../images/openers-closers/img03.jpg"/>
+</figure>
+<p n="19">Another letter is quoted in example 5, where John George I, Prince of Anhalt-Dessau salutes his sister Dorothea Maria of Anhalt, Dessau in a typical and formal manner. Here, the princely salutation appears even more clearly in the middle of the first paragraph:</p>
+	<figure><head>Example 5: John George I, Prince of Anhalt-Dessau to his sister Dorothea Maria of Anhalt, Dessau, 6. November 1605 (LATh - HSt Weimar, Fürstenhaus A 552, fol. 216r)</head>
+	<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>Was wir auß bruderlichen Trewen, Ehren, Liebeß<lb/>
+	vnd gueteß vermugen zuuorn, Hochgeborne Fürſtin,<lb/>
+	freundtliche gelibte Frau Schweſter vnd Gefatterin,<lb/>
+	Auß E. L. an Vnnß den 3i Octobris Jungſthin ann<lb/>
+	Vnnß betrubtenn gethanenn Clagſchreiben, haben wir [...]</p></egXML>
+</figure></div>
+<div xml:id="c-3-1-2" n="3.1.2"><head>Discussion of Issue 1</head>
+	<p n="20">To encode salutatory phrases which are part of a paragraph bears difficulties. According to the TEI Guidelines, <gi>salute</gi> and <gi>p</gi> are both block-level and can not be placed inside each other. Because <gi>salute</gi> is not allowed in <gi>p</gi>, the following encoding would not be valid:<note n="6" xml:id="fn6">The transcriptions of this letter are taken from Otto Sonntag (ed.), Paul Gottlieb Werlhof's letters to Albrecht von Haller, vol. 1, p. 666.</note></p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p><salute>O my dear Friend,</salute> I remember not having received any news more delightful and charming to me, than that, which Your Letter of April […]</p></egXML>
+	<p n="21">The encoding of inline salutations has already been discussed by the TEI community.<note n="7" xml:id="fn7">See discussion <ref target="http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935.html">http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935.html</ref>. Possible adjustments have been postponed.</note> As Lou Burnard pointed out, some correspondence-related elements such as <gi>salute</gi> were originally designed for documents where such phrases are set-off visually from other paragraphs.<note n="8" xml:id="fn8">See comment <ref target="http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025937.html">http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025937.html</ref>.</note> As such, they cover the majority of use cases, but the restrictions do not comply with deviating document structures.</p></div>
+<div xml:id="c-3-1-3" n="3.1.3"><head>Solutions to Issue 1</head>
+<p n="22">(1) An editor may decide to cut off the phrase “O my dear Friend” in example 3 and to encode it as a separate <gi>salute</gi> above the leading paragraph:
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><salute>O my dear Friend,</salute>
+<p>I remember not having received any news more delightful and charming to me, than that, which Your Letter of April […]</p></egXML>
+This approach could be an appropriate simplification in some cases. In others it will be unsatisfactory. For example, it would be inadequate in the context of a diplomatic transcription to render the embedded saluting phrase offset the paragraph.</p>
+	<p n="23">(2) A conceivable workaround is to use the attribute <att>rend</att> with value <val>inline</val> (or a similar value) in <gi>salute</gi> and to apply a <gi>div</gi> element as a wrapper.<note n="9" xml:id="fn9">See comment <ref target="http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025939.html">http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025939.html</ref>.</note> For example:
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><div><salute rend="inline">O my dear Friend,</salute> <p>I remember not having received […]</p></div></egXML>
+This may be a solution for saluting phrases embedded at the beginning or end of a paragraph. But would this also work in case of example 4 and 5, where a salutatory phrase is embedded within the first sentence?</p>
+<p n="24">(3) We suggest to allow <gi>salute</gi> in <gi>p</gi> to enable a more flexible encoding of inline salutations. Technically <gi>salute</gi> should become an inter-level element able to appear between block-level elements or within them. Accordingly,  <gi>salute</gi> should move from <hi rendition="#monospace">model.divWrapper</hi> to <hi rendition="#monospace">model.inter</hi> or an appropriate subclass. Additionally, it could be reasonable to move <gi>salute</gi> from the TEI module <hi rendition="#i">textstructure</hi> to <hi rendition="#i">core</hi>. We assume this change will have no backwards-compatibility implications and will lead to promising possibilities.</p></div></div> 
+<div xml:id="c-3-2" n="3.2">
+<head>Issue 2: Salutations within a Paragraph and the Following Closer</head>
+<div xml:id="c-3-2-1" n="3.2.1"><head>Description of Issue 2</head><p n="25">In issue 1 we discussed how salutations within paragraphs could be encoded under the condition that the <gi>salute</gi> tag is allowed within <gi>p</gi>. There still exists, however, the problem of a salutation that starts within a paragraph and continues in the <gi>closer</gi>, or starts within the <gi>opener</gi> and continues in the following paragraph.</p> 
+
+<p n="26">In example 6 below, the letter writer closes with the greeting line „In herzlicher Verehrung“ (With heartfelt admiration), which most editors would probably identify as a standard letter closer and either encode as part of <gi>salute</gi> or possibly <gi>signed</gi>. The preceding paragraph, which contains the well wishes “Möge das hereinbrechende milde Frühjahr alle Leiden von Ihnen fern halten.” (<hi rendition="#i">May the upcoming mild spring keep all sorrows away from you.</hi>), seems to be a less clear-cut case. While its personal message and position at the end of the letter indicate that it belongs to the formal closing section, there are a number of ways in which it can be interpreted:</p>
+
+<list><item>as part of the letter closer,</item> 	
+<item>as a salutation in itself within the letter body, separate from the following salutation in the closing section,</item>	
+<item>as a salutation within the letter body that is semantically related to the salutation in the letter closer,</item> 		
+<item>as no salutation at all, at least not in the strict formal sense that allows for a <gi>salute</gi>-element to be applied.</item></list>
+<p n="27">The question of whether this paragraph belongs to the letter body or letter closer (or both) cannot be resolved on the basis of layout alone, as it is not visually set apart in a different manner than the preceding paragraphs or the following greeting line, which from the layout perspective appears to be rather the final line of the letter body than the first line of a separate closing section. The decision to categorize this part of the letter therefore ultimately lies with the editor. In the following section solutions for the second and third abovementioned interpretations, namely that there is a salutation within the letter body separate from the closer, will be examined.</p>
+
+
+
+	<figure><head>Example 6: Salutations in letter body and letter closer (source: <ref target="https://digilib.bbaw.de/digitallibrary/digilib.html?fn=silo10/avhr/ehrenberg/IdNo282E20/&amp;pn=6">Christian Gottfried Ehrenberg to Alexander von Humboldt, 25 March 1858, p 3v</ref>, Archiv der Berlin-Brandenburgischen Akademie der Wissenschaften; Shelfmark: NL C. G. Ehrenberg, 676, fol. 19-22)</head>
+	<graphic url="../images/openers-closers/img04.jpg"/>
+</figure></div>
+
+<div xml:id="c-3-2-2" n="3.2.2"><head>Discussion of Issue 2</head>
+<p n="28">How structures as in example 6 should be encoded depends on one’s interpretation of both salutations: do they form a semantic unit or should they be treated as two separate sections? Taking into consideration these interpretations, there already seems to exist a possible solution within the current TEI Guidelines:</p>
+<p n="29">Both salutations could be encoded within <gi>closer</gi>, either each in their own <gi>salute</gi> element or both together in one single <gi>salute</gi> element. If the first, the attribute <att>rend</att> with values <val>paragraph</val> and <val>closer</val> (or similar values) then could be added to the <gi>salute</gi> elements to distinguish their original position.</p> 
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><closer>
+	<salute rend="paragraph">Möge das hereinbrechende milde<lb/>
+	Frühjahr alle Leiden von Ihnen<lb/>
+	fern halten.</salute>
+<salute rend="closer">In herzlicher Verehrung</salute>
+<signed>Ihr <lb/>ganz ergebenster <lb/>Ehrenberg</signed>
+</closer></egXML>
+
+	<p n="30">Unfortunately, this way of encoding possibly misrepresents the actual layout of the letter, and works more as a compromise under the restrictions in place. Although not explicitly stated as such, the description of the <gi>closer</gi>-tag strongly indicates that it is intended to be used for the encoding of visually distinctive closing sections, separate from the letter body and its paragraphs.</p>
+
+<cit><quote>“<gi>closer</gi> groups together salutations, datelines, and similar phrases appearing as a final group at the end of a division, especially of a letter.”</quote>
+	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html)</ref></cit>
+<p n="31">It is not necessarily wrong to apply this workaround, but can be unsatisfactory for diplomatic transcriptions. To provide the editor with the option to correctly encode the visual layout of the letter, we suggest the following solution.</p></div>
+<div xml:id="c-3-2-3" n="3.2.3"><head>Solution to Issue 2</head>
+<p n="32">Given the option of placing <gi>salute</gi> within <gi>p</gi> as proposed in issue 1, the salutation in the letter body in example 6 can be encoded as such, while the salutation in the formal closing part is placed within <gi>closer</gi> as usual. In the rare case that the two salutations form a semantic unit and therefore should be mapped to each other, the <gi>salute</gi> elements can be linked by usage of the attributes <att>xml-id</att>, <att>prev</att> and <att>next</att>.</p>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>[...]
+<salute>Möge das hereinbrechende milde <lb/>Frühjahr alle Leiden von Ihnen <lb/>fern halten.</salute>
+</p>
+<closer>
+<salute>In herzlicher Verehrung</salute>
+<signed>Ihr <lb/>ganz ergebenster <lb/>Ehrenberg</signed>
+</closer></egXML>
+</div>
+
+</div>
+<div xml:id="c-3-3" n="3.3"><head>Issue 3: Different Types of Salutations and Signatures</head>
+<div xml:id="c-3-3-1" n="3.3.1"><head>Description of Issue 3</head>
+<p n="33">Historical letters from the medieval and early modern period regularly contain complex salutations and signatures whose form and mode of usage have been handed down over centuries. They are similar to elements that can be found in modern letters but follow rules which are stricter with regard to their order, content, and the position in which they may appear. The range of elements typically included can be categorized in the following way:</p>
+<list><item><hi rendition="#i">Intitulatio</hi>,</item>
+<item>an often multipart salutation, consisting of a <hi rendition="#i">formal salutation</hi> and possibly a <hi rendition="#i">family salutation</hi>,</item>
+<item>a <hi rendition="#i">provision of services</hi>,</item>
+<item>a <hi rendition="#i">blessing</hi>,</item>
+<item>the <hi rendition="#i">titles of nobility or profession</hi>.</item></list>
+
+<p n="34">In a letter, these different kinds of salutations, reverences, and signatures can be formally distinguished, for example by paragraphs or indentations. However, they may also be merged into other textual parts (e.g. sentences) which themselves contain information beyond those components.</p>
+<p n="35">As an illustration of the types listed above, two extracts from letters are included below, in which these elements can be determined as follows:</p>
+	<figure><head>Example 7: John George I, Prince of Anhalt-Dessau to his sister Dorothea Maria of Anhalt, Dessau, 6. November 1605 (LATh - HSt Weimar, Fürstenhaus A 552, fol. 216r)</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>Was wir auß bruderlichen Trewen, Ehren, Liebeß<lb/>
+vnd gueteß vermugen zuuorn, Hochgeborne Fürſtin,<lb/>
+freundtliche gelibte Frau Schweſter vnd Gefatterin,<lb/>
+Auß E. L. an Vnnß den 3i Octobris Jungſthin ann<lb/>
+Vnnß betrubtenn gethanenn Clagſchreiben, haben wir [...]</p></egXML></figure>
+
+	<list><item><hi rendition="#i">Provision of services:</hi> <quote>“Was wir auß bruderlichen Trewen, Ehren, Liebeß vnd gueteß vermugen zuuorn,”</quote></item>
+		<item><hi rendition="#i">Formal salutation:</hi> <quote>“Hochgeborne Fürſtin,”</quote></item>
+		<item><hi rendition="#i">Family salutation:</hi> <quote>“freundtliche gelibte Frau Schweſter vnd Gefatterin,”</quote></item></list>
+
+	<figure><head>Example 8: Anna Dorothea of Saxe-Weimar, Abbess of Quedlinburg to her father, John Ernest II, Duke of Saxe-Weimar, 22. September 1679 (LATh – HStAW, FH A 358 fol. 24r-25r; transcription: Lühr et al. 2013: AD_JE2_1679_09_22.)</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>W. d. 22. <hi rendition="#u">Sebtemb</hi><lb/>
+1679.<lb/>
+Durchlauchtiger Fürst<lb/>
+Gnädiger HochgeEhrter Herr Vatter<lb/>
+Ew gnd gehorsamste Tochter Erkühne mich<lb/>
+Aber mahl Ew gnd gnädiger Herr Vatter<lb/>
+mid dießen meinen ӱbelen Stihliesierten<lb/>
+Prifflein gehorsamst Auffzu warden, [...]<lb/>
+und deß vegen der guden hoffung leben<lb/>
+gnädigst ferlob zu bekomen, welches vier<lb/>
+den mid ferlangen Ervarden verde<lb/>
+und mich hier mid gehorsamst und bestens recom=<lb/>
+andiere Alß,<lb/>
+Ew. Gnad*.<lb/>
+gehorsame und<lb/>
+demütige<lb/>
+Tochter<lb/>
+A:D. HZS*</p></egXML></figure>
+
+<list><head>Opener:</head> 
+	<item><hi rendition="#i">Date and place:</hi> <quote>“W[eimar]. d[en]. 22. <hi rendition="#u">Sebtemb[er]</hi> 1679.”</quote></item>
+	<item><hi rendition="#i">Formal salutation:</hi> <quote>“Durchlauchtiger Fürst”</quote></item>
+	<item><hi rendition="#i">Family salutation:</hi> <quote>“Gnädiger HochgeEhrter Herr Vatter”</quote></item></list>
+
+<list><head>Closer:</head>
+	<item><hi rendition="#i">Provision of services:</hi> <quote>“und mich hier mid gehorsamst und bestens recomandiere Alß,”</quote></item>
+	<item><hi rendition="#i">Provision of services:</hi> <quote>“Ew. Gnad*. gehorsame und demütige”</quote></item>
+<item><hi rendition="#i">Intitulatio</hi> 
+	<list><item><hi rendition="#i">with family status:</hi> <quote>“Tochter”</quote></item>
+		<item><hi rendition="#i">Handwritten signature:</hi> <quote>“A[nna] D[orothea]”</quote></item>
+		<item><hi rendition="#i">Titles of nobility:</hi> <quote>“H[erzogin] Z[u] S[achsen]”</quote></item></list></item></list></div>
+<div xml:id="c-3-3-2" n="3.3.2"><head>Discussion of Issue 3</head>
+
+<p n="36">While being distinct in form and function, the different types of salutations and signatures could all be easily encoded with the help of the <gi>salute</gi> and <gi>signed</gi> tag. Problems arise when it comes to the specification of those broad categories. Identifying a special type of salutation or signature might not be central in the case of modern letters; in the investigation of earlier periods on the other hand, researchers know of and work with an established terminology that was used at the time of creation of the documents. The latin denominations of the elements listed above are historically accurate descriptions and including them in the encoding might make the transcriptions more useful for experts in the field.</p>
+
+<p n="37">If the editor wishes to typify the salutations or signatures in the encoding, the only feasible option under the current TEI Guidelines is the application of the element <gi>seg</gi>, which allows for the attributes <att>type</att> and <att>subtype</att>. <gi>seg</gi> can then be utilized as child element of <gi>salute</gi> or <gi>signed</gi>, specifying them further with the help of <att>type</att>:</p>
+
+<p n="38">(1) A multipart salutation
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><salute>
+<seg type="provision">Was wir auß bruderlichen Trewen, Ehren, Liebeß vnd gueteß vermugen zuuorn,</seg>
+<seg type="formal">Hochgeborne Fürſtin,</seg>
+<seg type="family">freundtliche gelibte Frau Schweſter vnd Gefatterin,</seg>
+</salute></egXML></p>
+
+<p n="39">(2) A multipart signature
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><signed>
+<seg type="family_status">Tochter</seg>
+<seg type="name">A:D.</seg>
+<seg type="title_of_nobility">HZS*</seg>
+</signed></egXML></p> 
+
+<p n="40">Combining <gi>salute</gi> and <gi>seg</gi> can be practical for more complex salutatory structures, and we certainly don’t discourage using both when this specific application of <gi>seg</gi> is consistent with editorial guidelines and the tag is not generally overused. Utilizing <gi>signed</gi> and <gi>seg</gi> in the same way in (2), however, demonstrates the possible difficulties with the approach: The structure as a whole, a so-called <hi rendition="#i">intitulatio</hi>, is not encoded, or just broadly encoded as a signature. To indicate its category, yet another <gi>seg</gi> in place of the <gi>signed</gi> tag would be necessary:</p> 
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><seg type="intitulatio">
+<seg type="family_status">Tochter</seg>
+<seg type="name">A:D.</seg>
+<seg type="title_of_nobility">HZS*</seg>
+</seg></egXML> 
+
+<p n="41">Working in this manner, an editor would end up using a great variety of typified <gi>seg</gi> elements for textual structures that are recognized and accounted for in the TEI tagset. Heavily using <gi>seg</gi> also might bear the risk of making the resulting XML code less accessible and transparent to other researchers. Instead we suggest a solution that facilitates a wider range of options to editors who wish to use <gi>salute</gi> and <gi>signed</gi> for the kinds of text material it was intended for.</p></div>
+	
+<div xml:id="c-3-3-3" n="3.3.3"><head>Solution to Issue 3</head>
+<p n="42">So far, the attribute <att>type</att> is not permitted in <gi>salute</gi> and <gi>signed</gi>. As shown above, a variety of salutation and signature types exist and there may well be many ways to categorize them. The possibility to freely categorize or type salutations  and signatures would allow the investigation of new and interesting research questions. From this perspective, we propose to include the attribute <att>type</att> in <gi>salute</gi> and <gi>signed</gi>. To do so, <gi>salute</gi> should become a member of the attribute class att.typed. We assume this change would be unproblematic and valuable as well. Following this proposed change, an editor would be able to encode a salutation’s type as follows:</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><salute type="formal">Durchlauchtiger Fürst</salute>
+<salute type="family">Gnädiger HochgeEhrter Herr Vatter</salute>
+<salute type="provision">Ew. Gnad*. gehorsame und demütige</salute></egXML>
+
+<p n="43">In cases such as the Intitulatio from Example 8, which in itself requires specification, a typified <gi>seg</gi> and <gi>signed</gi> can then be combined in a very useful way:</p> 
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><seg type="intitulatio">
+<signed type="family_status">Tochter</signed>
+<signed type="name">A:D.</signed>
+<signed type="title_of_nobility">HZS*</signed>
+</seg></egXML>
+
+<p n="44">Ideally, the <gi>seg</gi>-element in the example at hand should be replaced by a semantically more fitting <gi>signed</gi>-tag:</p>
+	
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><signed type="intitulatio">
+<signed type="family_status">Tochter</signed>
+<signed type="name">A:D.</signed>
+<signed type="title_of_nobility">HZS*</signed>
+</signed></egXML>
+	
+<p n="45">Using <gi>signed</gi> in this manner, however, is not allowed under the current TEI Guidelines. Although this is not the main problem in the discussion at hand, it might be worth to consider lifting the restrictions on <gi>signed</gi> to facilitate embedded structures. Having a more specific tag available for encoding is often preferable to overusing <gi>seg</gi>.</p>
+
+</div> 
+</div>
+<div xml:id="c-3-4" n="3.4">
+<head>Issue 4: Epigraph within Closer</head>
+<div xml:id="c-3-4-1" n="3.4.1"><head>Description of Issue 4</head><p n="46">Another element and member of the textstructure module which could be useful for letter encoding is <gi>epigraph</gi>. Although epigraphs in the sense of quotations typically appear on printed title pages, they can be found in opening or closing passages of letters as well.</p>
+<p n="47">The TEI Guidelines define <gi>epigraph</gi> as follows:</p>
+<cit><quote><gi>epigraph</gi> contains a quotation, anonymous or attributed, appearing at the start or end of a section or on a title page.</quote>
+<ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html)</ref></cit>
+<p n="48">As the description states, an epigraph appears at the start or end of a section or on a title page. The element <gi>epigraph</gi> is a member of <hi rendition="#monospace">model.divWrapper</hi> and two further model classes (<hi rendition="#monospace">model.pLike.front</hi> and <hi rendition="#monospace">model.titlepagePart</hi>). Moreover, it is specifically added to the content model of <gi>opener</gi>, but not to the content model of <gi>closer</gi>. As a consequence, <gi>epigraph</gi> can be grouped with <gi>opener</gi>, but not with <gi>closer</gi>.</p> </div>
+<div xml:id="c-3-4-2" n="3.4.2"><head>Solution to Issue 4</head>
+<p n="49">We suggest to add <gi>epigraph</gi> specifically to the content model of <gi>closer</gi>. This would enable the encoding of epigraphs as a part of the closing passage of a letter and would generally be more consistent.</p></div>
+</div>
+<div xml:id="c-3-5" n="3.5">
+<head>Issue 5: Signature within Paragraph</head>
+<div xml:id="c-3-5-1" n="3.5.1"><head>Description of Issue 5</head>
+<p n="50">Signatures in letters are usually encoded in the <gi>signed</gi> element. The <gi>signed</gi> element is described in the TEI Guidelines as follows:</p>
+<cit><quote><gi>signed</gi> (signature) contains the closing salutation, etc., appended to a foreword, dedicatory epistle, or other division of a text.</quote> 
+	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html)</ref></cit>
+	<p n="51">It is currently part of the <hi rendition="#monospace">model.divTopPart</hi> and <hi rendition="#monospace">model.divBottomPart</hi> classes and therefore cannot be used to encode signatures found in the letter body. While it is correct that they are commonly placed in separate sections at the end of a letter, editors might be confronted with signatures of ambiguous placement. In the example below, the signature „Ht“ in the bottom right corner of the page is placed close enough to the preceding paragraph to be interpreted as formally a part of the letter body.</p>
+ 
+	<figure><head>Example 9: Signature within paragraph (source: <ref target="https://digilib.bbaw.de/digitallibrary/digilib.html?fn=silo10/avhr/ehrenberg/IdNo40/&amp;pn=4">Alexander von Humboldt to Christian Gottfried Ehrenberg, August 1833</ref>, p. 2v, Archiv der Berlin-Brandenburgischen Akademie der Wissenschaften (Sign: NL C. G. Ehrenberg, 421, fol. 71r-72v)</head><graphic url="../images/openers-closers/img05.jpg"/></figure>
+	<p n="52">It is known from convention that signatures are usually meant as isolated sections, but editors might prefer a diplomatic approach to transcription and rather encode the evident material than the supposed, underlying one.</p>
+</div>
+<div xml:id="c-3-5-2" n="3.5.2"><head>Discussion of Issue 5</head>
+<p n="53">As already suggested in issue 1 for salutations within a paragraph, the attribute <att>rend</att> with value <val>inline</val> can be added to <gi>signed</gi> in order to encode its original position in the letter body.</p>  
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>[...] Leben Zeit u Muth für höhere u edlere<lb/>Zwekke aufsparen muss.
+</p>
+<closer>
+<signed rend="inline">Ht</signed>
+</closer></egXML>
+	<p n="54">This of course is unsatisfying for diplomatic transcriptions, since the <gi>signed</gi> element is separated from the paragraph which it is a part of according to the visible layout. While arguably such layout has not been intended by the writer, the editor still might want the actual appearance to be reflected in the encoding.</p></div>  
+<div xml:id="c-3-5-3" n="3.5.3"><head>Solution to Issue 5</head>
+<p n="55">We suggest to allow <gi>signed</gi> within <gi>p</gi>, just as proposed for <gi>salute</gi> in the solution to issue 1. The element <gi>signed</gi> is a member of both the classes <hi rendition="#monospace">model.divTopPart</hi> and <hi rendition="#monospace">model.divBottomPart</hi> and consequently limited to usage within <gi>opener</gi>, <gi>closer</gi>, and <gi>postscript</gi>. Moving it to <hi rendition="#monospace">model.inter</hi> or a similar model class would lift the restrictions and facilitate a more accurate encoding of structures such as the example above:</p> 
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>[...] Leben Zeit u Muth für höhere u edlere<lb/>Zwekke aufsparen muss. <signed>Ht</signed>
+</p></egXML>
+<p n="56">On top of that, <gi>signed</gi> could be assigned to the module core instead of textstructure, as suggested for <gi>salute</gi> in the solution to issue 1.</p></div>
+</div>
+<div xml:id="c-3-6" n="3.6">
+<head>Issue 6: Dateline within Paragraph</head>
+<div xml:id="c-3-6-1" n="3.6.1"><head>Description of Issue 6</head><p n="57">Datelines in letters usually contain the place and date of writing. In most cases they are placed at the top or bottom and the right or left corner of the letter paper. The corresponding TEI tag <gi>dateline</gi> is described as follows:</p>
+	<cit><quote><gi>dateline</gi> contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer.</quote>	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html)</ref></cit>
+	<p n="58"><gi>dateline</gi> is part of the <hi rendition="#monospace">model.divWrapper</hi> class and, like <gi>salute</gi>, can be placed either within <gi>opener</gi> and <gi>closer</gi> , or as a single element at the top or bottom of a <gi>div</gi> element. The underlying assumption of this restriction is most likely that per convention, datelines in letters form a semantic section of their own and therefore are visibly set apart from other surrounding text, which is probably true for most cases. But, as has been observed in the preceding issues for <gi>salute</gi> and <gi>signed</gi>, not for all of them. In example 10 below, the dateline was written within the last line of the letter body. Unlike the signature in example 9, which most likely appears at the end of the letter body due to limited space for writing, in the letter at hand the dateline could have been comfortably added below it. Accordingly, the choice of placement might have been deliberate and even more so has to be taken into consideration when it comes to encoding.</p>  
+<figure><head>Example 10: Dateline within paragraphsource: Pro Memoria from Heinrich Eberhard Balck to Albrecht von Haller, 16 August 1753, Burgerbibliothek Bern, Sign: N Albrecht von Haller 105.2, Balck, Heinrich Eberhard: 14.</head>
+	<graphic url="../images/openers-closers/img06.jpg"/></figure></div>
+<div xml:id="c-3-6-2" n="3.6.2"><head>Discussion of Issue 6</head>
+<p n="59">Two arguments can be made against the interpretation of example 10 as a dateline within the paragraph which has to be encoded as such. Firstly, the paragraph that presumably contains the dateline might be read as part of the <gi>closer</gi>, in the sense that visually it seems to belong to the letter body but at the same time thematically it concludes the letter with a last key information. According to this analysis, the above letter’s closing section can be encoded in the following way:</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><closer>
+Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. communiciren. 	
+<dateline>Hannover d. 16t Aug. 1753.</dateline>
+<salute>an<lb/>H. Hoff-Rath<lb/>von Haller</salute>	
+<signed>Balck.</signed>
+</closer></egXML>
+	<p n="60">Of course, in this encoding the text before the dateline is unspecified, which is fine with the TEI Guidelines, but might create inconsistencies in editions that generally apply the <gi>opener</gi> and <gi>closer</gi> encoding with the corresponding tags <gi>dateline</gi>, <gi>salute</gi> and <gi>signed</gi>. In addition to the editorial concerns, the unspecified text elements could conceivably complicate the automatic analysis of the XML code for research. On top of that, there is the problem of <gi>dateline</gi> being a separate line, and not part of the paragraph anymore. Alternatively, the last paragraph remains encoded as <gi>p</gi>, while the dateline is placed in <gi>closer</gi> as <gi>dateline</gi> with the attribute <att>rend</att> and value <val>inline</val>.</p> 
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. communiciren.</p>
+<closer>
+	<dateline rend="inline">Hannover d. 16t Aug. 1753.</dateline>
+	<salute>an<lb/>H. Hoff-Rath<lb/>von Haller</salute>
+	<signed>Balck.</signed>
+</closer></egXML>
+
+<p n="61">This solution still bears the problem that the text material in question is removed from the paragraph where it had been placed in the original layout; it is therefore not feasible for diplomatic transcriptions.</p> 
+<p n="62">A second argument against an interpretation as a dateline within the letter body would be that the text “Hannover d. 16t Aug. 1753” is not a dateline at all, but instead a simple instance of a place and date mentioned, like in the encoding example below:</p>  
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. Communiciren. <name>Hannover</name> d. <date>16t Aug. 1753.</date></p>
+<closer>
+	<salute>an<lb/>H. Hoff-Rath<lb/>von Haller</salute>
+	<signed>Balck.</signed>
+</closer></egXML>
+
+<p n="63">Yet, this categorization is a decision that should be left to the editor. For that reason, an additional solution is proposed in the following section that provides the editor the option to include <gi>dateline</gi> in the paragraph.</p></div>
+	<div xml:id="c-3-6-3" n="3.6.3"><head>Solution to Issue 6</head>
+	<p n="64">We suggest to allow <gi>dateline</gi> within <gi>p</gi> in order to facilitate diplomatic transcriptions of letters such as for example 10 above. On a formal level, <gi>dateline</gi> should be able to behave like <gi>date</gi> then.</p>
+		<egXML xmlns="http://www.tei-c.org/ns/Examples"><p>Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. Communiciren.<dateline>Hannover d. 16t Aug. 1753.</dateline></p>
+		<closer>
+			<salute>an<lb/>H. Hoff-Rath<lb/>von Haller</salute>
+			<signed>Balck.</signed>
+		</closer></egXML>
+		<p n="65">To this end, <gi>dateline</gi> should be moved from the module <hi rendition="#i">textStructure</hi> to the module core, and from the class <hi rendition="#monospace">model.divWrapper</hi> to <hi rendition="#monospace">model.inter</hi>.</p></div></div>
+<div xml:id="c-3-7" n="3.7">
+<head>Issue 7: Dateline Written by a Different Hand</head>
+<div xml:id="c-3-7-1" n="3.7.1"><head>Description of Issue 7</head><p n="66">There are several scenarios in which other persons than a letter’s author might contribute written text to it, a frequent one being when the author dictates the letter, and someone else, for instance a secretary, does the actual writing. In those cases, the author in his or her capacity as the official sender adds the signature and possibly a salutation and dateline.</p></div> 
+<div xml:id="c-3-7-2" n="3.7.2"><head>Discussion of Issue 7</head> 
+<p n="67">Currently the only possibility to encode the case that a dateline was written in a different hand than the rest of the letter (or most of the letter) is using the milestone element <gi>handShift</gi>. All of the other opening and closing elements of letters (<gi>signed</gi>, <gi>salute</gi>, <gi>closer</gi>, <gi>opener</gi> and <gi>postscript</gi>) can receive the attribute <att>hand</att>; <gi>dateline</gi> is uniquely excluded. The TEI Guidelines do not clarify in which cases the attribute <att>hand</att>, and in which cases the element <gi>handShift</gi> is preferred. The description of <gi>handShift</gi> states:</p>
+<cit><quote>The handShift element may be used either to denote a shift in the document hand (as from one scribe to another, on one writing style to another). Or, it may indicate a shift within a document hand, as a change of writing style, character or ink. Like other milestone elements, it should appear at the point of transition from some other state to the state which it describes.</quote>
+	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-handShift.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-handShift.html)</ref></cit>
+<p n="68"><gi>handShift</gi> is probably most appropriately employed when several shifts within a document happen, and the shifts are distributed in such a way that they cross the limits of elements and, therefore, require a milestone element to be encoded in XML at all, or the shifts take place in the middle of a text-containing element.</p>  
+<p n="69">If, on the other hand, a text-containing element is entirely written by a different scribe, although <gi>handShift</gi> being a formally correct option, using the attribute <att>hand</att> is a more practical approach. <gi>dateline</gi> could be indirectly encoded as written by a different hand by adding <att>hand</att> to the surrounding <gi>opener</gi> or <gi>closer</gi> element. Yet this solution might turn out to be unreliable for the editorial practice in cases where the <gi>opener</gi> or <gi>closer</gi> includes text which has been written by the same scribe as the majority of the letter (e.g. a salutation).</p></div>
+<div xml:id="c-3-7-3" n="3.7.3"><head>Solution to Issue 7</head>
+<p n="70"><gi>dateline</gi> should be able to receive the attribute <att>hand</att>. This change could help to ensure consistency in both individual editions’ transcription practice and the TEI Guidelines.</p> 
+	<p n="71">It is worth mentioning that the issue at hand has been discussed in <ref target="https://github.com/TEIC/TEI/issues/481">Issue #481 of the TEI GitHub repository</ref>, where it even has been suggested to allow the attribute <att>hand</att> in all text-containing elements.</p></div>
+</div>
+</div>
+<div xml:id="c-4" n="4"><head>Conclusion</head>
+<p n="72">In this article, we discussed usage scenarios for opening and closing elements in TEI documents and problems with existing restrictions of the TEI Guidelines.</p>
+<p n="73">The TEI elements provided to structure the opening and closing passages of letters, namely <gi>opener</gi> and <gi>closer</gi> as well as their possible child elements <gi>salute</gi>, <gi>signed</gi>, and <gi>dateline</gi>, are all defined not only by their semantic meaning but also by layout specifics in the text: they are all considered block text passages separated from the letter body. While the elements <gi>opener</gi> and <gi>closer</gi> may well fit such layout constraints, the elements representing salutations, signatures, or datelines should become less restricted regarding their location in the TEI document. In fact, there are many examples for letters where salutations, signatures or datelines are part of the first or last paragraphs or even appear in the middle of opening and closing sentences. </p>
+<p n="74">Furthermore, we propose wider usage options for the element <gi>epigraph</gi>, as epigraphs may appear not only at the beginning but also at the end of letters.</p> 
+<p n="75">Finally, some changes to the attribute selection of the elements discussed here were considered in order to allow for the distinction between different types of signatures and salutations as well as different writer’s hands for datelines.</p>
+</div>
+<div type="bibliography">
+	<head>Bibliography</head>
+	<listBibl>
+		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/F3GYDAIN">Paul Gottlieb Werlhof's letters to Albrecht von Haller. Volume 1. Edited by Otto Sonntag. Volume 1. Basel: Schwabe, 2014 (=Studia Halleriana 11/1).</bibl>
+		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/J6SVV3D4">Nickisch, Reinhard M. G.: Brief, Stuttgart 1991.</bibl>
+		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/A3F94BIQ">TEI Consortium, eds. TEI P5: Guidelines for Electronic Text Encoding and Interchange. Version 3.6.0. Last updated on 16th July 2019. TEI Consortium. <ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html">https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html</ref> (last accessed: 10th January 2020).</bibl>
+		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/4PGN9LJG">Lühr Rosemarie, Faßhauer Vera, Prutscher Daniela, Seidel Henry (eds.): Fuerstinnenkorrespondenz 1.1 (Version 1.1). Universität Jena 2013. https://doi.org/10.34644/laudatio-repository-H2hDmGoB6bp_h9Na8c2R_1557384256.</bibl></listBibl>
+</div>
+</body>
+</text>
+</TEI>

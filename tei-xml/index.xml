@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Home</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xml:id="header">
+            <head type="main">Encoding Correspondence</head>
+            <head type="sub">A Manual for encoding letters and postcards in TEI-XML and DTABf</head>
+            <p>Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert</p>
+         </div>
+         <div xml:id="content">
+            <div n="1">
+               <head>Introduction</head>
+               <p>Historical correspondence has been digitally edited and published with
+                  growing interest for years. This publication is intended to help editors to encode letters
+                  and postcards in TEI-XML and DTABf. <ref target="introduction.xml">[Read
+                     More]</ref></p>
+            </div>
+            <div n="2">
+               <head>Open Peer Review</head>
+               <p>Annotate the articles and give feedback with the Annotation Platform <ref
+                  target="https://hypothes.is">Hypothes.is</ref>. Of course you can also contact us via <ref target="mailto:encoding-correspondence@bbaw.de">e-mail</ref>. 
+                  We're looking forward to
+                  hearing from you!</p>
+            </div>
+            <div n="3">
+               <listBibl>
+                  <head>Latest Articles</head>
+                  <bibl>
+                     <title><ref target="CMIF.xml">Correspondence Metadata Interchange
+                        Format</ref></title>
+                     <author>Stefan Dumont, Ingo Börne, Jonas Müller-Laackman, Dominik Leipold,
+                        Gerlinde Schneider</author>
+                  </bibl>
+                  <bibl>
+                     <title><ref target="openers-closers.xml">Letter Openers and
+                        Closers</ref></title>
+                     <author>Christian Forney, Susanne Haaf, Linda Kirsten</author>
+                  </bibl>
+                  <bibl>
+                     <title><ref target="postscripts.xml">Postscripts of Letters</ref></title>
+                     <author>Christian Forney, Susanne Haaf, Linda Kirsten</author>
+                  </bibl>
+                  <bibl>
+                     <title><ref target="pre-printed-parts.xml">Pre-printed parts: Letterheads and
+                           forms</ref></title>
+                     <author>Sabine Seifert, Nicolas Schenk</author>
+                  </bibl>
+               </listBibl>
+            </div>
+            <div n="4">
+               <head>Upcoming Articles</head>
+               <p>This manual will be continuously supplemented by further articles. In preparation are among others:</p>
+               <listBibl>
+                  <bibl>
+                     <title>Addresses</title>
+                     <author>Marjam Trautmann</author> 
+                  </bibl>
+                  <bibl>
+                  <title>Postage stamps, seals, and postmarks</title>
+                  <author>Josephine Obert, Marjam Trautmann</author>
+               </bibl>
+               </listBibl>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

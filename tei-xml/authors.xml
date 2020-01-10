@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Index of Authors</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Born digital.</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listPerson>
+            <person xml:id="boerner">
+               <ptr target="https://www.oeaw.ac.at/acdh/team/current-team/ingo-boerner/"/>
+               <persName>
+                  <forename>Ingo</forename>
+                  <surname>Börner</surname>
+               </persName>
+            </person>
+            <person xml:id="dumont">
+               <idno type="orcid">http://orcid.org/0000-0002-6923-0950</idno>
+               <ptr target="http://www.bbaw.de/die-akademie/mitarbeiter/dumont/"/>
+               <persName>
+                  <forename>Stefan</forename>
+                  <surname>Dumont</surname>
+               </persName>
+               <note>Stefan Dumont is a researcher and developer at TELOTA, the Digital Humanities
+                  working group of the Berlin-Brandenburg Academy of Sciences and Humanities. Since
+                  2017 he has also been the scientific coordinator of the DFG project <ref target="https://www.correspSearch.net">"correspSearch
+                  - Connecting Scholarly Editions of Letters"</ref>.</note>
+            </person>
+            <person xml:id="forney">
+               <persName>
+                  <forename>Christian</forename>
+                  <surname>Forney</surname>
+               </persName>
+            </person>
+            <person xml:id="haaf">
+               <ptr target="http://www.bbaw.de/die-akademie/mitarbeiter/haaf"/>
+               <persName>
+                  <forename>Susanne</forename>
+                  <surname>Haaf</surname>
+               </persName>
+            </person>
+            <person xml:id="hoedl-notter">
+               <ptr
+                  target="https://www.squirrel.uni-muenchen.de/ueber_uns/personen_uebersicht/hoedl-notter/index.html"/>
+               <persName>
+                  <forename>Isabelle</forename>
+                  <surname>Hödl-Notter</surname>
+               </persName>
+               <note>Isabella Hödl-Notter is a doctoral student at LMU Munich. Since 2015 she has
+                  beem a member of the digital edition of the correspondence between Archduke
+                  Leopold Wilhelm and his brother the Emperor Ferdinand II. and the online-editing
+                  platform "Squirrel" at LMU.</note>
+            </person>
+            <person xml:id="kirsten">
+               <persName>
+                  <forename>Linda</forename>
+                  <surname>Kirsten</surname>
+               </persName>
+            </person>
+            <person xml:id="leipold">
+               <ptr
+                  target="https://www.musikwissenschaft.uni-muenchen.de/personen/mitarbeiter/leipold/index.html"/>
+               <persName>
+                  <forename>Dominik</forename>
+                  <surname>Leipold</surname>
+               </persName>
+            </person>
+            <person xml:id="mueller-laackman">
+               <ptr target="http://www.bbaw.de/die-akademie/mitarbeiter/laackman"/>
+               <persName>
+                  <forename>Jonas</forename>
+                  <surname>Müller-Laackman</surname>
+               </persName>
+            </person>
+            <person xml:id="schenk">
+               <ptr target="https://kompetenzzentrum.uni-trier.de/en/about-us/mitarbeiter/nicolas-schenk/"/>
+               <persName>
+                  <forename>Nicolas</forename>
+                  <surname>Schenk</surname>
+               </persName>
+               <note>Nicolas Schenk is a research assistant in the project MBA Digital -
+                  Retrodigitalisierung der historisch-kritischen Marburger Büchner-Ausgabe at the
+                  Trier Center for Digital Humanities. He graduated in Digital Humanities at the
+                  University of Trier with a thesis on digital scholarly editions. </note>
+            </person>
+            <person xml:id="schneider">
+               <persName>
+                  <forename>Gerlinde</forename>
+                  <surname>Schneider</surname>
+               </persName>
+               <note> Gerlinde Schneider is a research technologist and developer at the Centre for
+                  Information Modelling at the University of Graz, where she has worked since 2012.
+                  She has experience working on a number of projects in the field of language
+                  technologies and digital scholarly editions. Currently, she is coordinating the
+                  establishment of a CLARIN Centre at the University of Graz. </note>
+            </person>
+            <person xml:id="seifert">
+               <ptr
+                  target="https://www.fontanearchiv.de/theodor-fontane-archiv/team/dr-sabine-seifert/"/>
+               <persName>
+                  <forename>Sabine</forename>
+                  <surname>Seifert</surname>
+               </persName>
+               <note>Sabine Seifert is a research associate at the <ref
+                     target="https://www.fontanearchiv.de">Theodor Fontane Archive</ref> at Potsdam
+                  University. She contributed to the development of the digital edition <ref
+                     target="http://www.berliner-intellektuelle.eu/?en">“Letters and texts.
+                     Intellectual Berlin around 1800”</ref>, and has been co-convener of the TEI
+                  Special Interest Group Correspondence since 2014. Sabine received her PhD from
+                  Humboldt University Berlin with a study on the history of philology in the 19th
+                  century.</note>
+            </person>
+         </listPerson>
+      </body>
+   </text>
+</TEI>

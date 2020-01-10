@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="postscripts">
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<title>Postscripts of Letters</title>
+<author key="forney">Christian Forney</author>
+<author key="haaf">Susanne Haaf</author>
+<author key="kirsten">Linda Kirsten</author>
+</titleStmt>
+<publicationStmt>
+<publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
+<date when="2019-12-14"/>
+<idno type="urn">urn:nbn:de:kobv:b4-20200110163840406-3753902-5</idno>
+<idno type="url">https://encoding-correspondence.bbaw.de/v1/postscripts.html</idno>
+<idno type="zotero">https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/N8AEREJN</idno>
+</publicationStmt>
+<seriesStmt>
+<title type="main">Encoding Correspondence.</title>
+<title type="sub">A manual for encoding letters and postcards in TEI-XML and
+DTABf</title>
+<editor>Stefan Dumont</editor>
+<editor>Susanne Haaf</editor>
+<editor>Sabine Seifert</editor>
+<idno type="urn">urn:nbn:de:kobv:b4-20200110163329488-8695229-7</idno>
+<idno type="url">https://encoding-correspondence.bbaw.de/v1/</idno>
+<biblScope unit="edition">v1</biblScope>
+</seriesStmt>
+<sourceDesc>
+<p>Born digital.</p>
+</sourceDesc>
+</fileDesc>
+<revisionDesc>
+<listChange>
+<change n="1" when="2019-12-20" status="draft">Initial Version</change>
+</listChange>
+</revisionDesc>
+</teiHeader>
+<text>
+<body>
+<div xml:id="c-1"><head>Introduction</head>
+<p n="1">The Oxford English Dictionary defines postscript as:</p>
+<cit><quote>A paragraph or passage written at the end of a letter, after the signature, containing an afterthought or additional matter.</quote>
+	<ref target="http://www.oed.com/view/Entry/148663">(OED, entry 148663)</ref></cit>
+<p n="2">This definition may be read in two ways: First, it may mean that the existence of a postscript is tied to the place where it stands; second, “written at the end” and “after” might be temporal expressions, referring to the time when the postscript was written rather than its actual place. In any case, a postscript is recognized as a text additional to the main text of a letter, written some time after the “main” letter was finished and put somewhere behind the main text.</p>
+<p n="3">For the concept of postscript, the TEI offers an element <gi>postscript</gi> which is defined without any restrictions to where it is located:</p> 
+<cit><quote><gi>postscript</gi> contains a postscript, e.g. to a letter.</quote>
+	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-postscript.html">(TEI P5 3.6.0: ref-postscript</ref></cit>
+<p n="4">This explanation does not say a lot but the more detailed TEI documentation offers more information:</p> 
+<cit><quote>A postscript is a passage added after the signature of a letter or, less frequently, the main portion of the body of a book, article, or essay. In English a postscript is often abbreviated as <hi rendition="#i">P.S.</hi> or <hi rendition="#i">PS</hi>, and postscripts are often introduced by labels with one of these abbreviations [...].</quote> 
+	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/DS.html#DSAE">(TEI P5 3.6.0, ch. 4.2.3: Arguments, Epigraphs, and Postscripts)</ref></cit>
+<p n="5">While the short description does not mention any restrictions, the more elaborate documentation also specifies that a postscript is “added after the signature”. Indeed, the formal TEI specification then adds restrictions by making the element <gi>postscript</gi> a member of the class <hi rendition="#monospace">model.divBottomPart</hi>. Restrictions have already been loosened in 2011 after a discussion about problems using postscript in real world examples. Compared to the options back then, the element <gi>postscript</gi> is much more flexible by now. However, there are still cases which raise insecurities on how to handle their encoding properly or which even cannot be handled sufficiently with the current TEI toolbox. These problems, a range of possible solutions and some recommendations will be presented in the following parts of this chapter.</p></div>
+<div xml:id="c-2"><head>Encoding of Postscripts—State of the Art</head>
+<div xml:id="c-2-1"><head>Simple Postscripts</head>
+<p n="6">For the encoding of simple postscripts, the TEI offers the <gi>postscript</gi> element. This element belongs to the models <hi rendition="#monospace">model.divTopPart</hi> and <hi rendition="#monospace">model.divBottomPart</hi>, which means it can be inserted at the beginning or end of a devision. A frequent and usual case is a postscript behind a closing salutation, as in example 1.</p>
+
+	<figure><head>Example 1: Simple postscript (source: Elisabeth Goethe to Bettina von Arnim, 14 March 1807. In Arnim 1835: p. X/facs. 30. <ref target="http://www.deutschestextarchiv.de/arnimb_goethe01_1835/30">Digital edition/DTA</ref>).</head>
+	<graphic url="../images/postscript/img01.jpg"/>
+</figure>
+<p n="7">The encoding of this example is quite simple and straightforward: </p>
+	<egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="letter">
+[...]
+<p>Amüſire Dich recht gut und ſei luſtig, denn wer<lb/>
+lacht, kann keine Todſünd' thun.</p><lb/>
+<closer>
+<signed>Deine Freundin<lb/>
+Eliſabeth Goethe.</signed>
+</closer>
+<postscript>
+<p>Nach dem Wolfgang frägſt Du ja gar nicht; ich<lb/>
+hab' Dir's ja immer geſagt: wart' nur bis einmal ein<lb/>
+andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm<lb/>
+ſeufzen.</p>
+</postscript>
+</div></egXML>
+<p n="8">The <gi>postscript</gi> element may contain a couple of elements for internal structuring, as e.g. <gi>p</gi>, <gi>label</gi>, and even <gi>opener</gi>, <gi>closer</gi>, or <gi>signed</gi>.</p></div>
+<div xml:id="c-2-2"><head>Issue 1: Postscript in/with Complex Text Structure</head>
+<div xml:id="c-2-2-1"><head>Description of Issue 1</head>
+	<p n="9">As mentioned before, postscripts are not always represented by simple paragraphs without any structure. Very often, they contain salutations, datelines, or even more elaborate structures. They can also be accompanied by other postscripts with different potential relations: there can be several postscripts lined up after a letter which are related to the respective letter; a subsequent postscript might be referring to the preceding postscript; or a postscript can be part of a superordinate postscript. Example 2 illustrates some of the possible variation with regard to postscripts.</p> 
+	<figure><head>Example 2: Numerous postscripts at the end of a letter written by various hands (source: Gottfried Weber to Johann Gänsbacher. Darmstadt, 9 February 1811. <ref target="https://weber-gesamtausgabe.de/de/A002078/Korrespondenz/A040446.html">Digital edition/ CMWG</ref>).</head><graphic url="../images/postscript/img02.jpg"/></figure></div>
+<div xml:id="c-2-2-2"><head>Solutions to Issue 1</head>
+<p n="10">The TEI already allows for the usage of more than one postscript in a <gi>div</gi> structure. So, in case there are subsequent postscripts following a letter as in example 2, these can simply be encoded each with its own <gi>postscript</gi> element. It is also already possible to subordinate postscripts to one another. The encoding of the above example could then be as follows:</p>
+<figure><head>Example 2a: Encoding for example 2 (transcription by Carl-Maria-von-Weber-Gesamtausgabe; encoding based on Carl-Maria-von-Weber-Gesamtausgabe):</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><postscript>
+<p>Im Ernste Bruder bessere Dich.</p> <signed>MeyerBeer</signed>
+</postscript>
+<postscript>
+<p>Wenn Du diesen Brief nicht erhältst, so schreibe es wenigstens Hund!</p> <signed>Dein A Dusch</signed>
+</postscript>
+<postscript>
+<p>bey unsrer Freundschaft beschwöre ich dich, uns aus dieser tödtlichen Ungewißheit zu reißen</p> <signed>C. M. v. Weber</signed>
+</postscript></egXML></figure>
+
+<p n="11">If the internal structure of a postscript becomes very elaborate, it might be reasonable to yield to <tag>div type="postscript"</tag> in order to properly represent the structures contained by the postscript. In a TEI mailing list discussion of such cases, this was already stated by the TEI Council to be the preferred encoding solution.
+Several writing sessions each with its own postscript can be represented in subordinate <gi>div</gi> elements within the <gi>div</gi> that contains the whole letter:</p> 
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="letter">
+<div n="writingSession">
+<p>[...]</p>
+<closer><salute>[Salutation here]</salute></closer>
+<postscript><p>[Postscript here]</p></postscript>
+<postscript><p>[Another postscript here]</p></postscript>
+</div>
+<div type="writingSession">
+<p>[...]</p>
+<postscript><p>[...]</p></postscript>
+</div>
+</div></egXML>
+
+<p n="12">An example for such encoding can be found in a letter by Carl Maria von Weber’s correspondents to the composer (example 3). The letter was written by two authors and was encoded in two separate writing session divisions.</p> 
+	<figure><head>Example 3: Writing sessions by different correspondents in one letter (source: Ignaz Moscheles to Moritz Schlesinger, London, 9 March 1826. With a postscript by Carl Schlesinger, Bath, 13 March 1826. <ref target="https://weber-gesamtausgabe.de/de/A001353/Korrespondenz/A042603.html">Digital edition/CMWG</ref>)</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="letter">
+<div type="writingSession" n="1" hand="#author1">
+<opener>
+<dateline rendition="#right">London den 9ten März 1826</dateline>
+<salute>Lieber Moritz</salute>
+</opener>
+<p>Dein Bruder besucht mich eben, u da nur in den letzten Abendstunden mir vergönnt ist mich innerhalb meiner 4 häußlichen Wände aufzuhalten, wo ich gewöhnlich meine Muse aus dem Schlafe weke, so folge ich seiner Aufforderung ein Schreiben an dich zu eröffnen.</p>
+<p>[...]</p>
+<closer>Lieber Alter du mußt schon machen, mir einmahl in London zu besuchen, [...] 
+<salute>Lebe wohl in Andenken Deines  
+	<signed>Moscheles</signed>
+</salute>
+</closer>
+</div>
+<pb/>
+<div type="writingSession" n="2" hand="#author2">
+<opener>
+<dateline>Bath d 13t März 1826</dateline>
+<salute>Lieber Moritz</salute>
+</opener>
+<p>Moscheles hat zwei Seiten des Bogens vollgeschrieben, ich muß dir daher in Kürze sagen, was ich mit dir zu sprechen habe.</p>
+<p>[...]</p>
+<closer>
+<salute>Viele Grüße an alle Freunde</salute>
+<signed>Dein Carl</signed>
+</closer>
+<postscript>
+<p>Ich erwarte Antwort auf meine frühere Frage- und Commission, sobald du Vaters Cataloge erhältst, sende sie mir [...]</p>
+</postscript>
+<postscript>
+<p>Bochsa schreibt jetzt für Boosey und daher auch für dich, auf mein Anrathen, 3 Nocturnes über Romanzen [...]</p>
+</postscript>
+</div>
+</div></egXML>
+	</figure></div></div></div>
+<div xml:id="c-3"><head>Encoding problems around Postscript</head>
+<p n="13">As already mentioned above, “behind” or “after” a written text does not always have to mean “at the bottom of” that text. In fact, the postscript may have been written somewhere along the pages where there was still some space left, it may occur in front of other items of the letter, e.g. a dateline, even in front of the whole letter, it may have been divided into several parts if space was limited, it may have evolved into a quite elaborate text with more complex structures, and – probably the most irritating case – it may even contain the main information of the letter.</p> 
+<div xml:id="c-3-1"><head>Issue 2: Locations of Postscripts</head>
+<div xml:id="c-3-1-1"><head>Description of Issue 2</head>
+	<p n="14">As stated above the postscript can be found at locations other than the bottom of a letter. The first case is illustrated in Example 3. Here, the postscript is scribbled on the left margin of one (not the last) page of a letter. The conclusion of that letter can be found on one of the following pages.</p>
+
+	<figure><head>Example 4: Postscript at the left margin of an interior letter page (Source: Erdmuthe Benigna of Reuß-Ebersdorf to Heinrich XXIV. of Reuß-Schleiz at Köstritz, Ebersdorf, 15 May 1714. <ref target="https://archive.thulb.uni-jena.de/collections/rsc/viewer/HisBest_derivate_00017471/PK16_97_0001.tif">Facs. 1</ref>).</head>
+		<graphic url="../images/postscript/img03.jpg"/>
+</figure> 
+<p n="15">Secondly, a probably very rare (though existing) case is that a postscript was written at the beginning of a letter, as cited in Example 4.</p>
+<figure><head>Example 4: Postscript at the beginning of a letter (source: Daniel Webster to James Hervey Bingham, Salisbury, 3 April 1804. <ref target="https://listserv.brown.edu/archives/cgi-bin/wa?A2=ind1801&amp;L=TEI-L&amp;P=30948)">[Partial transcript]</ref>.</head><egXML xmlns="http://www.tei-c.org/ns/Examples"><opener><salute>TO JAMES HERVEY BINGHAM</salute><lb/>
+<postscript>P.S. The top of a letter is a new place for a postscript; excuse it, for its <lb/>
+design is to beg you to give my love to your and my friends P. and E.<lb/>
+Salisbury, April 3, 1804.<lb/>
+Good Hervey,<lb/>
+I am really much obliged by your ready attention to my requests [etc. ...]</postscript></opener></egXML>
+	</figure>
+
+<p n="16">This second case was discussed on the TEI mailing list and the person raising the issue stated: 
+	“isn't this a postscript, regardless of its position? And presumably it was placed there after the body of the letter had been written.”<note n="1" xml:id="fn1">David Sewell on: <ref target="https://listserv.brown.edu/cgi-bin/wa?A2=ind1801&amp;L=TEI-L&amp;P=30948">TEI mailing list, 24 Jan 2018.</ref> </note></p>
+
+<p n="17">So, the argument for calling the text a postscript here is the time when, not the place where it presumably was written.</p> 
+<p n="18">A third case is a postscript written behind the final salutation but in front of the dateline (Example 5).</p> 
+
+<figure><head>Example 5: Postscript surrounded by parts of the closer (source: Leopoldo Marcantonio Caldani to Albrecht von Haller, 13 March 1759, Burgerbibliothek Bern [Shelfmark: N Albrecht von Haller 105.9, Caldani, Leopoldo Marcantonio: 22])</head>
+	<graphic url="../images/postscript/img04.jpg"/>
+</figure></div>
+<div xml:id="c-3-1-2"><head>Discussion of Issue 2</head>
+<p n="19">There are two obvious ways how one might want to handle Examples 3 and 4.</p> 
+<p n="20">(1) First, the postscript could be transcribed at the end of the letter because ‘it is meant as’ final remark and was probably written down after the letter was finished. An editor’s comment could then specify where the text was originally found. However, if an edition uses <gi>pb</gi> elements to indicate the pages of the original document, the postscript text would need a separate <gi>pb</gi> or else it would be formally assigned to the last page of the letter. The latter would be incorrect with regard to the source document. The former would mean, page break elements have to be linked among each other and would result in a higher number of <gi>pb</gi> elements than there are pages in the source document. This is a possible scenario, but it would have to be communicated quite clearly to the users in order to avert errors in further processing.</p>
+<p n="21">(2) Another possibility would be to transcribe and tag the postscript on the page where it was written. This approach, however, is not yet supported by the TEI Guidelines, neither if a postscript was written somewhere in the middle of a letter text (ex. 12), nor, if it is entered at the beginning of a letter (ex. 13): the <gi>postscript</gi> element is part of the TEI Guidelines class <hi rendition="#monospace">model.divBottomPart</hi>. A workaround could be to use the <gi>note</gi> element, e.g. as <tag>note type="postscript"</tag>. But can a postscript really be characterized as a note? And if so, why not use <gi>note</gi> for it everywhere? It seems that there should be another way given that the TEI Guidelines already contain a <gi>postscript</gi> element.</p>
+<p n="22">As for Examples 3 and 4, closeness to the source seems to be an important argument in favor of the handling proposed in (2). Example 5 raises the question if it were semantically correct to assign a postscript to the <gi>closer</gi> element, or if, in contrast, it interrupts the closer in the current case, or if the dateline is not part of the closer here, or anywhere, or if it belongs to the closer. So here, an area of interpretation is reached where decision taking might better be delegated to the editor, while the format is purposely designed to allow for the different possible ways of encoding.</p></div> 
+<div xml:id="c-3-1-3"><head>Solutions to Issue 2</head>
+<p n="23">For the issue described here, we propose two modifications of the TEI Guidelines:</p>
+<p n="24"><gi>postscript</gi> should become a possible subelement of <gi>p</gi>. Formally, it could have a distribution similar to the <gi>note</gi> element, i.e. in encoding, <gi>postscript</gi> may interrupt running text. Thus, in this scenario, <gi>postscript</gi> might become member of the class <hi rendition="#monospace">model.noteLike</hi>. </p>
+<p n="25">This way, it would e.g. easily be possible to annotate postscripts scribled at the margin of a page (Example 3). 
+This handling is preferred to using the <gi>note</gi> element for this case, which would be misleading with regard to the text type under consideration, or to using <gi>seg</gi>, which would be too unspecific, given that the element <gi>postscript</gi> already exists in the TEI Guidelines.</p>
+<p n="26">Furthermore, the <gi>postscript</gi> element should be supplied with an attribute <att>place</att> to indicate the place where the postscript is entered on the page. So, the <gi>postscript</gi> element should become a member of class <hi rendition="#monospace">att.placement</hi>. 
+These modifications are accompanied with some proposed ground rules for transcription:</p>
+<p n="27">If the postscript is found at the left margin of a page, it should be transcribed in front of the line at the height of which it was entered; if it is found at the right margin, it should be transcribed at the end of that line. Postscripts at the top/bottom margin of a page should be transcribed before/after the running text of the page, respectively.</p></div></div>
+<div xml:id="c-3-2"><head>Issue 3: Discontinuous Parts of one Postscript</head>
+<div xml:id="c-3-2-1"><head>Description of Issue 3</head>
+	<p n="28">Issue 2 showed, that postscripts in letters may have been put wherever there was space left on the pages of the letter, which is not necessarily at the bottom of a letter. Given this fact, it is probably not surprising that if the available space was filled, a postscript could be continued at other places in the letter. Thus, the editor of a text may have to deal with discontinuous parts of postscripts which occur at various places in the letter and have to be transcribed and connected somehow. Example 6 illustrates this case. Here, a letter is written accross 4 pages (2 sheets), and then continued by writing vertically on the first page across the letter’s primary text. It is finished with a salutation and a postscript is started on the same page and in the same manner which is then continued on a new, third sheet of paper. This postscript is then followed by a second postscript on the last page.</p>
+
+	<figure><head>Example 6: Discontinuous parts of a postscript (source: Jacoba van Heemskerck to Herwarth Walden, 31 January 1915, p. <ref target="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000001">53r</ref>, <ref target="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000004">54v</ref>, <ref target="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000006">55v</ref>; <ref target="https://sturm-edition.de/id/Q.01.19150131.JVH.01">digital edition </ref>)</head>
+		<graphic url="../images/postscript/img05.jpg"/></figure></div>
+
+<div xml:id="c-3-2-2"><head>Discussion of Issue 3</head>
+<p n="29">There are several discontinuous parts of the letter in example 6. First, the letter is somehow disrupted between first and second page by content inserted on the first page. Second, there are several letter pages between the start and end of the postscript. 
+The TEI offers several ways of dealing with discontinuity. First, it is possible to use the <gi>seg</gi> element with an attribute <att>part</att> for each part of a discontinuous structure. The TEI proposes a small set of values for <att>part</att>, i.e. ‘I’ for ‘initial’, ‘M’ for ‘medium’ and ‘F’ for ‘final’. This tagging has some disadvantages, though: With the values at hand, the current case could not be tagged unambiguously, because in fact, the segments representing parts of the letter body and the postscript would overlap just as the source text does.</p> 
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><div><seg part="I">Beginning of the letter</seg>
+<seg part="M">Ending of the letter
+<postscript>Beginning of the postscript</postscript></seg>
+<pb/>
+<seg part="I">Continuation of the letter
+<pb/>...
+<pb/>...
+</seg>
+<seg part="F">Continuation and ending of the postscript</seg>
+</div></egXML>
+<p n="30">With only the values <val>I</val>, <val>M</val>, <val>F</val>, <hi rendition="#monospace">//seg[2]</hi> and <hi rendition="#monospace">//seg[3]</hi> cannot be tagged unambiguously. The <hi rendition="#monospace">//seg[3][@part="I"]</hi> is not correct because //seg[3] is not the initial part of the chain. However, if the tagging was <hi rendition="#monospace">//seg[3][@part="M"]</hi>, it would not be clear, that <hi rendition="#monospace">//seg[3]</hi> actually comes before <hi rendition="#monospace">//seg[2]</hi> in the sequence of the letter.</p> 
+<p n="31">So, the <gi>seg</gi> chain in a way forces linerarity to the text where this can’t be guaranteed.
+The problem gets even worse if we considered the letter body and the postscript as two separate structures, each represented by its own chain of segments.</p>
+<p n="32">Thus, if <gi>seg</gi> was chosen, a more elaborate vocabulary for naming of the parts would have to be introduced. Since the only connection between the <gi>seg</gi> structures is their naming of the <att>part</att> values, these could be further differentiated but actually would have to remain actual names indicating the position of a segment in the chain (e.g. <val>I</val>, <val>M1</val>, <val>M2</val>, <val>M3</val>, ..., <val>F</val>). So, with this tagging it would always be costly to add seg parts (if needed) to the chain at a later point in time.</p> 
+<p n="33">By introducing and chaining <gi>seg</gi>s, those structures which really are interrupted are not taken care of. In our case, e.g. the paragraph which starts on the first page and is continued on the second page, would be closed, interrupted by other text parts, and reopened. Here, the two parts of the paragraph should be connected somehow.</p>
+<p n="34">Another more flexible way of indicating discontinuous parts of texts is the set of <att>xml:id</att>, <att>prev</att>, <att>next</att> attributes, as presented in the following section.</p> </div>
+<div xml:id="c-3-2-3"><head>Solution to Issue 3</head>
+	<p n="35">For discontinuous parts of letters and postscripts, we recommend the application of the <att>xml:id</att> (class <hi rendition="#monospace">att.global</hi>), and <att>prev</att>, <att>next</att> (class <hi rendition="#monospace">att.global.linking</hi>) attribute set. A structure, that is interrupted, can be connected with its followers by usage of unambiguous identifiers. For example 6, this could be encoded as follows:</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples"><div>
+<p xml:id="p1a" next="p1b">Beginning of the letter</p>
+<p xml:id="p2b" prev="p2a">Ending of the letter</p>...
+<postscript xml:id="p3a" next="p3b">Beginning of the postscript</postscript>
+<pb/>
+<p xml:id="p1b" prev="p1a">Continuation of the letter<pb/>...
+<pb/>
+</p>
+<p xml:id="p2a" next="p2b">Continuation of the letter</p>
+<pb/>
+<postscript xml:id="p3b" prev="p3a">
+Ending of postscript
+</postscript>
+<postscript>2nd postscript</postscript></div></egXML></div> 
+</div>
+<div xml:id="c-3-3"><head>Issue 4: Variation of the Postscript’s Location on the Page</head>
+<div xml:id="c-3-3-1"><head>Description of Issue 4</head>
+<p n="36">We have seen before that postscripts do not necessarily have to be written down at the bottom of a letter nor even continuously in one place. Here we discuss cases where parts of one postscript are written down at different positions of a page. Example 7 illustrates the issue: the postscript was started in the bottom half of the (folded) sheet and continued on the left side of the upper half of that sheet.</p>
+	<figure><head>Example 7: Change of place within postscript (source: <ref target="https://digilib.bbaw.de/digitallibrary/digilib.html?fn=archiv/IdNo32&amp;pn=4">Alexander von Humboldt to Christian Gottfried Ehrenberg, Paris, 19 December 1831, p. 2v.</ref> Archiv der Berlin-Brandenburgischen Akademie der Wissenschaften; shelfmark: NL C. G. Ehrenberg, 421, fol. 57r-58v).</head><graphic url="../images/postscript/img06.jpg"/></figure>
+</div>
+<div xml:id="c-3-3-2"><head>Discussion of Issue 4</head>
+	<p n="37">(1) One possible solution might be to add <gi>postscript</gi> to the attribute class <hi rendition="#monospace">att.placement</hi>, so that the attribute <att>place</att> becomes usable within <gi>postscript</gi>. This way, it could be encoded where exactly the <gi>postscript</gi> was written on the page. However, if that place changes, it would be hard to encode that change. A possible solution could then be to close the <gi>postscript</gi>, reopen it with a new indication of <att>place</att> and connect the two <gi>postscript</gi> elements with <att>xml:id</att>, <att>prev</att>, <att>next</att>.</p>
+<p n="38">(2) Another approach could include <gi>seg</gi> elements to enclose text segments according to the places where they were found. In that scenario, it would be the <gi>seg</gi> element which has to carry the information about the text segment’s placement. So, <gi>seg</gi> would have to be added to the <hi rendition="#monospace">att.placement</hi> class.</p>
+	<p n="39">(3) An elegant way could also be to introduce a new milestone element <gi>placeShift</gi> (analoguous to e.g. <gi>handShift</gi>) which is member of <hi rendition="#monospace">att.placement</hi>. That way, the change of placement could be indicated by <gi>placeShift</gi> without interrupting the running text (as in 1) and without introducing artificial structures (as in 2). The <gi>placeShift</gi> element would still have to be provided with an attribute <att>new</att> or an attribute set <att>from</att>/<att>to</att> to indicate the destination of the shift. Between the two proposals for attribute, <att>new</att> would be a solution consistent with the practice for other “shift” elements, i.e. <gi>handShift</gi> and <gi>shift</gi>, whereas <att>from</att>/<att>to</att> would have the advantages of (a) conceptually carrying the concept of location (change) and (b) allowing not only to define the destination of the shift but also the starting point.</p> 
+<p n="40">(4) It might be considered sufficient to introduce a new attribute <att>placeShift</att> rather than the element (in 3). This attribute would have to be carried by the first <gi>lb</gi> element after the change of place. Since the change of place always involves a linebreak, this seems to be a straightforward solution. However, technically the place shift of a whole text segment is not (just) tied to its first linebreak as this encoding might suggest. 
+</p></div> 
+<div xml:id="c-3-3-3"><head>Solution to Issue 4</head>
+<p n="41">From the possible solutions discussed above we recommend the introduction of a new element <gi>placeShift</gi> with an attribute <att>new</att> or an attribute set <att>from</att>/<att>to</att> to indicate the destination of the shift (solution 3).</p></div></div></div>  
+<div xml:id="c-4"><head>Conclusion</head>
+<p n="42">In the 2011 discussion referred to above, Lou Burnard mentioned:</p> 
+<cit><quote>When <gi>postscript</gi> was introduced, it was agreed to reserve it for simple postscripts (sic!) only, and to represent other more complex structures either with <gi>ab</gi> or with <gi>div</gi>. It is hard to see why a "postscript" should get its own special tag and a "chapter" not—they are both divs.</quote>
+	<ref target="https://github.com/TEIC/TEI/issues/280#issuecomment-145099090">TEI Repository: Comment to issue 280</ref></cit>
+  <p n="43">Martin Mueller’s counterargument was:</p> 
+  <cit><quote>I see the force of this argument, but it's an even stronger argument for not having postscript in the first place. "postscript" is a part of "letter", and if there is no letter tag why should there be a postscript.</quote>
+  	<ref target="https://github.com/TEIC/TEI/issues/280#issuecomment-145099092">TEI Repository: Comment to issue 280</ref></cit>
+  <p n="44">Following that discussion, the content model of postscript was adapted in a way that it was not changed to hold elaborate, div-like structures but that more flexibility was added in some ways. For instance, it became possible to add a postscript at the top of a div structure. Back then, the discussion had come to the result that for elaborate structures in postscripts one would have to use <tag>div type="postscript"</tag> elements rather than changing the content model of postscript to include div-like structures. With our proposals, we respect this decision and chosen path. However, even the rather simple <gi>postscript</gi> element would need the proposed addition of flexibility, so that editors do not have to resort to more, other TEI solutions (like <tag>note type="postscript"</tag>, etc.), introducing even more ambiguity to the application of the TEI-Guidelines.</p></div>
+    <div type="bibliography">
+    	<head>Bibliography</head>
+    	<listBibl>
+    		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/S7NPCIK9">Jobst, Anne, ed. 2019. <hi rendition="#i">Alexander von Humboldt - Christian Gottfried Ehrenberg: 
+    			Briefwechsel.</hi> Berlin. <ref target="http://telota.bbaw.de/AvHBriefedition">http://telota.bbaw.de/AvHBriefedition</ref>.</bibl>
+    		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/ISZF52UZ">Arnim, Bettine von. 1835. <hi rendition="#i">Goethe’s Briefwechsel mit einem Kinde. Vol. 1.</hi> Deutsches Textarchiv. Berlin. <ref target="http://www.deutschestextarchiv.de/arnimb_goethe01_1835">http://www.deutschestextarchiv.de/arnimb_goethe01_1835</ref>.
+    		</bibl>
+  			
+    		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/RLZ4X49P"><hi rendition="#i">Carl-Maria-von-Weber-Gesamtausgabe (CMWG). Digital Edition.</hi> 2019. Version 3.5.1. <ref target="http://weber-gesamtausgabe.de">http://weber-gesamtausgabe.de</ref>.
+    		</bibl>
+    		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/HSCQSGCE">Trautmann, Marjam, and Torsten Schrade, eds. 2019. <hi rendition="#i">DER STURM. Digitale Quellenedition Zur Geschichte Der Internationalen Avantgarde.</hi> 2nd ed. Mainz: Akademie der Wissenschaften und der Literatur. <ref target="https://sturm-edition.de/">https://sturm-edition.de/</ref>.
+    		</bibl>   	
+    		<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/ACZUARGD">Prell, Martin, and Julia Schmidt-Funke, eds. 2017-2019. <hi rendition="#i">Digitale Edition Der Briefe Erdmuthe Benignas von Reuß-Ebersdorf (1670-1732).</hi> Jena. <ref target="http://erdmuthe.thulb.uni-jena.de">http://erdmuthe.thulb.uni-jena.de</ref>.
+    		</bibl>
+    	</listBibl>
+ 	
+    </div>
+</body>
+</text>
+</TEI>

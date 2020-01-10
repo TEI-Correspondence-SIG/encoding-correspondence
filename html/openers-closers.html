@@ -1,0 +1,1079 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="libs/bootstrap-4.3.1/css/bootstrap.min.css">
+      <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+      <link href="libs/prism/prism.css" rel="stylesheet">
+      <link href="css/ec.css" rel="stylesheet">
+      <title>Encoding Correspondence: Letter Openers and Closers</title>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+         <div class="container"><a class="navbar-brand" href="index.html" title="To the homepage" alt="Go to home page of Encoding Correspondence">Encoding Correspondence</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar">
+               <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" href="introduction.html">Introduction</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a></div>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="authors.html">Authors <span class="sr-only">(current)</span></a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div id="content" class="container">
+         <div class="row">
+            <div class="col-md-4 order-2 d-print-none">
+               <div id="status" class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Status of this article</h5>
+                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 30.04.2020.
+                     </p>
+                     <p>We kindly invite you to review and/or comment this article! Please do so via the web
+                        annotation service <a href="https://web.hypothes.is/">Hypothes.is</a> 
+                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.
+                     </p>
+                     <p>This article remains stable and <a href="#citation">citable</a> in the first version of this manual. The revised article will be published in the
+                        second edition of the manual.
+                     </p>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Table of Content</h5>
+                     <ul id="toc">
+                        <li><a href="#c-1">Introduction</a></li>
+                        <li><a href="#c-2">Encoding of Opener and Closer—State of the Art</a></li>
+                        <li><a href="#c-3">Encoding Problems around Opener and Closer</a><ul>
+                              <li><a href="#c-3-1">Issue 1: Salutations within Paragraphs</a><ul>
+                                    <li><a href="#c-3-1-1">Description of Issue 1</a></li>
+                                    <li><a href="#c-3-1-2">Discussion of Issue 1</a></li>
+                                    <li><a href="#c-3-1-3">Solutions to Issue 1</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-3-2">Issue 2: Salutations within a Paragraph and the Following Closer</a><ul>
+                                    <li><a href="#c-3-2-1">Description of Issue 2</a></li>
+                                    <li><a href="#c-3-2-2">Discussion of Issue 2</a></li>
+                                    <li><a href="#c-3-2-3">Solution to Issue 2</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-3-3">Issue 3: Different Types of Salutations and Signatures</a><ul>
+                                    <li><a href="#c-3-3-1">Description of Issue 3</a></li>
+                                    <li><a href="#c-3-3-2">Discussion of Issue 3</a></li>
+                                    <li><a href="#c-3-3-3">Solution to Issue 3</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-3-4">Issue 4: Epigraph within Closer</a><ul>
+                                    <li><a href="#c-3-4-1">Description of Issue 4</a></li>
+                                    <li><a href="#c-3-4-2">Solution to Issue 4</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-3-5">Issue 5: Signature within Paragraph</a><ul>
+                                    <li><a href="#c-3-5-1">Description of Issue 5</a></li>
+                                    <li><a href="#c-3-5-2">Discussion of Issue 5</a></li>
+                                    <li><a href="#c-3-5-3">Solution to Issue 5</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-3-6">Issue 6: Dateline within Paragraph</a><ul>
+                                    <li><a href="#c-3-6-1">Description of Issue 6</a></li>
+                                    <li><a href="#c-3-6-2">Discussion of Issue 6</a></li>
+                                    <li><a href="#c-3-6-3">Solution to Issue 6</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-3-7">Issue 7: Dateline Written by a Different Hand</a><ul>
+                                    <li><a href="#c-3-7-1">Description of Issue 7</a></li>
+                                    <li><a href="#c-3-7-2">Discussion of Issue 7</a></li>
+                                    <li><a href="#c-3-7-3">Solution to Issue 7</a></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </li>
+                        <li><a href="#c-4">Conclusion</a></li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#bibliography">Bibliography</a></li>
+                        <li class="citation-link"><a href="#citation">Cite this article</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 order-1">
+               <article>
+                  <header>
+                     <h1>Letter Openers and Closers</h1>
+                     <p id="authors">Christian Forney, Susanne Haaf, Linda Kirsten<br> with contributions by Henry Seidel
+                     </p>
+                  </header>
+                  <section>
+                     
+                     <div class="chapter" id="c-1">
+                        <h2>Introduction</h2>
+                        
+                        <p id="1"><span class="paragraph-number">&nbsp;&nbsp;1</span>Letters and similar forms of written communication typically contain opening or closing
+                           passages which may include salutations and valedictions, signatures, date and place
+                           of origin, addresses, as well as further statements. As Nickisch (1991: 10) noted,
+                           the formal structure of a letter (usually comprising the basic components opening,
+                           letter content, and closing) is strongly related to oral communication. Opening and
+                           closing passages in letters mark the start and end of a communicative act and tend
+                           most likely to formalisation.
+                        </p>
+                        
+                        <p id="2"><span class="paragraph-number">&nbsp;&nbsp;2</span>The TEI module textstructure provides several elements to encode such phenomena:
+                        </p> 
+                        <blockquote>
+                           <p><span class="code">&lt;dateline&gt;</span> contains a brief description of the place, date, time, etc. of production of a letter,
+                              newspaper story, or other work, prefixed or suffixed to it as a kind of heading or
+                              trailer.
+                           </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html)</a></cite></blockquote>
+                        
+                        <blockquote>
+                           <p><span class="code">&lt;salute&gt;</span> (salutation) contains a salutation or greeting prefixed to a foreword, dedicatory
+                              epistle, or other division of a text, or the salutation in the closing of a letter,
+                              preface, etc.
+                           </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-salute.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-salute.html)</a></cite></blockquote>
+                        
+                        <blockquote>
+                           <p><span class="code">&lt;signed&gt;</span> (signature) contains the closing salutation, etc., appended to a foreword, dedicatory
+                              epistle, or other division of a text.
+                           </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html)</a></cite></blockquote>
+                        	
+                        <p id="3"><span class="paragraph-number">&nbsp;&nbsp;3</span>The descriptions of <span class="code">&lt;dateline&gt;</span>, <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span> imply semantic and structural meanings at the same time. The TEI Guidelines determine
+                           specific opportunities and restrict the use of those elements: Informally, all three
+                           function as block-level elements or so-called <i>chunks</i>.<a id="fn1" href="#note_fn1">[1]</a> Similar to paragraphs, they can appear directly within texts or divisions, but are
+                           usually not allowed within other chunks. In other words: They are siblings of paragraphs
+                           and children of text divisions.
+                        </p>
+                        
+                        <p id="4"><span class="paragraph-number">&nbsp;&nbsp;4</span>Furthermore, because <span class="code">&lt;dateline&gt;</span> and <span class="code">&lt;salute&gt;</span> are currently members of the model class <span class="code">model.divWrapper</span>, they can appear either at the top or bottom of a textual division. The element <span class="code">&lt;signed&gt;</span> is member of <span class="code">model.divBottomPart</span> and <span class="code">model.divTopPart</span>, therefore it can appear either at the beginning or end of a division. A consequence
+                           of this slightly different allocation is that <span class="code">&lt;signed&gt;</span> can be placed directly within <span class="code">&lt;postscript&gt;</span>, while <span class="code">&lt;dateline&gt;</span> and <span class="code">&lt;salute&gt;</span> need an intermediate <span class="code">&lt;opener&gt;</span> or <span class="code">&lt;closer&gt;</span> parent to exist within <span class="code">&lt;postscript&gt;</span>. In this respect, the use of <span class="code">&lt;signed&gt;</span> is less restricted than the use of <span class="code">&lt;dateline&gt;</span> and <span class="code">&lt;salute&gt;</span>.
+                        </p>
+                        
+                        <p id="5"><span class="paragraph-number">&nbsp;&nbsp;5</span>The elements <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> enable to group a sequence of opening or closing elements, either at the beginning
+                           (<span class="code">model.divTopPart</span>) or at the end (<span class="code">model.divBottomPart</span>) of a textual division. The elements <span class="code">&lt;dateline&gt;</span>, <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span> have been specifically added to its content models:
+                        </p>
+                        
+                        <blockquote>
+                           <p><span class="code">&lt;opener&gt;</span> groups together dateline, byline, salutation, and similar phrases appearing as a
+                              preliminary group at the start of a division, especially of a letter.
+                           </p><cite><a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-opener.html" target="_blank">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-opener.html)</a></cite></blockquote>
+                        
+                        <blockquote>
+                           <p><span class="code">&lt;closer&gt;</span> groups together salutations, datelines, and similar phrases appearing as a final
+                              group at the end of a division, especially of a letter.
+                           </p><cite><a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html" target="_blank">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html)</a></cite></blockquote>
+                        	
+                        <p id="6"><span class="paragraph-number">&nbsp;&nbsp;6</span>Finally, another item worth mentioning here because it is crucial in the context of
+                           epistolary documents is the <span class="code">&lt;address&gt;</span> element which is provided by the TEI module <i>core</i>:
+                        </p>
+                        
+                        <blockquote>
+                           <p><span class="code">&lt;address&gt;</span> contains a postal address, for example of a publisher, an organization, or an individual.
+                           </p><cite><a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-address.html" target="_blank">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-address.html)</a></cite></blockquote>
+                        
+                        <p id="7"><span class="paragraph-number">&nbsp;&nbsp;7</span>Regarding the location in a document, the element <span class="code">&lt;address&gt;</span> is less restricted than <span class="code">&lt;dateline&gt;</span>, <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span>. As a member of <span class="code">model.global</span> it can appear at any point within a TEI text. As they do in many cases, the TEI Guidelines
+                           provide different ways to encode the parts of a postal address: For one thing, they
+                           can be encoded primarily based on structural or renditional actualities as a sequence
+                           of address lines using <span class="code">&lt;addrLine&gt;</span>:
+                        </p>
+                        
+                        <blockquote>
+                           <p><span class="code">&lt;addrLine&gt;</span> (address line) contains one line of a postal address.
+                           </p><cite><a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-addrLine.html" target="_blank">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-addrLine.html)</a></cite></blockquote>
+                        	
+                        <p id="8"><span class="paragraph-number">&nbsp;&nbsp;8</span>Alternatively, the encoding of address parts can be more semantically oriented using
+                           component elements from <span class="code">model.addrPart</span>, such as <span class="code">&lt;postCode&gt;</span>, <span class="code">&lt;street&gt;</span> or <span class="code">&lt;state&gt;</span>.<a id="fn2" href="#note_fn2">[2]</a></p>
+                        
+                     </div>
+                     
+                     <div class="chapter" id="c-2">
+                        <h2>Encoding of Opener and Closer—State of the Art</h2>
+                        
+                        <p id="9"><span class="paragraph-number">&nbsp;&nbsp;9</span>This section illustrates possible applications of the elements introduced before and
+                           provides a simple example. The picture below shows a letter from the German physician
+                           Paul Gottlieb Werlhof (1699–1767) to his intimate, the polymath Albrecht von Haller
+                           (1708–1777). The letter is dated 22 July 1746 and is written on a folded sheet on
+                           two pages:
+                        </p>
+                        
+                        <figure><img src="img/openers-closers/img01.jpg"><figcaption>Example 1: Letter with typical correspondence-related text elements (source: Paul
+                              Gottlieb Werlhof to Albrecht von Haller, 22 July 1746, Burgerbibliothek Bern, Sign:
+                              N Albrecht von Haller 105.74, Werlhof, Paul Gottlieb: 901).
+                           </figcaption>
+                        </figure>
+                        
+                        <ul>
+                           <li>Werlhof's letter starts with an informal salutation (“Dear Friend”) clearly offset
+                              on the top-left side of the page. The saluting phrase is obviously distinct from the
+                              paragraphs making up the letter content. This layout of salutations is very common
+                              and can be found in many letters.
+                           </li>
+                           <li>Below the salutation, Werlhof wrote the letter content in prose using two paragraphs
+                              (in this example, the division into two paragraphs may not be obvious at a first glance).
+                              The paragraphs are slightly indented compared to the opening passage of the letter.
+                           </li>
+                           <li>The closing passage consists of different phrases of greeting, Werlhof's signature
+                              and the notification of date and place (the two latter make up a “dateline”). Again,
+                              this part is visually offset from the main paragraphs as a block. The closing elements
+                              are arranged as differently indented lines.
+                           </li>
+                           <li>On the left page the postal address was entered: It is centered in the middle of the
+                              page and arranged in horizontal format. The name of the recipient, title and place
+                              of residence are written in a rather formal manner and laid out over a number of lines.
+                           </li>
+                        </ul>
+                        
+                        <p id="10"><span class="paragraph-number">10</span>The following reveals one of several possibilities to encode the basic structure and
+                           semantics of this letter. This provides an opportunity to discuss the application
+                           of the elements introduced above (example 2). The transcriptions are taken from Otto
+                           Sonntag (2014):
+                        </p>
+                        
+                        <figure><pre><code class="language-xml">
+	&lt;div&gt;
+		&lt;opener&gt;
+			&lt;salute&gt;Dear Friend,&lt;/salute&gt;
+		&lt;/opener&gt;
+		&lt;p&gt;Come, when You can and please. &lt;persName&gt;Mecenas&lt;/persName&gt; shall be here again y&lt;hi rend="superscript"&gt;e&lt;/hi&gt; 28&lt;hi rend="superscript"&gt;th&lt;/hi&gt;. I hope for some Joy, hoping to see Your Face and to speak with You. But You will make some stay here, I think, and I will endeavour to steal some Moments for my Satisfaction. I am sorry for Your Polypes.&lt;/p&gt;
+		&lt;p&gt;Mons has surrender’d ye 11th, the Garrison Prisonners. The Defense has been realy as indifferent, as of ye other Places. No news worth ye while from Italy, nor from Scotland, nor any of ye french Fleet.&lt;/p&gt;
+		&lt;closer&gt;
+			&lt;salute&gt;I am with all my Heart&lt;lb/&gt;Dear Friend&lt;lb/&gt;Yours most faithfully&lt;/salute&gt;
+			&lt;signed&gt;Werlhof&lt;/signed&gt;
+			&lt;dateline&gt;H[annover] July 22&lt;lb/&gt;46.&lt;/dateline&gt;
+		&lt;/closer&gt;
+		&lt;address&gt;
+			&lt;addrLine&gt;à Monsieur&lt;/addrLine&gt;
+			&lt;addrLine&gt;Monsieur Haller&lt;/addrLine&gt;
+			&lt;addrLine&gt;conseiller aulique et&lt;lb/&gt;professeur roïal&lt;/addrLine&gt;
+			&lt;addrLine&gt;à&lt;lb/&gt;Göttingen&lt;/addrLine&gt;
+		&lt;/address&gt;
+	&lt;/div&gt;
+</code></pre><figcaption>Example 2: Otto Sonntag (ed.), Paul Gottlieb Werlhof's letters to Albrecht von Haller,
+                              vol. 1, Basel 2014, p. 1470f.
+                           </figcaption>
+                        </figure>
+                        
+                        <p id="11"><span class="paragraph-number">11</span>To get back to the opening part: The salutation is encoded with a <span class="code">&lt;salute&gt;</span>, which in turn is placed in an <span class="code">&lt;opener&gt;</span> grouping element. Apparently, it is not strictly necessary to group a single element
+                           and the TEI Guidelines would also allow the <span class="code">&lt;salute&gt;</span> to appear directly in the letter <span class="code">&lt;div&gt;</span>. However, in both cases the saluting phrase is encoded on <i>block-level</i>.
+                        </p>
+                        	
+                        <p id="12"><span class="paragraph-number">12</span>The letter content consists of two paragraphs, the main unit of prose texts.<a id="fn3" href="#note_fn3">[3]</a> In this example, the <span class="code">&lt;p&gt;</span> elements include text and some phrase-level elements. Some <span class="code">&lt;hi&gt;</span> elements have been applied to encode super- and subscript parts and a <span class="code">&lt;persName&gt;</span> element to mark the mentioning of a mutual friend of Werlhof and Haller (for brevity,
+                           not all names mentioned or characters emphasized have been encoded in this example).
+                        </p>
+                        	
+                        <p id="13"><span class="paragraph-number">13</span>A <span class="code">&lt;closer&gt;</span> groups the elements which form the closing part of the letter. <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span> have been applied to encode saluting phrases and the signature of the author. <span class="code">&lt;dateline&gt;</span> marks the letter date and the place of origin. One aspect worth pointing out here
+                           is the differentiation between <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span>. The difference is not immediately obvious insofar as both can contain salutations
+                           (compare the definitions of the two elements in the introduction).<a id="fn4" href="#note_fn4">[4]</a> While <span class="code">&lt;salute&gt;</span> is intended to encode a phrase containing a salutation, <span class="code">&lt;signed&gt;</span> is applied to phrases containing a signature and possibly some kind of salutation.<a id="fn5" href="#note_fn5">[5]</a> For that reason, the following is also a valid encoding:
+                           		<pre><code class="language-xml">&lt;salute&gt;I am with all my Heart&lt;lb/&gt;Dear Friend&lt;/salute&gt;
+			&lt;signed&gt;Yours most faithfully&lt;lb/&gt;Werlhof&lt;/signed&gt;</code></pre></p>
+                        
+                        <p id="14"><span class="paragraph-number">14</span>The postal address is encoded with an <span class="code">&lt;address&gt;</span> and a number of generic <span class="code">&lt;addrLine&gt;</span>. In this example, Haller's address in Göttingen is distributed over 6 distinct lines
+                           of text. Therefore, the simplest approach would be to apply six <span class="code">&lt;addrLine&gt;</span> elements. However, the encoding above includes only 5 <span class="code">&lt;addrLine&gt;</span>, but one of them additionally contains a linebreak element (<span class="code">&lt;lb&gt;</span>). This combination of <span class="code">&lt;addrLine&gt;</span> and <span class="code">&lt;lb&gt;</span> provides a possibility to group basic units (e.g. the title or the location) which
+                           are distributed over several lines within one element. In the case where <span class="code">&lt;addrLine&gt;</span> serves as a wrapper for elements which cannot appear in <span class="code">&lt;address&gt;</span> directly, this has clear advantages.
+                        </p>
+                        
+                        <p id="15"><span class="paragraph-number">15</span>Opening or closing parts of letters may contain phrases which do not really fit into
+                           the TEI elements allowed in <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span>. Although renditionally oriented, all child elements of <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> have a semantic meaning (e.g. it is a <i>salutation</i> or a <i>signature</i>). Of course, it should be stressed here that <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> can also contain text nodes. Therefore, encoders have the possibility to place text
+                           nodes directly in <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> on the <i>block-level</i>:
+                           	<pre><code class="language-xml">&lt;closer&gt;
+		Text which does not fit into existing categories […].
+		&lt;salute&gt;Best wishes,&lt;/salute&gt;
+		&lt;signed&gt;John&lt;/signed&gt;
+	&lt;/closer&gt;
+	</code></pre></p>
+                        
+                        <p id="16"><span class="paragraph-number">16</span>Nevertheless it is worth considering to allow paragraphs in <span class="code">&lt;opener&gt;</span> or <span class="code">&lt;closer&gt;</span>. This would provide a semantically more free element to encode opening or closing
+                           passages which do not fit into existing categories.
+                        </p>
+                     </div>
+                     
+                     <div class="chapter" id="c-3">
+                        <h2>Encoding Problems around Opener and Closer</h2>
+                        
+                        <div class="chapter" id="c-3-1">
+                           <h3>Issue 1: Salutations within Paragraphs</h3>
+                           
+                           <div class="chapter" id="c-3-1-1">
+                              <h4>Description of Issue 1</h4>
+                              <p id="17"><span class="paragraph-number">17</span>As already shown in the basic example, salutations placed above or below a letter
+                                 paragraph can be encoded straightforwardly with <span class="code">&lt;salute&gt;</span>. However, in practice, salutations could appear almost everywhere in a letter. In
+                                 particular, some are embedded within paragraphs, as in example 3, where a salutation
+                                 phrase (“O my dear Friend, […]”) occurs at the beginning of the first paragraph and
+                                 its first sentence:
+                              </p>
+                              
+                              <figure><img src="img/openers-closers/img02.jpg"><figcaption>Example 3: Inline salutation at the start of a paragraph (source: Paul Gottlieb Werlhof
+                                    to Albrecht von Haller, 8 Mai 1739, Burgerbibliothek Bern, Sign: N Albrecht von Haller
+                                    105.71, Werlhof, Paul Gottlieb: 248).
+                                 </figcaption>
+                              </figure>
+                              
+                              <p id="18"><span class="paragraph-number">18</span>Example 4 illustrates a salutation phrase (“[…] dear Friend […]”), which is integrated
+                                 in the first paragraph and moreover enclosed by parts of the first sentence (“Oh,
+                                 yes, […] that pure, sincere, godly, welldoing Soul […]”):
+                              </p>
+                              
+                              <figure><img src="img/openers-closers/img03.jpg"><figcaption>Example 4: Inline salutation embedded in a paragraph and enclosed by parts of the
+                                    first sentence (source: Paul Gottlieb Werlhof to Albrecht von Haller, 11 Juni 1742,
+                                    Burgerbibliothek Bern, Sign: N Albrecht von Haller 105.72, Werlhof, Paul Gottlieb:
+                                    539).
+                                 </figcaption>
+                              </figure>
+                              
+                              <p id="19"><span class="paragraph-number">19</span>Another letter is quoted in example 5, where John George I, Prince of Anhalt-Dessau
+                                 salutes his sister Dorothea Maria of Anhalt, Dessau in a typical and formal manner.
+                                 Here, the princely salutation appears even more clearly in the middle of the first
+                                 paragraph:
+                              </p>
+                              	
+                              <figure><pre><code class="language-xml">&lt;p&gt;Was wir auß bruderlichen Trewen, Ehren, Liebeß&lt;lb/&gt;
+	vnd gueteß vermugen zuuorn, Hochgeborne Fürſtin,&lt;lb/&gt;
+	freundtliche gelibte Frau Schweſter vnd Gefatterin,&lt;lb/&gt;
+	Auß E. L. an Vnnß den 3i Octobris Jungſthin ann&lt;lb/&gt;
+	Vnnß betrubtenn gethanenn Clagſchreiben, haben wir [...]&lt;/p&gt;</code></pre><figcaption>Example 5: John George I, Prince of Anhalt-Dessau to his sister Dorothea Maria of
+                                    Anhalt, Dessau, 6. November 1605 (LATh - HSt Weimar, Fürstenhaus A 552, fol. 216r)
+                                 </figcaption>
+                              </figure>
+                           </div>
+                           
+                           <div class="chapter" id="c-3-1-2">
+                              <h4>Discussion of Issue 1</h4>
+                              	
+                              <p id="20"><span class="paragraph-number">20</span>To encode salutatory phrases which are part of a paragraph bears difficulties. According
+                                 to the TEI Guidelines, <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;p&gt;</span> are both block-level and can not be placed inside each other. Because <span class="code">&lt;salute&gt;</span> is not allowed in <span class="code">&lt;p&gt;</span>, the following encoding would not be valid:<a id="fn6" href="#note_fn6">[6]</a></p>
+                              <pre><code class="language-xml">&lt;p&gt;&lt;salute&gt;O my dear Friend,&lt;/salute&gt; I remember not having received any news more delightful and charming to me, than that, which Your Letter of April […]&lt;/p&gt;</code></pre>
+                              	<p id="21"><span class="paragraph-number">21</span>The encoding of inline salutations has already been discussed by the TEI community.<a id="fn7" href="#note_fn7">[7]</a> As Lou Burnard pointed out, some correspondence-related elements such as <span class="code">&lt;salute&gt;</span> were originally designed for documents where such phrases are set-off visually from
+                                 other paragraphs.<a id="fn8" href="#note_fn8">[8]</a> As such, they cover the majority of use cases, but the restrictions do not comply
+                                 with deviating document structures.
+                              </p>
+                           </div>
+                           
+                           <div class="chapter" id="c-3-1-3">
+                              <h4>Solutions to Issue 1</h4>
+                              
+                              <p id="22"><span class="paragraph-number">22</span>(1) An editor may decide to cut off the phrase “O my dear Friend” in example 3 and
+                                 to encode it as a separate <span class="code">&lt;salute&gt;</span> above the leading paragraph:
+                                 <pre><code class="language-xml">&lt;salute&gt;O my dear Friend,&lt;/salute&gt;
+&lt;p&gt;I remember not having received any news more delightful and charming to me, than that, which Your Letter of April […]&lt;/p&gt;</code></pre>
+                                 This approach could be an appropriate simplification in some cases. In others it will
+                                 be unsatisfactory. For example, it would be inadequate in the context of a diplomatic
+                                 transcription to render the embedded saluting phrase offset the paragraph.</p>
+                              	
+                              <p id="23"><span class="paragraph-number">23</span>(2) A conceivable workaround is to use the attribute <span class="code">@rend</span> with value <span class="code">"inline"</span> (or a similar value) in <span class="code">&lt;salute&gt;</span> and to apply a <span class="code">&lt;div&gt;</span> element as a wrapper.<a id="fn9" href="#note_fn9">[9]</a> For example:
+                                 <pre><code class="language-xml">&lt;div&gt;&lt;salute rend="inline"&gt;O my dear Friend,&lt;/salute&gt; &lt;p&gt;I remember not having received […]&lt;/p&gt;&lt;/div&gt;</code></pre>
+                                 This may be a solution for saluting phrases embedded at the beginning or end of a
+                                 paragraph. But would this also work in case of example 4 and 5, where a salutatory
+                                 phrase is embedded within the first sentence?</p>
+                              
+                              <p id="24"><span class="paragraph-number">24</span>(3) We suggest to allow <span class="code">&lt;salute&gt;</span> in <span class="code">&lt;p&gt;</span> to enable a more flexible encoding of inline salutations. Technically <span class="code">&lt;salute&gt;</span> should become an inter-level element able to appear between block-level elements
+                                 or within them. Accordingly,  <span class="code">&lt;salute&gt;</span> should move from <span class="code">model.divWrapper</span> to <span class="code">model.inter</span> or an appropriate subclass. Additionally, it could be reasonable to move <span class="code">&lt;salute&gt;</span> from the TEI module <i>textstructure</i> to <i>core</i>. We assume this change will have no backwards-compatibility implications and will
+                                 lead to promising possibilities.
+                              </p>
+                           </div>
+                        </div> 
+                        
+                        <div class="chapter" id="c-3-2">
+                           
+                           <h3>Issue 2: Salutations within a Paragraph and the Following Closer</h3>
+                           
+                           <div class="chapter" id="c-3-2-1">
+                              <h4>Description of Issue 2</h4>
+                              <p id="25"><span class="paragraph-number">25</span>In issue 1 we discussed how salutations within paragraphs could be encoded under the
+                                 condition that the <span class="code">&lt;salute&gt;</span> tag is allowed within <span class="code">&lt;p&gt;</span>. There still exists, however, the problem of a salutation that starts within a paragraph
+                                 and continues in the <span class="code">&lt;closer&gt;</span>, or starts within the <span class="code">&lt;opener&gt;</span> and continues in the following paragraph.
+                              </p> 
+                              
+                              
+                              <p id="26"><span class="paragraph-number">26</span>In example 6 below, the letter writer closes with the greeting line „In herzlicher
+                                 Verehrung“ (With heartfelt admiration), which most editors would probably identify
+                                 as a standard letter closer and either encode as part of <span class="code">&lt;salute&gt;</span> or possibly <span class="code">&lt;signed&gt;</span>. The preceding paragraph, which contains the well wishes “Möge das hereinbrechende
+                                 milde Frühjahr alle Leiden von Ihnen fern halten.” (<i>May the upcoming mild spring keep all sorrows away from you.</i>), seems to be a less clear-cut case. While its personal message and position at the
+                                 end of the letter indicate that it belongs to the formal closing section, there are
+                                 a number of ways in which it can be interpreted:
+                              </p>
+                              
+                              
+                              <ul>
+                                 <li>as part of the letter closer,</li>
+                                 <li>as a salutation in itself within the letter body, separate from the following salutation
+                                    in the closing section,
+                                 </li>
+                                 <li>as a salutation within the letter body that is semantically related to the salutation
+                                    in the letter closer,
+                                 </li>
+                                 <li>as no salutation at all, at least not in the strict formal sense that allows for a
+                                    <span class="code">&lt;salute&gt;</span>-element to be applied.
+                                 </li>
+                              </ul>
+                              
+                              <p id="27"><span class="paragraph-number">27</span>The question of whether this paragraph belongs to the letter body or letter closer
+                                 (or both) cannot be resolved on the basis of layout alone, as it is not visually set
+                                 apart in a different manner than the preceding paragraphs or the following greeting
+                                 line, which from the layout perspective appears to be rather the final line of the
+                                 letter body than the first line of a separate closing section. The decision to categorize
+                                 this part of the letter therefore ultimately lies with the editor. In the following
+                                 section solutions for the second and third abovementioned interpretations, namely
+                                 that there is a salutation within the letter body separate from the closer, will be
+                                 examined.
+                              </p>
+                              
+                              
+                              
+                              	
+                              <figure><img src="img/openers-closers/img04.jpg"><figcaption>Example 6: Salutations in letter body and letter closer (source: <a href="https://digilib.bbaw.de/digitallibrary/digilib.html?fn=silo10/avhr/ehrenberg/IdNo282E20/&amp;pn=6" target="_blank">Christian Gottfried Ehrenberg to Alexander von Humboldt, 25 March 1858, p 3v</a>, Archiv der Berlin-Brandenburgischen Akademie der Wissenschaften; Shelfmark: NL C.
+                                    G. Ehrenberg, 676, fol. 19-22)
+                                 </figcaption>
+                              </figure>
+                           </div>
+                           
+                           
+                           <div class="chapter" id="c-3-2-2">
+                              <h4>Discussion of Issue 2</h4>
+                              
+                              <p id="28"><span class="paragraph-number">28</span>How structures as in example 6 should be encoded depends on one’s interpretation of
+                                 both salutations: do they form a semantic unit or should they be treated as two separate
+                                 sections? Taking into consideration these interpretations, there already seems to
+                                 exist a possible solution within the current TEI Guidelines:
+                              </p>
+                              
+                              <p id="29"><span class="paragraph-number">29</span>Both salutations could be encoded within <span class="code">&lt;closer&gt;</span>, either each in their own <span class="code">&lt;salute&gt;</span> element or both together in one single <span class="code">&lt;salute&gt;</span> element. If the first, the attribute <span class="code">@rend</span> with values <span class="code">"paragraph"</span> and <span class="code">"closer"</span> (or similar values) then could be added to the <span class="code">&lt;salute&gt;</span> elements to distinguish their original position.
+                              </p> 
+                              
+                              <pre><code class="language-xml">&lt;closer&gt;
+	&lt;salute rend="paragraph"&gt;Möge das hereinbrechende milde&lt;lb/&gt;
+	Frühjahr alle Leiden von Ihnen&lt;lb/&gt;
+	fern halten.&lt;/salute&gt;
+&lt;salute rend="closer"&gt;In herzlicher Verehrung&lt;/salute&gt;
+&lt;signed&gt;Ihr &lt;lb/&gt;ganz ergebenster &lt;lb/&gt;Ehrenberg&lt;/signed&gt;
+&lt;/closer&gt;</code></pre>
+                              
+                              	<p id="30"><span class="paragraph-number">30</span>Unfortunately, this way of encoding possibly misrepresents the actual layout of the
+                                 letter, and works more as a compromise under the restrictions in place. Although not
+                                 explicitly stated as such, the description of the <span class="code">&lt;closer&gt;</span>-tag strongly indicates that it is intended to be used for the encoding of visually
+                                 distinctive closing sections, separate from the letter body and its paragraphs.
+                              </p>
+                              
+                              
+                              <blockquote>
+                                 <p>“<span class="code">&lt;closer&gt;</span> groups together salutations, datelines, and similar phrases appearing as a final
+                                    group at the end of a division, especially of a letter.”
+                                 </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html)</a></cite></blockquote>
+                              
+                              <p id="31"><span class="paragraph-number">31</span>It is not necessarily wrong to apply this workaround, but can be unsatisfactory for
+                                 diplomatic transcriptions. To provide the editor with the option to correctly encode
+                                 the visual layout of the letter, we suggest the following solution.
+                              </p>
+                           </div>
+                           
+                           <div class="chapter" id="c-3-2-3">
+                              <h4>Solution to Issue 2</h4>
+                              
+                              <p id="32"><span class="paragraph-number">32</span>Given the option of placing <span class="code">&lt;salute&gt;</span> within <span class="code">&lt;p&gt;</span> as proposed in issue 1, the salutation in the letter body in example 6 can be encoded
+                                 as such, while the salutation in the formal closing part is placed within <span class="code">&lt;closer&gt;</span> as usual. In the rare case that the two salutations form a semantic unit and therefore
+                                 should be mapped to each other, the <span class="code">&lt;salute&gt;</span> elements can be linked by usage of the attributes <span class="code">@xml-id</span>, <span class="code">@prev</span> and <span class="code">@next</span>.
+                              </p>
+                              
+                              <pre><code class="language-xml">&lt;p&gt;[...]
+&lt;salute&gt;Möge das hereinbrechende milde &lt;lb/&gt;Frühjahr alle Leiden von Ihnen &lt;lb/&gt;fern halten.&lt;/salute&gt;
+&lt;/p&gt;
+&lt;closer&gt;
+&lt;salute&gt;In herzlicher Verehrung&lt;/salute&gt;
+&lt;signed&gt;Ihr &lt;lb/&gt;ganz ergebenster &lt;lb/&gt;Ehrenberg&lt;/signed&gt;
+&lt;/closer&gt;</code></pre>
+                              </div>
+                           
+                           
+                        </div>
+                        
+                        <div class="chapter" id="c-3-3">
+                           <h3>Issue 3: Different Types of Salutations and Signatures</h3>
+                           
+                           <div class="chapter" id="c-3-3-1">
+                              <h4>Description of Issue 3</h4>
+                              
+                              <p id="33"><span class="paragraph-number">33</span>Historical letters from the medieval and early modern period regularly contain complex
+                                 salutations and signatures whose form and mode of usage have been handed down over
+                                 centuries. They are similar to elements that can be found in modern letters but follow
+                                 rules which are stricter with regard to their order, content, and the position in
+                                 which they may appear. The range of elements typically included can be categorized
+                                 in the following way:
+                              </p>
+                              
+                              <ul>
+                                 <li><i>Intitulatio</i>,
+                                 </li>
+                                 <li>an often multipart salutation, consisting of a <i>formal salutation</i> and possibly a <i>family salutation</i>,
+                                 </li>
+                                 <li>a <i>provision of services</i>,
+                                 </li>
+                                 <li>a <i>blessing</i>,
+                                 </li>
+                                 <li>the <i>titles of nobility or profession</i>.
+                                 </li>
+                              </ul>
+                              
+                              
+                              <p id="34"><span class="paragraph-number">34</span>In a letter, these different kinds of salutations, reverences, and signatures can
+                                 be formally distinguished, for example by paragraphs or indentations. However, they
+                                 may also be merged into other textual parts (e.g. sentences) which themselves contain
+                                 information beyond those components.
+                              </p>
+                              
+                              <p id="35"><span class="paragraph-number">35</span>As an illustration of the types listed above, two extracts from letters are included
+                                 below, in which these elements can be determined as follows:
+                              </p>
+                              	
+                              <figure><pre><code class="language-xml">&lt;p&gt;Was wir auß bruderlichen Trewen, Ehren, Liebeß&lt;lb/&gt;
+vnd gueteß vermugen zuuorn, Hochgeborne Fürſtin,&lt;lb/&gt;
+freundtliche gelibte Frau Schweſter vnd Gefatterin,&lt;lb/&gt;
+Auß E. L. an Vnnß den 3i Octobris Jungſthin ann&lt;lb/&gt;
+Vnnß betrubtenn gethanenn Clagſchreiben, haben wir [...]&lt;/p&gt;</code></pre><figcaption>Example 7: John George I, Prince of Anhalt-Dessau to his sister Dorothea Maria of
+                                    Anhalt, Dessau, 6. November 1605 (LATh - HSt Weimar, Fürstenhaus A 552, fol. 216r)
+                                 </figcaption>
+                              </figure>
+                              
+                              	
+                              <ul>
+                                 <li><i>Provision of services:</i> “Was wir auß bruderlichen Trewen, Ehren, Liebeß vnd gueteß vermugen zuuorn,”
+                                 </li>
+                                 <li><i>Formal salutation:</i> “Hochgeborne Fürſtin,”
+                                 </li>
+                                 <li><i>Family salutation:</i> “freundtliche gelibte Frau Schweſter vnd Gefatterin,”
+                                 </li>
+                              </ul>
+                              
+                              	
+                              <figure><pre><code class="language-xml">&lt;p&gt;W. d. 22. &lt;hi rendition="#u"&gt;Sebtemb&lt;/hi&gt;&lt;lb/&gt;
+1679.&lt;lb/&gt;
+Durchlauchtiger Fürst&lt;lb/&gt;
+Gnädiger HochgeEhrter Herr Vatter&lt;lb/&gt;
+Ew gnd gehorsamste Tochter Erkühne mich&lt;lb/&gt;
+Aber mahl Ew gnd gnädiger Herr Vatter&lt;lb/&gt;
+mid dießen meinen ӱbelen Stihliesierten&lt;lb/&gt;
+Prifflein gehorsamst Auffzu warden, [...]&lt;lb/&gt;
+und deß vegen der guden hoffung leben&lt;lb/&gt;
+gnädigst ferlob zu bekomen, welches vier&lt;lb/&gt;
+den mid ferlangen Ervarden verde&lt;lb/&gt;
+und mich hier mid gehorsamst und bestens recom=&lt;lb/&gt;
+andiere Alß,&lt;lb/&gt;
+Ew. Gnad*.&lt;lb/&gt;
+gehorsame und&lt;lb/&gt;
+demütige&lt;lb/&gt;
+Tochter&lt;lb/&gt;
+A:D. HZS*&lt;/p&gt;</code></pre><figcaption>Example 8: Anna Dorothea of Saxe-Weimar, Abbess of Quedlinburg to her father, John
+                                    Ernest II, Duke of Saxe-Weimar, 22. September 1679 (LATh – HStAW, FH A 358 fol. 24r-25r;
+                                    transcription: Lühr et al. 2013: AD_JE2_1679_09_22.)
+                                 </figcaption>
+                              </figure>
+                              
+                              
+                              <h5>Opener:</h5>
+                              <ul>
+                                 <li><i>Date and place:</i> “W[eimar]. d[en]. 22. Sebtemb[er] 1679.”
+                                 </li>
+                                 <li><i>Formal salutation:</i> “Durchlauchtiger Fürst”
+                                 </li>
+                                 <li><i>Family salutation:</i> “Gnädiger HochgeEhrter Herr Vatter”
+                                 </li>
+                              </ul>
+                              
+                              
+                              <h5>Closer:</h5>
+                              <ul>
+                                 <li><i>Provision of services:</i> “und mich hier mid gehorsamst und bestens recomandiere Alß,”
+                                 </li>
+                                 <li><i>Provision of services:</i> “Ew. Gnad*. gehorsame und demütige”
+                                 </li>
+                                 <li><i>Intitulatio</i> 
+                                    	
+                                    <ul>
+                                       <li><i>with family status:</i> “Tochter”
+                                       </li>
+                                       <li><i>Handwritten signature:</i> “A[nna] D[orothea]”
+                                       </li>
+                                       <li><i>Titles of nobility:</i> “H[erzogin] Z[u] S[achsen]”
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                           
+                           <div class="chapter" id="c-3-3-2">
+                              <h4>Discussion of Issue 3</h4>
+                              
+                              
+                              <p id="36"><span class="paragraph-number">36</span>While being distinct in form and function, the different types of salutations and
+                                 signatures could all be easily encoded with the help of the <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span> tag. Problems arise when it comes to the specification of those broad categories.
+                                 Identifying a special type of salutation or signature might not be central in the
+                                 case of modern letters; in the investigation of earlier periods on the other hand,
+                                 researchers know of and work with an established terminology that was used at the
+                                 time of creation of the documents. The latin denominations of the elements listed
+                                 above are historically accurate descriptions and including them in the encoding might
+                                 make the transcriptions more useful for experts in the field.
+                              </p>
+                              
+                              
+                              <p id="37"><span class="paragraph-number">37</span>If the editor wishes to typify the salutations or signatures in the encoding, the
+                                 only feasible option under the current TEI Guidelines is the application of the element
+                                 <span class="code">&lt;seg&gt;</span>, which allows for the attributes <span class="code">@type</span> and <span class="code">@subtype</span>. <span class="code">&lt;seg&gt;</span> can then be utilized as child element of <span class="code">&lt;salute&gt;</span> or <span class="code">&lt;signed&gt;</span>, specifying them further with the help of <span class="code">@type</span>:
+                              </p>
+                              
+                              
+                              <p id="38"><span class="paragraph-number">38</span>(1) A multipart salutation
+                                 <pre><code class="language-xml">&lt;salute&gt;
+&lt;seg type="provision"&gt;Was wir auß bruderlichen Trewen, Ehren, Liebeß vnd gueteß vermugen zuuorn,&lt;/seg&gt;
+&lt;seg type="formal"&gt;Hochgeborne Fürſtin,&lt;/seg&gt;
+&lt;seg type="family"&gt;freundtliche gelibte Frau Schweſter vnd Gefatterin,&lt;/seg&gt;
+&lt;/salute&gt;</code></pre></p>
+                              
+                              
+                              <p id="39"><span class="paragraph-number">39</span>(2) A multipart signature
+                                 <pre><code class="language-xml">&lt;signed&gt;
+&lt;seg type="family_status"&gt;Tochter&lt;/seg&gt;
+&lt;seg type="name"&gt;A:D.&lt;/seg&gt;
+&lt;seg type="title_of_nobility"&gt;HZS*&lt;/seg&gt;
+&lt;/signed&gt;</code></pre></p> 
+                              
+                              
+                              <p id="40"><span class="paragraph-number">40</span>Combining <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;seg&gt;</span> can be practical for more complex salutatory structures, and we certainly don’t discourage
+                                 using both when this specific application of <span class="code">&lt;seg&gt;</span> is consistent with editorial guidelines and the tag is not generally overused. Utilizing
+                                 <span class="code">&lt;signed&gt;</span> and <span class="code">&lt;seg&gt;</span> in the same way in (2), however, demonstrates the possible difficulties with the
+                                 approach: The structure as a whole, a so-called <i>intitulatio</i>, is not encoded, or just broadly encoded as a signature. To indicate its category,
+                                 yet another <span class="code">&lt;seg&gt;</span> in place of the <span class="code">&lt;signed&gt;</span> tag would be necessary:
+                              </p> 
+                              
+                              <pre><code class="language-xml">&lt;seg type="intitulatio"&gt;
+&lt;seg type="family_status"&gt;Tochter&lt;/seg&gt;
+&lt;seg type="name"&gt;A:D.&lt;/seg&gt;
+&lt;seg type="title_of_nobility"&gt;HZS*&lt;/seg&gt;
+&lt;/seg&gt;</code></pre> 
+                              
+                              <p id="41"><span class="paragraph-number">41</span>Working in this manner, an editor would end up using a great variety of typified <span class="code">&lt;seg&gt;</span> elements for textual structures that are recognized and accounted for in the TEI
+                                 tagset. Heavily using <span class="code">&lt;seg&gt;</span> also might bear the risk of making the resulting XML code less accessible and transparent
+                                 to other researchers. Instead we suggest a solution that facilitates a wider range
+                                 of options to editors who wish to use <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span> for the kinds of text material it was intended for.
+                              </p>
+                           </div>
+                           	
+                           
+                           <div class="chapter" id="c-3-3-3">
+                              <h4>Solution to Issue 3</h4>
+                              
+                              <p id="42"><span class="paragraph-number">42</span>So far, the attribute <span class="code">@type</span> is not permitted in <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span>. As shown above, a variety of salutation and signature types exist and there may
+                                 well be many ways to categorize them. The possibility to freely categorize or type
+                                 salutations  and signatures would allow the investigation of new and interesting research
+                                 questions. From this perspective, we propose to include the attribute <span class="code">@type</span> in <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span>. To do so, <span class="code">&lt;salute&gt;</span> should become a member of the attribute class att.typed. We assume this change would
+                                 be unproblematic and valuable as well. Following this proposed change, an editor would
+                                 be able to encode a salutation’s type as follows:
+                              </p>
+                              <pre><code class="language-xml">&lt;salute type="formal"&gt;Durchlauchtiger Fürst&lt;/salute&gt;
+&lt;salute type="family"&gt;Gnädiger HochgeEhrter Herr Vatter&lt;/salute&gt;
+&lt;salute type="provision"&gt;Ew. Gnad*. gehorsame und demütige&lt;/salute&gt;</code></pre>
+                              
+                              <p id="43"><span class="paragraph-number">43</span>In cases such as the Intitulatio from Example 8, which in itself requires specification,
+                                 a typified <span class="code">&lt;seg&gt;</span> and <span class="code">&lt;signed&gt;</span> can then be combined in a very useful way:
+                              </p> 
+                              
+                              <pre><code class="language-xml">&lt;seg type="intitulatio"&gt;
+&lt;signed type="family_status"&gt;Tochter&lt;/signed&gt;
+&lt;signed type="name"&gt;A:D.&lt;/signed&gt;
+&lt;signed type="title_of_nobility"&gt;HZS*&lt;/signed&gt;
+&lt;/seg&gt;</code></pre>
+                              
+                              <p id="44"><span class="paragraph-number">44</span>Ideally, the <span class="code">&lt;seg&gt;</span>-element in the example at hand should be replaced by a semantically more fitting
+                                 <span class="code">&lt;signed&gt;</span>-tag:
+                              </p>
+                              	
+                              <pre><code class="language-xml">&lt;signed type="intitulatio"&gt;
+&lt;signed type="family_status"&gt;Tochter&lt;/signed&gt;
+&lt;signed type="name"&gt;A:D.&lt;/signed&gt;
+&lt;signed type="title_of_nobility"&gt;HZS*&lt;/signed&gt;
+&lt;/signed&gt;</code></pre>
+                              	
+                              <p id="45"><span class="paragraph-number">45</span>Using <span class="code">&lt;signed&gt;</span> in this manner, however, is not allowed under the current TEI Guidelines. Although
+                                 this is not the main problem in the discussion at hand, it might be worth to consider
+                                 lifting the restrictions on <span class="code">&lt;signed&gt;</span> to facilitate embedded structures. Having a more specific tag available for encoding
+                                 is often preferable to overusing <span class="code">&lt;seg&gt;</span>.
+                              </p>
+                              
+                              
+                           </div> 
+                           
+                        </div>
+                        
+                        <div class="chapter" id="c-3-4">
+                           
+                           <h3>Issue 4: Epigraph within Closer</h3>
+                           
+                           <div class="chapter" id="c-3-4-1">
+                              <h4>Description of Issue 4</h4>
+                              <p id="46"><span class="paragraph-number">46</span>Another element and member of the textstructure module which could be useful for letter
+                                 encoding is <span class="code">&lt;epigraph&gt;</span>. Although epigraphs in the sense of quotations typically appear on printed title
+                                 pages, they can be found in opening or closing passages of letters as well.
+                              </p>
+                              
+                              <p id="47"><span class="paragraph-number">47</span>The TEI Guidelines define <span class="code">&lt;epigraph&gt;</span> as follows:
+                              </p>
+                              
+                              <blockquote>
+                                 <p><span class="code">&lt;epigraph&gt;</span> contains a quotation, anonymous or attributed, appearing at the start or end of a
+                                    section or on a title page.
+                                 </p><cite><a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html" target="_blank">(https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html)</a></cite></blockquote>
+                              
+                              <p id="48"><span class="paragraph-number">48</span>As the description states, an epigraph appears at the start or end of a section or
+                                 on a title page. The element <span class="code">&lt;epigraph&gt;</span> is a member of <span class="code">model.divWrapper</span> and two further model classes (<span class="code">model.pLike.front</span> and <span class="code">model.titlepagePart</span>). Moreover, it is specifically added to the content model of <span class="code">&lt;opener&gt;</span>, but not to the content model of <span class="code">&lt;closer&gt;</span>. As a consequence, <span class="code">&lt;epigraph&gt;</span> can be grouped with <span class="code">&lt;opener&gt;</span>, but not with <span class="code">&lt;closer&gt;</span>.
+                              </p> 
+                           </div>
+                           
+                           <div class="chapter" id="c-3-4-2">
+                              <h4>Solution to Issue 4</h4>
+                              
+                              <p id="49"><span class="paragraph-number">49</span>We suggest to add <span class="code">&lt;epigraph&gt;</span> specifically to the content model of <span class="code">&lt;closer&gt;</span>. This would enable the encoding of epigraphs as a part of the closing passage of
+                                 a letter and would generally be more consistent.
+                              </p>
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="chapter" id="c-3-5">
+                           
+                           <h3>Issue 5: Signature within Paragraph</h3>
+                           
+                           <div class="chapter" id="c-3-5-1">
+                              <h4>Description of Issue 5</h4>
+                              
+                              <p id="50"><span class="paragraph-number">50</span>Signatures in letters are usually encoded in the <span class="code">&lt;signed&gt;</span> element. The <span class="code">&lt;signed&gt;</span> element is described in the TEI Guidelines as follows:
+                              </p>
+                              
+                              <blockquote>
+                                 <p><span class="code">&lt;signed&gt;</span> (signature) contains the closing salutation, etc., appended to a foreword, dedicatory
+                                    epistle, or other division of a text.
+                                 </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-signed.html)</a></cite></blockquote>
+                              	
+                              <p id="51"><span class="paragraph-number">51</span>It is currently part of the <span class="code">model.divTopPart</span> and <span class="code">model.divBottomPart</span> classes and therefore cannot be used to encode signatures found in the letter body.
+                                 While it is correct that they are commonly placed in separate sections at the end
+                                 of a letter, editors might be confronted with signatures of ambiguous placement. In
+                                 the example below, the signature „Ht“ in the bottom right corner of the page is placed
+                                 close enough to the preceding paragraph to be interpreted as formally a part of the
+                                 letter body.
+                              </p>
+                              
+                              	
+                              <figure><img src="img/openers-closers/img05.jpg"><figcaption>Example 9: Signature within paragraph (source: <a href="https://digilib.bbaw.de/digitallibrary/digilib.html?fn=silo10/avhr/ehrenberg/IdNo40/&amp;pn=4" target="_blank">Alexander von Humboldt to Christian Gottfried Ehrenberg, August 1833</a>, p. 2v, Archiv der Berlin-Brandenburgischen Akademie der Wissenschaften (Sign: NL
+                                    C. G. Ehrenberg, 421, fol. 71r-72v)
+                                 </figcaption>
+                              </figure>
+                              	
+                              <p id="52"><span class="paragraph-number">52</span>It is known from convention that signatures are usually meant as isolated sections,
+                                 but editors might prefer a diplomatic approach to transcription and rather encode
+                                 the evident material than the supposed, underlying one.
+                              </p>
+                              
+                           </div>
+                           
+                           <div class="chapter" id="c-3-5-2">
+                              <h4>Discussion of Issue 5</h4>
+                              
+                              <p id="53"><span class="paragraph-number">53</span>As already suggested in issue 1 for salutations within a paragraph, the attribute
+                                 <span class="code">@rend</span> with value <span class="code">"inline"</span> can be added to <span class="code">&lt;signed&gt;</span> in order to encode its original position in the letter body.
+                              </p>  
+                              <pre><code class="language-xml">&lt;p&gt;[...] Leben Zeit u Muth für höhere u edlere&lt;lb/&gt;Zwekke aufsparen muss.
+&lt;/p&gt;
+&lt;closer&gt;
+&lt;signed rend="inline"&gt;Ht&lt;/signed&gt;
+&lt;/closer&gt;</code></pre>
+                              	<p id="54"><span class="paragraph-number">54</span>This of course is unsatisfying for diplomatic transcriptions, since the <span class="code">&lt;signed&gt;</span> element is separated from the paragraph which it is a part of according to the visible
+                                 layout. While arguably such layout has not been intended by the writer, the editor
+                                 still might want the actual appearance to be reflected in the encoding.
+                              </p>
+                           </div>  
+                           
+                           <div class="chapter" id="c-3-5-3">
+                              <h4>Solution to Issue 5</h4>
+                              
+                              <p id="55"><span class="paragraph-number">55</span>We suggest to allow <span class="code">&lt;signed&gt;</span> within <span class="code">&lt;p&gt;</span>, just as proposed for <span class="code">&lt;salute&gt;</span> in the solution to issue 1. The element <span class="code">&lt;signed&gt;</span> is a member of both the classes <span class="code">model.divTopPart</span> and <span class="code">model.divBottomPart</span> and consequently limited to usage within <span class="code">&lt;opener&gt;</span>, <span class="code">&lt;closer&gt;</span>, and <span class="code">&lt;postscript&gt;</span>. Moving it to <span class="code">model.inter</span> or a similar model class would lift the restrictions and facilitate a more accurate
+                                 encoding of structures such as the example above:
+                              </p> 
+                              <pre><code class="language-xml">&lt;p&gt;[...] Leben Zeit u Muth für höhere u edlere&lt;lb/&gt;Zwekke aufsparen muss. &lt;signed&gt;Ht&lt;/signed&gt;
+&lt;/p&gt;</code></pre>
+                              <p id="56"><span class="paragraph-number">56</span>On top of that, <span class="code">&lt;signed&gt;</span> could be assigned to the module core instead of textstructure, as suggested for <span class="code">&lt;salute&gt;</span> in the solution to issue 1.
+                              </p>
+                           </div>
+                           
+                        </div>
+                        
+                        <div class="chapter" id="c-3-6">
+                           
+                           <h3>Issue 6: Dateline within Paragraph</h3>
+                           
+                           <div class="chapter" id="c-3-6-1">
+                              <h4>Description of Issue 6</h4>
+                              <p id="57"><span class="paragraph-number">57</span>Datelines in letters usually contain the place and date of writing. In most cases
+                                 they are placed at the top or bottom and the right or left corner of the letter paper.
+                                 The corresponding TEI tag <span class="code">&lt;dateline&gt;</span> is described as follows:
+                              </p>
+                              	
+                              <blockquote>
+                                 <p><span class="code">&lt;dateline&gt;</span> contains a brief description of the place, date, time, etc. of production of a letter,
+                                    newspaper story, or other work, prefixed or suffixed to it as a kind of heading or
+                                    trailer.
+                                 </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-dateline.html)</a></cite></blockquote>
+                              	
+                              <p id="58"><span class="paragraph-number">58</span><span class="code">&lt;dateline&gt;</span> is part of the <span class="code">model.divWrapper</span> class and, like <span class="code">&lt;salute&gt;</span>, can be placed either within <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> , or as a single element at the top or bottom of a <span class="code">&lt;div&gt;</span> element. The underlying assumption of this restriction is most likely that per convention,
+                                 datelines in letters form a semantic section of their own and therefore are visibly
+                                 set apart from other surrounding text, which is probably true for most cases. But,
+                                 as has been observed in the preceding issues for <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span>, not for all of them. In example 10 below, the dateline was written within the last
+                                 line of the letter body. Unlike the signature in example 9, which most likely appears
+                                 at the end of the letter body due to limited space for writing, in the letter at hand
+                                 the dateline could have been comfortably added below it. Accordingly, the choice of
+                                 placement might have been deliberate and even more so has to be taken into consideration
+                                 when it comes to encoding.
+                              </p>  
+                              
+                              <figure><img src="img/openers-closers/img06.jpg"><figcaption>Example 10: Dateline within paragraphsource: Pro Memoria from Heinrich Eberhard Balck
+                                    to Albrecht von Haller, 16 August 1753, Burgerbibliothek Bern, Sign: N Albrecht von
+                                    Haller 105.2, Balck, Heinrich Eberhard: 14.
+                                 </figcaption>
+                              </figure>
+                           </div>
+                           
+                           <div class="chapter" id="c-3-6-2">
+                              <h4>Discussion of Issue 6</h4>
+                              
+                              <p id="59"><span class="paragraph-number">59</span>Two arguments can be made against the interpretation of example 10 as a dateline within
+                                 the paragraph which has to be encoded as such. Firstly, the paragraph that presumably
+                                 contains the dateline might be read as part of the <span class="code">&lt;closer&gt;</span>, in the sense that visually it seems to belong to the letter body but at the same
+                                 time thematically it concludes the letter with a last key information. According to
+                                 this analysis, the above letter’s closing section can be encoded in the following
+                                 way:
+                              </p>
+                              <pre><code class="language-xml">&lt;closer&gt;
+Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. communiciren. 	
+&lt;dateline&gt;Hannover d. 16t Aug. 1753.&lt;/dateline&gt;
+&lt;salute&gt;an&lt;lb/&gt;H. Hoff-Rath&lt;lb/&gt;von Haller&lt;/salute&gt;	
+&lt;signed&gt;Balck.&lt;/signed&gt;
+&lt;/closer&gt;</code></pre>
+                              	<p id="60"><span class="paragraph-number">60</span>Of course, in this encoding the text before the dateline is unspecified, which is
+                                 fine with the TEI Guidelines, but might create inconsistencies in editions that generally
+                                 apply the <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> encoding with the corresponding tags <span class="code">&lt;dateline&gt;</span>, <span class="code">&lt;salute&gt;</span> and <span class="code">&lt;signed&gt;</span>. In addition to the editorial concerns, the unspecified text elements could conceivably
+                                 complicate the automatic analysis of the XML code for research. On top of that, there
+                                 is the problem of <span class="code">&lt;dateline&gt;</span> being a separate line, and not part of the paragraph anymore. Alternatively, the
+                                 last paragraph remains encoded as <span class="code">&lt;p&gt;</span>, while the dateline is placed in <span class="code">&lt;closer&gt;</span> as <span class="code">&lt;dateline&gt;</span> with the attribute <span class="code">@rend</span> and value <span class="code">"inline"</span>.
+                              </p> 
+                              <pre><code class="language-xml">&lt;p&gt;Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. communiciren.&lt;/p&gt;
+&lt;closer&gt;
+	&lt;dateline rend="inline"&gt;Hannover d. 16t Aug. 1753.&lt;/dateline&gt;
+	&lt;salute&gt;an&lt;lb/&gt;H. Hoff-Rath&lt;lb/&gt;von Haller&lt;/salute&gt;
+	&lt;signed&gt;Balck.&lt;/signed&gt;
+&lt;/closer&gt;</code></pre>
+                              
+                              <p id="61"><span class="paragraph-number">61</span>This solution still bears the problem that the text material in question is removed
+                                 from the paragraph where it had been placed in the original layout; it is therefore
+                                 not feasible for diplomatic transcriptions.
+                              </p> 
+                              
+                              <p id="62"><span class="paragraph-number">62</span>A second argument against an interpretation as a dateline within the letter body would
+                                 be that the text “Hannover d. 16t Aug. 1753” is not a dateline at all, but instead
+                                 a simple instance of a place and date mentioned, like in the encoding example below:
+                              </p>  
+                              <pre><code class="language-xml">&lt;p&gt;Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. Communiciren. &lt;name&gt;Hannover&lt;/name&gt; d. &lt;date&gt;16t Aug. 1753.&lt;/date&gt;&lt;/p&gt;
+&lt;closer&gt;
+	&lt;salute&gt;an&lt;lb/&gt;H. Hoff-Rath&lt;lb/&gt;von Haller&lt;/salute&gt;
+	&lt;signed&gt;Balck.&lt;/signed&gt;
+&lt;/closer&gt;</code></pre>
+                              
+                              <p id="63"><span class="paragraph-number">63</span>Yet, this categorization is a decision that should be left to the editor. For that
+                                 reason, an additional solution is proposed in the following section that provides
+                                 the editor the option to include <span class="code">&lt;dateline&gt;</span> in the paragraph.
+                              </p>
+                           </div>
+                           	
+                           <div class="chapter" id="c-3-6-3">
+                              <h4>Solution to Issue 6</h4>
+                              	
+                              <p id="64"><span class="paragraph-number">64</span>We suggest to allow <span class="code">&lt;dateline&gt;</span> within <span class="code">&lt;p&gt;</span> in order to facilitate diplomatic transcriptions of letters such as for example 10
+                                 above. On a formal level, <span class="code">&lt;dateline&gt;</span> should be able to behave like <span class="code">&lt;date&gt;</span> then.
+                              </p>
+                              		<pre><code class="language-xml">&lt;p&gt;Wegen der Cultur-Gelder wird H. Professor Michaelis mit Ew. Hochwollgeb. Communiciren.&lt;dateline&gt;Hannover d. 16t Aug. 1753.&lt;/dateline&gt;&lt;/p&gt;
+		&lt;closer&gt;
+			&lt;salute&gt;an&lt;lb/&gt;H. Hoff-Rath&lt;lb/&gt;von Haller&lt;/salute&gt;
+			&lt;signed&gt;Balck.&lt;/signed&gt;
+		&lt;/closer&gt;</code></pre>
+                              		<p id="65"><span class="paragraph-number">65</span>To this end, <span class="code">&lt;dateline&gt;</span> should be moved from the module <i>textStructure</i> to the module core, and from the class <span class="code">model.divWrapper</span> to <span class="code">model.inter</span>.
+                              </p>
+                           </div>
+                        </div>
+                        
+                        <div class="chapter" id="c-3-7">
+                           
+                           <h3>Issue 7: Dateline Written by a Different Hand</h3>
+                           
+                           <div class="chapter" id="c-3-7-1">
+                              <h4>Description of Issue 7</h4>
+                              <p id="66"><span class="paragraph-number">66</span>There are several scenarios in which other persons than a letter’s author might contribute
+                                 written text to it, a frequent one being when the author dictates the letter, and
+                                 someone else, for instance a secretary, does the actual writing. In those cases, the
+                                 author in his or her capacity as the official sender adds the signature and possibly
+                                 a salutation and dateline.
+                              </p>
+                           </div> 
+                           
+                           <div class="chapter" id="c-3-7-2">
+                              <h4>Discussion of Issue 7</h4> 
+                              
+                              <p id="67"><span class="paragraph-number">67</span>Currently the only possibility to encode the case that a dateline was written in a
+                                 different hand than the rest of the letter (or most of the letter) is using the milestone
+                                 element <span class="code">&lt;handShift&gt;</span>. All of the other opening and closing elements of letters (<span class="code">&lt;signed&gt;</span>, <span class="code">&lt;salute&gt;</span>, <span class="code">&lt;closer&gt;</span>, <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;postscript&gt;</span>) can receive the attribute <span class="code">@hand</span>; <span class="code">&lt;dateline&gt;</span> is uniquely excluded. The TEI Guidelines do not clarify in which cases the attribute
+                                 <span class="code">@hand</span>, and in which cases the element <span class="code">&lt;handShift&gt;</span> is preferred. The description of <span class="code">&lt;handShift&gt;</span> states:
+                              </p>
+                              
+                              <blockquote>
+                                 <p>The handShift element may be used either to denote a shift in the document hand (as
+                                    from one scribe to another, on one writing style to another). Or, it may indicate
+                                    a shift within a document hand, as a change of writing style, character or ink. Like
+                                    other milestone elements, it should appear at the point of transition from some other
+                                    state to the state which it describes.
+                                 </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-handShift.html" target="_blank">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-handShift.html)</a></cite></blockquote>
+                              
+                              <p id="68"><span class="paragraph-number">68</span><span class="code">&lt;handShift&gt;</span> is probably most appropriately employed when several shifts within a document happen,
+                                 and the shifts are distributed in such a way that they cross the limits of elements
+                                 and, therefore, require a milestone element to be encoded in XML at all, or the shifts
+                                 take place in the middle of a text-containing element.
+                              </p>  
+                              
+                              <p id="69"><span class="paragraph-number">69</span>If, on the other hand, a text-containing element is entirely written by a different
+                                 scribe, although <span class="code">&lt;handShift&gt;</span> being a formally correct option, using the attribute <span class="code">@hand</span> is a more practical approach. <span class="code">&lt;dateline&gt;</span> could be indirectly encoded as written by a different hand by adding <span class="code">@hand</span> to the surrounding <span class="code">&lt;opener&gt;</span> or <span class="code">&lt;closer&gt;</span> element. Yet this solution might turn out to be unreliable for the editorial practice
+                                 in cases where the <span class="code">&lt;opener&gt;</span> or <span class="code">&lt;closer&gt;</span> includes text which has been written by the same scribe as the majority of the letter
+                                 (e.g. a salutation).
+                              </p>
+                           </div>
+                           
+                           <div class="chapter" id="c-3-7-3">
+                              <h4>Solution to Issue 7</h4>
+                              
+                              <p id="70"><span class="paragraph-number">70</span><span class="code">&lt;dateline&gt;</span> should be able to receive the attribute <span class="code">@hand</span>. This change could help to ensure consistency in both individual editions’ transcription
+                                 practice and the TEI Guidelines.
+                              </p> 
+                              	
+                              <p id="71"><span class="paragraph-number">71</span>It is worth mentioning that the issue at hand has been discussed in <a href="https://github.com/TEIC/TEI/issues/481" target="_blank">Issue #481 of the TEI GitHub repository</a>, where it even has been suggested to allow the attribute <span class="code">@hand</span> in all text-containing elements.
+                              </p>
+                           </div>
+                           
+                        </div>
+                        
+                     </div>
+                     
+                     <div class="chapter" id="c-4">
+                        <h2>Conclusion</h2>
+                        
+                        <p id="72"><span class="paragraph-number">72</span>In this article, we discussed usage scenarios for opening and closing elements in
+                           TEI documents and problems with existing restrictions of the TEI Guidelines.
+                        </p>
+                        
+                        <p id="73"><span class="paragraph-number">73</span>The TEI elements provided to structure the opening and closing passages of letters,
+                           namely <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> as well as their possible child elements <span class="code">&lt;salute&gt;</span>, <span class="code">&lt;signed&gt;</span>, and <span class="code">&lt;dateline&gt;</span>, are all defined not only by their semantic meaning but also by layout specifics
+                           in the text: they are all considered block text passages separated from the letter
+                           body. While the elements <span class="code">&lt;opener&gt;</span> and <span class="code">&lt;closer&gt;</span> may well fit such layout constraints, the elements representing salutations, signatures,
+                           or datelines should become less restricted regarding their location in the TEI document.
+                           In fact, there are many examples for letters where salutations, signatures or datelines
+                           are part of the first or last paragraphs or even appear in the middle of opening and
+                           closing sentences. 
+                        </p>
+                        
+                        <p id="74"><span class="paragraph-number">74</span>Furthermore, we propose wider usage options for the element <span class="code">&lt;epigraph&gt;</span>, as epigraphs may appear not only at the beginning but also at the end of letters.
+                        </p> 
+                        
+                        <p id="75"><span class="paragraph-number">75</span>Finally, some changes to the attribute selection of the elements discussed here were
+                           considered in order to allow for the distinction between different types of signatures
+                           and salutations as well as different writer’s hands for datelines.
+                        </p>
+                        
+                     </div>
+                     
+                     
+                  </section>
+                  <div id="notes">
+                     <h2>Notes</h2>
+                     <ul>
+                        <li><a id="note_fn1" class="note-number" href="#fn1">[1]</a>See <a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ST.html#STBTC" target="_blank">https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ST.html#STBTC</a> for a concise description of the informal TEI element classifications.
+                        </li>
+                        <li><a id="note_fn2" class="note-number" href="#fn2">[2]</a>See <a href="See https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/CO.html#CONAAD">https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/CO.html#CONAAD</a></li>
+                        <li><a id="note_fn3" class="note-number" href="#fn3">[3]</a>Paragraphs belong to the elements available in all TEI documents and are described
+                           in detail in <a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/CO.html" target="_blank">Chapter 3 of the TEI P5 Guidelines</a>.
+                        </li>
+                        <li><a id="note_fn4" class="note-number" href="#fn4">[4]</a>See discussion <a href="http://tei-l.970651.n3.nabble.com/signed-vs-salute-td2350146.html#a2350165" target="_blank">http://tei-l.970651.n3.nabble.com/signed-vs-salute-td2350146.html#a2350165</a>.
+                        </li>
+                        <li><a id="note_fn5" class="note-number" href="#fn5">[5]</a>See comment <a href="http://tei-l.970651.n3.nabble.com/signed-vs-salute-tp2350146p2350152.html" target="_blank">http://tei-l.970651.n3.nabble.com/signed-vs-salute-tp2350146p2350152.html</a>.
+                        </li>
+                        <li><a id="note_fn6" class="note-number" href="#fn6">[6]</a>The transcriptions of this letter are taken from Otto Sonntag (ed.), Paul Gottlieb
+                           Werlhof's letters to Albrecht von Haller, vol. 1, p. 666.
+                        </li>
+                        <li><a id="note_fn7" class="note-number" href="#fn7">[7]</a>See discussion <a href="http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935.html" target="_blank">http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935.html</a>. Possible adjustments have been postponed.
+                        </li>
+                        <li><a id="note_fn8" class="note-number" href="#fn8">[8]</a>See comment <a href="http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025937.html" target="_blank">http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025937.html</a>.
+                        </li>
+                        <li><a id="note_fn9" class="note-number" href="#fn9">[9]</a>See comment <a href="http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025939.html" target="_blank">http://tei-l.970651.n3.nabble.com/Salute-within-paragraph-tp4025935p4025939.html</a>.
+                        </li>
+                     </ul>
+                  </div>
+                  <div id="bibliography">
+                     <h2>Bibliography</h2>
+                     <ul>
+                        <li>Paul Gottlieb Werlhof's letters to Albrecht von Haller. Volume 1. Edited by Otto Sonntag.
+                           Volume 1. Basel: Schwabe, 2014 (=Studia Halleriana 11/1).<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/F3GYDAIN" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Paul%20Gottlieb%20Werlhof's%20letters%20to%20Albrecht%20von%20Haller&amp;rft.place=Basel&amp;rft.publisher=Schwabe&amp;rft.series=Studia%20Halleriana&amp;rft.aufirst=Otto&amp;rft.aulast=Sonntag&amp;rft.au=Otto%20Sonntag&amp;rft.date=2014"></span></li>
+                        <li>Nickisch, Reinhard M. G.: Brief, Stuttgart 1991.<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/J6SVV3D4" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Brief&amp;rft.place=Stuttgart&amp;rft.aufirst=Reinhard%20M.%20G.&amp;rft.aulast=Nikisch&amp;rft.au=Reinhard%20M.%20G.%20Nikisch&amp;rft.date=1991"></span></li>
+                        <li>TEI Consortium, eds. TEI P5: Guidelines for Electronic Text Encoding and Interchange.
+                           Version 3.6.0. Last updated on 16th July 2019. TEI Consortium. <a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html" target="_blank">https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html</a> (last accessed: 10th January 2020).<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/A3F94BIQ" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Headers%2C%20Footers%2C%20and%20Similar%20Matter&amp;rft.btitle=TEI%20P5%3A%20Guidelines%20for%20Electronic%20Text%20Encoding%20and%20Interchange.&amp;rft.edition=Version%203.6.0&amp;rft.aulast=TEI%20Consortium&amp;rft.au=TEI%20Consortium&amp;rft.date=2019&amp;rft.pages=419%E2%80%93420&amp;rft.spage=419&amp;rft.epage=420"></span></li>
+                        <li>Lühr Rosemarie, Faßhauer Vera, Prutscher Daniela, Seidel Henry (eds.): Fuerstinnenkorrespondenz
+                           1.1 (Version 1.1). Universität Jena 2013. https://doi.org/10.34644/laudatio-repository-H2hDmGoB6bp_h9Na8c2R_1557384256.<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/4PGN9LJG" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=F%C3%BCrsteninnenkorrespondenz&amp;rft.place=Jena&amp;rft.publisher=Universit%C3%A4t%20Jena&amp;rft.edition=Version%201.1&amp;rft.aufirst=Rosemarie&amp;rft.aulast=L%C3%BChr&amp;rft.au=Rosemarie%20L%C3%BChr&amp;rft.au=Vera%20Fa%C3%9Fhauer&amp;rft.au=Daniela%20Prutscher&amp;rft.au=Henry%20Seidel&amp;rft.date=2013"></span></li>
+                     </ul>
+                  </div>
+                  <div class="card" id="citation">
+                     <div class="card-body">
+                        <h4 class="card-title">Citation</h4>Christian Forney, Susanne Haaf, Linda Kirsten: Letter Openers and Closers. In: Encoding Correspondence. A Manual for encoding letters and postcards in TEI-XML
+                        and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.
+                        URL: <a href="https://encoding-correspondence.bbaw.de/v1/openers-closers.html">https://encoding-correspondence.bbaw.de/v1/openers-closers.html</a> URN:&nbsp;<a href="https://nbn-resolving.org/urn:nbn:de:kobv:b4-20200110163801810-3945310-7">urn:nbn:de:kobv:b4-20200110163801810-3945310-7</a><p class="download-link"><i class="fa fa-download"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence">Download TEI-XML source of this article on GitHub</a></p>
+                     </div>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </div>
+      <footer class="d-print-none">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <h4>Publication</h4>
+                  <p>Encoding Correspondence. A Manual for encoding letters and postcards in TEI-XML and
+                     DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.
+                  </p>
+                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.
+                  </p>
+                  <p><a href="legal.html">Legal notice &amp; privacy</a></p>
+               </div>
+               <div class="col-md-4">
+                  <h4>Licence</h4>
+                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+                  </p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
+               <div class="col-md-4">
+                  <h4>Kindly supported by</h4>
+                  <ul>
+                     <li><a href="https://www.clarin-d.net/en/" target="_blank">CLARIN-D</a></li>
+                     <li><a href="https://tei-c.org/activities/sig/correspondence/" target="_blank">TEI Correspondence SIG</a></li>
+                     <li><a href="http://www.bbaw.de/en/" target="_blank">Berlin-Brandenburg Academy of Sciences and Humanities</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer><script src="libs/jquery/jquery-3.3.1.slim.min.js"></script><script src="libs/popper.js/popper.min.js"></script><script src="libs/bootstrap-4.3.1/js/bootstrap.min.js"></script><script src="libs/prism/prism.js"></script><script src="https://hypothes.is/embed.js" async></script><script>
+                    $(function () {
+                        $("[data-toggle='popover']").popover({
+                            html : true,
+                            trigger: 'focus',
+                            content: function() {
+                                var content = $(this).attr("data-popover-content");
+                                return $(content).children(".popover-body").html();
+                            }
+                        });
+                    })
+                </script></body>
+</html>

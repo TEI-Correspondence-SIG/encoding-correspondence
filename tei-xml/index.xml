@@ -42,6 +42,14 @@
                <listBibl>
                   <head>Latest Articles</head>
                   <bibl>
+                     <title><ref target="addresses.xml">Adresses</ref></title>
+                     <author>Marjam Trautmann</author> 
+                  </bibl>
+                  <bibl>
+                     <title><ref target="stamps-seals-postmarks.xml">Postage stamps, seals, and postmarks</ref></title>
+                     <author>Josephine Obert, Marjam Trautmann</author>
+                  </bibl>
+                  <bibl>
                      <title><ref target="CMIF.xml">Correspondence Metadata Interchange
                         Format</ref></title>
                      <author>Stefan Dumont, Ingo Börne, Jonas Müller-Laackman, Dominik Leipold,
@@ -68,13 +76,13 @@
                <p>This manual will be continuously supplemented by further articles. In preparation are among others:</p>
                <listBibl>
                   <bibl>
-                     <title>Addresses</title>
-                     <author>Marjam Trautmann</author> 
+                     <title>Attachments</title>
+                     <author>Julian Jarosch</author>
                   </bibl>
                   <bibl>
-                  <title>Postage stamps, seals, and postmarks</title>
-                  <author>Josephine Obert, Marjam Trautmann</author>
-               </bibl>
+                     <title>Encoding uncertainties in metadata</title>
+                     <author>Peter Dängeli, Isabella Hödl-Notter, Timo Steyer</author>
+                  </bibl>
                </listBibl>
             </div>
          </div>

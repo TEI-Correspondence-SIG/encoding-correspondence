@@ -59,7 +59,7 @@
                   <surname>Hödl-Notter</surname>
                </persName>
                <note>Isabella Hödl-Notter is a doctoral student at LMU Munich. Since 2015 she has
-                  beem a member of the digital edition of the correspondence between Archduke
+                  been a member of the digital edition of the correspondence between Archduke
                   Leopold Wilhelm and his brother the Emperor Ferdinand II. and the online-editing
                   platform "Squirrel" at LMU.</note>
             </person>
@@ -121,6 +121,17 @@
                   Special Interest Group Correspondence since 2014. Sabine received her PhD from
                   Humboldt University Berlin with a study on the history of philology in the 19th
                   century.</note>
+            </person>
+            <person xml:id="trautmann">
+               <persName>
+                  <forename>Marjam</forename>
+                  <surname>Trautmann</surname>
+               </persName>
+               <note>Marjam Trautmann is a research associate at the Digital Academy in
+                  Mainz, the department for Digital Humanities at the Academy of Sciences
+                  and Literature Mainz. She is co-publisher of the STURM-Edition
+                  (<ref target="https://sturm-edition.de">sturm-edition.de</ref>) and works on a
+                     doctoral thesis on networks of the historical avant-garde.</note>
             </person>
          </listPerson>
       </body>

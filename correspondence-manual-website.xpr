@@ -110,14 +110,6 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
-                                    <String>6/jats/jats.framework/JATSKit - NISO JATS and NLM BITS</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
                                     <String>6/kml/kml.framework/KML</String>
                                 </field>
                                 <field name="enable">

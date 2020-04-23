@@ -113,8 +113,10 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                        <a class="dropdown-item" href="addresses.html">Addresses</a>
                                         <a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a>
                                         <a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a>
+                                        <a class="dropdown-item" href="stamps-seals-postmarks.html">Postage Stamps, Seals, and Postmarks</a>
                                         <a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a>
                                         <a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a>
                                     </div>

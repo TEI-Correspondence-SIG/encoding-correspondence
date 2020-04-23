@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="stamps-seals-postmarks">
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="stamps-seals-postmarks">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -10,11 +9,9 @@
          <publicationStmt>
             <publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
             <date when="2020-03-05"/>
-            <idno type="urn">urn:nbn:de:kobv:b4-20200421172336303-8613365-9 wurde registriert</idno>
-            <idno type="url"
-               >https://encoding-correspondence.bbaw.de/v1/stamps-seals-postmarks.html</idno>
-            <idno type="zotero"
-               >https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/NMRZD7DC</idno>
+            <idno type="urn">urn:nbn:de:kobv:b4-20200421172336303-8613365-9</idno>
+            <idno type="url">https://encoding-correspondence.bbaw.de/v1/stamps-seals-postmarks.html</idno>
+            <idno type="zotero">https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/NMRZD7DC</idno>
          </publicationStmt>
          <seriesStmt>
             <title type="main">Encoding Correspondence.</title>
@@ -39,9 +36,9 @@
    </teiHeader>
    <text>
       <body>
-         <div>
+         <div xml:id="c-1">
             <head>Introduction</head>
-            <p>Next to addresses and pre-printed parts, a topic that often seems to be neglected
+            <p n="1">Next to addresses and pre-printed parts, a topic that often seems to be neglected
                within the TEI universe are the additional parts of information found on envelopes or
                postcards, like stamps, seals, and postmarks. Seals are specifically chosen by the
                sender and, thus, can tell us a lot about them. Postmarks and postage stamps,
@@ -53,50 +50,43 @@
                are not included, a lot of relevant information about the document in question could
                be missed.</p>
          </div>
-         <div>
+         <div xml:id="c-2">
             <head>Postage stamps</head>
-            <div>
-               <p>The TEI Guidelines do list an element called <gi>stamp</gi> that "<quote>contains
-                     a word or phrase describing a stamp or similar device</quote>"<note><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html"
-                        >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html</ref>.
+            <div xml:id="c-2-1">
+               <p n="2">The TEI Guidelines do list an element called <gi>stamp</gi> that "<quote>contains
+                     a word or phrase describing a stamp or similar device</quote>"<note n="1" xml:id="fn1"><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html</ref>.
                   </note>. This element, however, usually refers to armorial stamps or rubber
                   stamps. But when encoding envelopes or postcards, taking postal stamps into
                   consideration is often inevitable.</p>
                <figure>
                   <head>Example 1: Postcard with stamps (source: Swiss-German picture postcard
-                     corpus ANKO, <ref
-                        target="https://www.ds.uzh.ch/de/projekte/ansichtskartenprojekt"
-                        >https://www.ds.uzh.ch/de/projekte/ansichtskartenprojekt/</ref>).</head>
+                     corpus ANKO, <ref target="https://www.ds.uzh.ch/de/projekte/ansichtskartenprojekt">https://www.ds.uzh.ch/de/projekte/ansichtskartenprojekt/</ref>).</head>
                   <graphic url="../images/stamps-seals-postmarks/example1.png"/>
                </figure>
             </div>
-            <div>
+            <div xml:id="c-2-2">
                <head>Approach 1: Postage stamps within the <gi>text</gi> element</head>
-               <p>If the stamps are to be included within the <gi>text</gi> element, a suitable
+               <p n="3">If the stamps are to be included within the <gi>text</gi> element, a suitable
                   encoding might be the use of the <gi>figure</gi> element with a @type, such as
                      <gi>figure</gi> type="postage-stamp". However, it has to be noted that the
                   given definition is not really what we are looking for: "<quote><gi>figure</gi>
                      groups elements representing or containing graphic information such as an
-                     illustration, formula, or figure</quote>"<note><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html"
-                        >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html</ref>.
+                     illustration, formula, or figure</quote>"<note n="2" xml:id="fn2"><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html</ref>.
                   </note>.</p>
-               <p>As mentioned above, the element <gi>stamp</gi> does already exist but is rather
+               <p n="4">As mentioned above, the element <gi>stamp</gi> does already exist but is rather
                   used for rubber stamps. A convenient addition could therefore be the expansion of
                   the description and usage of the <gi>stamp</gi> element to include postal stamps
                   as well.</p>
             </div>
-            <div>
+            <div xml:id="c-2-3">
                <head>Approach 2: Postage stamps within the meta data</head>
-               <p>Understanding postage stamps as part of the meta data could be another proposal.
+               <p n="5">Understanding postage stamps as part of the meta data could be another proposal.
                   An adequate place to put them could be the <gi>objectType</gi> element, for
                   example within the <gi>physDesc</gi> element. This way it can be stated that one
                   or several stamps are present in the given document. It is also easily possible to
                   add the text written on the stamp, as well as any other information required such
                   as the motive or value.</p>
-               <p>A possible encoding of example 1 might look like this: <egXML
-                     xmlns="http://www.tei-c.org/ns/Examples">
+               <p n="6">A possible encoding of example 1 might look like this: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <msDesc>
                         <physDesc>
                            <p><idno type="postcard">101030</idno>
@@ -121,9 +111,9 @@
                      </msDesc>
                   </egXML></p>
             </div>
-            <div>
+            <div xml:id="c-2-4">
                <head>Postage stamps: Conclusion</head>
-               <p>By the current status, there is no uncomplicated way to incorporate postage stamps
+               <p n="7">By the current status, there is no uncomplicated way to incorporate postage stamps
                   inside the <gi>text</gi> element. It also seems unnecessary to invent a new
                   element specifically for those—considering that a <gi>stamp</gi> element already
                   exists. Therefore the proposal to solve this problem would either be to expand the
@@ -133,21 +123,17 @@
                   motive.</p>
             </div>
          </div>
-         <div>
+         <div xml:id="c-3">
             <head>Seals</head>
-            <div>
-               <p>A similar issue is the topic of seals: There is the option to encode them in the
+            <div xml:id="c-3-1">
+               <p n="8">A similar issue is the topic of seals: There is the option to encode them in the
                   header via <gi>sealDesc</gi> (within <gi>physDesc</gi>), which "<quote>describes
-                     the seals or similar items related to the object described</quote>"<note><ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sealDesc.html"
-                     />.</note>. It is even possible to specify the @type and @subtype of the seal
+                     the seals or similar items related to the object described</quote>"<note n="3" xml:id="fn3"><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sealDesc.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sealDesc.html</ref>.</note>. It is even possible to specify the @type and @subtype of the seal
                   as well as describing it along with other desired information such as the date,
                   owner and a description.</p>
                <figure>
                   <head>Example 2: Seal on an envelope for a letter (source: Clara Schumann to
-                     Hedwig von Holstein, 18 June 1886, <ref
-                        target="https://www.deutsche-digitale-bibliothek.de/item/SD5BCK2IF4HNMI5AYZHYDRD4YIOZJ6S7"
-                        >https://www.deutsche-digitale-bibliothek.de/item/SD5BCK2IF4HNMI5AYZHYDRD4YIOZJ6S7</ref>).</head>
+                     Hedwig von Holstein, 18 June 1886, <ref target="https://www.deutsche-digitale-bibliothek.de/item/SD5BCK2IF4HNMI5AYZHYDRD4YIOZJ6S7">https://www.deutsche-digitale-bibliothek.de/item/SD5BCK2IF4HNMI5AYZHYDRD4YIOZJ6S7</ref>).</head>
                   <graphic url="../images/stamps-seals-postmarks/example2.png"/>
                </figure>
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><physDesc>
@@ -160,12 +146,10 @@
                </egXML>
                <figure>
                   <head>Example 3: Three seals on a letter (source: Adelbert von Chamisso to Louis
-                     de La Foye, 26 June 1804, <ref
-                        target="https://www.berliner-intellektuelle.eu/manuscript?Brief005ChamissoandeLaFoye+en#2"
-                        >https://www.berliner-intellektuelle.eu/manuscript?Brief005ChamissoandeLaFoye+en#2</ref>).</head>
+                     de La Foye, 26 June 1804, <ref target="https://www.berliner-intellektuelle.eu/manuscript?Brief005ChamissoandeLaFoye+en#2">https://www.berliner-intellektuelle.eu/manuscript?Brief005ChamissoandeLaFoye+en#2</ref>).</head>
                   <graphic url="../images/stamps-seals-postmarks/example3.png"/>
                </figure>
-               <p>A possible encoding of the seals in example 3 might look like this:</p>
+               <p n="9">A possible encoding of the seals in example 3 might look like this:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><physDesc>
                      <sealDesc>
                         <seal n="1">
@@ -184,7 +168,7 @@
                      </sealDesc>
                   </physDesc>
                </egXML>
-               <p>Such an encoding is both sufficient and reasonable, and putting the encoding of
+               <p n="10">Such an encoding is both sufficient and reasonable, and putting the encoding of
                   seals within the <gi>text</gi> element can be dismissed. Seals, just as postage
                   stamps, do not really belong to the text flow and, therefore, do not need an
                   element of their own within the text. If insisted upon, the element
@@ -215,10 +199,10 @@
                </egXML>
             </div>
          </div>
-         <div>
+         <div xml:id="c-4">
             <head>Postmarks</head>
-            <div>
-               <p>Postmarks provide information about the place and date of shipping of the letter.
+            <div xml:id="c-4-1">
+               <p n="11">Postmarks provide information about the place and date of shipping of the letter.
                   This information can be found in the <gi>correspAction</gi> element of the
                      <gi>teiHeader</gi>. Furthermore, it is thinkable, depending on the question,
                   that one would like to explicitly refer to the existence of a postmark and its
@@ -232,23 +216,19 @@
                   dispatch, i.e. the date on the postmark, this is always encoded in
                      <gi>correspDesc</gi>. It should be recorded elsewhere in the metadata, if the
                   handwritten date differs from the date documented on the postmark.</p>
-               <p>Such a case could be encoded in the element <gi>origin</gi> within the element
+               <p n="12">Such a case could be encoded in the element <gi>origin</gi> within the element
                      <gi>history</gi>. According to the TEI P5 Guidelines, <gi>history</gi>
                      "<quote>groups elements describing the full history of a manuscript, manuscript
-                     part, or other object</quote>"<note><ref
-                        target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html"
-                        >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html</ref>.
+                     part, or other object</quote>"<note n="4" xml:id="fn4"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html</ref>.
                   </note> and being part of it, <gi>origin</gi> "<quote>contains any descriptive or
                      other information concerning the origin of a manuscript, manuscript part, or
-                     other object</quote>"<note><ref
-                        target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html"
-                        >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html</ref>.
+                     other object</quote>"<note n="5" xml:id="fn5"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html</ref>.
                   </note>. The reference to a handwritten date would reflect the course of the
                   origin of the letter at this point. As another possibility we would like to
                   suggest the encoding of the handwritten date as <gi>note</gi> within the
                   respective <gi>correspAction</gi>. Both suggestions are presented in the
                   fictitious example below.</p>
-               <p>Encoding example within the <gi>history</gi> element:</p>
+               <p n="13">Encoding example within the <gi>history</gi> element:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sourceDesc>
                      <msDesc>
@@ -261,7 +241,7 @@
                      </msDesc>
                   </sourceDesc>
                </egXML>
-               <p>Encoding example within <gi>correspAction</gi>:</p>
+               <p n="14">Encoding example within <gi>correspAction</gi>:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><correspDesc>
                      <correspAction type="sent">
                         <persName>Franz Marc</persName>
@@ -275,24 +255,20 @@
                      </correspAction>
                   </correspDesc>
                </egXML>
-               <p>Another possibility would be the separate encoding of the postmark. In the
+               <p n="15">Another possibility would be the separate encoding of the postmark. In the
                   following, we would like to discuss possible coding variants using example 4:</p>
                <figure>
                   <head>Example 4: Postcard with several stamps (source: Franz Marc to Herwarth
                      Walden, 16 January 1915, in: DER STURM. Digitale Quellenedition zur Geschichte
-                     der internationalen Avantgarde, <ref
-                        target="https://sturm-​edition.de/id/Q.01.19150116.FMA.01"
-                        >https://sturm-​edition.de/id/Q.01.19150116.FMA.01</ref>).</head>
+                     der internationalen Avantgarde, <ref target="https://sturm-​edition.de/id/Q.01.19150116.FMA.01">https://sturm-​edition.de/id/Q.01.19150116.FMA.01</ref>).</head>
                   <graphic url="../images/stamps-seals-postmarks/example4.png"/>
                </figure>
             </div>
-            <div>
+            <div xml:id="c-4-2">
                <head>Approach 1: Postmarks within the meta data</head>
-               <p>A postmark is not an object in the true sense of the word, like a stamp or a seal.
+               <p n="16">A postmark is not an object in the true sense of the word, like a stamp or a seal.
                   However, the definition of the <gi>stamp</gi> element in the TEI Guidelines states
-                  that it could also represent a "<quote>similar device</quote>"<note><ref
-                        target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html"
-                        >https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html</ref>.
+                  that it could also represent a "<quote>similar device</quote>"<note n="6" xml:id="fn6"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html</ref>.
                   </note>—something to which a postmark could be assigned. As an equivalent to
                   stamps, it would therefore be conceivable to encode postmarks within the
                      <gi>teiHeader</gi> in <gi>msDesc</gi> as <gi>stamp</gi> and, in addition to a
@@ -305,44 +281,36 @@
                               <support>
                                  <p>postcard with
                                              postmark:<stamp><!-- Description if needed--><mentioned><placeName>Feldpoststation
-                                             A. A. Falkenhausen</placeName><date when="1915-01-18"
-                                             >18 Januar 15</date>2-3 N</mentioned></stamp></p>
+                                             A. A. Falkenhausen</placeName><date when="1915-01-18">18 Januar 15</date>2-3 N</mentioned></stamp></p>
                               </support>
                            </supportDesc>
                         </objectDesc>
                      </physDesc>
                   </msDesc>
                </egXML>
-               <p><gi>support</gi> "<quote>contains a description of the materials etc. which make
+               <p n="17"><gi>support</gi> "<quote>contains a description of the materials etc. which make
                      up the physical support for the written part of a manuscript or other
-                     object</quote>"<note><ref
-                        target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html"
-                        >https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html</ref>.
+                     object</quote>"<note n="7" xml:id="fn7"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html</ref>.
                   </note>—a definition that could include postmarks. Furthermore, the TEI P5
                   Guidelines recommend to clearly separate the transcription of text written on an
                   object from the editor’s description of that object, e.g. by <gi>mentioned</gi>
-                  for the text of stamps as child element of <gi>stamp</gi><note><ref
-                        target="https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mswat"
-                        >https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mswat</ref>.
+                  for the text of stamps as child element of <gi>stamp</gi><note n="8" xml:id="fn8"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mswat">https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mswat</ref>.
                   </note>. The element <gi>mentioned</gi>, however, is intended to make words and
                   phrases explicit that are only implicit in the text: "<quote><gi>mentioned</gi>
-                     marks words or phrases mentioned, not used</quote>"<note><ref
-                        target="https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-mentioned.html"
-                        >https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-mentioned.html</ref>.
+                     marks words or phrases mentioned, not used</quote>"<note n="9" xml:id="fn9"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-mentioned.html">https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-mentioned.html</ref>.
                   </note>. This appears to be a contradiction within the TEI Guidelines. Elements
                   like <gi>q</gi>, <gi>quote</gi> and <gi>cit</gi> are not allowed at this point,
                   perhaps a validation of these elements at this point would be the resolution of
                   the discrepancy we suspect for the element <gi>mentioned</gi>?</p>
             </div>
-            <div>
+            <div xml:id="c-4-3">
                <head>Approach 2: Postmarks within the <gi>text</gi> element</head>
-               <p>For encoding the postmark within the <gi>text</gi> element, we suggest using a
+               <p n="18">For encoding the postmark within the <gi>text</gi> element, we suggest using a
                   typified <gi>ab</gi> or <gi>div</gi> element (the latter needing an additional
                      <gi>p</gi>):</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples"><ab type="postmark"
-                        ><placeName>Feldpoststation A.A. Falkenhausen</placeName><date>18 Januar
+               <egXML xmlns="http://www.tei-c.org/ns/Examples"><ab type="postmark"><placeName>Feldpoststation A.A. Falkenhausen</placeName><date>18 Januar
                         15</date></ab></egXML>
-               <p>or</p>
+               <p n="19">or</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="postmark">
                      <p>
                         <placeName>Feldpoststation A.A. Falkenhausen</placeName>
@@ -350,7 +318,7 @@
                      </p>
                   </div>
                </egXML>
-               <p>Within <gi>text</gi> non-encoded descriptions in plain text of objects in the
+               <p n="20">Within <gi>text</gi> non-encoded descriptions in plain text of objects in the
                   letter—to which a postmark is counted here—are not provided per se, and are rather
                   assigned to the metadata in the <gi>teiHeader</gi>. So <gi>stamp</gi>, if you want
                   to use it correctly, must not be used within <gi>text</gi> since the element
@@ -360,7 +328,7 @@
                      <gi>quote</gi> etc. as discussed in approach 1—also make sense within
                      <gi>body</gi>, not only for postmarks but also for other types of stamps (e.g.
                   for receipt stamps)?</p>
-               <p>Another solution could be to encode the actual letter text again separately in a
+               <p n="21">Another solution could be to encode the actual letter text again separately in a
                      <gi>div</gi> or <gi>ab</gi> element, or to even introduce a new element
                      <gi>postmark</gi> within the <gi>text</gi> element.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><body>
@@ -374,7 +342,7 @@
                      </div>
                   </body>
                </egXML>
-               <p>or</p>
+               <p n="22">or</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples"><body>
                      <postmark>
                         <placeName>A.A. Falkenhausen</placeName>
@@ -385,22 +353,22 @@
                   </body>
                </egXML>
             </div>
-            <div>
+            <div xml:id="c-4-4">
                <head>Postmarks: Conclusion</head>
-               <p>To take into account the difference between handwritten places and dates and those
+               <p n="23">To take into account the difference between handwritten places and dates and those
                   on postmarks in the coding of correspondence, we discussed different approaches.
                   In order to document the handwritten date in the meta data, we suggest using the
                   element <gi>origin</gi> within <gi>history</gi>/<gi>msDesc</gi>, or analogously an
                   additional <gi>note</gi> within <gi>correspAction</gi>, since the date of the
                   postmark is always listed in the <gi>correspAction</gi>.</p>
-               <p>However, in order to capture the information of the postmark not only in terms of
+               <p n="24">However, in order to capture the information of the postmark not only in terms of
                   content but also in terms of a transcription, we make two suggestions. The first
                   is the possible encoding of the text of the postmark in the element <gi>stamp</gi>
                   within <gi>support</gi> (inside <gi>msDesc</gi>) (approach1). Here, the explicit
                   text is in the element <gi>mentioned</gi>, which contradicts the actual definition
                   of this element. For this reason, we suggest allowing elements such as
                      <gi>cit</gi>, <gi>quote</gi>, and <gi>q</gi> in the <gi>stamp</gi> element.</p>
-               <p>In our second approach, we discussed the possibilities of encoding the postmark
+               <p n="25">In our second approach, we discussed the possibilities of encoding the postmark
                   within <gi>text</gi>. One way could be to use a paragraph-like element like
                      <gi>ab</gi> or <gi>div</gi> with a @type attribute "postmark". We also
                   encourage discussion on the possibility of introducing a separate element

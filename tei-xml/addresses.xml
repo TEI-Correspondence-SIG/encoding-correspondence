@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="addresses">
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="addresses">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,8 +10,7 @@
             <date when="2020-01-28"/>
             <idno type="urn">urn:nbn:de:kobv:b4-20200421172505303-5921001-2</idno>
             <idno type="url">https://encoding-correspondence.bbaw.de/v1/addresses.html</idno>
-            <idno type="zotero"
-               >https://www.zotero.org/groups/2248469/encoding_correspondence/items/collectionKey/ULR9ASPA/itemKey/TFR6AZQS</idno>
+            <idno type="zotero">https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/TFR6AZQS</idno>
          </publicationStmt>
          <seriesStmt>
             <title type="main">Encoding Correspondence.</title>
@@ -37,30 +35,26 @@
    </teiHeader>
    <text>
       <body>
-         <div>
+         <div xml:id="c-1">
             <head>Introduction</head>
-            <p>Regarding the current Guidelines of the Text Encoding Initiative P5, the element
+            <p n="1">Regarding the current Guidelines of the Text Encoding Initiative P5, the element
                   <gi>address</gi> contains a postal address, e.g. of a publisher, an organization
-               or an individual.<note><ref
-                     target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-address.html"
-                     >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-address.html</ref>.</note>
+               or an individual.<note n="1" xml:id="fn1"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-address.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-address.html</ref>.</note>
                Several children of the <gi>address</gi> element are available, depending on the
                modules which are integrated in the schema. When applying the <gi>address</gi>
                element and its inherent attributes and child elements, there are three central and
                problematic issues regarding the encoding of addresses in letters and postcards.</p>
          </div>
-         <div>
+         <div xml:id="c-2">
             <head>Issue 1: Missing attribute @type for the <gi>address</gi> element</head>
-            <p>Letters, postcards or telegrams have a sender and an addressee. In some cases both
+            <p n="2">Letters, postcards or telegrams have a sender and an addressee. In some cases both
                addresses are mentioned in the correspondence and are part of the transcription, not
                only of the metadata. Here, it would be convenient to be able to distinguish the
                address of the sender from the one of the addressee, or of any other person mentioned
                in the text. Furthermore, it might be necessary to distinguish between a private
                address and a business address, or between postal and e-mail address.</p>
-            <p>For the metadata, the <gi>correspAction</gi> element can be used that has a type
-               attribute either with the value 'sent' or 'received'.<note><ref
-                     target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspAction.html"
-                     >https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspAction.html</ref>.</note>
+            <p n="3">For the metadata, the <gi>correspAction</gi> element can be used that has a type
+               attribute either with the value 'sent' or 'received'.<note n="2" xml:id="fn2"><ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspAction.html">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspAction.html</ref>.</note>
                In the transcription, however, there is the need of the attribute @type for the
                   <gi>address</gi> element, which is not allowed according to the TEI P5 Guidelines.
                One possibility could be to add the element <gi>address</gi> to the class
@@ -70,16 +64,13 @@
             <figure>
                <head>Example 1: Field postcard (source: Franz Marc to Herwarth Walden, 13 November
                   1914, in: Der STURM. Digitale Quellenedition zur Geschichte der internationalen
-                  Avantgarde, <ref target="https://sturm-​edition.de/id/Q.01.19141113.FMA.01"
-                     >https://sturm-​edition.de/id/Q.01.19141113.FMA.01</ref>.</head>
+                  Avantgarde, <ref target="https://sturm-​edition.de/id/Q.01.19141113.FMA.01">https://sturm-​edition.de/id/Q.01.19141113.FMA.01</ref>.</head>
                <graphic url="../images/addresses/example1.png"/>
             </figure>
-            <p>The addresses of both sender and recipient in example 1 could be encoded like
-                  this:<note>Encoding taken from <ref
-                     target="https://sturm-edition.de/api/files/Q.01.19141113.FMA.01.xml"
-                     >https://sturm-edition.de/api/files/Q.01.19141113.FMA.01.xml</ref>.</note>
+            <p n="4">The addresses of both sender and recipient in example 1 could be encoded like
+                  this:<note n="3" xml:id="fn3">Encoding taken from <ref target="https://sturm-edition.de/api/files/Q.01.19141113.FMA.01.xml">https://sturm-edition.de/api/files/Q.01.19141113.FMA.01.xml</ref>.</note>
             </p>
-            <p><egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p n="5"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <div type="address">
                      <ab type="sender">
                         <address>
@@ -101,19 +92,19 @@
                      </ab>
                   </div>
                </egXML></p>
-            <p>In this example, the addresses of sender and recipient are distinguished from one
+            <p n="6">In this example, the addresses of sender and recipient are distinguished from one
                another by using the <gi>ab</gi> element with a @type attribute containing the values
                'sender' and 'recipient'. The <gi>div</gi> element, however, is used to differentiate
                between parts of the texts like the address and the content of the postcard, again
                with a @type attribute.</p>
-            <p>This leads to the second issue, the problem of the <gi>address</gi> element being not
+            <p n="7">This leads to the second issue, the problem of the <gi>address</gi> element being not
                allowed before <gi>opener</gi> or after <gi>closer</gi>. Finally, we want to discuss
                the encoding of address transcriptions within the elements <gi>opener</gi> or
                   <gi>closer</gi> in order to implement the current standard.</p>
          </div>
-         <div>
+         <div xml:id="c-3">
             <head>Issue 2: <gi>address</gi> before <gi>opener</gi> and after <gi>closer</gi></head>
-            <p>The <gi>address</gi> element is not part of the content model of <gi>div</gi>. This
+            <p n="8">The <gi>address</gi> element is not part of the content model of <gi>div</gi>. This
                means that it cannot appear directly inside a <gi>div</gi> and this also means that
                it is not allowed before model.divTopPart or after model.divBottomPart elements, e.g.
                   <gi>opener</gi> or after <gi>closer</gi>. So, if the encoder wants to model the
@@ -122,7 +113,7 @@
                after <gi>closer</gi> of a letter, he or she needs to construct an elaborate data
                model with the addresses and the <gi>opener</gi>/<gi>closer</gi> encoded in several
                   <gi>div</gi> elements:</p>
-            <p><egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p n="9"><egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <body>
                      <div type="address">
                         <ab type="sender">
@@ -144,8 +135,7 @@
                            </address>
                         </ab>
                      </div>
-                     <pb xml:id="S.193r" n="193r"
-                        facs="http://resolver.staatsbibliothek-berlin.de/SBB0000DAB200000002"/>
+                     <pb xml:id="S.193r" n="193r" facs="http://resolver.staatsbibliothek-berlin.de/SBB0000DAB200000002"/>
                      <div type="content">
                         <opener>
                            <dateline> Ha - - <date when="1914-11-13">13 XI/14</date>
@@ -155,45 +145,37 @@
                      </div>
                   </body>
                </egXML></p>
-            <p>In the encoding example above, the <gi>address</gi> element is part of an <gi>ab</gi>
+            <p n="10">In the encoding example above, the <gi>address</gi> element is part of an <gi>ab</gi>
                element inside a <gi>div</gi> element with the attribute @type="address". In order to
                place the transcription of the addresses and the transcription of the remaining
                content at the same semantic level, the separation of the transcriptions in
                   <gi>div</gi> siblings was chosen. Instead of <gi>div</gi> one could choose the
                element <gi>ab</gi> but in the example the <gi>ab</gi> element is used to identify
                the sender or addressee.</p>
-            <p>To avoid such an unnecessary elaborate encoding, it would be convenient to be able to
+            <p n="11">To avoid such an unnecessary elaborate encoding, it would be convenient to be able to
                use <gi>address</gi> directly inside a <gi>div</gi>. Could a possible solution be to
                assign the element <gi>address</gi> to a suitable additional class, like
-               model.divTopPart and model.divBottomPart?<note><ref
-                     target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divTopPart.html"
-                     >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divTopPart.html</ref>,
-                     <ref
-                     target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divBottomPart.html"
-                     >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divBottomPart.html</ref>.</note>
+               model.divTopPart and model.divBottomPart?<note n="4" xml:id="fn4"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divTopPart.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divTopPart.html</ref>,
+                     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divBottomPart.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divBottomPart.html</ref>.</note>
                We would like to put this question to the community for further discussion.</p>
-            <p>What other actual coding possibilities could be used to label the address
+            <p n="12">What other actual coding possibilities could be used to label the address
                transcriptions of correspondence without separating them from the transcription of
                the remaining letter by <gi>div</gi> structures? A proposal for discussion is given
                in the following section.</p>
          </div>
-         <div>
+         <div xml:id="c-4">
             <head>Issue 3: <gi>address</gi> within <gi>opener</gi> or <gi>closer</gi>
             </head>
-            <p>Another solution could be to include the transcription of the address in the
+            <p n="13">Another solution could be to include the transcription of the address in the
                   <gi>opener</gi> or <gi>closer</gi>. Here, the <gi>address</gi> element is allowed.
                The <gi>opener</gi> "combines date line, author, salutation and similar phrases that
-               are used at the beginning of a section, especially in a letter".<note><ref
-                     target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html"
-                     >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html</ref>.</note>
+               are used at the beginning of a section, especially in a letter".<note n="5" xml:id="fn5"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html</ref>.</note>
                The <gi>closer</gi> contains "greeting formulas, date lines and similar phrases that
-               appear at the end of a section, especially in a letter".<note><ref
-                     target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html"
-                     >https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html</ref>.</note>
+               appear at the end of a section, especially in a letter".<note n="6" xml:id="fn6"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html</ref>.</note>
                This variant would make the division of the transcribed correspondence text into
                individual <gi>div</gi> and/or <gi>ab</gi> elements obsolete and would be a slimmer
                version of the above issue.</p>
-            <p>Example 1 with <gi>address</gi> encoded within <gi>opener</gi>:</p>
+            <p n="14">Example 1 with <gi>address</gi> encoded within <gi>opener</gi>:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <body>
                   <opener>
@@ -218,7 +200,7 @@
                   <p><!--text of letter--></p>
                </body>
             </egXML>
-            <p>For establishing a standard for encoding postal addresses in <gi>opener</gi> or
+            <p n="15">For establishing a standard for encoding postal addresses in <gi>opener</gi> or
                   <gi>closer</gi>, a modification of the definition of these two elements remains to
                be considered. As it is now, the postal addresses are interpreted as 'similar
                phrases'. In view of the concrete and also frequent use case a reformulation would be
@@ -227,19 +209,19 @@
                distinguish the addresses of recipients and senders it is recommended to introduce an
                @type for <gi>address</gi>—as already explained in Issue 1.</p>
          </div>
-         <div>
+         <div xml:id="c-5">
             <head>Proposal</head>
-            <p>Considering the discussed issues, editing of the TEI Guidelines regarding the
+            <p n="16">Considering the discussed issues, editing of the TEI Guidelines regarding the
                   <gi>address</gi> element seems to be recommended concerning the inclusion of the
                attribute @type for the <gi>address</gi> element with indivually chosen values
                (possibly 'sender', 'recipient'/'receiver', 'private_address' or 'business_address'
                etc.). Furthermore, it should probably be added to the class 'att.typed'.</p>
-            <p>For the development of a TEI standard for encoding the transcription of addresses, we
+            <p n="17">For the development of a TEI standard for encoding the transcription of addresses, we
                first considered the idea of using the <gi>address</gi> element directly within an
                   <gi>div</gi> element to avoid the use of further child elements inside
                   <gi>div</gi>. Here we want to discuss whether it would be useful to assign it to
                suitable classes, for example model.divTopPart and model.divBottomPart.</p>
-            <p>To get around the separation of transcriptions into different <gi>div</gi> structures
+            <p n="18">To get around the separation of transcriptions into different <gi>div</gi> structures
                according to the current Guidelines, we propose in Issue 3 as an alternative to code
                the addresses of sender and receiver within <gi>opener</gi> or <gi>closer</gi>. For
                this, we propose to adapt the definition of <gi>opener</gi> and <gi>closer</gi> for

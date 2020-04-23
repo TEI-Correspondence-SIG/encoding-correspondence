@@ -36,6 +36,7 @@
         <revisionDesc>
             <listChange>
                 <change n="1" when="2019-10-28" status="draft">Initial Version</change>
+                <change n="1.1" when="2020-04-22" status="draft">Minor typo fixed and accidentally untranslated sentence (note 1) translated into English.</change>
             </listChange>
         </revisionDesc>
     </teiHeader>
@@ -249,7 +250,7 @@
                             "deduced" and could not be obtained from the original source itself.</p>
                         <p n="24">Deduced Information that does not originate from other sources but
                             from the investigations of the editor, can appear to have less or more
-                            certainty. . For example, if the editor is not sure about a particular
+                            certainty. For example, if the editor is not sure about a particular
                             information, it is not only marked with square brackets, but also with a
                             question mark. This makes it possible to offer the reader a suggestion
                             without specifying it is definitely correct. This practice of marking
@@ -427,8 +428,7 @@
                 <table rend="rules">
                     <head>Table 1: Vocabulary for relationships (predicates)</head>
                     <row role="label">
-                        <cell>URI<note xml:id="fn1" n="1"><p>Der Namensraum-Präfix “cmif” steht hier
-                                    für einen noch zu definierenden Namensraum.</p></note></cell>
+                        <cell>URI<note xml:id="fn1" n="1"><p>Here, the namespace prefix "cmif" stands for a namespace yet to be defined.</p></note></cell>
                         <cell>Description</cell>
                         <cell>@target (object)</cell>
                     </row>

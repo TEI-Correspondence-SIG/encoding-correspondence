@@ -145,7 +145,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Publication</h4>    
-                                <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.</p>
+                                <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019.</p>
                                 <p>Source files on <i class="fab fa-github"></i>&#160;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
                                 <p>
                                     <a href="legal.html">Legal notice &amp; privacy</a></p>
@@ -346,6 +346,9 @@
                         <xsl:call-template name="notes"/>
                         <xsl:call-template name="bibliography"/>
                         <xsl:call-template name="citation"/>
+                        <xsl:if test="//tei:change[@n='1.1']">
+                            <xsl:call-template name="editorial-note"/>
+                        </xsl:if>
                     </article>
                 </div>
             </div>
@@ -446,7 +449,7 @@
             <xsl:value-of select="max(.//tei:change/@n)"/>
         </xsl:variable>
         <xsl:variable name="url">
-            <xsl:text>https://encoding-correspondence.bbaw.de/v</xsl:text><xsl:value-of select="$version"/><xsl:text>/</xsl:text><xsl:value-of select="./tei:TEI/@xml:id"/><xsl:text>.html</xsl:text>
+            <xsl:value-of select="//tei:publicationStmt/tei:idno[@type='url']"/>
         </xsl:variable>
         <div class="card" id="citation">
             <div class="card-body">
@@ -455,7 +458,7 @@
                     <xsl:value-of select="ec:seperator(., position())"/>
                 </xsl:for-each><xsl:text>: </xsl:text>
                 <xsl:value-of select="//tei:titleStmt/tei:title"/>
-                <xsl:text>. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.</xsl:text>
+                <xsl:text>. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019.</xsl:text>
                 <!--<xsl:text> Version </xsl:text><xsl:value-of select="$version"/><xsl:text> from </xsl:text><xsl:value-of select="format-date(//tei:change[@n=$version]/@when, '[D].[M].[Y]')"/>-->
                 <xsl:text> URL:&#160;</xsl:text><a href="{$url}"><xsl:value-of select="$url"/></a>
                 <xsl:text> URN:&#160;</xsl:text><a href="https://nbn-resolving.org/{//tei:publicationStmt/tei:idno[@type='urn']/text()}"><xsl:value-of select="//tei:publicationStmt/tei:idno[@type='urn']"/></a>
@@ -467,6 +470,17 @@
             </div>
         </div>
     </xsl:template>
+    
+    <xsl:template name="editorial-note">
+        <div class="card" id="editorial-note">
+            <div class="card-body">
+                <h4 class="card-title">Editorial Note</h4>
+                <p>In this article, the following obvious misprints were corrected on <xsl:value-of select="format-date(//tei:change[@n='1.1']/@when, '[D] [MNn] [Y0000]')"/>: <i><xsl:value-of select="//tei:change[@n='1.1']/text()"/></i> In all other respects the article is unchanged in content and statement.</p>
+            </div>
+        </div>
+        
+    </xsl:template>
+   
     
     <xsl:template match="tei:div">
         <xsl:choose>

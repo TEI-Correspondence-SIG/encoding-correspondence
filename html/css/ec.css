@@ -278,9 +278,15 @@ div#bibliography a.zotero-link:hover {
     text-decoration: none;
 }
 
-div#citation {
+div#citation,
+div#editorial-note {
     font-family: 'Noto Sans', sans;
     font-size: 0.8em;
+}
+
+div#editorial-note {
+    margin-top: 2em;
+    color: gray;
 }
 
 div#content p.download-link {

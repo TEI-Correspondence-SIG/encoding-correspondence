@@ -35,6 +35,7 @@
 	<revisionDesc>
 		<listChange>
 			<change n="1" when="2019-12-20" status="draft">Initial Version</change>
+			<change n="1.1" when="2020-04-24" status="draft">Example 6: replaced wrong image; § 32: wrong attribut name; example 2: invalid encoding; § 14: wrong number of addrLines.</change>
 		</listChange>
 	</revisionDesc>
 </teiHeader>
@@ -81,13 +82,13 @@
 			<salute>I am with all my Heart<lb/>Dear Friend<lb/>Yours most faithfully</salute>
 			<signed>Werlhof</signed>
 			<dateline>H[annover] July 22<lb/>46.</dateline>
+			<address>
+				<addrLine>à Monsieur</addrLine>
+				<addrLine>Monsieur Haller</addrLine>
+				<addrLine>conseiller aulique et<lb/>professeur roïal</addrLine>
+				<addrLine>à<lb/>Göttingen</addrLine>
+			</address>
 		</closer>
-		<address>
-			<addrLine>à Monsieur</addrLine>
-			<addrLine>Monsieur Haller</addrLine>
-			<addrLine>conseiller aulique et<lb/>professeur roïal</addrLine>
-			<addrLine>à<lb/>Göttingen</addrLine>
-		</address>
 	</div>
 </egXML></figure>
 <p n="11">To get back to the opening part: The salutation is encoded with a <gi>salute</gi>, which in turn is placed in an <gi>opener</gi> grouping element. Apparently, it is not strictly necessary to group a single element and the TEI Guidelines would also allow the <gi>salute</gi> to appear directly in the letter <gi>div</gi>. However, in both cases the saluting phrase is encoded on <hi rendition="#i">block-level</hi>.</p>
@@ -95,7 +96,7 @@
 	<p n="13">A <gi>closer</gi> groups the elements which form the closing part of the letter. <gi>salute</gi> and <gi>signed</gi> have been applied to encode saluting phrases and the signature of the author. <gi>dateline</gi> marks the letter date and the place of origin. One aspect worth pointing out here is the differentiation between <gi>salute</gi> and <gi>signed</gi>. The difference is not immediately obvious insofar as both can contain salutations (compare the definitions of the two elements in the introduction).<note n="4" xml:id="fn4">See discussion <ref target="http://tei-l.970651.n3.nabble.com/signed-vs-salute-td2350146.html#a2350165">http://tei-l.970651.n3.nabble.com/signed-vs-salute-td2350146.html#a2350165</ref>.</note> While <gi>salute</gi> is intended to encode a phrase containing a salutation, <gi>signed</gi> is applied to phrases containing a signature and possibly some kind of salutation.<note n="5" xml:id="fn5">See comment <ref target="http://tei-l.970651.n3.nabble.com/signed-vs-salute-tp2350146p2350152.html">http://tei-l.970651.n3.nabble.com/signed-vs-salute-tp2350146p2350152.html</ref>.</note> For that reason, the following is also a valid encoding:
 		<egXML xmlns="http://www.tei-c.org/ns/Examples"><salute>I am with all my Heart<lb/>Dear Friend</salute>
 			<signed>Yours most faithfully<lb/>Werlhof</signed></egXML></p>
-<p n="14">The postal address is encoded with an <gi>address</gi> and a number of generic <gi>addrLine</gi>. In this example, Haller's address in Göttingen is distributed over 6 distinct lines of text. Therefore, the simplest approach would be to apply six <gi>addrLine</gi> elements. However, the encoding above includes only 5 <gi>addrLine</gi>, but one of them additionally contains a linebreak element (<gi>lb</gi>). This combination of <gi>addrLine</gi> and <gi>lb</gi> provides a possibility to group basic units (e.g. the title or the location) which are distributed over several lines within one element. In the case where <gi>addrLine</gi> serves as a wrapper for elements which cannot appear in <gi>address</gi> directly, this has clear advantages.</p>
+<p n="14">The postal address is encoded with an <gi>address</gi> and a number of generic <gi>addrLine</gi>. In this example, Haller's address in Göttingen is distributed over 6 distinct lines of text. Therefore, the simplest approach would be to apply six <gi>addrLine</gi> elements. However, the encoding above includes only 4 <gi>addrLine</gi>, but two of them additionally contains a linebreak element (<gi>lb</gi>). This combination of <gi>addrLine</gi> and <gi>lb</gi> provides a possibility to group basic units (e.g. the title or the location) which are distributed over several lines within one element. In the case where <gi>addrLine</gi> serves as a wrapper for elements which cannot appear in <gi>address</gi> directly, this has clear advantages.</p>
 <p n="15">Opening or closing parts of letters may contain phrases which do not really fit into the TEI elements allowed in <gi>opener</gi> and <gi>closer</gi>. Although renditionally oriented, all child elements of <gi>opener</gi> and <gi>closer</gi> have a semantic meaning (e.g. it is a <hi rendition="#i">salutation</hi> or a <hi rendition="#i">signature</hi>). Of course, it should be stressed here that <gi>opener</gi> and <gi>closer</gi> can also contain text nodes. Therefore, encoders have the possibility to place text nodes directly in <gi>opener</gi> and <gi>closer</gi> on the <hi rendition="#i">block-level</hi>:
 	<egXML xmlns="http://www.tei-c.org/ns/Examples"><closer>
 		Text which does not fit into existing categories […].
@@ -170,7 +171,7 @@ This may be a solution for saluting phrases embedded at the beginning or end of 
 	<ref target="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html">(https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-closer.html)</ref></cit>
 <p n="31">It is not necessarily wrong to apply this workaround, but can be unsatisfactory for diplomatic transcriptions. To provide the editor with the option to correctly encode the visual layout of the letter, we suggest the following solution.</p></div>
 <div xml:id="c-3-2-3" n="3.2.3"><head>Solution to Issue 2</head>
-<p n="32">Given the option of placing <gi>salute</gi> within <gi>p</gi> as proposed in issue 1, the salutation in the letter body in example 6 can be encoded as such, while the salutation in the formal closing part is placed within <gi>closer</gi> as usual. In the rare case that the two salutations form a semantic unit and therefore should be mapped to each other, the <gi>salute</gi> elements can be linked by usage of the attributes <att>xml-id</att>, <att>prev</att> and <att>next</att>.</p>
+<p n="32">Given the option of placing <gi>salute</gi> within <gi>p</gi> as proposed in issue 1, the salutation in the letter body in example 6 can be encoded as such, while the salutation in the formal closing part is placed within <gi>closer</gi> as usual. In the rare case that the two salutations form a semantic unit and therefore should be mapped to each other, the <gi>salute</gi> elements can be linked by usage of the attributes <att>xml:id</att>, <att>prev</att> and <att>next</att>.</p>
 
 <egXML xmlns="http://www.tei-c.org/ns/Examples"><p>[...]
 <salute>Möge das hereinbrechende milde <lb/>Frühjahr alle Leiden von Ihnen <lb/>fern halten.</salute>

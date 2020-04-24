@@ -1,0 +1,549 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="libs/bootstrap-4.3.1/css/bootstrap.min.css">
+      <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+      <link href="libs/prism/prism.css" rel="stylesheet">
+      <link href="css/ec.css" rel="stylesheet">
+      <title>Encoding Correspondence: Postage stamps, seals, and postmarks</title><script type="text/javascript">
+                    var _paq = window._paq || [];
+                    _paq.push(["setVisitorCookieTimeout", "604800"]);
+                    _paq.push(["setSessionCookieTimeout", "0"]);
+                    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+                    (function() {
+                    var u="https://piwik.bbaw.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '53']);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                    })();
+                </script><noscript>
+         <p><img src="https://piwik.bbaw.de/matomo.php?idsite=53&amp;rec=1" style="border:0;" alt=""></p></noscript></head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+         <div class="container"><a class="navbar-brand" href="index.html" title="To the homepage" alt="Go to home page of Encoding Correspondence">Encoding Correspondence</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar">
+               <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" href="introduction.html">Introduction</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="addresses.html">Addresses</a><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="stamps-seals-postmarks.html">Postage Stamps, Seals, and Postmarks</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a></div>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="authors.html">Authors <span class="sr-only">(current)</span></a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div id="content" class="container">
+         <div class="row">
+            <div class="col-md-4 order-2 d-print-none">
+               <div id="status" class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Status of this article</h5>
+                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 31&nbsp;July&nbsp;2020.</p>
+                     <p>We kindly invite you to review and/or comment this article! Please do so via the web
+                        annotation service <a href="https://web.hypothes.is/">Hypothes.is</a> 
+                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.</p>
+                     <p>This article remains stable and <a href="#citation">citable</a> in the first version of this manual. The revised article will be published in the
+                        second edition of the manual.</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Table of Content</h5>
+                     <ul id="toc">
+                        <li><a href="#c-1">Introduction</a></li>
+                        <li><a href="#c-2">Postage stamps</a><ul>
+                              <li></li>
+                              <li><a href="#c-2-2">Approach 1: Postage stamps within the text element</a></li>
+                              <li><a href="#c-2-3">Approach 2: Postage stamps within the meta data</a></li>
+                              <li><a href="#c-2-4">Postage stamps: Conclusion</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#c-3">Seals</a><ul>
+                              <li></li>
+                           </ul>
+                        </li>
+                        <li><a href="#c-4">Postmarks</a><ul>
+                              <li></li>
+                              <li><a href="#c-4-2">Approach 1: Postmarks within the meta data</a></li>
+                              <li><a href="#c-4-3">Approach 2: Postmarks within the text element</a></li>
+                              <li><a href="#c-4-4">Postmarks: Conclusion</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li class="citation-link"><a href="#citation">Cite this article</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 order-1">
+               <article>
+                  <header>
+                     <h1>Postage stamps, seals, and postmarks</h1>
+                     <p id="authors">Dewi Josephine Obert, Marjam Trautmann</p>
+                  </header>
+                  <section>
+                     
+                     <div class="chapter" id="c-1">
+                        
+                        <h2>Introduction</h2>
+                        
+                        <p id="1"><span class="paragraph-number">&nbsp;&nbsp;1</span>Next to addresses and pre-printed parts, a topic that often seems to be neglected
+                           within the TEI universe are the additional parts of information found on envelopes
+                           or
+                           postcards, like stamps, seals, and postmarks. Seals are specifically chosen by the
+                           sender and, thus, can tell us a lot about them. Postmarks and postage stamps,
+                           however, seem to be quite the opposite—the sender exerts little to no influence on
+                           both. Still, they can contain a great deal of information about the time and location
+                           the letter was sent from. Furthermore, many tourist spots will have their well-known
+                           places, sights, or buildings printed on their stamps. Even postmarks can include
+                           special editions for certain anniversaries or other festivities. If these elements
+                           are not included, a lot of relevant information about the document in question could
+                           be missed.</p>
+                        </div>
+                     
+                     <div class="chapter" id="c-2">
+                        
+                        <h2>Postage stamps</h2>
+                        
+                        <div class="chapter" id="c-2-1">
+                           
+                           <p id="2"><span class="paragraph-number">&nbsp;&nbsp;2</span>The TEI Guidelines do list an element called <span class="code">&lt;stamp&gt;</span> that "contains
+                              a word or phrase describing a stamp or similar device"<a id="fn1" href="#note_fn1">[1]</a>. This element, however, usually refers to armorial stamps or rubber
+                              stamps. But when encoding envelopes or postcards, taking postal stamps into
+                              consideration is often inevitable.</p>
+                           
+                           <figure><img src="img/stamps-seals-postmarks/example1.png"><figcaption>Example 1: Postcard with stamps (source: Swiss-German picture postcard
+                                 corpus ANKO, <a href="https://www.ds.uzh.ch/de/projekte/ansichtskartenprojekt" target="_blank">https://www.ds.uzh.ch/de/projekte/ansichtskartenprojekt/</a>).</figcaption>
+                           </figure>
+                           </div>
+                        
+                        <div class="chapter" id="c-2-2">
+                           
+                           <h3>Approach 1: Postage stamps within the <span class="code">&lt;text&gt;</span> element</h3>
+                           
+                           <p id="3"><span class="paragraph-number">&nbsp;&nbsp;3</span>If the stamps are to be included within the <span class="code">&lt;text&gt;</span> element, a suitable
+                              encoding might be the use of the <span class="code">&lt;figure&gt;</span> element with a @type, such as
+                              <span class="code">&lt;figure&gt;</span> type="postage-stamp". However, it has to be noted that the
+                              given definition is not really what we are looking for: "<span class="code">&lt;figure&gt;</span>
+                              groups elements representing or containing graphic information such as an
+                              illustration, formula, or figure"<a id="fn2" href="#note_fn2">[2]</a>.</p>
+                           
+                           <p id="4"><span class="paragraph-number">&nbsp;&nbsp;4</span>As mentioned above, the element <span class="code">&lt;stamp&gt;</span> does already exist but is rather
+                              used for rubber stamps. A convenient addition could therefore be the expansion of
+                              the description and usage of the <span class="code">&lt;stamp&gt;</span> element to include postal stamps
+                              as well.</p>
+                           </div>
+                        
+                        <div class="chapter" id="c-2-3">
+                           
+                           <h3>Approach 2: Postage stamps within the meta data</h3>
+                           
+                           <p id="5"><span class="paragraph-number">&nbsp;&nbsp;5</span>Understanding postage stamps as part of the meta data could be another proposal.
+                              An adequate place to put them could be the <span class="code">&lt;objectType&gt;</span> element, for
+                              example within the <span class="code">&lt;physDesc&gt;</span> element. This way it can be stated that one
+                              or several stamps are present in the given document. It is also easily possible to
+                              add the text written on the stamp, as well as any other information required such
+                              as the motive or value.</p>
+                           
+                           <p id="6"><span class="paragraph-number">&nbsp;&nbsp;6</span>A possible encoding of example 1 might look like this: 
+                              <pre><code class="language-xml">
+&lt;msDesc&gt;
+&lt;physDesc&gt;
+&lt;p&gt;&lt;idno type="postcard"&gt;101030&lt;/idno&gt;
+&lt;objectType n="1"&gt;Stamp&lt;/objectType&gt; from Italy with the imprint
+&lt;quote&gt;CASTELLO &lt;lb/&gt; ARAGONESE • ISCHIA 100&lt;lb/&gt; ITALIA&lt;/quote&gt;
+&lt;figure&gt;
+&lt;graphic url="postagestamp1.jpg"/&gt;
+&lt;figDesc&gt;The drawing on the postage stamp shows a castle on top of
+a cliff.&lt;/figDesc&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;objectType n="2"&gt;Stamp&lt;/objectType&gt; from Italy with the imprint
+&lt;quote&gt;CASTELLO &lt;lb/&gt; SCALIGERO • SIRMIONE 600&lt;lb/&gt; ITALIA&lt;/quote&gt;
+&lt;figure&gt;
+&lt;graphic url="postagestamp2.jpg"/&gt;
+&lt;figDesc&gt;The drawing on the postage stamp shows a castle next to a
+body of water&lt;/figDesc&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/physDesc&gt;
+&lt;/msDesc&gt;
+</code></pre>
+                           </p>
+                           </div>
+                        
+                        <div class="chapter" id="c-2-4">
+                           
+                           <h3>Postage stamps: Conclusion</h3>
+                           
+                           <p id="7"><span class="paragraph-number">&nbsp;&nbsp;7</span>By the current status, there is no uncomplicated way to incorporate postage stamps
+                              inside the <span class="code">&lt;text&gt;</span> element. It also seems unnecessary to invent a new
+                              element specifically for those—considering that a <span class="code">&lt;stamp&gt;</span> element already
+                              exists. Therefore the proposal to solve this problem would either be to expand the
+                              description and usage of the <span class="code">&lt;stamp&gt;</span> element to include postal stamps as
+                              well, or to just position them in the <span class="code">&lt;physDesc&gt;</span> element within the
+                              metadata, where it is possible to add significant information such as the text or
+                              motive.</p>
+                           </div>
+                        </div>
+                     
+                     <div class="chapter" id="c-3">
+                        
+                        <h2>Seals</h2>
+                        
+                        <div class="chapter" id="c-3-1">
+                           
+                           <p id="8"><span class="paragraph-number">&nbsp;&nbsp;8</span>A similar issue is the topic of seals: There is the option to encode them in the
+                              header via <span class="code">&lt;sealDesc&gt;</span> (within <span class="code">&lt;physDesc&gt;</span>), which "describes
+                              the seals or similar items related to the object described"<a id="fn3" href="#note_fn3">[3]</a>. It is even possible to specify the @type and @subtype of the seal
+                              as well as describing it along with other desired information such as the date,
+                              owner and a description.</p>
+                           
+                           <figure><img src="img/stamps-seals-postmarks/example2.png"><figcaption>Example 2: Seal on an envelope for a letter (source: Clara Schumann to
+                                 Hedwig von Holstein, 18 June 1886, <a href="https://www.deutsche-digitale-bibliothek.de/item/SD5BCK2IF4HNMI5AYZHYDRD4YIOZJ6S7" target="_blank">https://www.deutsche-digitale-bibliothek.de/item/SD5BCK2IF4HNMI5AYZHYDRD4YIOZJ6S7</a>).</figcaption>
+                           </figure>
+                           
+                           <pre><code class="language-xml">&lt;physDesc&gt;
+&lt;sealDesc&gt;
+&lt;seal type="x" subtype="y"&gt;
+&lt;p&gt;Round seal of &lt;name&gt;XY&lt;/name&gt; made of red wax&lt;/p&gt;
+&lt;/seal&gt;
+&lt;/sealDesc&gt;
+&lt;/physDesc&gt;
+</code></pre>
+                           
+                           <figure><img src="img/stamps-seals-postmarks/example3.png"><figcaption>Example 3: Three seals on a letter (source: Adelbert von Chamisso to Louis
+                                 de La Foye, 26 June 1804, <a href="https://www.berliner-intellektuelle.eu/manuscript?Brief005ChamissoandeLaFoye+en#2" target="_blank">https://www.berliner-intellektuelle.eu/manuscript?Brief005ChamissoandeLaFoye+en#2</a>).</figcaption>
+                           </figure>
+                           
+                           <p id="9"><span class="paragraph-number">&nbsp;&nbsp;9</span>A possible encoding of the seals in example 3 might look like this:</p>
+                           
+                           <pre><code class="language-xml">&lt;physDesc&gt;
+&lt;sealDesc&gt;
+&lt;seal n="1"&gt;
+&lt;p&gt;The green wax seal represents the motto of the "Nordsternbund":
+&lt;foreign xml:lang="grc"&gt;&lt;hi rend="greek"&gt;τὸ του πόλοῦ
+ἄστρον&lt;/hi&gt;&lt;/foreign&gt;.&lt;/p&gt;
+&lt;/seal&gt;
+&lt;seal n="2"&gt;
+&lt;p&gt;The red wax seal has not been identified yet.&lt;/p&gt;
+&lt;/seal&gt;
+&lt;seal n="3"&gt;
+&lt;p&gt;The yellow wax seal shows Chinese inscriptions. In his book "Reise um
+die Welt" (p. 132), Chamisso reports that Julius Klaproth gave him
+that seal in 1804 or 1805 and that it shows a quote by Confucius.&lt;/p&gt;
+&lt;/seal&gt;
+&lt;/sealDesc&gt;
+&lt;/physDesc&gt;
+</code></pre>
+                           
+                           <p id="10"><span class="paragraph-number">10</span>Such an encoding is both sufficient and reasonable, and putting the encoding of
+                              seals within the <span class="code">&lt;text&gt;</span> element can be dismissed. Seals, just as postage
+                              stamps, do not really belong to the text flow and, therefore, do not need an
+                              element of their own within the text. If insisted upon, the element
+                              <span class="code">&lt;figure&gt;</span> should be adequate (again, example 3):</p>
+                           
+                           <pre><code class="language-xml">&lt;text&gt;
+&lt;body&gt;
+&lt;p&gt;
+&lt;figure type="seal" n="1"&gt;
+&lt;graphic url="seal1.jpg"/&gt;
+&lt;figDesc&gt;A green wax seal, representing the motto of the
+"Nordsternbund": &lt;foreign xml:lang="grc"&gt;&lt;hi rend="greek"&gt;τὸ του
+πόλοῦ ἄστρον&lt;/hi&gt;&lt;/foreign&gt;.&lt;/figDesc&gt;
+&lt;/figure&gt;
+&lt;figure type="seal" n="2"&gt;
+&lt;graphic url="seal2.jpg"/&gt;
+&lt;figDesc&gt;A red wax seal that has not been identified yet.&lt;/figDesc&gt;
+&lt;/figure&gt;
+&lt;figure type="seal" n="3"&gt;
+&lt;graphic url="seal3.jpg"/&gt;
+&lt;figDesc&gt;A yellow wax seal that shows Chinese inscriptions. In his
+book "Reise um die Welt" (p. 132), Chamisso reports that Julius
+Klaproth gave him that seal in 1804 or 1805 and that it shows a
+quote by Confucius&lt;/figDesc&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/text&gt;
+</code></pre>
+                           </div>
+                        </div>
+                     
+                     <div class="chapter" id="c-4">
+                        
+                        <h2>Postmarks</h2>
+                        
+                        <div class="chapter" id="c-4-1">
+                           
+                           <p id="11"><span class="paragraph-number">11</span>Postmarks provide information about the place and date of shipping of the letter.
+                              This information can be found in the <span class="code">&lt;correspAction&gt;</span> element of the
+                              <span class="code">&lt;teiHeader&gt;</span>. Furthermore, it is thinkable, depending on the question,
+                              that one would like to explicitly refer to the existence of a postmark and its
+                              information content. Also a differentiation between the date and place of the
+                              letter written by the sender, on the one hand, and the date and place at which the
+                              letter was actually dispatched by the post office, on the other hand, could be
+                              relevant. In the following, it is assumed that the letter writer provided
+                              handwritten information. This is usually encoded within <span class="code">&lt;text&gt;</span> within
+                              <span class="code">&lt;dateline&gt;</span> and can also be found in <span class="code">&lt;correspAction&gt;</span>. However, the
+                              postmark might provide different information. If there is a correct date of
+                              dispatch, i.e. the date on the postmark, this is always encoded in
+                              <span class="code">&lt;correspDesc&gt;</span>. It should be recorded elsewhere in the metadata, if the
+                              handwritten date differs from the date documented on the postmark.</p>
+                           
+                           <p id="12"><span class="paragraph-number">12</span>Such a case could be encoded in the element <span class="code">&lt;origin&gt;</span> within the element
+                              <span class="code">&lt;history&gt;</span>. According to the TEI P5 Guidelines, <span class="code">&lt;history&gt;</span>
+                              "groups elements describing the full history of a manuscript, manuscript
+                              part, or other object"<a id="fn4" href="#note_fn4">[4]</a> and being part of it, <span class="code">&lt;origin&gt;</span> "contains any descriptive or
+                              other information concerning the origin of a manuscript, manuscript part, or
+                              other object"<a id="fn5" href="#note_fn5">[5]</a>. The reference to a handwritten date would reflect the course of the
+                              origin of the letter at this point. As another possibility we would like to
+                              suggest the encoding of the handwritten date as <span class="code">&lt;note&gt;</span> within the
+                              respective <span class="code">&lt;correspAction&gt;</span>. Both suggestions are presented in the
+                              fictitious example below.</p>
+                           
+                           <p id="13"><span class="paragraph-number">13</span>Encoding example within the <span class="code">&lt;history&gt;</span> element:</p>
+                           
+                           <pre><code class="language-xml">
+&lt;sourceDesc&gt;
+&lt;msDesc&gt;
+&lt;history&gt;
+&lt;origin&gt;
+&lt;p&gt;The sender dates the letter, contrary to the postmark, to the
+&lt;origDate when="1915-01-16"&gt;16 January 1915&lt;/origDate&gt;.&lt;/p&gt;
+&lt;/origin&gt;
+&lt;/history&gt;
+&lt;/msDesc&gt;
+&lt;/sourceDesc&gt;
+</code></pre>
+                           
+                           <p id="14"><span class="paragraph-number">14</span>Encoding example within <span class="code">&lt;correspAction&gt;</span>:</p>
+                           
+                           <pre><code class="language-xml">&lt;correspDesc&gt;
+&lt;correspAction type="sent"&gt;
+&lt;persName&gt;Franz Marc&lt;/persName&gt;
+&lt;placeName&gt;Benediktbeuern&lt;/placeName&gt;
+&lt;date when="1915-01-18"/&gt;
+&lt;note&gt;The sender dates the letter, contrary to the postmark, to the
+&lt;origDate when="1915-01-16"&gt;16 January 1915&lt;/origDate&gt;.&lt;/note&gt;
+&lt;/correspAction&gt;
+&lt;correspAction type="received"&gt;
+&lt;!-- [...] --&gt;
+&lt;/correspAction&gt;
+&lt;/correspDesc&gt;
+</code></pre>
+                           
+                           <p id="15"><span class="paragraph-number">15</span>Another possibility would be the separate encoding of the postmark. In the
+                              following, we would like to discuss possible coding variants using example 4:</p>
+                           
+                           <figure><img src="img/stamps-seals-postmarks/example4.png"><figcaption>Example 4: Postcard with several stamps (source: Franz Marc to Herwarth
+                                 Walden, 16 January 1915, in: DER STURM. Digitale Quellenedition zur Geschichte
+                                 der internationalen Avantgarde, <a href="https://sturm-%E2%80%8Bedition.de/id/Q.01.19150116.FMA.01" target="_blank">https://sturm-​edition.de/id/Q.01.19150116.FMA.01</a>).</figcaption>
+                           </figure>
+                           </div>
+                        
+                        <div class="chapter" id="c-4-2">
+                           
+                           <h3>Approach 1: Postmarks within the meta data</h3>
+                           
+                           <p id="16"><span class="paragraph-number">16</span>A postmark is not an object in the true sense of the word, like a stamp or a seal.
+                              However, the definition of the <span class="code">&lt;stamp&gt;</span> element in the TEI Guidelines states
+                              that it could also represent a "similar device"<a id="fn6" href="#note_fn6">[6]</a>—something to which a postmark could be assigned. As an equivalent to
+                              stamps, it would therefore be conceivable to encode postmarks within the
+                              <span class="code">&lt;teiHeader&gt;</span> in <span class="code">&lt;msDesc&gt;</span> as <span class="code">&lt;stamp&gt;</span> and, in addition to a
+                              description, to encode the stamped information of example 4 as follows or
+                              similarly:</p>
+                           
+                           <pre><code class="language-xml">&lt;msDesc&gt;
+&lt;physDesc&gt;
+&lt;objectDesc&gt;
+&lt;supportDesc&gt;
+&lt;support&gt;
+&lt;p&gt;postcard with
+postmark:&lt;stamp&gt;&lt;!-- Description if needed--&gt;&lt;mentioned&gt;&lt;placeName&gt;Feldpoststation
+A. A. Falkenhausen&lt;/placeName&gt;&lt;date when="1915-01-18"&gt;18 Januar 15&lt;/date&gt;2-3 N&lt;/mentioned&gt;&lt;/stamp&gt;&lt;/p&gt;
+&lt;/support&gt;
+&lt;/supportDesc&gt;
+&lt;/objectDesc&gt;
+&lt;/physDesc&gt;
+&lt;/msDesc&gt;
+</code></pre>
+                           
+                           <p id="17"><span class="paragraph-number">17</span><span class="code">&lt;support&gt;</span> "contains a description of the materials etc. which make
+                              up the physical support for the written part of a manuscript or other
+                              object"<a id="fn7" href="#note_fn7">[7]</a>—a definition that could include postmarks. Furthermore, the TEI P5
+                              Guidelines recommend to clearly separate the transcription of text written on an
+                              object from the editor’s description of that object, e.g. by <span class="code">&lt;mentioned&gt;</span>
+                              for the text of stamps as child element of <span class="code">&lt;stamp&gt;</span><a id="fn8" href="#note_fn8">[8]</a>. The element <span class="code">&lt;mentioned&gt;</span>, however, is intended to make words and
+                              phrases explicit that are only implicit in the text: "<span class="code">&lt;mentioned&gt;</span>
+                              marks words or phrases mentioned, not used"<a id="fn9" href="#note_fn9">[9]</a>. This appears to be a contradiction within the TEI Guidelines. Elements
+                              like <span class="code">&lt;q&gt;</span>, <span class="code">&lt;quote&gt;</span> and <span class="code">&lt;cit&gt;</span> are not allowed at this point,
+                              perhaps a validation of these elements at this point would be the resolution of
+                              the discrepancy we suspect for the element <span class="code">&lt;mentioned&gt;</span>?</p>
+                           </div>
+                        
+                        <div class="chapter" id="c-4-3">
+                           
+                           <h3>Approach 2: Postmarks within the <span class="code">&lt;text&gt;</span> element</h3>
+                           
+                           <p id="18"><span class="paragraph-number">18</span>For encoding the postmark within the <span class="code">&lt;text&gt;</span> element, we suggest using a
+                              typified <span class="code">&lt;ab&gt;</span> or <span class="code">&lt;div&gt;</span> element (the latter needing an additional
+                              <span class="code">&lt;p&gt;</span>):</p>
+                           
+                           <pre><code class="language-xml">&lt;ab type="postmark"&gt;&lt;placeName&gt;Feldpoststation A.A. Falkenhausen&lt;/placeName&gt;&lt;date&gt;18 Januar
+15&lt;/date&gt;&lt;/ab&gt;</code></pre>
+                           
+                           <p id="19"><span class="paragraph-number">19</span>or</p>
+                           
+                           <pre><code class="language-xml">&lt;div type="postmark"&gt;
+&lt;p&gt;
+&lt;placeName&gt;Feldpoststation A.A. Falkenhausen&lt;/placeName&gt;
+&lt;date&gt;18 Januar 15&lt;/date&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+                           
+                           <p id="20"><span class="paragraph-number">20</span>Within <span class="code">&lt;text&gt;</span> non-encoded descriptions in plain text of objects in the
+                              letter—to which a postmark is counted here—are not provided per se, and are rather
+                              assigned to the metadata in the <span class="code">&lt;teiHeader&gt;</span>. So <span class="code">&lt;stamp&gt;</span>, if you want
+                              to use it correctly, must not be used within <span class="code">&lt;text&gt;</span> since the element
+                              <span class="code">&lt;stamp&gt;</span> explicitly contains a description of the object and is solely
+                              part of <span class="code">&lt;msDesc&gt;</span>. But would not a valid use of the <span class="code">&lt;stamp&gt;</span>
+                              element—in combination with a validation of elements like <span class="code">&lt;cit&gt;</span>,
+                              <span class="code">&lt;quote&gt;</span> etc. as discussed in approach 1—also make sense within
+                              <span class="code">&lt;body&gt;</span>, not only for postmarks but also for other types of stamps (e.g.
+                              for receipt stamps)?</p>
+                           
+                           <p id="21"><span class="paragraph-number">21</span>Another solution could be to encode the actual letter text again separately in a
+                              <span class="code">&lt;div&gt;</span> or <span class="code">&lt;ab&gt;</span> element, or to even introduce a new element
+                              <span class="code">&lt;postmark&gt;</span> within the <span class="code">&lt;text&gt;</span> element.</p>
+                           
+                           <pre><code class="language-xml">&lt;body&gt;
+&lt;ab type="postmark"&gt;
+&lt;placeName&gt;A.A. Falkenhausen&lt;/placeName&gt;
+&lt;date&gt;18 Januar 15&lt;/date&gt;
+&lt;/ab&gt;
+&lt;div&gt;
+&lt;opener/&gt;
+&lt;!-- [...] --&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+                           
+                           <p id="22"><span class="paragraph-number">22</span>or</p>
+                           
+                           <pre><code class="language-xml">&lt;body&gt;
+&lt;postmark&gt;
+&lt;placeName&gt;A.A. Falkenhausen&lt;/placeName&gt;
+&lt;date&gt;18 Januar 15&lt;/date&gt;
+&lt;/postmark&gt;
+&lt;opener/&gt;
+&lt;!-- [...] --&gt;
+&lt;/body&gt;
+</code></pre>
+                           </div>
+                        
+                        <div class="chapter" id="c-4-4">
+                           
+                           <h3>Postmarks: Conclusion</h3>
+                           
+                           <p id="23"><span class="paragraph-number">23</span>To take into account the difference between handwritten places and dates and those
+                              on postmarks in the coding of correspondence, we discussed different approaches.
+                              In order to document the handwritten date in the meta data, we suggest using the
+                              element <span class="code">&lt;origin&gt;</span> within <span class="code">&lt;history&gt;</span>/<span class="code">&lt;msDesc&gt;</span>, or analogously an
+                              additional <span class="code">&lt;note&gt;</span> within <span class="code">&lt;correspAction&gt;</span>, since the date of the
+                              postmark is always listed in the <span class="code">&lt;correspAction&gt;</span>.</p>
+                           
+                           <p id="24"><span class="paragraph-number">24</span>However, in order to capture the information of the postmark not only in terms of
+                              content but also in terms of a transcription, we make two suggestions. The first
+                              is the possible encoding of the text of the postmark in the element <span class="code">&lt;stamp&gt;</span>
+                              within <span class="code">&lt;support&gt;</span> (inside <span class="code">&lt;msDesc&gt;</span>) (approach1). Here, the explicit
+                              text is in the element <span class="code">&lt;mentioned&gt;</span>, which contradicts the actual definition
+                              of this element. For this reason, we suggest allowing elements such as
+                              <span class="code">&lt;cit&gt;</span>, <span class="code">&lt;quote&gt;</span>, and <span class="code">&lt;q&gt;</span> in the <span class="code">&lt;stamp&gt;</span> element.</p>
+                           
+                           <p id="25"><span class="paragraph-number">25</span>In our second approach, we discussed the possibilities of encoding the postmark
+                              within <span class="code">&lt;text&gt;</span>. One way could be to use a paragraph-like element like
+                              <span class="code">&lt;ab&gt;</span> or <span class="code">&lt;div&gt;</span> with a @type attribute "postmark". We also
+                              encourage discussion on the possibility of introducing a separate element
+                              <span class="code">&lt;postmark&gt;</span> or to validate <span class="code">&lt;stamp&gt;</span> with the adjustments proposed
+                              in approach 1 for elements such as <span class="code">&lt;cit&gt;</span>, <span class="code">&lt;q&gt;</span> and
+                              <span class="code">&lt;quote&gt;</span>.</p>
+                           </div>
+                        </div>
+                     </section>
+                  <div id="notes">
+                     <h2>Notes</h2>
+                     <ul>
+                        <li><a id="note_fn1" class="note-number" href="#fn1">[1]</a><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html" target="_blank">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html</a>.
+                           </li>
+                        <li><a id="note_fn2" class="note-number" href="#fn2">[2]</a><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html" target="_blank">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html</a>.
+                           </li>
+                        <li><a id="note_fn3" class="note-number" href="#fn3">[3]</a><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sealDesc.html" target="_blank">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sealDesc.html</a>.</li>
+                        <li><a id="note_fn4" class="note-number" href="#fn4">[4]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html</a>.
+                           </li>
+                        <li><a id="note_fn5" class="note-number" href="#fn5">[5]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html</a>.
+                           </li>
+                        <li><a id="note_fn6" class="note-number" href="#fn6">[6]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html</a>.
+                           </li>
+                        <li><a id="note_fn7" class="note-number" href="#fn7">[7]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html</a>.
+                           </li>
+                        <li><a id="note_fn8" class="note-number" href="#fn8">[8]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mswat" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#mswat</a>.
+                           </li>
+                        <li><a id="note_fn9" class="note-number" href="#fn9">[9]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-mentioned.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-mentioned.html</a>.
+                           </li>
+                     </ul>
+                  </div>
+                  <div id="bibliography"></div>
+                  <div class="card" id="citation">
+                     <div class="card-body">
+                        <h4 class="card-title">Citation</h4>Dewi Josephine Obert, Marjam Trautmann: Postage stamps, seals, and postmarks. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML
+                        and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.
+                        URL:&nbsp;<a href="https://encoding-correspondence.bbaw.de/v1/stamps-seals-postmarks.html">https://encoding-correspondence.bbaw.de/v1/stamps-seals-postmarks.html</a> URN:&nbsp;<a href="https://nbn-resolving.org/urn:nbn:de:kobv:b4-20200421172336303-8613365-9">urn:nbn:de:kobv:b4-20200421172336303-8613365-9</a><a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/NMRZD7DC" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><br><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Postage%20stamps%2C%20seals%2C%20and%20postmarks&amp;rft.btitle=Encoding%20Correspondence.%20A%20Manual%20for%20TEI-XML-based%20Encoding%20of%20Letters%20and%20Postcards%20in%20TEI-XML%20and%20DTABf&amp;rft.place=Berlin&amp;rft.publisher=Berlin-Brandenburg%20Academy%20of%20Sciences%20and%20Humanities&amp;rft.edition=1&amp;rft.aufirst=Dewi%20Josephine&amp;rft.aulast=Obert&amp;rft.au=Dewi%20Josephine%20Obert&amp;rft.au=Marjam%20Trautmann&amp;rft.au=Stefan%20Dumont&amp;rft.au=Susanne%20Haaf&amp;rft.au=Sabine%20Seifert&amp;rft.date=2020&amp;rft.language=en-EN"></span><p class="download-link"><i class="fa fa-download"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence">Download TEI-XML source of this article on GitHub</a></p>
+                     </div>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </div>
+      <footer class="d-print-none">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <h4>Publication</h4>
+                  <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and
+                     DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</p>
+                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
+                  <p><a href="legal.html">Legal notice &amp; privacy</a></p>
+               </div>
+               <div class="col-md-4">
+                  <h4>Licence</h4>
+                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
+               <div class="col-md-4">
+                  <h4>Kindly supported by</h4>
+                  <ul>
+                     <li><a href="https://www.clarin-d.net/en/" target="_blank">CLARIN-D</a></li>
+                     <li><a href="https://tei-c.org/activities/sig/correspondence/" target="_blank">TEI Correspondence SIG</a></li>
+                     <li><a href="http://www.bbaw.de/en/" target="_blank">Berlin-Brandenburg Academy of Sciences and Humanities</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer><script src="libs/jquery/jquery-3.3.1.slim.min.js"></script><script src="libs/popper.js/popper.min.js"></script><script src="libs/bootstrap-4.3.1/js/bootstrap.min.js"></script><script src="libs/prism/prism.js"></script><script src="https://hypothes.is/embed.js" async></script><script>
+                    $(function () {
+                        $("[data-toggle='popover']").popover({
+                            html : true,
+                            trigger: 'focus',
+                            content: function() {
+                                var content = $(this).attr("data-popover-content");
+                                return $(content).children(".popover-body").html();
+                            }
+                        });
+                    })
+                </script></body>
+</html>

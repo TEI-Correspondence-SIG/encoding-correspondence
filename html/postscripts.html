@@ -23,15 +23,13 @@
                     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
                     })();
                 </script><noscript>
-         <p><img src="https://piwik.bbaw.de/matomo.php?idsite=53&amp;rec=1" style="border:0;" alt=""></p>
-      </noscript>
-   </head>
+         <p><img src="https://piwik.bbaw.de/matomo.php?idsite=53&amp;rec=1" style="border:0;" alt=""></p></noscript></head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-dark">
          <div class="container"><a class="navbar-brand" href="index.html" title="To the homepage" alt="Go to home page of Encoding Correspondence">Encoding Correspondence</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar">
                <ul class="navbar-nav">
                   <li class="nav-item"><a class="nav-link" href="introduction.html">Introduction</a></li>
-                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a></div>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="addresses.html">Addresses</a><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="stamps-seals-postmarks.html">Postage Stamps, Seals, and Postmarks</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a></div>
                   </li>
                   <li class="nav-item"><a class="nav-link" href="authors.html">Authors <span class="sr-only">(current)</span></a></li>
                </ul>
@@ -44,15 +42,12 @@
                <div id="status" class="card">
                   <div class="card-body">
                      <h5 class="card-title">Status of this article</h5>
-                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 30.04.2020.
-                     </p>
+                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 30&nbsp;May&nbsp;2020.</p>
                      <p>We kindly invite you to review and/or comment this article! Please do so via the web
                         annotation service <a href="https://web.hypothes.is/">Hypothes.is</a> 
-                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.
-                     </p>
+                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.</p>
                      <p>This article remains stable and <a href="#citation">citable</a> in the first version of this manual. The revised article will be published in the
-                        second edition of the manual.
-                     </p>
+                        second edition of the manual.</p>
                   </div>
                </div>
                <div class="card">
@@ -109,38 +104,31 @@
                      <div class="chapter" id="c-1">
                         <h2>Introduction</h2>
                         
-                        <p id="1"><span class="paragraph-number">&nbsp;&nbsp;1</span>The Oxford English Dictionary defines postscript as:
-                        </p>
+                        <p id="1"><span class="paragraph-number">&nbsp;&nbsp;1</span>The Oxford English Dictionary defines postscript as:</p>
                         
                         <blockquote>
                            <p>A paragraph or passage written at the end of a letter, after the signature, containing
-                              an afterthought or additional matter.
-                           </p><cite><a href="http://www.oed.com/view/Entry/148663" target="_blank">(OED, entry 148663)</a></cite></blockquote>
+                              an afterthought or additional matter.</p><cite><a href="http://www.oed.com/view/Entry/148663" target="_blank">(OED, entry 148663)</a></cite></blockquote>
                         
                         <p id="2"><span class="paragraph-number">&nbsp;&nbsp;2</span>This definition may be read in two ways: First, it may mean that the existence of
                            a postscript is tied to the place where it stands; second, “written at the end” and
                            “after” might be temporal expressions, referring to the time when the postscript was
                            written rather than its actual place. In any case, a postscript is recognized as a
                            text additional to the main text of a letter, written some time after the “main” letter
-                           was finished and put somewhere behind the main text.
-                        </p>
+                           was finished and put somewhere behind the main text.</p>
                         
-                        <p id="3"><span class="paragraph-number">&nbsp;&nbsp;3</span>For the concept of postscript, the TEI offers an element <span class="code">&lt;postscript&gt;</span> which is defined without any restrictions to where it is located:
-                        </p> 
+                        <p id="3"><span class="paragraph-number">&nbsp;&nbsp;3</span>For the concept of postscript, the TEI offers an element <span class="code">&lt;postscript&gt;</span> which is defined without any restrictions to where it is located:</p> 
                         
                         <blockquote>
-                           <p><span class="code">&lt;postscript&gt;</span> contains a postscript, e.g. to a letter.
-                           </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-postscript.html" target="_blank">(TEI P5 3.6.0: ref-postscript</a></cite></blockquote>
+                           <p><span class="code">&lt;postscript&gt;</span> contains a postscript, e.g. to a letter.</p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/ref-postscript.html" target="_blank">(TEI P5 3.6.0: ref-postscript</a></cite></blockquote>
                         
                         <p id="4"><span class="paragraph-number">&nbsp;&nbsp;4</span>This explanation does not say a lot but the more detailed TEI documentation offers
-                           more information:
-                        </p> 
+                           more information:</p> 
                         
                         <blockquote>
                            <p>A postscript is a passage added after the signature of a letter or, less frequently,
                               the main portion of the body of a book, article, or essay. In English a postscript
-                              is often abbreviated as <i>P.S.</i> or <i>PS</i>, and postscripts are often introduced by labels with one of these abbreviations [...].
-                           </p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/DS.html#DSAE" target="_blank">(TEI P5 3.6.0, ch. 4.2.3: Arguments, Epigraphs, and Postscripts)</a></cite></blockquote>
+                              is often abbreviated as <i>P.S.</i> or <i>PS</i>, and postscripts are often introduced by labels with one of these abbreviations [...].</p><cite><a href="https://tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html/DS.html#DSAE" target="_blank">(TEI P5 3.6.0, ch. 4.2.3: Arguments, Epigraphs, and Postscripts)</a></cite></blockquote>
                         
                         <p id="5"><span class="paragraph-number">&nbsp;&nbsp;5</span>While the short description does not mention any restrictions, the more elaborate
                            documentation also specifies that a postscript is “added after the signature”. Indeed,
@@ -149,8 +137,7 @@
                            <span class="code">&lt;postscript&gt;</span> is much more flexible by now. However, there are still cases which raise insecurities
                            on how to handle their encoding properly or which even cannot be handled sufficiently
                            with the current TEI toolbox. These problems, a range of possible solutions and some
-                           recommendations will be presented in the following parts of this chapter.
-                        </p>
+                           recommendations will be presented in the following parts of this chapter.</p>
                      </div>
                      
                      <div class="chapter" id="c-2">
@@ -160,18 +147,16 @@
                            <h3>Simple Postscripts</h3>
                            
                            <p id="6"><span class="paragraph-number">&nbsp;&nbsp;6</span>For the encoding of simple postscripts, the TEI offers the <span class="code">&lt;postscript&gt;</span> element. This element belongs to the models <span class="code">model.divTopPart</span> and <span class="code">model.divBottomPart</span>, which means it can be inserted at the beginning or end of a devision. A frequent
-                              and usual case is a postscript behind a closing salutation, as in example 1.
-                           </p>
+                              and usual case is a postscript behind a closing salutation, as in example 1.</p>
                            
                            	
                            <figure><img src="img/postscript/img01.jpg"><figcaption>Example 1: Simple postscript (source: Elisabeth Goethe to Bettina von Arnim, 14 March
-                                 1807. In Arnim 1835: p. X/facs. 30. <a href="http://www.deutschestextarchiv.de/arnimb_goethe01_1835/30" target="_blank">Digital edition/DTA</a>).
-                              </figcaption>
+                                 1807. In Arnim 1835: p. X/facs. 30. <a href="http://www.deutschestextarchiv.de/arnimb_goethe01_1835/30" target="_blank">Digital edition/DTA</a>).</figcaption>
                            </figure>
                            
-                           <p id="7"><span class="paragraph-number">&nbsp;&nbsp;7</span>The encoding of this example is quite simple and straightforward: 
-                           </p>
-                           	<pre><code class="language-xml">&lt;div type="letter"&gt;
+                           <p id="7"><span class="paragraph-number">&nbsp;&nbsp;7</span>The encoding of this example is quite simple and straightforward: </p>
+                           	
+                           <pre><code class="language-xml">&lt;div type="letter"&gt;
 [...]
 &lt;p&gt;Amüſire Dich recht gut und ſei luſtig, denn wer&lt;lb/&gt;
 lacht, kann keine Todſünd' thun.&lt;/p&gt;&lt;lb/&gt;
@@ -186,8 +171,8 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
 ſeufzen.&lt;/p&gt;
 &lt;/postscript&gt;
 &lt;/div&gt;</code></pre>
-                           <p id="8"><span class="paragraph-number">&nbsp;&nbsp;8</span>The <span class="code">&lt;postscript&gt;</span> element may contain a couple of elements for internal structuring, as e.g. <span class="code">&lt;p&gt;</span>, <span class="code">&lt;label&gt;</span>, and even <span class="code">&lt;opener&gt;</span>, <span class="code">&lt;closer&gt;</span>, or <span class="code">&lt;signed&gt;</span>.
-                           </p>
+                           
+                           <p id="8"><span class="paragraph-number">&nbsp;&nbsp;8</span>The <span class="code">&lt;postscript&gt;</span> element may contain a couple of elements for internal structuring, as e.g. <span class="code">&lt;p&gt;</span>, <span class="code">&lt;label&gt;</span>, and even <span class="code">&lt;opener&gt;</span>, <span class="code">&lt;closer&gt;</span>, or <span class="code">&lt;signed&gt;</span>.</p>
                         </div>
                         
                         <div class="chapter" id="c-2-2">
@@ -202,12 +187,10 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
                                  relations: there can be several postscripts lined up after a letter which are related
                                  to the respective letter; a subsequent postscript might be referring to the preceding
                                  postscript; or a postscript can be part of a superordinate postscript. Example 2 illustrates
-                                 some of the possible variation with regard to postscripts.
-                              </p> 
+                                 some of the possible variation with regard to postscripts.</p> 
                               	
                               <figure><img src="img/postscript/img02.jpg"><figcaption>Example 2: Numerous postscripts at the end of a letter written by various hands (source:
-                                    Gottfried Weber to Johann Gänsbacher. Darmstadt, 9 February 1811. <a href="https://weber-gesamtausgabe.de/de/A002078/Korrespondenz/A040446.html" target="_blank">Digital edition/ CMWG</a>).
-                                 </figcaption>
+                                    Gottfried Weber to Johann Gänsbacher. Darmstadt, 9 February 1811. <a href="https://weber-gesamtausgabe.de/de/A002078/Korrespondenz/A040446.html" target="_blank">Digital edition/ CMWG</a>).</figcaption>
                               </figure>
                            </div>
                            
@@ -216,10 +199,10 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
                               
                               <p id="10"><span class="paragraph-number">10</span>The TEI already allows for the usage of more than one postscript in a <span class="code">&lt;div&gt;</span> structure. So, in case there are subsequent postscripts following a letter as in
                                  example 2, these can simply be encoded each with its own <span class="code">&lt;postscript&gt;</span> element. It is also already possible to subordinate postscripts to one another. The
-                                 encoding of the above example could then be as follows:
-                              </p>
+                                 encoding of the above example could then be as follows:</p>
                               
-                              <figure><pre><code class="language-xml">&lt;postscript&gt;
+                              <figure>
+                                 <pre><code class="language-xml">&lt;postscript&gt;
 &lt;p&gt;Im Ernste Bruder bessere Dich.&lt;/p&gt; &lt;signed&gt;MeyerBeer&lt;/signed&gt;
 &lt;/postscript&gt;
 &lt;postscript&gt;
@@ -227,9 +210,9 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
 &lt;/postscript&gt;
 &lt;postscript&gt;
 &lt;p&gt;bey unsrer Freundschaft beschwöre ich dich, uns aus dieser tödtlichen Ungewißheit zu reißen&lt;/p&gt; &lt;signed&gt;C. M. v. Weber&lt;/signed&gt;
-&lt;/postscript&gt;</code></pre><figcaption>Example 2a: Encoding for example 2 (transcription by Carl-Maria-von-Weber-Gesamtausgabe;
-                                    encoding based on Carl-Maria-von-Weber-Gesamtausgabe):
-                                 </figcaption>
+&lt;/postscript&gt;</code></pre>
+                                 <figcaption>Example 2a: Encoding for example 2 (transcription by Carl-Maria-von-Weber-Gesamtausgabe;
+                                    encoding based on Carl-Maria-von-Weber-Gesamtausgabe):</figcaption>
                               </figure>
                               
                               
@@ -238,10 +221,10 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
                                  mailing list discussion of such cases, this was already stated by the TEI Council
                                  to be the preferred encoding solution.
                                  Several writing sessions each with its own postscript can be represented in subordinate
-                                 <span class="code">&lt;div&gt;</span> elements within the <span class="code">&lt;div&gt;</span> that contains the whole letter:
-                              </p> 
+                                 <span class="code">&lt;div&gt;</span> elements within the <span class="code">&lt;div&gt;</span> that contains the whole letter:</p> 
+                              
                               <pre><code class="language-xml">&lt;div type="letter"&gt;
-&lt;div n="writingSession"&gt;
+&lt;div type="writingSession"&gt;
 &lt;p&gt;[...]&lt;/p&gt;
 &lt;closer&gt;&lt;salute&gt;[Salutation here]&lt;/salute&gt;&lt;/closer&gt;
 &lt;postscript&gt;&lt;p&gt;[Postscript here]&lt;/p&gt;&lt;/postscript&gt;
@@ -253,12 +236,13 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                               
+                              
                               <p id="12"><span class="paragraph-number">12</span>An example for such encoding can be found in a letter by Carl Maria von Weber’s correspondents
                                  to the composer (example 3). The letter was written by two authors and was encoded
-                                 in two separate writing session divisions.
-                              </p> 
+                                 in two separate writing session divisions.</p> 
                               	
-                              <figure><pre><code class="language-xml">&lt;div type="letter"&gt;
+                              <figure>
+                                 <pre><code class="language-xml">&lt;div type="letter"&gt;
 &lt;div type="writingSession" n="1" hand="#author1"&gt;
 &lt;opener&gt;
 &lt;dateline rendition="#right"&gt;London den 9ten März 1826&lt;/dateline&gt;
@@ -291,10 +275,10 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
 &lt;p&gt;Bochsa schreibt jetzt für Boosey und daher auch für dich, auf mein Anrathen, 3 Nocturnes über Romanzen [...]&lt;/p&gt;
 &lt;/postscript&gt;
 &lt;/div&gt;
-&lt;/div&gt;</code></pre><figcaption>Example 3: Writing sessions by different correspondents in one letter (source: Ignaz
+&lt;/div&gt;</code></pre>
+                                 <figcaption>Example 3: Writing sessions by different correspondents in one letter (source: Ignaz
                                     Moscheles to Moritz Schlesinger, London, 9 March 1826. With a postscript by Carl Schlesinger,
-                                    Bath, 13 March 1826. <a href="https://weber-gesamtausgabe.de/de/A001353/Korrespondenz/A042603.html" target="_blank">Digital edition/CMWG</a>)
-                                 </figcaption>
+                                    Bath, 13 March 1826. <a href="https://weber-gesamtausgabe.de/de/A001353/Korrespondenz/A042603.html" target="_blank">Digital edition/CMWG</a>)</figcaption>
                               </figure>
                            </div>
                         </div>
@@ -309,8 +293,7 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
                            of other items of the letter, e.g. a dateline, even in front of the whole letter,
                            it may have been divided into several parts if space was limited, it may have evolved
                            into a quite elaborate text with more complex structures, and – probably the most
-                           irritating case – it may even contain the main information of the letter.
-                        </p> 
+                           irritating case – it may even contain the main information of the letter.</p> 
                         
                         <div class="chapter" id="c-3-1">
                            <h3>Issue 2: Locations of Postscripts</h3>
@@ -321,28 +304,26 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm&lt;lb/&gt;
                               <p id="14"><span class="paragraph-number">14</span>As stated above the postscript can be found at locations other than the bottom of
                                  a letter. The first case is illustrated in Example 3. Here, the postscript is scribbled
                                  on the left margin of one (not the last) page of a letter. The conclusion of that
-                                 letter can be found on one of the following pages.
-                              </p>
+                                 letter can be found on one of the following pages.</p>
                               
                               	
                               <figure><img src="img/postscript/img03.jpg"><figcaption>Example 4: Postscript at the left margin of an interior letter page (Source: Erdmuthe
                                     Benigna of Reuß-Ebersdorf to Heinrich XXIV. of Reuß-Schleiz at Köstritz, Ebersdorf,
-                                    15 May 1714. <a href="https://archive.thulb.uni-jena.de/collections/rsc/viewer/HisBest_derivate_00017471/PK16_97_0001.tif" target="_blank">Facs. 1</a>).
-                                 </figcaption>
+                                    15 May 1714. <a href="https://archive.thulb.uni-jena.de/collections/rsc/viewer/HisBest_derivate_00017471/PK16_97_0001.tif" target="_blank">Facs. 1</a>).</figcaption>
                               </figure> 
                               
                               <p id="15"><span class="paragraph-number">15</span>Secondly, a probably very rare (though existing) case is that a postscript was written
-                                 at the beginning of a letter, as cited in Example 4.
-                              </p>
+                                 at the beginning of a letter, as cited in Example 4.</p>
                               
-                              <figure><pre><code class="language-xml">&lt;opener&gt;&lt;salute&gt;TO JAMES HERVEY BINGHAM&lt;/salute&gt;&lt;lb/&gt;
+                              <figure>
+                                 <pre><code class="language-xml">&lt;opener&gt;&lt;salute&gt;TO JAMES HERVEY BINGHAM&lt;/salute&gt;&lt;lb/&gt;
 &lt;postscript&gt;P.S. The top of a letter is a new place for a postscript; excuse it, for its &lt;lb/&gt;
 design is to beg you to give my love to your and my friends P. and E.&lt;lb/&gt;
 Salisbury, April 3, 1804.&lt;lb/&gt;
 Good Hervey,&lt;lb/&gt;
-I am really much obliged by your ready attention to my requests [etc. ...]&lt;/postscript&gt;&lt;/opener&gt;</code></pre><figcaption>Example 4: Postscript at the beginning of a letter (source: Daniel Webster to James
-                                    Hervey Bingham, Salisbury, 3 April 1804. <a href="https://listserv.brown.edu/archives/cgi-bin/wa?A2=ind1801&amp;L=TEI-L&amp;P=30948)" target="_blank">[Partial transcript]</a>.
-                                 </figcaption>
+I am really much obliged by your ready attention to my requests [etc. ...]&lt;/postscript&gt;&lt;/opener&gt;</code></pre>
+                                 <figcaption>Example 4: Postscript at the beginning of a letter (source: Daniel Webster to James
+                                    Hervey Bingham, Salisbury, 3 April 1804. <a href="https://listserv.brown.edu/archives/cgi-bin/wa?A2=ind1801&amp;L=TEI-L&amp;P=30948)" target="_blank">[Partial transcript]</a>.</figcaption>
                               </figure>
                               
                               
@@ -353,26 +334,22 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
                               
                               
                               <p id="17"><span class="paragraph-number">17</span>So, the argument for calling the text a postscript here is the time when, not the
-                                 place where it presumably was written.
-                              </p> 
+                                 place where it presumably was written.</p> 
                               
                               <p id="18"><span class="paragraph-number">18</span>A third case is a postscript written behind the final salutation but in front of the
-                                 dateline (Example 5).
-                              </p> 
+                                 dateline (Example 5).</p> 
                               
                               
                               <figure><img src="img/postscript/img04.jpg"><figcaption>Example 5: Postscript surrounded by parts of the closer (source: Leopoldo Marcantonio
                                     Caldani to Albrecht von Haller, 13 March 1759, Burgerbibliothek Bern [Shelfmark: N
-                                    Albrecht von Haller 105.9, Caldani, Leopoldo Marcantonio: 22])
-                                 </figcaption>
+                                    Albrecht von Haller 105.9, Caldani, Leopoldo Marcantonio: 22])</figcaption>
                               </figure>
                            </div>
                            
                            <div class="chapter" id="c-3-1-2">
                               <h4>Discussion of Issue 2</h4>
                               
-                              <p id="19"><span class="paragraph-number">19</span>There are two obvious ways how one might want to handle Examples 3 and 4.
-                              </p> 
+                              <p id="19"><span class="paragraph-number">19</span>There are two obvious ways how one might want to handle Examples 3 and 4.</p> 
                               
                               <p id="20"><span class="paragraph-number">20</span>(1) First, the postscript could be transcribed at the end of the letter because ‘it
                                  is meant as’ final remark and was probably written down after the letter was finished.
@@ -383,15 +360,13 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
                                  break elements have to be linked among each other and would result in a higher number
                                  of <span class="code">&lt;pb&gt;</span> elements than there are pages in the source document. This is a possible scenario,
                                  but it would have to be communicated quite clearly to the users in order to avert
-                                 errors in further processing.
-                              </p>
+                                 errors in further processing.</p>
                               
                               <p id="21"><span class="paragraph-number">21</span>(2) Another possibility would be to transcribe and tag the postscript on the page
                                  where it was written. This approach, however, is not yet supported by the TEI Guidelines,
                                  neither if a postscript was written somewhere in the middle of a letter text (ex.
                                  12), nor, if it is entered at the beginning of a letter (ex. 13): the <span class="code">&lt;postscript&gt;</span> element is part of the TEI Guidelines class <span class="code">model.divBottomPart</span>. A workaround could be to use the <span class="code">&lt;note&gt;</span> element, e.g. as note type="postscript". But can a postscript really be characterized as a note? And if so, why not use <span class="code">&lt;note&gt;</span> for it everywhere? It seems that there should be another way given that the TEI Guidelines
-                                 already contain a <span class="code">&lt;postscript&gt;</span> element.
-                              </p>
+                                 already contain a <span class="code">&lt;postscript&gt;</span> element.</p>
                               
                               <p id="22"><span class="paragraph-number">22</span>As for Examples 3 and 4, closeness to the source seems to be an important argument
                                  in favor of the handling proposed in (2). Example 5 raises the question if it were
@@ -399,35 +374,29 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
                                  the dateline is not part of the closer here, or anywhere, or if it belongs to the
                                  closer. So here, an area of interpretation is reached where decision taking might
                                  better be delegated to the editor, while the format is purposely designed to allow
-                                 for the different possible ways of encoding.
-                              </p>
+                                 for the different possible ways of encoding.</p>
                            </div> 
                            
                            <div class="chapter" id="c-3-1-3">
                               <h4>Solutions to Issue 2</h4>
                               
-                              <p id="23"><span class="paragraph-number">23</span>For the issue described here, we propose two modifications of the TEI Guidelines:
-                              </p>
+                              <p id="23"><span class="paragraph-number">23</span>For the issue described here, we propose two modifications of the TEI Guidelines:</p>
                               
-                              <p id="24"><span class="paragraph-number">24</span><span class="code">&lt;postscript&gt;</span> should become a possible subelement of <span class="code">&lt;p&gt;</span>. Formally, it could have a distribution similar to the <span class="code">&lt;note&gt;</span> element, i.e. in encoding, <span class="code">&lt;postscript&gt;</span> may interrupt running text. Thus, in this scenario, <span class="code">&lt;postscript&gt;</span> might become member of the class <span class="code">model.noteLike</span>. 
-                              </p>
+                              <p id="24"><span class="paragraph-number">24</span><span class="code">&lt;postscript&gt;</span> should become a possible subelement of <span class="code">&lt;p&gt;</span>. Formally, it could have a distribution similar to the <span class="code">&lt;note&gt;</span> element, i.e. in encoding, <span class="code">&lt;postscript&gt;</span> may interrupt running text. Thus, in this scenario, <span class="code">&lt;postscript&gt;</span> might become member of the class <span class="code">model.noteLike</span>. </p>
                               
                               <p id="25"><span class="paragraph-number">25</span>This way, it would e.g. easily be possible to annotate postscripts scribled at the
                                  margin of a page (Example 3). 
                                  This handling is preferred to using the <span class="code">&lt;note&gt;</span> element for this case, which would be misleading with regard to the text type under
-                                 consideration, or to using <span class="code">&lt;seg&gt;</span>, which would be too unspecific, given that the element <span class="code">&lt;postscript&gt;</span> already exists in the TEI Guidelines.
-                              </p>
+                                 consideration, or to using <span class="code">&lt;seg&gt;</span>, which would be too unspecific, given that the element <span class="code">&lt;postscript&gt;</span> already exists in the TEI Guidelines.</p>
                               
                               <p id="26"><span class="paragraph-number">26</span>Furthermore, the <span class="code">&lt;postscript&gt;</span> element should be supplied with an attribute <span class="code">@place</span> to indicate the place where the postscript is entered on the page. So, the <span class="code">&lt;postscript&gt;</span> element should become a member of class <span class="code">att.placement</span>. 
-                                 These modifications are accompanied with some proposed ground rules for transcription:
-                              </p>
+                                 These modifications are accompanied with some proposed ground rules for transcription:</p>
                               
                               <p id="27"><span class="paragraph-number">27</span>If the postscript is found at the left margin of a page, it should be transcribed
                                  in front of the line at the height of which it was entered; if it is found at the
                                  right margin, it should be transcribed at the end of that line. Postscripts at the
                                  top/bottom margin of a page should be transcribed before/after the running text of
-                                 the page, respectively.
-                              </p>
+                                 the page, respectively.</p>
                            </div>
                         </div>
                         
@@ -447,13 +416,11 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
                                  by writing vertically on the first page across the letter’s primary text. It is finished
                                  with a salutation and a postscript is started on the same page and in the same manner
                                  which is then continued on a new, third sheet of paper. This postscript is then followed
-                                 by a second postscript on the last page.
-                              </p>
+                                 by a second postscript on the last page.</p>
                               
                               	
                               <figure><img src="img/postscript/img05.jpg"><figcaption>Example 6: Discontinuous parts of a postscript (source: Jacoba van Heemskerck to Herwarth
-                                    Walden, 31 January 1915, p. <a href="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000001" target="_blank">53r</a>, <a href="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000004" target="_blank">54v</a>, <a href="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000006" target="_blank">55v</a>; <a href="https://sturm-edition.de/id/Q.01.19150131.JVH.01" target="_blank">digital edition </a>)
-                                 </figcaption>
+                                    Walden, 31 January 1915, p. <a href="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000001" target="_blank">53r</a>, <a href="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000004" target="_blank">54v</a>, <a href="http://resolver.staatsbibliothek-berlin.de/SBB0000D96300000006" target="_blank">55v</a>; <a href="https://sturm-edition.de/id/Q.01.19150131.JVH.01" target="_blank">digital edition </a>)</figcaption>
                               </figure>
                            </div>
                            
@@ -470,8 +437,8 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
                                  for <span class="code">@part</span>, i.e. ‘I’ for ‘initial’, ‘M’ for ‘medium’ and ‘F’ for ‘final’. This tagging has some
                                  disadvantages, though: With the values at hand, the current case could not be tagged
                                  unambiguously, because in fact, the segments representing parts of the letter body
-                                 and the postscript would overlap just as the source text does.
-                              </p> 
+                                 and the postscript would overlap just as the source text does.</p> 
+                              
                               <pre><code class="language-xml">&lt;div&gt;&lt;seg part="I"&gt;Beginning of the letter&lt;/seg&gt;
 &lt;seg part="M"&gt;Ending of the letter
 &lt;postscript&gt;Beginning of the postscript&lt;/postscript&gt;&lt;/seg&gt;
@@ -482,39 +449,34 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
 &lt;/seg&gt;
 &lt;seg part="F"&gt;Continuation and ending of the postscript&lt;/seg&gt;
 &lt;/div&gt;</code></pre>
+                              
                               <p id="30"><span class="paragraph-number">30</span>With only the values <span class="code">"I"</span>, <span class="code">"M"</span>, <span class="code">"F"</span>, <span class="code">//seg[2]</span> and <span class="code">//seg[3]</span> cannot be tagged unambiguously. The <span class="code">//seg[3][@part="I"]</span> is not correct because //seg[3] is not the initial part of the chain. However, if
-                                 the tagging was <span class="code">//seg[3][@part="M"]</span>, it would not be clear, that <span class="code">//seg[3]</span> actually comes before <span class="code">//seg[2]</span> in the sequence of the letter.
-                              </p> 
+                                 the tagging was <span class="code">//seg[3][@part="M"]</span>, it would not be clear, that <span class="code">//seg[3]</span> actually comes before <span class="code">//seg[2]</span> in the sequence of the letter.</p> 
                               
                               <p id="31"><span class="paragraph-number">31</span>So, the <span class="code">&lt;seg&gt;</span> chain in a way forces linerarity to the text where this can’t be guaranteed.
                                  The problem gets even worse if we considered the letter body and the postscript as
-                                 two separate structures, each represented by its own chain of segments.
-                              </p>
+                                 two separate structures, each represented by its own chain of segments.</p>
                               
                               <p id="32"><span class="paragraph-number">32</span>Thus, if <span class="code">&lt;seg&gt;</span> was chosen, a more elaborate vocabulary for naming of the parts would have to be
                                  introduced. Since the only connection between the <span class="code">&lt;seg&gt;</span> structures is their naming of the <span class="code">@part</span> values, these could be further differentiated but actually would have to remain actual
                                  names indicating the position of a segment in the chain (e.g. <span class="code">"I"</span>, <span class="code">"M1"</span>, <span class="code">"M2"</span>, <span class="code">"M3"</span>, ..., <span class="code">"F"</span>). So, with this tagging it would always be costly to add seg parts (if needed) to
-                                 the chain at a later point in time.
-                              </p> 
+                                 the chain at a later point in time.</p> 
                               
                               <p id="33"><span class="paragraph-number">33</span>By introducing and chaining <span class="code">&lt;seg&gt;</span>s, those structures which really are interrupted are not taken care of. In our case,
                                  e.g. the paragraph which starts on the first page and is continued on the second page,
                                  would be closed, interrupted by other text parts, and reopened. Here, the two parts
-                                 of the paragraph should be connected somehow.
-                              </p>
+                                 of the paragraph should be connected somehow.</p>
                               
                               <p id="34"><span class="paragraph-number">34</span>Another more flexible way of indicating discontinuous parts of texts is the set of
-                                 <span class="code">@xml:id</span>, <span class="code">@prev</span>, <span class="code">@next</span> attributes, as presented in the following section.
-                              </p> 
-                           </div>
+                                 <span class="code">@xml:id</span>, <span class="code">@prev</span>, <span class="code">@next</span> attributes, as presented in the following section.</p> </div>
                            
                            <div class="chapter" id="c-3-2-3">
                               <h4>Solution to Issue 3</h4>
                               	
                               <p id="35"><span class="paragraph-number">35</span>For discontinuous parts of letters and postscripts, we recommend the application of
                                  the <span class="code">@xml:id</span> (class <span class="code">att.global</span>), and <span class="code">@prev</span>, <span class="code">@next</span> (class <span class="code">att.global.linking</span>) attribute set. A structure, that is interrupted, can be connected with its followers
-                                 by usage of unambiguous identifiers. For example 6, this could be encoded as follows:
-                              </p>
+                                 by usage of unambiguous identifiers. For example 6, this could be encoded as follows:</p>
+                              
                               <pre><code class="language-xml">&lt;div&gt;
 &lt;p xml:id="p1a" next="p1b"&gt;Beginning of the letter&lt;/p&gt;
 &lt;p xml:id="p2b" prev="p2a"&gt;Ending of the letter&lt;/p&gt;...
@@ -528,9 +490,9 @@ I am really much obliged by your ready attention to my requests [etc. ...]&lt;/p
 &lt;postscript xml:id="p3b" prev="p3a"&gt;
 Ending of postscript
 &lt;/postscript&gt;
-&lt;postscript&gt;2nd postscript&lt;/postscript&gt;&lt;/div&gt;</code></pre></div> 
-                           
-                        </div>
+&lt;postscript&gt;2nd postscript&lt;/postscript&gt;&lt;/div&gt;</code></pre>
+                           </div> 
+                           </div>
                         
                         <div class="chapter" id="c-3-3">
                            <h3>Issue 4: Variation of the Postscript’s Location on the Page</h3>
@@ -542,52 +504,44 @@ Ending of postscript
                                  the bottom of a letter nor even continuously in one place. Here we discuss cases where
                                  parts of one postscript are written down at different positions of a page. Example
                                  7 illustrates the issue: the postscript was started in the bottom half of the (folded)
-                                 sheet and continued on the left side of the upper half of that sheet.
-                              </p>
+                                 sheet and continued on the left side of the upper half of that sheet.</p>
                               	
                               <figure><img src="img/postscript/img06.jpg"><figcaption>Example 7: Change of place within postscript (source: <a href="https://digilib.bbaw.de/digitallibrary/digilib.html?fn=archiv/IdNo32&amp;pn=4" target="_blank">Alexander von Humboldt to Christian Gottfried Ehrenberg, Paris, 19 December 1831,
                                        p. 2v.</a> Archiv der Berlin-Brandenburgischen Akademie der Wissenschaften; shelfmark: NL C.
-                                    G. Ehrenberg, 421, fol. 57r-58v).
-                                 </figcaption>
+                                    G. Ehrenberg, 421, fol. 57r-58v).</figcaption>
                               </figure>
-                              
-                           </div>
+                              </div>
                            
                            <div class="chapter" id="c-3-3-2">
                               <h4>Discussion of Issue 4</h4>
                               	
                               <p id="37"><span class="paragraph-number">37</span>(1) One possible solution might be to add <span class="code">&lt;postscript&gt;</span> to the attribute class <span class="code">att.placement</span>, so that the attribute <span class="code">@place</span> becomes usable within <span class="code">&lt;postscript&gt;</span>. This way, it could be encoded where exactly the <span class="code">&lt;postscript&gt;</span> was written on the page. However, if that place changes, it would be hard to encode
-                                 that change. A possible solution could then be to close the <span class="code">&lt;postscript&gt;</span>, reopen it with a new indication of <span class="code">@place</span> and connect the two <span class="code">&lt;postscript&gt;</span> elements with <span class="code">@xml:id</span>, <span class="code">@prev</span>, <span class="code">@next</span>.
-                              </p>
+                                 that change. A possible solution could then be to close the <span class="code">&lt;postscript&gt;</span>, reopen it with a new indication of <span class="code">@place</span> and connect the two <span class="code">&lt;postscript&gt;</span> elements with <span class="code">@xml:id</span>, <span class="code">@prev</span>, <span class="code">@next</span>.</p>
                               
                               <p id="38"><span class="paragraph-number">38</span>(2) Another approach could include <span class="code">&lt;seg&gt;</span> elements to enclose text segments according to the places where they were found.
                                  In that scenario, it would be the <span class="code">&lt;seg&gt;</span> element which has to carry the information about the text segment’s placement. So,
-                                 <span class="code">&lt;seg&gt;</span> would have to be added to the <span class="code">att.placement</span> class.
-                              </p>
+                                 <span class="code">&lt;seg&gt;</span> would have to be added to the <span class="code">att.placement</span> class.</p>
                               	
                               <p id="39"><span class="paragraph-number">39</span>(3) An elegant way could also be to introduce a new milestone element <span class="code">&lt;placeShift&gt;</span> (analoguous to e.g. <span class="code">&lt;handShift&gt;</span>) which is member of <span class="code">att.placement</span>. That way, the change of placement could be indicated by <span class="code">&lt;placeShift&gt;</span> without interrupting the running text (as in 1) and without introducing artificial
                                  structures (as in 2). The <span class="code">&lt;placeShift&gt;</span> element would still have to be provided with an attribute <span class="code">@new</span> or an attribute set <span class="code">@from</span>/<span class="code">@to</span> to indicate the destination of the shift. Between the two proposals for attribute,
                                  <span class="code">@new</span> would be a solution consistent with the practice for other “shift” elements, i.e.
                                  <span class="code">&lt;handShift&gt;</span> and <span class="code">&lt;shift&gt;</span>, whereas <span class="code">@from</span>/<span class="code">@to</span> would have the advantages of (a) conceptually carrying the concept of location (change)
                                  and (b) allowing not only to define the destination of the shift but also the starting
-                                 point.
-                              </p> 
+                                 point.</p> 
                               
                               <p id="40"><span class="paragraph-number">40</span>(4) It might be considered sufficient to introduce a new attribute <span class="code">@placeShift</span> rather than the element (in 3). This attribute would have to be carried by the first
                                  <span class="code">&lt;lb&gt;</span> element after the change of place. Since the change of place always involves a linebreak,
                                  this seems to be a straightforward solution. However, technically the place shift
                                  of a whole text segment is not (just) tied to its first linebreak as this encoding
                                  might suggest. 
-                                 
-                              </p>
+                                 </p>
                            </div> 
                            
                            <div class="chapter" id="c-3-3-3">
                               <h4>Solution to Issue 4</h4>
                               
                               <p id="41"><span class="paragraph-number">41</span>From the possible solutions discussed above we recommend the introduction of a new
-                                 element <span class="code">&lt;placeShift&gt;</span> with an attribute <span class="code">@new</span> or an attribute set <span class="code">@from</span>/<span class="code">@to</span> to indicate the destination of the shift (solution 3).
-                              </p>
+                                 element <span class="code">&lt;placeShift&gt;</span> with an attribute <span class="code">@new</span> or an attribute set <span class="code">@from</span>/<span class="code">@to</span> to indicate the destination of the shift (solution 3).</p>
                            </div>
                         </div>
                      </div>  
@@ -595,23 +549,19 @@ Ending of postscript
                      <div class="chapter" id="c-4">
                         <h2>Conclusion</h2>
                         
-                        <p id="42"><span class="paragraph-number">42</span>In the 2011 discussion referred to above, Lou Burnard mentioned:
-                        </p> 
+                        <p id="42"><span class="paragraph-number">42</span>In the 2011 discussion referred to above, Lou Burnard mentioned:</p> 
                         
                         <blockquote>
                            <p>When <span class="code">&lt;postscript&gt;</span> was introduced, it was agreed to reserve it for simple postscripts (sic!) only, and
                               to represent other more complex structures either with <span class="code">&lt;ab&gt;</span> or with <span class="code">&lt;div&gt;</span>. It is hard to see why a "postscript" should get its own special tag and a "chapter"
-                              not—they are both divs.
-                           </p><cite><a href="https://github.com/TEIC/TEI/issues/280#issuecomment-145099090" target="_blank">TEI Repository: Comment to issue 280</a></cite></blockquote>
+                              not—they are both divs.</p><cite><a href="https://github.com/TEIC/TEI/issues/280#issuecomment-145099090" target="_blank">TEI Repository: Comment to issue 280</a></cite></blockquote>
                         
-                        <p id="43"><span class="paragraph-number">43</span>Martin Mueller’s counterargument was:
-                        </p> 
+                        <p id="43"><span class="paragraph-number">43</span>Martin Mueller’s counterargument was:</p> 
                         
                         <blockquote>
                            <p>I see the force of this argument, but it's an even stronger argument for not having
                               postscript in the first place. "postscript" is a part of "letter", and if there is
-                              no letter tag why should there be a postscript.
-                           </p><cite><a href="https://github.com/TEIC/TEI/issues/280#issuecomment-145099092" target="_blank">TEI Repository: Comment to issue 280</a></cite></blockquote>
+                              no letter tag why should there be a postscript.</p><cite><a href="https://github.com/TEIC/TEI/issues/280#issuecomment-145099092" target="_blank">TEI Repository: Comment to issue 280</a></cite></blockquote>
                         
                         <p id="44"><span class="paragraph-number">44</span>Following that discussion, the content model of postscript was adapted in a way that
                            it was not changed to hold elaborate, div-like structures but that more flexibility
@@ -620,17 +570,14 @@ Ending of postscript
                            elaborate structures in postscripts one would have to use div type="postscript" elements rather than changing the content model of postscript to include div-like
                            structures. With our proposals, we respect this decision and chosen path. However,
                            even the rather simple <span class="code">&lt;postscript&gt;</span> element would need the proposed addition of flexibility, so that editors do not have
-                           to resort to more, other TEI solutions (like note type="postscript", etc.), introducing even more ambiguity to the application of the TEI-Guidelines.
-                        </p>
+                           to resort to more, other TEI solutions (like note type="postscript", etc.), introducing even more ambiguity to the application of the TEI-Guidelines.</p>
                      </div>
                      
-                     
-                  </section>
+                     </section>
                   <div id="notes">
                      <h2>Notes</h2>
                      <ul>
-                        <li><a id="note_fn1" class="note-number" href="#fn1">[1]</a>David Sewell on: <a href="https://listserv.brown.edu/cgi-bin/wa?A2=ind1801&amp;L=TEI-L&amp;P=30948" target="_blank">TEI mailing list, 24 Jan 2018.</a> 
-                        </li>
+                        <li><a id="note_fn1" class="note-number" href="#fn1">[1]</a>David Sewell on: <a href="https://listserv.brown.edu/cgi-bin/wa?A2=ind1801&amp;L=TEI-L&amp;P=30948" target="_blank">TEI mailing list, 24 Jan 2018.</a> </li>
                      </ul>
                   </div>
                   <div id="bibliography">
@@ -651,8 +598,14 @@ Ending of postscript
                   <div class="card" id="citation">
                      <div class="card-body">
                         <h4 class="card-title">Citation</h4>Christian Forney, Susanne Haaf, Linda Kirsten: Postscripts of Letters. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML
-                        and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.
+                        and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.
                         URL:&nbsp;<a href="https://encoding-correspondence.bbaw.de/v1/postscripts.html">https://encoding-correspondence.bbaw.de/v1/postscripts.html</a> URN:&nbsp;<a href="https://nbn-resolving.org/urn:nbn:de:kobv:b4-20200110163840406-3753902-5">urn:nbn:de:kobv:b4-20200110163840406-3753902-5</a><a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/N8AEREJN" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><br><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Postscripts%20of%20Letters&amp;rft.btitle=Encoding%20Correspondence.%20A%20Manual%20for%20TEI-XML-based%20Encoding%20of%20Letters%20and%20Postcards%20in%20TEI-XML%20and%20DTABf&amp;rft.place=Berlin&amp;rft.publisher=Berlin-Brandenburg%20Academy%20of%20Sciences%20and%20Humanities&amp;rft.edition=1&amp;rft.aufirst=Christian&amp;rft.aulast=Forney&amp;rft.au=Christian%20Forney&amp;rft.au=Susanne%20Haaf&amp;rft.au=Linda%20Kirsten&amp;rft.au=Stefan%20Dumont&amp;rft.au=Susanne%20Haaf&amp;rft.au=Sabine%20Seifert&amp;rft.date=2019&amp;rft.language=en-EN"></span><p class="download-link"><i class="fa fa-download"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence">Download TEI-XML source of this article on GitHub</a></p>
+                     </div>
+                  </div>
+                  <div class="card" id="editorial-note">
+                     <div class="card-body">
+                        <h4 class="card-title">Editorial Note</h4>
+                        <p>In this article, the following obvious misprints were corrected on 24 April 2020: <i>§ 11: Wrong attribute in code example.</i> In all other respects the article is unchanged in content and statement.</p>
                      </div>
                   </div>
                </article>
@@ -665,16 +618,13 @@ Ending of postscript
                <div class="col-md-4">
                   <h4>Publication</h4>
                   <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and
-                     DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.
-                  </p>
-                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.
-                  </p>
+                     DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</p>
+                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
                   <p><a href="legal.html">Legal notice &amp; privacy</a></p>
                </div>
                <div class="col-md-4">
                   <h4>Licence</h4>
-                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-                  </p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
+                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
                <div class="col-md-4">
                   <h4>Kindly supported by</h4>
                   <ul>

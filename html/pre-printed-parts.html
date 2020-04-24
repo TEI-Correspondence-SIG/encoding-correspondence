@@ -23,15 +23,13 @@
                     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
                     })();
                 </script><noscript>
-         <p><img src="https://piwik.bbaw.de/matomo.php?idsite=53&amp;rec=1" style="border:0;" alt=""></p>
-      </noscript>
-   </head>
+         <p><img src="https://piwik.bbaw.de/matomo.php?idsite=53&amp;rec=1" style="border:0;" alt=""></p></noscript></head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-dark">
          <div class="container"><a class="navbar-brand" href="index.html" title="To the homepage" alt="Go to home page of Encoding Correspondence">Encoding Correspondence</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar">
                <ul class="navbar-nav">
                   <li class="nav-item"><a class="nav-link" href="introduction.html">Introduction</a></li>
-                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a></div>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="addresses.html">Addresses</a><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="stamps-seals-postmarks.html">Postage Stamps, Seals, and Postmarks</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a></div>
                   </li>
                   <li class="nav-item"><a class="nav-link" href="authors.html">Authors <span class="sr-only">(current)</span></a></li>
                </ul>
@@ -44,15 +42,12 @@
                <div id="status" class="card">
                   <div class="card-body">
                      <h5 class="card-title">Status of this article</h5>
-                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 30.04.2020.
-                     </p>
+                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 30&nbsp;May&nbsp;2020.</p>
                      <p>We kindly invite you to review and/or comment this article! Please do so via the web
                         annotation service <a href="https://web.hypothes.is/">Hypothes.is</a> 
-                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.
-                     </p>
+                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.</p>
                      <p>This article remains stable and <a href="#citation">citable</a> in the first version of this manual. The revised article will be published in the
-                        second edition of the manual.
-                     </p>
+                        second edition of the manual.</p>
                   </div>
                </div>
                <div class="card">
@@ -106,15 +101,12 @@
                            a
                            company emblem, family crest or other kind of symbol. And second, there are
                            pre-printed parts similar to printed forms, for example address fields with labels
-                           and dotted lines to fill in on postcards, envelopes, or letters.
-                        </p>
+                           and dotted lines to fill in on postcards, envelopes, or letters.</p>
                         
                         <p id="2"><span class="paragraph-number">&nbsp;&nbsp;2</span>Both cases represent pre-printed parts but constitute semantically different
                            phenomena. It is, therefore, necessary to make a basic distinction between these two
-                           cases regarding their encoding in TEI.
-                        </p>
-                        
-                     </div>
+                           cases regarding their encoding in TEI.</p>
+                        </div>
                      
                      <div class="chapter" id="c-2">
                         
@@ -125,44 +117,40 @@
                            <h3>Issue 1: Using <span class="code">&lt;fw&gt;</span></h3>
                            
                            <p id="3"><span class="paragraph-number">&nbsp;&nbsp;3</span> One suggested possibility to encode letterheads is using the element
-                              <span class="code">&lt;fw&gt;</span>.<a id="fn1" href="#note_fn1">[1]</a> The TEI Guidelines define <span class="code">&lt;fw&gt;</span> as follows:
-                           </p>
+                              <span class="code">&lt;fw&gt;</span>.<a id="fn1" href="#note_fn1">[1]</a> The TEI Guidelines define <span class="code">&lt;fw&gt;</span> as follows:</p>
                            
                            <blockquote>
                               <p><span class="code">&lt;fw&gt;</span> (forme work) contains a running head (e.g. a header, footer),
-                                 catchword, or similar material appearing on the current page.
-                              </p><cite><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html</a></cite></blockquote>
+                                 catchword, or similar material appearing on the current page.</p><cite><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html</a></cite></blockquote>
                            
                            <p id="4"><span class="paragraph-number">&nbsp;&nbsp;4</span>Next to running heads and footers, i.e. titles of chapters in printed books,
                               this element is also intended for page numbers, catchwords, and "other material
                               repeated from page to page, which falls outside the stream of the text".<a id="fn2" href="#note_fn2">[2]</a> The question is whether letterheads fall in these categories
                               or whether this is an overexpansion of the definition and therefore a misuse of
-                              <span class="code">&lt;fw&gt;</span>.
-                           </p>
+                              <span class="code">&lt;fw&gt;</span>.</p>
                            
                            <figure><img src="img/pre-printed-parts/example1.png"><figcaption>Example 1: Letter with letterhead (source: Théophile Peyron to Vincent van
-                                 Gogh, 1 July 1890. Amsterdam, Van Gogh Museum, inv. no. b1064 V/1962, <a href="http://vangoghletters.org/vg/letters/let895/letter.html" target="_blank">http://vangoghletters.org/vg/letters/let895/letter.html</a>).
-                              </figcaption>
+                                 Gogh, 1 July 1890. Amsterdam, Van Gogh Museum, inv. no. b1064 V/1962, <a href="http://vangoghletters.org/vg/letters/let895/letter.html" target="_blank">http://vangoghletters.org/vg/letters/let895/letter.html</a>).</figcaption>
                            </figure>
                            
-                           <p id="5"><span class="paragraph-number">&nbsp;&nbsp;5</span>A possible encoding using <span class="code">&lt;fw&gt;</span> might look like this (example 1):
-                           </p>
+                           <p id="5"><span class="paragraph-number">&nbsp;&nbsp;5</span>A possible encoding using <span class="code">&lt;fw&gt;</span> might look like this (example 1):</p>
+                           
                            <pre><code class="language-xml">
 &lt;fw type="letterhead" place="top-left"&gt;Maison de
 Santé&lt;lb/&gt;de&lt;lb/&gt;Saint-Rémy&lt;lb/&gt;de Provence&lt;lb/&gt;Bouches-du-Rhône&lt;/fw&gt;
 </code></pre>
+                           
                            <p id="6"><span class="paragraph-number">&nbsp;&nbsp;6</span>The element <span class="code">&lt;fw&gt;</span> is quite flexible and allows names, places, and
                               addresses to be marked up with <span class="code">&lt;address&gt;</span>, <span class="code">&lt;name&gt;</span>, <span class="code">&lt;placeName&gt;</span>
                               etc. to further specify the content of the letterhead. <span class="code">&lt;figure&gt;</span> can also be
                               included to capture images that are part of the letterhead (for this, see <a href="#c-2-4">Case 1: Letterheads, issue 4</a>). There is, however, the
                               question whether <span class="code">&lt;fw&gt;</span> being an inline element is problematic or not as
-                              letterheads in their layout are usually set apart from the rest of the text.
-                           </p>
+                              letterheads in their layout are usually set apart from the rest of the text.</p>
                            
                            <p id="7"><span class="paragraph-number">&nbsp;&nbsp;7</span>The encoding of a combined letterhead and—as one might call it—letterfooter
                               might look like this:<a id="fn3" href="#note_fn3">[3]</a>
-                              
-                           </p>
+                              </p>
+                           
                            
                            <pre><code class="language-xml">
 &lt;div&gt;
@@ -178,8 +166,10 @@ Santé&lt;lb/&gt;de&lt;lb/&gt;Saint-Rémy&lt;lb/&gt;de Provence&lt;lb/&gt;Bouche
 &lt;fw type="letterfooter"&gt;[...]&lt;/fw&gt;
 &lt;/div&gt;
 </code></pre>
+                           
                            <p id="8"><span class="paragraph-number">&nbsp;&nbsp;8</span>Here, you can see this structure in an example encoding of a letter from
                               Johnny Cash to Saul Holiff, written in 1961:<a id="fn4" href="#note_fn4">[4]</a></p>
+                           
                            <pre><code class="language-xml">&lt;div&gt;
 &lt;pb n="1"/&gt;
 &lt;fw type="letterhead"&gt;A Few Very Rural, Badly Phrased But Well Meant Words
@@ -217,13 +207,12 @@ From&lt;lb/&gt;Johnny Cash&lt;/fw&gt;
 Picker&lt;/fw&gt;
 &lt;/div&gt;
 </code></pre>
+                           
                            <p id="9"><span class="paragraph-number">&nbsp;&nbsp;9</span>While this encoding might be suitable for letterheads with names and
                               addresses, it seems not so fitting for pre-printed parts with gaps to be filled in
                               by the letter writer (for this, see <a href="#c-3-2">Case 2: Pre-printed parts
-                                 like forms, issue 2</a>).
-                           </p>
-                           
-                        </div>
+                                 like forms, issue 2</a>).</p>
+                           </div>
                         
                         <div class="chapter" id="c-2-2">
                            
@@ -242,10 +231,8 @@ Picker&lt;/fw&gt;
                               page. As printed letterheads need not necessarily be on the top of the letter
                               paper above the letter text, they can be positioned at the bottom, on the left or
                               right side, or centered. Therefore, the encoding of letterheads should be
-                              independent of their position on the paper but solely based on their content.
-                           </p>
-                           
-                        </div>
+                              independent of their position on the paper but solely based on their content.</p>
+                           </div>
                         
                         <div class="chapter" id="c-2-3">
                            
@@ -256,24 +243,20 @@ Picker&lt;/fw&gt;
                               'individual' element but in a more general way as divisions, segments, or even as
                               anonymous blocks. The definitions of these elements <span class="code">&lt;div&gt;</span>, <span class="code">&lt;seg&gt;</span>,
                               and <span class="code">&lt;ab&gt;</span> do not exactly apply to letterheads but could be considered
-                              semantically close:
-                           </p>
+                              semantically close:</p>
                            
                            <blockquote>
                               <p><span class="code">&lt;div&gt;</span> (text division) contains a subdivision of the front, body, or
-                                 back of a text.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html)</a></cite></blockquote>
+                                 back of a text.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html)</a></cite></blockquote>
                            
                            <blockquote>
                               <p><span class="code">&lt;seg&gt;</span> (arbitrary segment) represents any segmentation of text below
-                                 the 'chunk' level.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html)</a></cite></blockquote>
+                                 the 'chunk' level.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html)</a></cite></blockquote>
                            
                            <blockquote>
                               <p><span class="code">&lt;ab&gt;</span> (anonymous block) contains any arbitrary component-level unit
                                  of text, acting as an anonymous container for phrase or inter level elements
-                                 analogous to, but without the semantic baggage of, a paragraph.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html)</a></cite></blockquote>
+                                 analogous to, but without the semantic baggage of, a paragraph.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html)</a></cite></blockquote>
                            
                            <p id="13"><span class="paragraph-number">13</span>The <span class="code">&lt;div&gt;</span> element can be further specified with a type attribute
                               containing "letterhead", "letterfooter", and "pre-printed-form" as possible
@@ -287,26 +270,23 @@ Picker&lt;/fw&gt;
                               source. <span class="code">&lt;seg&gt;</span> is an inline element and cannot be used outside <span class="code">&lt;div&gt;</span>
                               that again is not allowed before <span class="code">&lt;opener&gt;</span> or after <span class="code">&lt;closer&gt;</span>. It
                               should, however, not be put inside <span class="code">&lt;opener&gt;</span> or <span class="code">&lt;closer&gt;</span>,
-                              respectively, as it cannot be considered a part of these.
-                           </p>
+                              respectively, as it cannot be considered a part of these.</p>
                            
                            <p id="14"><span class="paragraph-number">14</span>Another problem arises when dealing with letters several pages long and
                               with a recurring (or even changing) letterhead on each page. An encoding like
+                              
                               <pre><code class="language-xml">&lt;div type="letter"&gt;
 &lt;div type="letterhead"/&gt;
 &lt;div type="letterbody"/&gt;
 &lt;/div&gt;
 </code></pre> would result in several <span class="code">&lt;div&gt;</span> with type="letterbody", one for each
                               single page, interrupted by the recurring <span class="code">&lt;div&gt;</span> with type="letterhead".
-                              This seems neither practical nor appropriate.
-                           </p>
+                              This seems neither practical nor appropriate.</p>
                            
                            <p id="15"><span class="paragraph-number">15</span>Finally, all three elements <span class="code">&lt;div&gt;</span>, <span class="code">&lt;seg&gt;</span>, and <span class="code">&lt;ab&gt;</span>
                               seem rather unspecific regarding the encoding of letterheads, and are probably too
-                              general.
-                           </p>
-                           
-                        </div>
+                              general.</p>
+                           </div>
                         
                         <div class="chapter" id="c-2-4">
                            
@@ -319,18 +299,16 @@ Picker&lt;/fw&gt;
                               varying depth. On the one hand, it can be used as an empty element for merely
                               signalling the presence of a letterhead. On the other hand, it can contain a
                               description (in <span class="code">&lt;figDesc&gt;</span>), a digital image (in <span class="code">&lt;graphic&gt;</span>), and/or a
-                              transcription of its text.
-                           </p>
+                              transcription of its text.</p>
                            
                            <figure><img src="img/pre-printed-parts/example2.png"><figcaption>Example 2: Letter with image in letterhead (source: Theodor Fontane to
                                  Emilie Fontane, 14 August 1856. Potsdam, Theodor-Fontane-Archiv, shelf number
-                                 TFA V III,4 (Andr), <a href="https://www.fontanearchiv.de/handschriften/12000250/" target="_blank">https://www.fontanearchiv.de/handschriften/12000250/</a>. 
-                              </figcaption>
+                                 TFA V III,4 (Andr), <a href="https://www.fontanearchiv.de/handschriften/12000250/" target="_blank">https://www.fontanearchiv.de/handschriften/12000250/</a>. </figcaption>
                            </figure>
                            
                            <p id="17"><span class="paragraph-number">17</span>A possible encoding using <span class="code">&lt;figure&gt;</span> might look like this (example
-                              2):
-                           </p>
+                              2):</p>
+                           
                            <pre><code class="language-xml">
 &lt;div type="letter"&gt;
 &lt;figure type="letterhead"&gt;
@@ -344,14 +322,13 @@ Stratford-upon-Avon, England.&lt;/figDesc&gt;
 &lt;p&gt;[...]&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
+                           
                            <p id="18"><span class="paragraph-number">18</span>Its use is very flexible but the definition suggests that using
-                              <span class="code">&lt;figure&gt;</span> like that is rather a tag abuse:
-                           </p>
+                              <span class="code">&lt;figure&gt;</span> like that is rather a tag abuse:</p>
                            
                            <blockquote>
                               <p><span class="code">&lt;figure&gt;</span> groups elements representing or containing graphic
-                                 information such as an illustration, formula, or figure.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html)</a></cite></blockquote>
+                                 information such as an illustration, formula, or figure.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html)</a></cite></blockquote>
                            
                            <p id="19"><span class="paragraph-number">19</span>Any text contained within <span class="code">&lt;figure&gt;</span> is being understood as
                               "commentary on the figure in the source"<a id="fn8" href="#note_fn8">[8]</a>
@@ -363,22 +340,19 @@ Stratford-upon-Avon, England.&lt;/figDesc&gt;
                               in the letterhead in example 1. Therefore, the text of letterheads should not be
                               subordinate to its image and be transcribed within <span class="code">&lt;figure&gt;</span>. If there is no
                               image at all, as in example 3, an encoding of the letterhead—although perhaps
-                              containing a graphical layout—with <span class="code">&lt;figure&gt;</span> seems counterintuitive.
-                           </p>
+                              containing a graphical layout—with <span class="code">&lt;figure&gt;</span> seems counterintuitive.</p>
                            
                            <figure><img src="img/pre-printed-parts/example3.png"><figcaption>Example 3: Letter with letterhead (source: Vincent van Gogh to Theo van
-                                 Gogh, 24 March 1873. Amsterdam, Van Gogh Museum, inv. no. b6 V/1962, <a href="http://vangoghletters.org/vg/letters/let006/letter.html" target="_blank">http://vangoghletters.org/vg/letters/let006/letter.html</a>).
-                              </figcaption>
+                                 Gogh, 24 March 1873. Amsterdam, Van Gogh Museum, inv. no. b6 V/1962, <a href="http://vangoghletters.org/vg/letters/let006/letter.html" target="_blank">http://vangoghletters.org/vg/letters/let006/letter.html</a>).</figcaption>
                            </figure>
                            
                            <p id="20"><span class="paragraph-number">20</span><span class="code">&lt;figure&gt;</span> is also not suitable for pre-printed parts with, for
-                              example, a place and a dotted line to fill in the date (see <a href="#c-3-3">Case 2: Pre-printed parts like forms, issue 3</a>).
-                           </p>
+                              example, a place and a dotted line to fill in the date (see <a href="#c-3-3">Case 2: Pre-printed parts like forms, issue 3</a>).</p>
                            
                            <p id="21"><span class="paragraph-number">21</span>Even though <span class="code">&lt;figure&gt;</span> is not suitable for complete letterheads, it
                               can be used for just the image. It can be part of <span class="code">&lt;fw&gt;</span> and a possible
-                              encoding of example 2 might look like this:
-                           </p>
+                              encoding of example 2 might look like this:</p>
+                           
                            <pre><code class="language-xml">&lt;div type="letter"&gt;
 &lt;fw type="letterhead"&gt;
 &lt;figure&gt;
@@ -404,20 +378,17 @@ Stratford-upon-Avon, England.&lt;/figDesc&gt;
                               these information and putting them in the meta data is sufficient. The latter may
                               be more convenient for projects that consider the exact transcription of
                               letterheads not semantically important, and for projects with large corpuses of
-                              letters with numerous letterheads.
-                           </p>
+                              letters with numerous letterheads.</p>
                            
                            <p id="23"><span class="paragraph-number">23</span>For including these information in the meta data, <span class="code">&lt;layoutDesc&gt;</span> as
-                              part of <span class="code">&lt;objectDesc&gt;</span> is a suitable place:
-                           </p>
+                              part of <span class="code">&lt;objectDesc&gt;</span> is a suitable place:</p>
                            
                            <blockquote>
                               <p><span class="code">&lt;layoutDesc&gt;</span> (layout description) collects the set of layout
-                                 descriptions applicable to a manuscript or other object.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html)</a></cite></blockquote>
+                                 descriptions applicable to a manuscript or other object.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html)</a></cite></blockquote>
                            
-                           <p id="24"><span class="paragraph-number">24</span>A simple encoding example might look like this:
-                           </p>
+                           <p id="24"><span class="paragraph-number">24</span>A simple encoding example might look like this:</p>
+                           
                            <pre><code class="language-xml">&lt;objectDesc&gt;
 &lt;layoutDesc&gt;
 &lt;layout&gt;A letterhead is printed at the top of the paper with the company's
@@ -425,11 +396,12 @@ name and address.&lt;/layout&gt;
 &lt;/layoutDesc&gt;
 &lt;/objectDesc&gt;
 </code></pre>
+                           
                            <p id="25"><span class="paragraph-number">25</span>Additionally, it might be useful to link the information encoded in
                               <span class="code">&lt;layoutDesc&gt;</span> with the transcription of the letterhead in the
                               <span class="code">&lt;body&gt;</span>. For the letter to Vincent van Gogh in example 1, we recommend an
-                              encoding like this in the <span class="code">&lt;teiHeader&gt;</span> as well as in <span class="code">&lt;body&gt;</span>:
-                           </p>
+                              encoding like this in the <span class="code">&lt;teiHeader&gt;</span> as well as in <span class="code">&lt;body&gt;</span>:</p>
+                           
                            <pre><code class="language-xml">&lt;objectDesc&gt;
 &lt;layoutDesc&gt;
 &lt;layout xml:id="lh"&gt;A letterhead is printed in the top left corner of the
@@ -443,13 +415,14 @@ staying.&lt;/layout&gt;
 Santé&lt;lb/&gt;de&lt;lb/&gt;Saint-Rémy&lt;lb/&gt;de Provence&lt;lb/&gt;Bouches-du-Rhône&lt;/fw&gt;
 &lt;/div&gt;
 </code></pre>
+                           
                            <p id="26"><span class="paragraph-number">26</span>For the linking of the letterhead in the <span class="code">&lt;body&gt;</span> part with the
                               header, one cannot use @ref within <span class="code">&lt;fw&gt;</span>, as this is not allowed according
                               to the TEI Guidelines. It is also not allowed to use the <span class="code">&lt;ref&gt;</span> element
                               inside <span class="code">&lt;div&gt;</span>. Therefore, the <span class="code">&lt;ref&gt;</span> element needs to be put inside
                               <span class="code">&lt;fw&gt;</span> containing the transcription of the letterhead. The target
-                              attribute then points to the <span class="code">&lt;layout&gt;</span> element in the header:
-                           </p>
+                              attribute then points to the <span class="code">&lt;layout&gt;</span> element in the header:</p>
+                           
                            <pre><code class="language-xml">&lt;div&gt;
 &lt;fw type="letterhead" place="top-left"&gt;
 &lt;ref target="#lh"&gt;Maison de Santé&lt;lb/&gt;de&lt;lb/&gt;Saint-Rémy&lt;lb/&gt;de
@@ -466,23 +439,18 @@ Provence&lt;lb/&gt;Bouches-du-Rhône&lt;/ref&gt;
                            <p id="27"><span class="paragraph-number">27</span>If one understands the information on pre-printed letterheads on the paper
                               as information about the supporting material on which the letter is written or
                               typed, the element <span class="code">&lt;supportDesc&gt;</span> (as part of <span class="code">&lt;objectDesc&gt;</span>) might
-                              first look like a suitable place:
-                           </p>
+                              first look like a suitable place:</p>
                            
                            <blockquote>
                               <p><span class="code">&lt;supportDesc&gt;</span> (support description) groups elements describing the
-                                 physical support for the written part of a manuscript or other object.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html)</a></cite></blockquote>
+                                 physical support for the written part of a manuscript or other object.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html)</a></cite></blockquote>
                            
                            <p id="28"><span class="paragraph-number">28</span>This is a handling of letterheads similar to, for example, watermarks.
                               However, this rather relates to the actual material and its physical aspects<a id="fn9" href="#note_fn9">[9]</a>
                               than to information printed on these materials. Therefore, <span class="code">&lt;supportDesc&gt;</span>
-                              cannot be recommended for encoding letterheads.
-                           </p>
-                           
+                              cannot be recommended for encoding letterheads.</p>
+                           </div>
                         </div>
-                        
-                     </div>
                      
                      <div class="chapter" id="c-3">
                         
@@ -492,13 +460,11 @@ Provence&lt;lb/&gt;Bouches-du-Rhône&lt;/ref&gt;
                            can be found on telegrams and postcards. A proper markup in order to distinguish
                            pre-printed text from handwritten text may be helpful when it comes to research
                            questions focusing, for example, on the relation of pre-printed and handwritten text
-                           in letters and how the first may influence the (genesis of) the latter.
-                        </p>
+                           in letters and how the first may influence the (genesis of) the latter.</p>
                         
                         <figure><img src="img/pre-printed-parts/example4.png"><figcaption>Example 4: field postcard (source: Franz Marc to Herwarth Walden, 17 April
                               1915, in: DER STURM. Digitale Quellenedition zur Geschichte der internationalen
-                              Avantgarde, <a href="https://sturm-%E2%80%8Bedition.de/id/Q.01.19150417.FMA.01" target="_blank">https://sturm-​edition.de/id/Q.01.19150417.FMA.01</a>).
-                           </figcaption>
+                              Avantgarde, <a href="https://sturm-%E2%80%8Bedition.de/id/Q.01.19150417.FMA.01" target="_blank">https://sturm-​edition.de/id/Q.01.19150417.FMA.01</a>).</figcaption>
                         </figure>
                         
                         <div class="chapter" id="c-3-1">
@@ -510,12 +476,11 @@ Provence&lt;lb/&gt;Bouches-du-Rhône&lt;/ref&gt;
                               in order to distinguish between pre-printed and non-pre-printed parts. <span class="code">&lt;ab&gt;</span>
                               then might use the attribute–value pair type="pre-printed" for pre-printed parts,
                               type="typed" for text which is produced by a typewriter and type="handwritten" for
-                              handwritten text to make the distinction.
-                           </p>
+                              handwritten text to make the distinction.</p>
                            
                            <p id="31"><span class="paragraph-number">31</span>An encoding of the field postcard in example 4 might look as follows
-                              (simplified, deletions by sender not encoded):
-                           </p>
+                              (simplified, deletions by sender not encoded):</p>
+                           
                            <pre><code class="language-xml">
 &lt;ab type="pre-printed"&gt;Absender:&lt;/ab&gt;
 &lt;ab type="handwritten"&gt;Vizewachtm. Marc&lt;/ab&gt;
@@ -528,11 +493,12 @@ Provence&lt;lb/&gt;Bouches-du-Rhône&lt;/ref&gt;
 &lt;ab type="handwritten"&gt;Schilling der 1. bayr. Feld-​Art. Rgt. Leichte-​Mun.
 Kol.&lt;/ab&gt;
 </code></pre>
+                           
                            <p id="32"><span class="paragraph-number">32</span>When encoded like this, we cannot see which handwritten addition belongs to
                               which pre-printed part. One could solve this problem by an encoding like the
                               following (with a different segmentation of the text used in order to group the
-                              associated parts):
-                           </p>
+                              associated parts):</p>
+                           
                            <pre><code class="language-xml">
 &lt;div&gt;
 &lt;ab type="pre-printed"&gt;Absender:&lt;/ab&gt;
@@ -562,21 +528,19 @@ Kol.&lt;/ab&gt;
 Kol.&lt;/ab&gt;
 &lt;/div&gt;
 </code></pre>
+                           
                            <p id="33"><span class="paragraph-number">33</span>The attribute-value pairs mentioned above do not follow any conventions in
                               TEI; the type attribute can be used in order to annotate completely different
                               phenomena. Thus, this solution seems unspecific with regard to the various ways in
-                              which <span class="code">&lt;ab&gt;</span> can be used.
-                           </p>
+                              which <span class="code">&lt;ab&gt;</span> can be used.</p>
                            
                            <p id="34"><span class="paragraph-number">34</span>Cases might arise in which pre-printed parts express a date or a location
                               and, therefore, belong in <span class="code">&lt;opener&gt;</span>.<a id="fn11" href="#note_fn11">[11]</a> When using
                               <span class="code">&lt;ab&gt;</span> for the encoding of pre-printed, typed and handwritten parts, it
                               could make sense to place these encodings within <span class="code">&lt;opener&gt;</span>. Since
                               <span class="code">&lt;ab&gt;</span> is not allowed within <span class="code">&lt;opener&gt;</span>, this is another reason not
-                              to use <span class="code">&lt;ab&gt;</span>.
-                           </p>
-                           
-                        </div>
+                              to use <span class="code">&lt;ab&gt;</span>.</p>
+                           </div>
                         
                         
                         <div class="chapter" id="c-3-2">
@@ -591,10 +555,8 @@ Kol.&lt;/ab&gt;
                               and is, therefore, not a continuous feature. Thus, the definition of <span class="code">&lt;fw&gt;</span>
                               cannot be applied to this case. Second, the type attribute could be used to
                               distinguish between pre-printed, handwritten or typed text, but, analogous to the
-                              case in Issue 1, there is no such usage convention of @type in TEI.
-                           </p>
-                           
-                        </div>
+                              case in Issue 1, there is no such usage convention of @type in TEI.</p>
+                           </div>
                         
                         <div class="chapter" id="c-3-3">
                            
@@ -607,10 +569,8 @@ Kol.&lt;/ab&gt;
                               formula, or figure in a narrow sense, so using <span class="code">&lt;figure&gt;</span> is excluded due to
                               its definition. Furthermore—as is the case in issue 1: Using <span class="code">&lt;ab&gt;</span> and issue
                               2: Using <span class="code">&lt;fw&gt;</span>—there is no convention in TEI of using the type attribute to
-                              express a distinction between handwritten (or typed) and pre-printed text.
-                           </p>
-                           
-                        </div>
+                              express a distinction between handwritten (or typed) and pre-printed text.</p>
+                           </div>
                         
                         <div class="chapter" id="c-3-4">
                            
@@ -621,8 +581,8 @@ Kol.&lt;/ab&gt;
                               The attribute–value pairs described in <a href="#c-3-1">Case 2, issue 1: Using
                                  <span class="code">&lt;ab&gt;</span></a> could be applied to <span class="code">&lt;seg&gt;</span>. Thus, a possible
                               encoding of the field postcard might be done as follows (simplified, deletions by
-                              sender not encoded):
-                           </p>
+                              sender not encoded):</p>
+                           
                            <pre><code class="language-xml">
 &lt;ab&gt;
 &lt;seg type="pre-printed"&gt;Absender:&lt;/seg&gt;
@@ -637,6 +597,7 @@ Kol.&lt;/ab&gt;
 Kol.&lt;/seg&gt;
 &lt;/ab&gt;
 </code></pre>
+                           
                            <p id="38"><span class="paragraph-number">38</span>There is a clear advantage compared to the usage of <span class="code">&lt;ab&gt;</span>: In the TEI
                               description of <span class="code">&lt;seg&gt;</span>, it is specifically stated that the encoder is free to
                               define his or her own segments of text. But again, as in issue 1: using
@@ -644,10 +605,8 @@ Kol.&lt;/seg&gt;
                               pre-printed, typed and handwritten text. In addition to that, <span class="code">&lt;seg&gt;</span> is an
                               inline element and therefore cannot be used in the same way as <span class="code">&lt;ab&gt;</span>, for
                               example. The necessity to enclose <span class="code">&lt;seg&gt;</span> with a block element might be
-                              problematic.
-                           </p>
-                           
-                        </div>
+                              problematic.</p>
+                           </div>
                         
                         <div class="chapter" id="c-3-5">
                            
@@ -656,19 +615,16 @@ Kol.&lt;/seg&gt;
                            
                            <p id="39"><span class="paragraph-number">39</span>Another possible solution is the use of <span class="code">&lt;handShift&gt;</span>. This turns out
                               to cause problems regarding the definition of <span class="code">&lt;handShift&gt;</span> in the TEI
-                              Guidelines:
-                           </p>
+                              Guidelines:</p>
                            
                            <blockquote>
                               <p><span class="code">&lt;handShift&gt;</span> marks the beginning of a sequence of text written in a
-                                 new hand, or the beginning of a scribal stint.
-                              </p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html)</a></cite></blockquote>
+                                 new hand, or the beginning of a scribal stint.</p><cite><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html" target="_blank">(https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html)</a></cite></blockquote>
                            
                            <p id="40"><span class="paragraph-number">40</span>As we do not only deal with the shift between different hands but between a
                               hand and a pre-printed form or machine-written part and pre-printed form, the use
                               of <span class="code">&lt;handShift&gt;</span> does not cover all these possible shifts and is, therefore,
-                              not an option.
-                           </p>
+                              not an option.</p>
                            
                            <p id="41"><span class="paragraph-number">41</span>This is why we propose a new element <span class="code">&lt;formShift&gt;</span>. This new element
                               could then be used at the point of transition from pre-printed text to
@@ -678,13 +634,12 @@ Kol.&lt;/seg&gt;
                               to typed) and pre-printed (shift from handwritten or typed to pre-printed).
                               Compared to the previous cases, we would have an element created specifically for
                               the task of describing such shifts. The type attribute would then have the sole
-                              and specific function to indicate the shifts.
-                           </p>
+                              and specific function to indicate the shifts.</p>
                            
                            <p id="42"><span class="paragraph-number">42</span>The description of how the pre-printed parts look like could be encoded in
                               <span class="code">&lt;layoutDesc&gt;</span> as part of <span class="code">&lt;objectDesc&gt;</span>: For example 4, the
-                              <span class="code">&lt;layoutDesc&gt;</span> might look like this:
-                           </p>
+                              <span class="code">&lt;layoutDesc&gt;</span> might look like this:</p>
+                           
                            <pre><code class="language-xml">
 &lt;objectDesc&gt;
 &lt;layoutDesc&gt;
@@ -694,9 +649,10 @@ dotted lines where handwritten entries were made.&lt;/p&gt;
 &lt;/objectDesc&gt;
 </code></pre>
                            
+                           
                            <p id="43"><span class="paragraph-number">43</span>Here is a possible solution for example 4, using the suggested element
-                              <span class="code">&lt;formShift&gt;</span> (simplified, deletions by sender not encoded):
-                           </p>
+                              <span class="code">&lt;formShift&gt;</span> (simplified, deletions by sender not encoded):</p>
+                           
                            <pre><code class="language-xml">
 &lt;objectDesc&gt;
 &lt;layoutDesc&gt;
@@ -721,55 +677,40 @@ were made.&lt;/p&gt;
 Leichte-​Mun. Kol.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-                           <p id="44"><span class="paragraph-number">44</span>The attribute-value pair corresp="pre-printed" would indicate the linking
-                              between the pre-printed text and the description in the meta data.
-                           </p>
                            
+                           <p id="44"><span class="paragraph-number">44</span>The attribute-value pair corresp="pre-printed" would indicate the linking
+                              between the pre-printed text and the description in the meta data.</p>
+                           </div>
+                        
                         </div>
-                        
-                        
-                     </div>
-                     
-                  </section>
+                     </section>
                   <div id="notes">
                      <h2>Notes</h2>
                      <ul>
                         <li><a id="note_fn1" class="note-number" href="#fn1">[1]</a>For this and the discussion of encoding
                            letterheads see the TEI-L Mailinglist: <a href="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html" target="_blank">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</a>.
-                           
-                        </li>
+                           </li>
                         <li><a id="note_fn2" class="note-number" href="#fn2">[2]</a>
                            <a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSK" target="_blank">Chapter 11.6 "Headers, Footers, and Similar Matter"</a> of the TEI
-                           Guidelines.
-                        </li>
+                           Guidelines.</li>
                         <li><a id="note_fn3" class="note-number" href="#fn3">[3]</a>Encoding example (slightly changed)
-                           taken from <a href="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html" target="_blank">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</a>.
-                        </li>
+                           taken from <a href="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html" target="_blank">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</a>.</li>
                         <li><a id="note_fn4" class="note-number" href="#fn4">[4]</a>Letter from
                            Johnny Cash to Saul Holiff, 6 June 1961: <a href="https://exhibits.library.uvic.ca/spotlight/holiff/catalog/11-12904" target="_blank">https://exhibits.library.uvic.ca/spotlight/holiff/catalog/11-12904</a>.
                            Another example for writing paper with letterhead and footer is the letter from
-                           Eugene Belmont to Harry Ault, 2 July 1932: <a href="https://digitalcollections.lib.washington.edu/digital/collection/pioneerlife/id/8634/" target="_blank">https://digitalcollections.lib.washington.edu/digital/collection/pioneerlife/id/8634/</a>.
-                        </li>
+                           Eugene Belmont to Harry Ault, 2 July 1932: <a href="https://digitalcollections.lib.washington.edu/digital/collection/pioneerlife/id/8634/" target="_blank">https://digitalcollections.lib.washington.edu/digital/collection/pioneerlife/id/8634/</a>.</li>
                         <li><a id="note_fn5" class="note-number" href="#fn5">[5]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html</a>, and
                            <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html</a>.
-                           
-                        </li>
-                        <li><a id="note_fn6" class="note-number" href="#fn6">[6]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html</a>.
-                        </li>
-                        <li><a id="note_fn7" class="note-number" href="#fn7">[7]</a><a href="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html" target="_blank">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</a>.
-                        </li>
-                        <li><a id="note_fn8" class="note-number" href="#fn8">[8]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA</a>.
-                        </li>
+                           </li>
+                        <li><a id="note_fn6" class="note-number" href="#fn6">[6]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html</a>.</li>
+                        <li><a id="note_fn7" class="note-number" href="#fn7">[7]</a><a href="http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html" target="_blank">http://tei-l.970651.n3.nabble.com/correspondence-encoding-problems-letter-headings-td4029408.html</a>.</li>
+                        <li><a id="note_fn8" class="note-number" href="#fn8">[8]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTGRA</a>.</li>
                         <li><a id="note_fn9" class="note-number" href="#fn9">[9]</a>Cf. the definition of <span class="code">&lt;support&gt;</span>: "<span class="code">&lt;support&gt;</span>
                            contains a description of the materials etc. which make up the physical support
-                           for the written part of a manuscript or other object" <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html</a>.
-                        </li>
-                        <li><a id="note_fn10" class="note-number" href="#fn10">[10]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html</a>.
-                        </li>
-                        <li><a id="note_fn11" class="note-number" href="#fn11">[11]</a>E.g. <a href="https://doi.org/10.7925/drs1.ivrla_4071" target="_blank">https://doi.org/10.7925/drs1.ivrla_4071</a>.
-                        </li>
-                        <li><a id="note_fn12" class="note-number" href="#fn12">[12]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html</a>.
-                        </li>
+                           for the written part of a manuscript or other object" <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html</a>.</li>
+                        <li><a id="note_fn10" class="note-number" href="#fn10">[10]</a><a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html</a>.</li>
+                        <li><a id="note_fn11" class="note-number" href="#fn11">[11]</a>E.g. <a href="https://doi.org/10.7925/drs1.ivrla_4071" target="_blank">https://doi.org/10.7925/drs1.ivrla_4071</a>.</li>
+                        <li><a id="note_fn12" class="note-number" href="#fn12">[12]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html</a>.</li>
                      </ul>
                   </div>
                   <div id="bibliography">
@@ -784,7 +725,7 @@ Leichte-​Mun. Kol.&lt;/p&gt;
                   <div class="card" id="citation">
                      <div class="card-body">
                         <h4 class="card-title">Citation</h4>Sabine Seifert, Nicolas Schenk: Pre-printed parts: Letterheads and forms. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML
-                        and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.
+                        and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.
                         URL:&nbsp;<a href="https://encoding-correspondence.bbaw.de/v1/pre-printed-parts.html">https://encoding-correspondence.bbaw.de/v1/pre-printed-parts.html</a> URN:&nbsp;<a href="https://nbn-resolving.org/urn:nbn:de:kobv:b4-20200110163911057-9256446-7">urn:nbn:de:kobv:b4-20200110163911057-9256446-7</a><a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/HRW8FC25" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><br><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Pre-printed%20parts%3A%20Letterheads%20and%20forms&amp;rft.btitle=Encoding%20Correspondence.%20A%20Manual%20for%20TEI-XML-based%20Encoding%20of%20Letters%20and%20Postcards%20in%20TEI-XML%20and%20DTABf&amp;rft.place=Berlin&amp;rft.publisher=Berlin-Brandenburg%20Academy%20of%20Sciences%20and%20Humanities&amp;rft.edition=1&amp;rft.aufirst=Sabine&amp;rft.aulast=Seifert&amp;rft.au=Sabine%20Seifert&amp;rft.au=Nicolas%20Schenk&amp;rft.au=Stefan%20Dumont&amp;rft.au=Susanne%20Haaf&amp;rft.au=Sabine%20Seifert&amp;rft.date=2019&amp;rft.language=en-EN"></span><p class="download-link"><i class="fa fa-download"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence">Download TEI-XML source of this article on GitHub</a></p>
                      </div>
                   </div>
@@ -798,16 +739,13 @@ Leichte-​Mun. Kol.&lt;/p&gt;
                <div class="col-md-4">
                   <h4>Publication</h4>
                   <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and
-                     DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019.
-                  </p>
-                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.
-                  </p>
+                     DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</p>
+                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
                   <p><a href="legal.html">Legal notice &amp; privacy</a></p>
                </div>
                <div class="col-md-4">
                   <h4>Licence</h4>
-                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-                  </p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
+                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
                <div class="col-md-4">
                   <h4>Kindly supported by</h4>
                   <ul>

@@ -50,8 +50,15 @@
                   <forename>Susanne</forename>
                   <surname>Haaf</surname>
                </persName>
+               <note>
+                  Susanne Haaf has been working as a research assistant at the Berlin-Brandenburg Academy of Sciences and Humanities since 2010. 
+                  Here, she has been engaged in the projects <ref target="http://deutschestextarchiv.de/">»Deutsches Textarchiv« (German Text Archive, DTA)</ref>, 
+                  »CLARIN-D« and <ref target="http://www.upb.de/tevo">»t.evo«</ref>. 
+                  She has been mainly responsible for the development of the <ref target="http://deutschestextarchiv.de/doku/basisformat/">»DTA Base Format«</ref>, a TEI dialect for the encoding of historical texts. 
+               </note>
             </person>
-            <person xml:id="hoedl-notter">
+            <!-- (Postponed until publication of article in the next weeks)
+               <person xml:id="hoedl-notter">
                <ptr
                   target="https://www.squirrel.uni-muenchen.de/ueber_uns/personen_uebersicht/hoedl-notter/index.html"/>
                <persName>
@@ -62,7 +69,7 @@
                   been a member of the digital edition of the correspondence between Archduke
                   Leopold Wilhelm and his brother the Emperor Ferdinand II. and the online-editing
                   platform "Squirrel" at LMU.</note>
-            </person>
+            </person> -->
             <person xml:id="kirsten">
                <persName>
                   <forename>Linda</forename>
@@ -82,6 +89,12 @@
                <persName>
                   <forename>Jonas</forename>
                   <surname>Müller-Laackman</surname>
+               </persName>
+            </person>
+            <person xml:id="obert">
+               <persName>
+                  <forename>Dewi Josephine</forename>
+                  <surname>Obert</surname>
                </persName>
             </person>
             <person xml:id="schenk">

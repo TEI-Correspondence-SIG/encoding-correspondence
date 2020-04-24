@@ -439,23 +439,20 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>tei-xml/addresses.xml</String>
+                                    <String>tei-xml/stamps-seals-postmarks.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
                                         <String>correspondence-manual</String>
-                                        <String>Paragraph and Chapter Numbering</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
-                                        <String>XSL</String>
                                     </list>
                                 </field>
                                 <field name="scenarioStorageLocations">
                                     <list>
-                                        <Byte>2</Byte>
                                         <Byte>2</Byte>
                                     </list>
                                 </field>
@@ -691,7 +688,7 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>${pdu}/html/xsl/correspondence-manual.xsl</String>
+                                    <String>${pdu}/xsl/correspondence-manual.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>

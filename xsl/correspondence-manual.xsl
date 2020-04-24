@@ -147,7 +147,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <h4>Publication</h4>    
-                                <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019.</p>
+                                <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</p>
                                 <p>Source files on <i class="fab fa-github"></i>&#160;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
                                 <p>
                                     <a href="legal.html">Legal notice &amp; privacy</a></p>
@@ -271,7 +271,7 @@
                         <xsl:variable name="id">
                             <xsl:value-of select="./@xml:id"/>
                         </xsl:variable>
-                        <div>
+                        <div id="{$id}">
                             <h3>
                                 <xsl:value-of select="concat(.//tei:surname, ', ', .//tei:forename)"/>
                                 <xsl:if test=".//tei:ptr">
@@ -287,6 +287,18 @@
                             </ul>
                         </div>
                     </xsl:for-each>
+                </div>
+                <div class="col-md-4 order-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Index</h5>
+                            <ul id="toc">
+                                <xsl:for-each select="//tei:person">
+                                    <li><a href="#{@xml:id}"><xsl:value-of select="concat(.//tei:surname, ', ', .//tei:forename)"/></a></li>
+                                </xsl:for-each>
+                            </ul> 
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -360,7 +372,7 @@
     <xsl:template name="status">
         <xsl:variable name="review-deadline">
             <xsl:choose>
-                <xsl:when test="$page='adresses' or $page='stamps-seals-postmarks'">
+                <xsl:when test="$page='addresses' or $page='stamps-seals-postmarks'">
                     <xsl:text>31 July 2020</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -470,7 +482,7 @@
                     <xsl:value-of select="ec:seperator(., position())"/>
                 </xsl:for-each><xsl:text>: </xsl:text>
                 <xsl:value-of select="//tei:titleStmt/tei:title"/>
-                <xsl:text>. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019.</xsl:text>
+                <xsl:text>. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</xsl:text>
                 <!--<xsl:text> Version </xsl:text><xsl:value-of select="$version"/><xsl:text> from </xsl:text><xsl:value-of select="format-date(//tei:change[@n=$version]/@when, '[D].[M].[Y]')"/>-->
                 <xsl:text> URL:&#160;</xsl:text><a href="{$url}"><xsl:value-of select="$url"/></a>
                 <xsl:text> URN:&#160;</xsl:text><a href="https://nbn-resolving.org/{//tei:publicationStmt/tei:idno[@type='urn']/text()}"><xsl:value-of select="//tei:publicationStmt/tei:idno[@type='urn']"/></a>

@@ -32,6 +32,7 @@ DTABf</title>
 <revisionDesc>
 <listChange>
 <change n="1" when="2019-12-20" status="draft">Initial Version</change>
+<change n="1.1" when="2020-04-24" status="draft">§ 11: Wrong attribute in code example.</change>	
 </listChange>
 </revisionDesc>
 </teiHeader>
@@ -93,7 +94,7 @@ andrer kommt, ſo wirſt Du ſchon nicht mehr nach ihm<lb/>
 <p n="11">If the internal structure of a postscript becomes very elaborate, it might be reasonable to yield to <tag>div type="postscript"</tag> in order to properly represent the structures contained by the postscript. In a TEI mailing list discussion of such cases, this was already stated by the TEI Council to be the preferred encoding solution.
 Several writing sessions each with its own postscript can be represented in subordinate <gi>div</gi> elements within the <gi>div</gi> that contains the whole letter:</p> 
 <egXML xmlns="http://www.tei-c.org/ns/Examples"><div type="letter">
-<div n="writingSession">
+<div type="writingSession">
 <p>[...]</p>
 <closer><salute>[Salutation here]</salute></closer>
 <postscript><p>[Postscript here]</p></postscript>

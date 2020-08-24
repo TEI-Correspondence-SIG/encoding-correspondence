@@ -26,6 +26,12 @@
                   <surname>Börner</surname>
                </persName>
             </person>
+            <person xml:id="daengeli">
+               <persName>
+                  <forename>Peter</forename>
+                  <surname>Dängeli</surname>
+               </persName>
+            </person>
             <person xml:id="dumont">
                <idno type="orcid">http://orcid.org/0000-0002-6923-0950</idno>
                <ptr target="http://www.bbaw.de/die-akademie/mitarbeiter/dumont/"/>
@@ -57,8 +63,7 @@
                   She has been mainly responsible for the development of the <ref target="http://deutschestextarchiv.de/doku/basisformat/">»DTA Base Format«</ref>, a TEI dialect for the encoding of historical texts. 
                </note>
             </person>
-            <!-- (Postponed until publication of article in the next weeks)
-               <person xml:id="hoedl-notter">
+            <person xml:id="hoedl-notter">
                <ptr
                   target="https://www.squirrel.uni-muenchen.de/ueber_uns/personen_uebersicht/hoedl-notter/index.html"/>
                <persName>
@@ -69,7 +74,7 @@
                   been a member of the digital edition of the correspondence between Archduke
                   Leopold Wilhelm and his brother the Emperor Ferdinand II. and the online-editing
                   platform "Squirrel" at LMU.</note>
-            </person> -->
+            </person>
             <person xml:id="kirsten">
                <persName>
                   <forename>Linda</forename>
@@ -134,6 +139,12 @@
                   Special Interest Group Correspondence since 2014. Sabine received her PhD from
                   Humboldt University Berlin with a study on the history of philology in the 19th
                   century.</note>
+            </person>
+            <person xml:id="steyer">
+               <persName>
+                  <forename>Timo</forename>
+                  <surname>Steyer</surname>
+               </persName>
             </person>
             <person xml:id="trautmann">
                <persName>

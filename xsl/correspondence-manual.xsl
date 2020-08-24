@@ -118,7 +118,8 @@
                                         <a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a>
                                         <a class="dropdown-item" href="stamps-seals-postmarks.html">Postage Stamps, Seals, and Postmarks</a>
                                         <a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a>
-                                        <a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and forms</a>
+                                        <a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and Forms</a>
+                                        <a class="dropdown-item" href="uncertainties-metadata.html">Uncertainties in Metadata</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -375,6 +376,9 @@
                 <xsl:when test="$page='addresses' or $page='stamps-seals-postmarks'">
                     <xsl:text>31 July 2020</xsl:text>
                 </xsl:when>
+                <xsl:when test="$page='uncertainties-metadata'">
+                    <xsl:text>31 October 2020</xsl:text>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>30 May 2020</xsl:text>
                 </xsl:otherwise>
@@ -485,12 +489,12 @@
                 <xsl:text>. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</xsl:text>
                 <!--<xsl:text> Version </xsl:text><xsl:value-of select="$version"/><xsl:text> from </xsl:text><xsl:value-of select="format-date(//tei:change[@n=$version]/@when, '[D].[M].[Y]')"/>-->
                 <xsl:text> URL:&#160;</xsl:text><a href="{$url}"><xsl:value-of select="$url"/></a>
-                <xsl:text> URN:&#160;</xsl:text><a href="https://nbn-resolving.org/{//tei:publicationStmt/tei:idno[@type='urn']/text()}"><xsl:value-of select="//tei:publicationStmt/tei:idno[@type='urn']"/></a>
+                <xsl:if test="//tei:publicationStmt/tei:idno[@type='urn']/text()"><xsl:text> URN:&#160;</xsl:text><a href="https://nbn-resolving.org/{//tei:publicationStmt/tei:idno[@type='urn']/text()}"><xsl:value-of select="//tei:publicationStmt/tei:idno[@type='urn']"/></a></xsl:if>
                 <xsl:if test="//tei:publicationStmt/tei:idno[@type='zotero']/text()">
                     <a class="zotero-link" href="{//tei:publicationStmt/tei:idno[@type='zotero']/text()}" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><br/>
                     <xsl:copy-of select="document(ec:zotero-api-url(//tei:publicationStmt/tei:idno[@type='zotero']/text()))"/>
                 </xsl:if>
-                <p class="download-link"><i class="fa fa-download"></i>&#160;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence">Download TEI-XML source of this article on GitHub</a></p>
+                <p class="download-link"><i class="fa fa-download"></i>&#160;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence/blob/master/tei-xml/{/tei:TEI/@xml:id}.xml">Download TEI-XML source of this article on GitHub</a></p>
             </div>
         </div>
     </xsl:template>

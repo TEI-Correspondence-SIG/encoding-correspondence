@@ -1,6 +1,6 @@
 # Encoding Correspondence
 
-GitHub repository of the publication Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019. https://encoding-correspondence.bbaw.de.
+GitHub repository of the publication Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and DTABf. Edited by Stefan Dumont, Susanne Haaf and Sabine Seifert. Berlin 2019-2020. https://encoding-correspondence.bbaw.de.
 
 For more information about the project see: https://encoding-correspondence.bbaw.de/v1/introduction.html
 

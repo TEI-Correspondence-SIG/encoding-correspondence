@@ -30,6 +30,14 @@
                             </documentTypeEntry>
                             <documentTypeEntry>
                                 <field name="documentTypeID">
+                                    <String>6/samples/travel-guide.framework/Travel Guide (Sample)</String>
+                                </field>
+                                <field name="enable">
+                                    <Boolean>false</Boolean>
+                                </field>
+                            </documentTypeEntry>
+                            <documentTypeEntry>
+                                <field name="documentTypeID">
                                     <String>6/ant/ant.framework/ANT</String>
                                 </field>
                                 <field name="enable">
@@ -420,14 +428,6 @@
                                     <Boolean>false</Boolean>
                                 </field>
                             </documentTypeEntry>
-                            <documentTypeEntry>
-                                <field name="documentTypeID">
-                                    <String>6/samples/travel-guide.framework/Travel Guide (Sample)</String>
-                                </field>
-                                <field name="enable">
-                                    <Boolean>false</Boolean>
-                                </field>
-                            </documentTypeEntry>
                         </documentTypeEntry-array>
                     </entry>
                     <entry>
@@ -439,7 +439,7 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>tei-xml/stamps-seals-postmarks.xml</String>
+                                    <String>tei-xml/uncertainties-metadata.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>

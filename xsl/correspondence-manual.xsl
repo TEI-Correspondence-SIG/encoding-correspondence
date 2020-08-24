@@ -172,7 +172,7 @@
                 </footer>
                 <!-- Optional JavaScript -->
                 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-                <script src="libs/jquery/jquery-3.3.1.slim.min.js"></script>
+                <script src="libs/jquery/jquery-3.5.1.slim.min.js"></script>
                 <script src="libs/popper.js/popper.min.js"></script>
                 <script src="libs/bootstrap-4.3.1/js/bootstrap.min.js"></script>
                 <script src="libs/prism/prism.js"></script>

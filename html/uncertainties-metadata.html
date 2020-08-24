@@ -1,0 +1,884 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="libs/bootstrap-4.3.1/css/bootstrap.min.css">
+      <link href="libs/fontawesome/css/all.css" rel="stylesheet">
+      <link href="libs/prism/prism.css" rel="stylesheet">
+      <link href="css/ec.css" rel="stylesheet">
+      <title>Encoding Correspondence: Uncertainties in metadata</title><script type="text/javascript">
+                    var _paq = window._paq || [];
+                    _paq.push(["setVisitorCookieTimeout", "604800"]);
+                    _paq.push(["setSessionCookieTimeout", "0"]);
+                    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+                    _paq.push(['trackPageView']);
+                    _paq.push(['enableLinkTracking']);
+                    (function() {
+                    var u="https://piwik.bbaw.de/";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '53']);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                    })();
+                </script><noscript>
+         <p><img src="https://piwik.bbaw.de/matomo.php?idsite=53&amp;rec=1" style="border:0;" alt=""></p></noscript></head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+         <div class="container"><a class="navbar-brand" href="index.html" title="To the homepage" alt="Go to home page of Encoding Correspondence">Encoding Correspondence</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbar">
+               <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link" href="introduction.html">Introduction</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a><div class="dropdown-menu" aria-labelledby="dropdown07"><a class="dropdown-item" href="addresses.html">Addresses</a><a class="dropdown-item" href="CMIF.html">Correspondence Metadata Interchange Format</a><a class="dropdown-item" href="openers-closers.html">Letter Openers and Closers</a><a class="dropdown-item" href="stamps-seals-postmarks.html">Postage Stamps, Seals, and Postmarks</a><a class="dropdown-item" href="postscripts.html">Postscripts of Letters</a><a class="dropdown-item" href="pre-printed-parts.html">Pre-printed parts: Letterheads and Forms</a><a class="dropdown-item" href="uncertainties-metadata.html">Uncertainties in Metadata</a></div>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="authors.html">Authors <span class="sr-only">(current)</span></a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div id="content" class="container">
+         <div class="row">
+            <div class="col-md-4 order-2 d-print-none">
+               <div id="status" class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Status of this article</h5>
+                     <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until 31&nbsp;October&nbsp;2020.</p>
+                     <p>We kindly invite you to review and/or comment this article! Please do so via the web
+                        annotation service <a href="https://web.hypothes.is/">Hypothes.is</a> 
+                        or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.</p>
+                     <p>This article remains stable and <a href="#citation">citable</a> in the first version of this manual. The revised article will be published in the
+                        second edition of the manual.</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Table of Content</h5>
+                     <ul id="toc">
+                        <li><a href="#c-1">Introduction</a></li>
+                        <li><a href="#c-2">Modelling uncertainties in the TEI</a></li>
+                        <li><a href="#c-3">General challenges</a></li>
+                        <li><a href="#c-4">Five recommendations for coding uncertainties</a></li>
+                        <li><a href="#c-5">What about degrees of uncertainty?</a></li>
+                        <li><a href="#c-6">Examples of uncertain information and proposed solutions</a><ul>
+                              <li><a href="#c-6-1">Dates</a><ul>
+                                    <li><a href="#c-6-1-1">Dating by the editor</a><ul>
+                                          <li><a href="#c-1-1-1">Phenomenon: Differing information in secondary literature</a></li>
+                                          <li><a href="#c-1-1-2">Phenomena: Insecure reading and correction by the editor; multiple
+                                                								dating (two calendars)</a></li>
+                                          <li><a href="#c-1-1-3">Phenomenon: Date determination from the letter content, intrinsic
+                                                								and extrinsic; multiple dating (Julian and Gregorian
+                                                								calendar)</a></li>
+                                          <li><a href="#c-1-1-4">Factual corrections by the editor</a></li>
+                                       </ul>
+                                    </li>
+                                    <li><a href="#c-6-1-2">Alternative calendars</a><ul>
+                                          <li><a href="#c-1-2-1">Phenomenon: Unclear conversion of a Roman letter date</a></li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-6-2">Locations</a><ul>
+                                    <li><a href="#c-6-2-1">Phenomenon: The location is missing in the original and is assigned by
+                                          							the editor</a></li>
+                                    <li><a href="#c-6-2-2">The location is unclear and is assigned by the editor</a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#c-6-3">Persons</a><ul>
+                                    <li><a href="#c-6-3-1">Sender and/or recipient are uncertain</a></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </li>
+                        <li><a href="#notes">Notes</a></li>
+                        <li><a href="#bibliography">Bibliography</a></li>
+                        <li class="citation-link"><a href="#citation">Cite this article</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 order-1">
+               <article>
+                  <header>
+                     <h1>Uncertainties in metadata</h1>
+                     <p id="authors">Peter Dängeli, Isabella Hödl-Notter, Timo Steyer</p>
+                  </header>
+                  <section>
+                     			
+                     <div class="chapter" id="c-1">
+                        				
+                        <h2>Introduction</h2>
+                        				
+                        <p id="1"><span class="paragraph-number">&nbsp;&nbsp;1</span>Uncertainties are a common challenge in scholarly work. It is fundamentally
+                           					important to point out uncertainties in order to make the research process and
+                           					the results transparent and comprehensible. In contrast to natural sciences
+                           					(e.g. mathematics), the humanities often miss the opportunity to model
+                           					uncertainties exactly. The handling of uncertainties, especially when working
+                           					with historical sources, is therefore usually explained descriptively—so far,
+                           					however, lacking a best practice regarding the retention of uncertainties or
+                           					decision-making in digital editions.<a id="fn1" href="#note_fn1">[1]</a></p>
+                        				
+                        <p id="2"><span class="paragraph-number">&nbsp;&nbsp;2</span>Basically, editors face three challenges: First, uncertainties must be
+                           					identified, second, they must be modelled/made comprehensible, and third, they
+                           					must be commented on or interpreted by the editor. These steps must be taken
+                           					into account in the creation of editions—not only in the main text but also in
+                           					the metadata. The importance of metadata is significant for proof and
+                           					transparency of research, for findability, distribution and interlinking as well
+                           					as for their obvious potential for evaluation methods (e.g. network
+                           					visualizations).</p>
+                        				
+                        <p id="3"><span class="paragraph-number">&nbsp;&nbsp;3</span>The core idea of metadata lies in having a simple and accurate data set that
+                           					summarizes the most important information about the particular information
+                           					resource. Metadata has been playing an increasingly important role in the
+                           					research process for some time, and also has become a subject of research in
+                           its
+                           					own right.</p>
+                        				
+                        <p id="4"><span class="paragraph-number">&nbsp;&nbsp;4</span>Good metadata facilitates interoperability. Describing/mapping uncertainties in
+                           					metadata does not necessarily impede this. The goal must therefore be to
+                           					identify uncertainties but not to fall back to project- or case-specific
+                           					solutions or data models; otherwise, such an approach threatens the accuracy
+                           of
+                           					scientific research as well as the prospect of interoperability. Precision of
+                           					the metadata with regard to the disclosure of uncertainties is therefore
+                           					urgently needed.</p>
+                        			</div>
+                     			
+                     <div class="chapter" id="c-2">
+                        				
+                        <h2>Modelling uncertainties in the TEI</h2>
+                        				
+                        <p id="5"><span class="paragraph-number">&nbsp;&nbsp;5</span>In principle, the TEI guidelines take into account two types of uncertainties: On
+                           					the one hand, uncertainty regarding the use of the appropriate TEI element and,
+                           					on the other hand, uncertain ways of reading text passages/words or the
+                           					identification of entities like persons or places. Both areas offer
+                           					opportunities to highlight uncertainty regarding entities.</p>
+                        				
+                        <p id="6"><span class="paragraph-number">&nbsp;&nbsp;6</span>This article concentrates on uncertain readings as well as dealing with various
+                           					forms of supplementary information.<a id="fn2" href="#note_fn2">[2]</a> For the
+                           					encoding of insecure readings and related information, the chapters 11.3.3.2
+                           and
+                           					21 of the TEI Guidelines are of relevance (Chapter 11.3.3.2 "Use of the
+                           						<span class="code">&lt;gap&gt;</span>, <span class="code">&lt;del&gt;</span>, <span class="code">&lt;damage&gt;</span>, <span class="code">&lt;unclear&gt;</span>, and
+                           						<span class="code">&lt;supplied&gt;</span> Elements in Combination";<a id="fn3" href="#note_fn3">[3]</a>
+                           					Chapter 21 "Certainty, Precision, and Responsibility"<a id="fn4" href="#note_fn4">[4]</a>).
+                           					When modelling uncertainty, it is essential to specify the responsibility
+                           						(<span class="code">@resp</span> or <span class="code">&lt;respons&gt;</span>), the degree of uncertainty
+                           						(<span class="code">@cert</span>, <span class="code">@precision</span>) and the reason (<span class="code">@reason</span> or
+                           					via <span class="code">&lt;note&gt;</span>) in order to make the decisions comprehensible for readers.
+                           					For this purpose, a gradual encoding of uncertainty is possible using
+                           						<span class="code">@cert</span> with fixed values (high, medium, low, unknown). This area
+                           					seems to be well covered by the existing possibilities.</p>
+                        				
+                        <p id="7"><span class="paragraph-number">&nbsp;&nbsp;7</span>However, problems arise when uncertainties in metadata are to be modelled and
+                           					these relate primarily to entities and datings. As we observe, there is a
+                           					certain arbitrariness in the encodings, which may be a signal of inadequate
+                           					documentation or uncertainty in dealing with the current guidelines. Certainly,
+                           					the described characteristics of metadata (see introduction) also play a
+                           					role.</p>
+                        				
+                        <p id="8"><span class="paragraph-number">&nbsp;&nbsp;8</span>This impression was reinforced by the discussions and the examples presented in
+                           					the workshop preceding this handbook on encoding correspondence. The aim of this
+                           					contribution is to inform about existing possibilities, to give examples as well
+                           					as to address some existing gaps and to develop coding suggestions.</p>
+                        			</div>
+                     			
+                     <div class="chapter" id="c-3">
+                        				
+                        <h2>General challenges</h2>
+                        				
+                        <p id="9"><span class="paragraph-number">&nbsp;&nbsp;9</span>The challenges of modelling uncertainties of metadata are an integral part of
+                           					every modelling process in the humanities and accompany editorial projects as
+                           					well as database-driven development or cataloging projects. The fundamental
+                           					dilemma in this context is the requirement of metadata for information that is
+                           					as granular, structured and standardized as possible, and the widespread
+                           					approach of researchers to enter information that circumscribes uncertainty or
+                           					to restrict themselves to one of several possible entities. Typical forms are
+                           					"around 1700", "Late Middle Ages", or "located between Cologne and Dusseldorf".
+                           					Thus, regardless of the following recommendations, it is necessary to understand
+                           					the relevance of metadata for automated processing steps, i.e. for further
+                           					processing of the data in search portals or interfaces. Only if the researchers
+                           					become aware of this and are willing to engage in structured and standardized
+                           					information input in the metadata, also with respect to uncertainties, the
+                           					quality of metadata dealing with uncertainties may sustainably be improved.</p>
+                        				
+                        <p id="10"><span class="paragraph-number">10</span>Another challenge is the often unsatisfactory authority data. The use of
+                           					authority data is a key factor in ensuring that metadata is reusable. In
+                           					particular, authority data can be used to identify entities in the metadata with
+                           					added value but there is often a lack of differentiating information in the
+                           					authority data. To give one example, authority datasets do not include
+                           					identifiers for all territorial units. While there is a GeoNames identifier for
+                           					today's state of Bavaria (2951839),<a id="fn5" href="#note_fn5">[5]</a> identifiers describing the
+                           					electorate, duchy, or the scale of the early modern Upper and Lower Bavaria are
+                           					missing. While authority data are used to uniquely identify an entity, they
+                           					cannot be seen in the same way as content-rich biographical reference works or
+                           					lexicons but the combination of an authority record with incomplete or
+                           					non-scientific information poses a problem here. The only remedy is the insight
+                           					that norm data serve primarily for identification and only secondarily for
+                           					description.</p>
+                        				
+                        <p id="11"><span class="paragraph-number">11</span>Thus, in order to model uncertainties in metadata, one needs to be aware,
+                           					firstly, of the benefits of metadata and the fact that they are not suitable
+                           for
+                           					mapping all possible interpretive variants, and, secondly, the perspective on
+                           					norm data as a reliable means of identification and less as a resource for
+                           					further information.</p>
+                        			</div>
+                     			
+                     <div class="chapter" id="c-4">
+                        				
+                        <h2>Five recommendations for coding uncertainties</h2>
+                        				
+                        <p id="12"><span class="paragraph-number">12</span>In the metadata, uncertainties occur at almost any location where information
+                           					from the source is recorded. If a source document is undated, multi-dated, or
+                           					ambivalently dated, such as being ambiguous about the underlying calendar,
+                           					editors feel compelled to identify the most plausible date and assign it to the
+                           					source. Likewise, location information may be missing or may not be specified
+                           					with sufficient accuracy. For instance, the resolution of an abbreviation may
+                           					not be unique, the same place names may occur in different areas, or historical
+                           					places or field names are no longer common. Similar problems arise with regard
+                           					to the identification of senders and recipients.</p>
+                        				
+                        <p id="13"><span class="paragraph-number">13</span>As general recommendations for the coding of uncertainties in metadata we suggest
+                           					the following general rules:<br>
+                           					
+                           <ul>
+                              <li>Always identify uncertainties in the metadata; the recognition,
+                                 							identification and interpretation of uncertainties is a scientific
+                                 							achievement,</li>
+                              <li>Render the process of coding transparent by indicating who is
+                                 							responsible for encoding the uncertainty,</li>
+                              <li>Distinguish whether the uncertainty is source-related (intrinsic) or
+                                 							based on inaccurate or ambiguous identification options
+                                 							(extrinsic),</li>
+                              <li>Name methods (<span class="code">@evidence</span> with recommended values "internal",
+                                 							"external", and "conjecture") to make transparent in which way the
+                                 							uncertainty was resolved,</li>
+                              <li>If possible, refer to external references (authority data,
+                                 							prosopographic databases, etc.) in order to give researchers the
+                                 							opportunity to familiarize themselves with the phenomenon at
+                                 							hand,</li>
+                              <li>If possible, add indications on how to process the information for
+                                 							analytical and indexing purposes.</li>
+                           </ul>
+                        </p>
+                        			</div>
+                     			
+                     <div class="chapter" id="c-5">
+                        				
+                        <h2>What about degrees of uncertainty?</h2>
+                        				
+                        <p id="14"><span class="paragraph-number">14</span>Apart from these general recommendations, the question of whether the degree of
+                           					uncertainty should be encoded is a matter which researchers always have to
+                           					answer anew for each edition project as there are until now no common guidelines
+                           					or best practice models. The most straightforward answer to this question is
+                           the
+                           					statement that an indication is either certain or uncertain and therefore
+                           					establishing a degree of uncertainty is a far too subjective undertaking.<a id="fn6" href="#note_fn6">[6]</a> In our opinion, it would be
+                           					advisable to dispense with the specification of granularity in the metadata and
+                           					to state only generally whether the information is secure or uncertain. The
+                           					(implicit) default specification reasonably being <span class="code">@cert</span>="true", the
+                           					statement <span class="code">@cert</span>="false" would only need to be set in cases of
+                           					uncertainty. However, this would require a corresponding change in the content
+                           					model of teidata.certainty, which introduces these Boolean values as
+                           					alternatives to the existing options (in order to allow for backward
+                           					compatibility). To remain in line with the current options offered by the TEI,
+                           					projects might provide an indication whether <span class="code">@cert</span>="medium" shall be
+                           					evaluated as certain or uncertain by applications that distinguish only these
+                           					two statuses (with "unknown" and "low" defaulting to uncertainty and "high"
+                           					defaulting to certainty).</p>
+                        			</div>
+                     			
+                     <div class="chapter" id="c-6">
+                        				
+                        <h2>Examples of uncertain information and proposed solutions</h2>
+                        				
+                        <p id="15"><span class="paragraph-number">15</span>Strategies for dealing with uncertainty often include the recording of different
+                           					options and their evaluation for plausibility and possibly mutual compatibility.
+                           					There is a need to record possible alternatives and to assign a priority to at
+                           					least one of them, pursuing the goal to maintain transparency and select a "best
+                           					option". This prioritised option may then be considered by default in the
+                           					processing of metadata (such as inclusion in registers, search indices, etc.).
+                           					In Chapter 16.8 "Alternation", the TEI offers several basic approaches on how
+                           to
+                           					capture and prioritise alternatives.<a id="fn7" href="#note_fn7">[7]</a></p>
+                        				
+                        <p id="16"><span class="paragraph-number">16</span>One such mechanism is the select attribute (see the following
+                           					explication), which allows one or more of the detected alternatives to be
+                           					specified starting from a hierarchically superior element (in the form of
+                           					space-separated tei.pointers). Because <span class="code">@select</span> mostly refers
+                           					to identifiers (<span class="code">@xml:id</span>), this procedure is well suited for the
+                           					recognition of named entities such as places or persons. For time units such
+                           as
+                           					dates or periods of time we are more reluctant to use <span class="code">@xml:id</span> and
+                           					prefer the use of <span class="code">@select</span> in combination with <span class="code">@n</span> or
+                           						<span class="code">@ana</span>. This offers the possibility to provide more detailed
+                           					descriptions. The evaluation of <span class="code">@select</span> would thus use not one
+                           					specific but two different reference schemes, which is not very elegant and
+                           					presents additional challenges for processing routines. The appropriate schema
+                           					would either need to depend on a <span class="code">@type</span> or be based on the syntactic
+                           					structure of the pointer.</p>
+                        				
+                        <p id="17"><span class="paragraph-number">17</span>An alternative approach to referencing specific metadata is local tagging
+                           					directly at each element. This approach seems to be more consistent. At the same
+                           					time it facilitates clarity and data processing. This kind of marking can be
+                           					done explicitly (e.g. via <span class="code">@ana</span>) but it can also be done implicitly by
+                           					creating just one element of each type—carrying the information that is deemed
+                           					most precise or probable—directly within <span class="code">&lt;correspAction&gt;</span> and specifying
+                           					all alternative places, persons and data only at a deeper level. Using this
+                           					approach, only one place of dispatch, address, recipient and sender as well as
+                           a
+                           					date of dispatch and date of receipt would be specified directly within
+                           						<span class="code">&lt;correspAction&gt;</span> and more detailed and possibly alternative
+                           					information might be located in <span class="code">&lt;note&gt;</span> elements, (partially) structured
+                           					or in prose. Given that letters may be written and sent by more than one person
+                           					from and to more than one place and at more than one date, it is hardly possible
+                           					to narrow the schema to allow only one element of each type directly within
+                           						<span class="code">&lt;correspAction&gt;</span>.<a id="fn8" href="#note_fn8">[8]</a>
+                           					Thus we can only suggest a best practice but not enforce it formally.</p>
+                        				
+                        <div class="chapter" id="c-6-1">
+                           					
+                           <h3>Dates</h3>
+                           					
+                           <p id="18"><span class="paragraph-number">18</span>The following examples of uncertain dating show how this kind of hierarchical
+                              						priorisation might be encoded. For each example, we present the nested way
+                              						that demotes alternatives to a lower level as well as a flat encoding where
+                              						alternatives are distinguished using <span class="code">@select</span>.</p>
+                           					
+                           <div class="chapter" id="c-6-1-1">
+                              						
+                              <h4>Dating by the editor</h4>
+                              						
+                              <div class="chapter" id="c-1-1-1">
+                                 							
+                                 <h4>Phenomenon: Differing information in secondary literature</h4>
+                                 							
+                                 <p id="19"><span class="paragraph-number">19</span>Implementation:</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] 
+	&lt;date resp="#editor-XY" when="1753-04-20"/&gt;
+	&lt;note&gt;Bei &lt;bibl&gt;B2462&lt;/bibl&gt; wird 1750 als Jahr angegeben,
+	was aber inhaltlich nicht stimmen kann (1750 AVH nicht
+	in Bern; die angekündigte Rückkehr nach Göttingen, falls
+	er in Bern kein Amt erhält, passt auf Ende April
+	1753).&lt;/note&gt;
+&lt;/correspAction&gt;</code></pre>
+                                    <figcaption>Example 1: Albrecht von Haller to Giovanni Battista Morgagni,
+                                       									Bern, 20 April 1753 (Editions- und Forschungsplattform
+                                       									hallerNet, <a href="https://hallernet.org/letter_15556" target="_blank">https://hallernet.org/letter_15556</a>).</figcaption>
+                                 </figure>
+                                 							
+                                 <p id="20"><span class="paragraph-number">20</span>Explication: A different date from secondary literature is rated as
+                                    								implausible in a comment. Because there is no direct connection with
+                                    								the source, the alternative date is not recorded in a structured
+                                    								form.</p>
+                                 							
+                                 <p id="21"><span class="paragraph-number">21</span>Alternative implementation (several <span class="code">&lt;date&gt;</span> elements in
+                                    									<span class="code">&lt;correspAction&gt;</span>):</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref"&gt; [...] 
+	&lt;date resp="#editor-XY" when="1753-04-20" n="date_pref"/&gt;
+	&lt;date resp="#author-B2462" when="1750" n="date_alt1"&gt;
+		&lt;note&gt;Bei &lt;bibl&gt;B2462&lt;/bibl&gt; wird 1750 als Jahr
+		angegeben, was aber inhaltlich nicht stimmen kann
+		(1750 AVH nicht in Bern; die angekündigte Rückkehr
+		nach Göttingen, falls er in Bern kein Amt erhält,
+		passt auf Ende April 1753).&lt;/note&gt;
+	&lt;/date&gt;
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption></figcaption>
+                                 </figure>
+                                 							
+                                 <p id="22"><span class="paragraph-number">22</span>Here and in the following examples, <span class="code">@ana</span>="date_alt1" might
+                                    								be used instead of <span class="code">@n</span>="date_alt1".</p>
+                                 						</div>
+                              						
+                              <div class="chapter" id="c-1-1-2">
+                                 							
+                                 <h4>Phenomena: Insecure reading and correction by the editor; multiple
+                                    								dating (two calendars)</h4>
+                                 							
+                                 <p id="23"><span class="paragraph-number">23</span>Implementation:</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] 
+	&lt;date resp="#editor-XY" evidence="conjecture" when="1729-04-21"&gt;
+		&lt;note type="evidence"&gt;ohne Jahr, eindeutig 1729; Notiz
+		von AvH: "du 19 d'avril, reçu le 22"; AvH hat einen
+		Rechnungsfehler begangen, 11. ante Kal. Maij ist der
+		21.4.&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;note type="alternativeDate"&gt;
+		&lt;date calendar="#roman"&gt;11. ante Kalend. Maij&lt;/date&gt;
+		&lt;p&gt;Die Lesung II. ante Kal. Maij kann nicht stimmen.&lt;/p&gt;
+	&lt;/note&gt; [...] 
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption>Example 2: Pierre-François Martin to Albrecht von Haller,
+                                       									Lausanne, 21 April 1729 (Editions- und Forschungsplattform
+                                       									hallerNet, <a href="https://hallernet.org/letter_04933" target="_blank">https://hallernet.org/letter_04933</a>).</figcaption>
+                                 </figure>
+                                 							
+                                 <p id="24"><span class="paragraph-number">24</span>Explication: The letter date is Roman but was incorrectly converted
+                                    								in a contemporary note. The editor has determined the appropriate
+                                    								date and entered it as regular metadata. He assesses a possible but
+                                    								incorrect reading of the Roman date in an additional remark.</p>
+                                 							
+                                 <p id="25"><span class="paragraph-number">25</span>Alternative implementation (several <span class="code">&lt;date&gt;</span> elements in
+                                    									<span class="code">&lt;correspAction&gt;</span>):</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref"&gt; [...] 
+	&lt;date resp="#editor-XY" evidence="conjecture" when="1729-04-21" n="date_pref"&gt;
+		&lt;note type="evidence"&gt;ohne Jahr, eindeutig 1729; Notiz
+		von AvH: "du 19 d'avril, reçu le 22"; AvH hat einen
+		Rechnungsfehler begangen, 11. ante Kal. Maij ist der
+		21.4.&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;date calendar="#roman" n="date_alt1"&gt;11. ante Kalend. Maij
+		&lt;note&gt;die Lesung II. ante Kal. Maij kann nicht
+		stimmen&lt;/note&gt;&lt;/date&gt; [...]
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption></figcaption>
+                                 </figure>
+                                 						</div>
+                              						
+                              <div class="chapter" id="c-1-1-3">
+                                 							
+                                 <h4>Phenomenon: Date determination from the letter content, intrinsic
+                                    								and extrinsic; multiple dating (Julian and Gregorian
+                                    								calendar)</h4>
+                                 							
+                                 <p id="26"><span class="paragraph-number">26</span>Implementation:</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] 
+	&lt;date resp="#editor-XY" evidence="internal external conjecture" when="1768-05-01"&gt;
+		&lt;note type="evidence"&gt;Ohne Jahr; Jahr gemäss alter
+			Sign., &lt;bibl&gt;GEH&lt;/bibl&gt; und Inhalt (O. schickt den
+			dritten, vierten und fünften Band seiner
+			Zeitschrift, die AvH dann ab dem 13.4.1769 in den
+			GGA rezensiert. Wie AvH dort schreibt, umfasst Bd. 5
+			die späten Monate von 1766 und den ersten von 1767.
+			Da er erwähnt, dass der 6. Band (der also die
+			späteren Monate von 1767 und den ersten von 1768
+			enthalten sollte) leider noch nicht fertig sei, muss
+			der Brief (wie auch bei Thormann angegeben) 1768 zu
+			datieren sein).&lt;/note&gt;
+			&lt;note type="alternativeDate"&gt;
+				&lt;date calendar="roman"&gt;Cal.Maij&lt;/date&gt;
+			&lt;/note&gt;
+	&lt;/date&gt; [...] 
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption>Example 3: Pietro Orteschi to Albrecht von Haller, Venice, 1st
+                                       									May 1768 (Editions- und Forschungsplattform hallerNet, <a href="https://hallernet.org/letter_06362" target="_blank">https://hallernet.org/letter_06362</a>).</figcaption>
+                                 </figure>
+                                 							
+                                 <p id="27"><span class="paragraph-number">27</span>The date of the incompletely dated letter was determined by the
+                                    								editor from the letter content and in accordance with an old
+                                    								signature, whereby the derivation of content is described relatively
+                                    								extensively for better traceability. The absence of <span class="code">@cert</span>
+                                    								indicates that the editor is safe in dating.</p>
+                                 							
+                                 <p id="28"><span class="paragraph-number">28</span>Alternative implementation (several <span class="code">&lt;date&gt;</span> elements in
+                                    									<span class="code">&lt;correspAction&gt;</span>):</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref"&gt; [...] 
+	&lt;date resp="#editor-XY" evidence="internal external conjecture" when="1768-05-01" n="date_pref"&gt;
+		&lt;note type="evidence"&gt;Ohne Jahr; Jahr gemäss alter
+			Sign., &lt;bibl&gt;GEH&lt;/bibl&gt; und Inhalt (O. schickt den
+			dritten, vierten und fünften Band seiner
+			Zeitschrift, die AvH dann ab dem 13.4.1769 in den
+			GGA rezensiert. Wie AvH dort schreibt, umfasst Bd. 5
+			die späten Monate von 1766 und den ersten von 1767.
+			Da er erwähnt, dass der 6. Band (der also die
+			späteren Monate von 1767 und den ersten von 1768
+			enthalten sollte) leider noch nicht fertig sei, muss
+			der Brief (wie auch bei Thormann angegeben) 1768 zu
+			datieren sein).&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;date calendar="roman" n="date_alt1"&gt;Cal.Maij&lt;/date&gt; [...]
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption></figcaption>
+                                 </figure>
+                                 						</div>
+                              						
+                              <div class="chapter" id="c-1-1-4">
+                                 							
+                                 <h4>Factual corrections by the editor</h4>
+                                 							
+                                 <p id="29"><span class="paragraph-number">29</span>Implementation:</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] &lt;date resp="#editor-XY" cert="high" evidence="conjecture" when="1777-12-24"&gt;
+		&lt;note type="evidence"&gt;Eindeutig als 1771 zu lesen. 1771
+			jedoch nicht möglich, da im Brief der
+			&lt;bibl&gt;Usong&lt;/bibl&gt; (dt. 1771, frz. 1772) und der
+			&lt;bibl&gt;Alfrzed&lt;/bibl&gt; (dt. 1773, frz. 1775) erwähnt
+			werden. Auch erhält C., der als Chan. de Brioude
+			unterschreibt, diese Funktion erst 1775. Also wohl
+			doch 1777 (wie bei &lt;bibl&gt;GEH&lt;/bibl&gt;), dafür spricht
+			auch die alte Signatur. [hs/1/96]&lt;/note&gt;
+	&lt;/date&gt; [...] 
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption>Example 4: Jean-Chrysostome de Creyssent to Albrecht von
+                                       									Haller, Paris, 24 December 1777 (Editions- und
+                                       									Forschungsplattform hallerNet, <a href="https://hallernet.org/letter_01214" target="_blank">https://hallernet.org/letter_01214</a>).</figcaption>
+                                 </figure>
+                                 							
+                                 <p id="30"><span class="paragraph-number">30</span>Explication: The example describes the content correction of a
+                                    								factually wrong date by the editor. The evidence emerging from the
+                                    								source and the historical context is described in a note.</p>
+                                 							
+                                 <p id="31"><span class="paragraph-number">31</span>Alternative implementation (several <span class="code">&lt;date&gt;</span> elements in
+                                    									<span class="code">&lt;correspAction&gt;</span>):</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref"&gt; [...] &lt;date resp="#editor-XY" cert="true" evidence="conjecture" when="1777-12-24" n="date_pref"&gt;
+		&lt;note type="evidence"&gt;Eindeutig als 1771 zu lesen. 1771
+			jedoch nicht möglich, da im Brief der
+			&lt;bibl&gt;Usong&lt;/bibl&gt; (dt. 1771, frz. 1772) und der
+			&lt;bibl&gt;Alfrzed&lt;/bibl&gt; (dt. 1773, frz. 1775) erwähnt
+			werden. Auch erhält C., der als Chan. de Brioude
+			unterschreibt, diese Funktion erst 1775. Also wohl
+			doch 1777 (wie bei &lt;bibl&gt;GEH&lt;/bibl&gt;), dafür spricht
+			auch die alte Signatur. [hs/1/96]&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;date resp="#author-Creyssent" cert="false" evidence="internal" when="1771-12-24" n="date_alt1"/&gt;
+	[...] 
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption></figcaption>
+                                 </figure>
+                                 						</div>
+                              					</div>
+                           					
+                           <div class="chapter" id="c-6-1-2">
+                              						
+                              <h4>Alternative calendars</h4>
+                              						
+                              <div class="chapter" id="c-1-2-1">
+                                 							
+                                 <h4>Phenomenon: Unclear conversion of a Roman letter date</h4>
+                                 							
+                                 <p id="32"><span class="paragraph-number">32</span>Implementation:</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] &lt;date resp="#editor-XY" evidence="external" cert="false" when="1759-06-23"&gt;
+		&lt;note type="evidence"&gt;Nach
+			&lt;bibl&gt;Grotefend&lt;/bibl&gt;.&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;note type="alternativeDate"&gt;
+		&lt;date calendar="roman"&gt;9.Cal.Quint.&lt;/date&gt;
+		&lt;date when="1759-04-23"&gt;
+			&lt;note&gt;Mit "Quint" könnte auch Mai gemeint sein, das
+			ergäbe den 23.4. als Briefdatum.&lt;/note&gt;
+		&lt;/date&gt;
+	&lt;/note&gt; [...]
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption>Example 5: Giovanni Bianchi to Albrecht von Haller, Rimini, 23
+                                       									June 1759 Brief (Editions- und Forschungsplattform hallerNet,
+                                       										<a href="https://hallernet.org/letter_00570" target="_blank">https://hallernet.org/letter_00570</a>).</figcaption>
+                                 </figure>
+                                 							
+                                 <p id="33"><span class="paragraph-number">33</span>Explication: The editor identifies two ways to interpret the date. He
+                                    								lends more credibility to the date calculated after Grotefend and
+                                    								enters the corresponding date as the main metadata but he also
+                                    								describes the alternative possibility.</p>
+                                 							
+                                 <p id="34"><span class="paragraph-number">34</span>Alternative implementation (several <span class="code">&lt;date&gt;</span> elements in
+                                    									<span class="code">&lt;correspAction&gt;</span>):</p>
+                                 							
+                                 <figure>
+                                    <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref"&gt; [...] &lt;date resp="#editor-XY" evidence="external" cert="false" when="1759-06-23" n="date_pref"&gt;
+		&lt;note type="evidence"&gt;Nach &lt;bibl&gt;Grotefend&lt;/bibl&gt;. Mit
+			"Quint" könnte auch Mai gemeint sein, das ergäbe den
+			23.4. als Briefdatum.&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;date resp="#editor-XY" evidence="external" cert="false" when="1759-04-23" n="date_alt1"&gt;
+		&lt;note type="evidence"&gt;Wenn mit "Quint" Mai gemeint sein
+			soll, ergibt sich der 23.4. als Briefdatum.&lt;/note&gt;
+	&lt;/date&gt;
+	&lt;date calendar="roman" n="date_alt2"&gt;9.Cal.Quint.&lt;/date&gt;
+	[...] 
+&lt;/correspAction&gt;
+</code></pre>
+                                    <figcaption></figcaption>
+                                 </figure>
+                                 							
+                                 <p id="35"><span class="paragraph-number">35</span>For all examples shown here, both variants allow processing routines
+                                    								to select the preferred date and, depending on the application, e.g.
+                                    								to be included in a register or search index or to be provided via
+                                    								an interface. The nested approach seems better suited towards
+                                    								interoperability as the prioritised date is reliably defined with a
+                                    								simple XPath expression
+                                    									(//correspAction[<span class="code">@type</span>="sent|received"]/date).</p>
+                                 							
+                                 <p id="36"><span class="paragraph-number">36</span>It should be noted that this article covers the selection of a date
+                                    								element but not yet the intended processing of the date attributes
+                                    								from the datable- and duration classes such as
+                                    									<span class="code">@notBefore</span>, <span class="code">@notAfter</span>, <span class="code">@from</span>,
+                                    									<span class="code">@to</span>, or <span class="code">@dur</span> (with the respective
+                                    									iso-, w3c- und custom-variants), as
+                                    								they are often used to encode time spans and dates that cannot be
+                                    								defined precisely.<a id="fn9" href="#note_fn9">[9]</a>
+                                    								The interpretation and processing of such attribute values ​​by
+                                    								processing routines lies beyond the scope of this text.<a id="fn10" href="#note_fn10">[10]</a></p>
+                                 						</div>
+                              					</div>
+                           				</div>
+                        				
+                        <div class="chapter" id="c-6-2">
+                           					
+                           <h3>Locations</h3>
+                           					
+                           <div class="chapter" id="c-6-2-1">
+                              						
+                              <h4>Phenomenon: The location is missing in the original and is assigned by
+                                 							the editor</h4>
+                              						
+                              <p id="37"><span class="paragraph-number">37</span>Implementation:</p>
+                              						
+                              <figure>
+                                 <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] &lt;placeName key="#place_00603" resp="#editor-XY" cert="true" evidence="conjecture"&gt;Hannover
+			&lt;note&gt;Ohne Ortsangabe im Original.&lt;/note&gt;
+	&lt;/placeName&gt; [...] &lt;/correspAction&gt;
+</code></pre>
+                                 <figcaption>Example 6: Heinrich Eberhard Balck to Albrecht von Haller,
+                                    								Hanover, January 1746 (Editions- und Forschungsplattform hallerNet,
+                                    									<a href="https://hallernet.org/letter_00178" target="_blank">https://hallernet.org/letter_00178</a>).</figcaption>
+                              </figure>
+                              						
+                              <p id="38"><span class="paragraph-number">38</span>Explication: While no place of dispatch is given in the original, the
+                                 							editor specifies Hanover. By specifying "conjecture" in
+                                 								<span class="code">@evidence</span>, the editorial action is made transparent. The
+                                 							degree of certainty provided by the use of <span class="code">@cert</span> is given here
+                                 							according to the default value and therefore strictly speaking not
+                                 							necessary.</p>
+                              						
+                              <p id="39"><span class="paragraph-number">39</span>Alternative implementation:</p>
+                              						
+                              <figure>
+                                 <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref #place_00603"&gt; […]
+		&lt;placeName key="#place_00603" resp="#editor-XY" evidence="conjecture"&gt;Hannover&lt;/placeName&gt;
+	&lt;placeName evidence="internal"/&gt; […] &lt;/correspAction&gt;
+</code></pre>
+                                 <figcaption></figcaption>
+                              </figure>
+                              						
+                              <p id="40"><span class="paragraph-number">40</span>This example shows two differing reference schemes used in
+                                 								<span class="code">@select</span> to define which date and which location should be
+                                 							considered for further processing (technical/analytical). This could be
+                                 							remediated relatively easily by adding
+                                 								<span class="code">@ana</span>|<span class="code">@n</span>="place_pref" to the preferred
+                                 								<span class="code">&lt;placeName&gt;</span> element (or perhaps better yet by the
+                                 							introduction of an <span class="code">@selection</span> to the TEI Guidelines as a
+                                 							counterpart for <span class="code">@select</span>) but all of this falls back beyond the
+                                 							less ambiguous hierarchical approach.</p>
+                              					</div>
+                           					
+                           <div class="chapter" id="c-6-2-2">
+                              						
+                              <h4>The location is unclear and is assigned by the editor</h4>
+                              						
+                              <p id="41"><span class="paragraph-number">41</span>Implementation:</p>
+                              						
+                              <figure>
+                                 <pre><code class="language-xml">
+&lt;correspAction type="sent"&gt; [...] &lt;placeName key="#place_01130" source="#letter_13916" evidence="conjecture" resp="#editor-XY"&gt;Wien &lt;note&gt;Wien nach &lt;rs key="#letter_13916"&gt;AvH.s Brief an S. Tissot [K] vom
+				16.6.1763&lt;/rs&gt;&lt;/note&gt;
+	&lt;/placeName&gt;
+&lt;/correspAction&gt;
+</code></pre>
+                                 <figcaption>Example 6: Natale Giuseppe Pallucci to Albrecht von Haller,
+                                    								Vienna, 2nd June 1763 (Editions- und Forschungsplattform hallerNet,
+                                    									<a href="https://hallernet.org/letter_13032" target="_blank">https://hallernet.org/letter_13032</a>).</figcaption>
+                              </figure>
+                              						
+                              <p id="42"><span class="paragraph-number">42</span>Explication: While no place of dispatch is given in the original, the
+                                 							editor specifies Vienna. The fact that this conjecture is based on
+                                 							another letter becomes apparent in <span class="code">@source</span> and its specifics
+                                 							are explained in a note element. Notwithstanding the omission of
+                                 								<span class="code">@cert</span>, this information is certain (default value
+                                 							"true").</p>
+                              						
+                              <p id="43"><span class="paragraph-number">43</span>Alternative implementation:</p>
+                              						
+                              <figure>
+                                 <pre><code class="language-xml">
+&lt;correspAction type="sent" select="#date_pref #place_01130"&gt; […]
+		&lt;placeName key="#place_01130" source="#letter_13916" resp="#editor-XY" evidence="conjecture"&gt;Wien &lt;note&gt;Wien nach
+				&lt;rs key="#letter_13916"&gt;AvH.s Brief an S. Tissot [K]
+				vom 16.6.1763&lt;/rs&gt;&lt;/note&gt;
+	&lt;/placeName&gt;
+	&lt;placeName evidence="internal"/&gt; […] &lt;/correspAction&gt;
+</code></pre>
+                                 <figcaption></figcaption>
+                              </figure>
+                              					</div>
+                           				</div>
+                        				
+                        <div class="chapter" id="c-6-3">
+                           					
+                           <h3>Persons</h3>
+                           					
+                           <div class="chapter" id="c-6-3-1">
+                              						
+                              <h4>Sender and/or recipient are uncertain</h4>
+                              						
+                              <p id="44"><span class="paragraph-number">44</span>The two strategies discussed and shown above are equally applicable to
+                                 							uncertain senders and recipients. Again, a <span class="code">&lt;correspAction&gt;</span> might
+                                 							contain the most likely senders and recipients in <span class="code">&lt;persName&gt;</span>
+                                 							elements for the sent and received actions and record more precise
+                                 							information in a note.</p>
+                              						
+                              <figure>
+                                 <pre><code class="language-xml">
+&lt;correspAction type="received"&gt; […] &lt;persName ref="http://d-nb.info/gnd/118534262" resp="#editor-XY"&gt;Fontane, Theodor&lt;/persName&gt; […] &lt;/correspAction&gt;
+&lt;correspAction type="received"&gt; […] &lt;persName ref="http://d-nb.info/gnd/1023503034" resp="#editor-XY" evidence="external" cert="medium"&gt;Hochenburger, Anna von
+			&lt;note&gt;Vgl. &lt;bibl&gt;Berbig, Theodor Fontane. Chronik, S.
+				3078&lt;/bibl&gt;.&lt;/note&gt;
+	&lt;/persName&gt; […] &lt;/correspAction&gt;</code></pre>
+                                 <figcaption>Example 6: Theodor Fontane to Unknown (Anna von Hochenburger?), 23
+                                    								January 1890 Vienna, 2nd June 1763 (Berbig, Roland. 2010. Theodor
+                                    								Fontane Chronik, p. 3078).</figcaption>
+                              </figure>
+                              						
+                              <p id="45"><span class="paragraph-number">45</span>Alternatively, all possible options could be encoded in <span class="code">&lt;persName&gt;</span>
+                                 							elements directly within <span class="code">&lt;correspAction&gt;</span> and prioritised using
+                                 								<span class="code">@select</span> on <span class="code">&lt;correspAction&gt;</span> (using pointers such as
+                                 								#sender_pref or #recipient_pref).</p>
+                              						
+                              <figure>
+                                 <pre><code class="language-xml">
+&lt;correspAction type="received" select="#recipient_pref"&gt; […]
+		&lt;persName n="recipient_pref" ref="http://d-nb.info/gnd/1023503034" resp="#editor-XY" evidence="conjecture" cert="medium"&gt;Hochenburger, Anna
+		von&lt;/persName&gt;
+	&lt;persName n="pers_alt1"&gt;unknown&lt;/persName&gt; […] &lt;/correspAction&gt;
+</code></pre>
+                                 <figcaption></figcaption>
+                              </figure>
+                              					</div>
+                           				</div>
+                        			</div>
+                     			
+                     			
+                     		</section>
+                  <div id="notes">
+                     <h2>Notes</h2>
+                     <ul>
+                        <li><a id="note_fn1" class="note-number" href="#fn1">[1]</a>Regarding
+                           						graph-based modeling of uncertainties: Kuczera, Andreas, Wübbena, Thorsten,
+                           						and Thomas Kollatz (eds.). 2019. Die Modellierung des Zweifels —
+                           						Schlüsselideen und -konzepte zur graphbasierten Modellierung von
+                           						Unsicherheiten. Wolfenbüttel. (Zeitschrift für digitale
+                           						Geisteswissenschaften / Sonderbände, 4). DOI: 10.17175/sb004.</li>
+                        <li><a id="note_fn2" class="note-number" href="#fn2">[2]</a>The use of the
+                           						correct TEI element will need to be discussed elsewhere.</li>
+                        <li><a id="note_fn3" class="note-number" href="#fn3">[3]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHST" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHST</a></li>
+                        <li><a id="note_fn4" class="note-number" href="#fn4">[4]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CE.html" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CE.html</a></li>
+                        <li><a id="note_fn5" class="note-number" href="#fn5">[5]</a><a href="http://www.geonames.org/2951839" target="_blank">http://www.geonames.org/2951839</a></li>
+                        <li><a id="note_fn6" class="note-number" href="#fn6">[6]</a>It is possible to encode the degree of uncertainty using
+                           						the values ​​"low", "medium" or "high". Some edition projects employ a more
+                           						specific indication using percentage.</li>
+                        <li><a id="note_fn7" class="note-number" href="#fn7">[7]</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAAT" target="_blank">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAAT</a></li>
+                        <li><a id="note_fn8" class="note-number" href="#fn8">[8]</a>For dates, it has been
+                           						suggested to narrow the CMIF schema to allow just one date. Cf. <a href="https://github.com/TEI-Correspondence-SIG/CMIF/issues/19" target="_blank">https://github.com/TEI-Correspondence-SIG/CMIF/issues/19</a>.</li>
+                        <li><a id="note_fn9" class="note-number" href="#fn9">[9]</a>Cf. e.g. section 5.1
+                           									("Dates") of the encoding guidelines of the edition <a href="https://www.berliner-intellektuelle.eu/?en" target="_blank">Letters
+                              										and Texts. Intellectual Berlin around 1800</a>, <a href="https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf#page=53" target="_blank">https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf</a>.</li>
+                        <li><a id="note_fn10" class="note-number" href="#fn10">[10]</a>Some of the challenges regarding the processing of
+                           									date attributes may be avoided by encouraging the use of
+                           									specific dates with <span class="code">@precision</span>="medium". See <a href="https://www.stoa.org/epidoc/gl/latest/supp-historigdate.html" target="_blank">https://www.stoa.org/epidoc/gl/latest/supp-historigdate.html</a>
+                           									and <a href="https://lsv.uky.edu/scripts/wa.exe?A2=MARKUP;7412fa2e.1901" target="_blank">https://lsv.uky.edu/scripts/wa.exe?A2=MARKUP;7412fa2e.1901</a>
+                           									for recommendations of the EpiDoc community. Another interesting
+                           									point of vantage is the Extended Date/Time Format (EDTF), cf.
+                           										<a href="https://www.loc.gov/standards/datetime/edtf.html" target="_blank">https://www.loc.gov/standards/datetime/edtf.html</a>.</li>
+                     </ul>
+                  </div>
+                  <div id="bibliography">
+                     <h2>Bibliography</h2>
+                     <ul>
+                        <li> Baillot, Anne, et al. 2013ff. Edition-specific TEI encoding guidelines for
+                           						the digital edition "Letters and texts. Intellectual Berlin around 1800"
+                           						["Briefe und Texte aus dem intellektuellen Berlin um 1800"] <a href="https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf" target="_blank">https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf</a>
+                           						(last accessed: 7 August 2020).<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/MFJ24FJR/" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Edition-specific%20TEI%20encoding%20guidelines%20for%20the%20digital%20edition%20%22Letters%20and%20texts.%20Intellectual%20Berlin%20around%201800%22%20%5B%22Briefe%20und%20Texte%20aus%20dem%20intellektuellen%20Berlin%20um%201800%22%5D&amp;rft.aufirst=Anne&amp;rft.aulast=Baillot&amp;rft.au=Anne%20Baillot"></span></li>
+                        <li> Berbig, Roland. 2010. Theodor Fontane Chronik. Berlin/New York.<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/B9FKUDZJ/" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=urn%3Aisbn%3A978-3-11-018910-0&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Theodor%20Fontane%20Chronik&amp;rft.place=Berlin%2FNew%20York&amp;rft.publisher=De%20Gruyter&amp;rft.aufirst=Roland&amp;rft.aulast=Berbig&amp;rft.au=Roland%20Berbig&amp;rft.au=Josefine%20Kitzbichler&amp;rft.date=2010&amp;rft.isbn=978-3-11-018910-0"></span></li>
+                        <li>Kuczera, Andreas, Wübbena, Thorsten, and Thomas Kollatz (eds.). 2019. Die
+                           						Modellierung des Zweifels — Schlüsselideen und -konzepte zur graphbasierten
+                           						Modellierung von Unsicherheiten. Wolfenbüttel. (Zeitschrift für digitale
+                           						Geisteswissenschaften / Sonderbände, 4). DOI: 10.17175/sb004.<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/3FKUXPAN/" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_id=info%3Adoi%2F10.17175%2Fsb004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Die%20Modellierung%20des%20Zweifels%20%E2%80%93%20Schl%C3%BCsselideen%20und%20-konzepte%20zur%20graphbasierten%20Modellierung%20von%20Unsicherheiten&amp;rft.volume=Sonderband%204&amp;rft.aufirst=Andreas&amp;rft.aulast=Kuczera&amp;rft.au=Andreas%20Kuczera&amp;rft.au=Thorsten%20W%C3%BCbbena&amp;rft.au=Kollatz%20Kollatz&amp;rft.date=2019"></span></li>
+                        <li>TEI Consortium, eds. TEI P5: Guidelines for Electronic Text Encoding and
+                           						Interchange. Version 3.6.0. Last updated on 16th July 2019. TEI Consortium.
+                           							<a href="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html" target="_blank">https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html</a> (last
+                           						accessed: 7 August 2020).<a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/A3F94BIQ" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Headers%2C%20Footers%2C%20and%20Similar%20Matter&amp;rft.btitle=TEI%20P5%3A%20Guidelines%20for%20Electronic%20Text%20Encoding%20and%20Interchange.&amp;rft.edition=Version%203.6.0&amp;rft.aulast=TEI%20Consortium&amp;rft.au=TEI%20Consortium&amp;rft.date=2019&amp;rft.pages=419%E2%80%93420&amp;rft.spage=419&amp;rft.epage=420"></span></li>
+                     </ul>
+                  </div>
+                  <div class="card" id="citation">
+                     <div class="card-body">
+                        <h4 class="card-title">Citation</h4>Peter Dängeli, Isabella Hödl-Notter, Timo Steyer: Uncertainties in metadata. In: Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML
+                        and DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.
+                        URL:&nbsp;<a href="https://encoding-correspondence.bbaw.de/v1/uncertainties-metadata.html">https://encoding-correspondence.bbaw.de/v1/uncertainties-metadata.html</a> URN:&nbsp;<a href="https://nbn-resolving.org/urn:nbn:de:kobv:b4-20200824161745822-9539282-1">urn:nbn:de:kobv:b4-20200824161745822-9539282-1</a><a class="zotero-link" href="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/KEX2RSUX" target="_blank" title="Zotero record" alt="Link to Zotero record">Zotero</a><br><span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Uncertainties%20in%20metadata&amp;rft.btitle=Encoding%20Correspondence.%20A%20Manual%20for%20Encoding%20of%20Letters%20and%20Postcards%20in%20TEI-XML%20and%20DTABf&amp;rft.place=Berlin&amp;rft.publisher=Berlin-Brandenburg%20Academy%20of%20Sciences%20and%20Humanities&amp;rft.edition=1&amp;rft.aufirst=Peter&amp;rft.aulast=D%C3%A4ngeli&amp;rft.au=Peter%20D%C3%A4ngeli&amp;rft.au=Isabella%20H%C3%B6dl-Notter&amp;rft.au=Steyer&amp;rft.au=Stefan%20Dumont&amp;rft.au=Susanne%20Haaf&amp;rft.au=Seifert&amp;rft.date=2020&amp;rft.language=en-EN"></span><p class="download-link"><i class="fa fa-download"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence/blob/master/tei-xml/uncertainties-metadata.xml">Download TEI-XML source of this article on GitHub</a></p>
+                     </div>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </div>
+      <footer class="d-print-none">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <h4>Publication</h4>
+                  <p>Encoding Correspondence. A Manual for Encoding Letters and Postcards in TEI-XML and
+                     DTABf. Edited by Stefan Dumont, Susanne Haaf, and Sabine Seifert. Berlin 2019–2020.</p>
+                  <p>Source files on <i class="fab fa-github"></i>&nbsp;<a href="https://github.com/TEI-Correspondence-SIG/encoding-correspondence" target="_blank">GitHub</a>.</p>
+                  <p><a href="legal.html">Legal notice &amp; privacy</a></p>
+               </div>
+               <div class="col-md-4">
+                  <h4>Licence</h4>
+                  <p>This publication is available under the terms of the Creative Commons Licence <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p><a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="img/_general/by-sa.svg"></a></div>
+               <div class="col-md-4">
+                  <h4>Kindly supported by</h4>
+                  <ul>
+                     <li><a href="https://www.clarin-d.net/en/" target="_blank">CLARIN-D</a></li>
+                     <li><a href="https://tei-c.org/activities/sig/correspondence/" target="_blank">TEI Correspondence SIG</a></li>
+                     <li><a href="http://www.bbaw.de/en/" target="_blank">Berlin-Brandenburg Academy of Sciences and Humanities</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer><script src="libs/jquery/jquery-3.3.1.slim.min.js"></script><script src="libs/popper.js/popper.min.js"></script><script src="libs/bootstrap-4.3.1/js/bootstrap.min.js"></script><script src="libs/prism/prism.js"></script><script src="https://hypothes.is/embed.js" async></script><script>
+                    $(function () {
+                        $("[data-toggle='popover']").popover({
+                            html : true,
+                            trigger: 'focus',
+                            content: function() {
+                                var content = $(this).attr("data-popover-content");
+                                return $(content).children(".popover-body").html();
+                            }
+                        });
+                    })
+                </script></body>
+</html>

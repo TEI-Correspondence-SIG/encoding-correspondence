@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="uncertainties-metadata">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Uncertainties in metadata</title>
+				<author key="daengeli">Peter Dängeli</author>
+				<author key="hoedl-notter">Isabella Hödl-Notter</author>
+				<author key="steyer">Timo Steyer</author>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Berlin-Brandenburg Academy of Sciences and Humanities</publisher>
+				<date when="2020-08-24"/>
+				<idno type="urn">urn:nbn:de:kobv:b4-20200824161745822-9539282-1</idno>
+				<idno type="url">https://encoding-correspondence.bbaw.de/v1/uncertainties-metadata.html</idno>
+				<idno type="zotero">https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/KEX2RSUX</idno>
+			</publicationStmt>
+			<seriesStmt>
+				<title type="main">Encoding Correspondence.</title>
+				<title type="sub">A manual for encoding letters and postcards in TEI-XML and
+					DTABf</title>
+				<editor>Stefan Dumont</editor>
+				<editor>Susanne Haaf</editor>
+				<editor>Sabine Seifert</editor>
+				<idno type="urn">urn:nbn:de:kobv:b4-20200110163329488-8695229-7</idno>
+				<idno type="url">https://encoding-correspondence.bbaw.de/v1/</idno>
+				<biblScope unit="edition">v1</biblScope>
+			</seriesStmt>
+			<sourceDesc>
+				<p>Born digital.</p>
+			</sourceDesc>
+		</fileDesc>
+		<revisionDesc>
+			<listChange>
+				<change n="1" when="2020-08-24" status="draft">Initial Version</change>
+			</listChange>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div xml:id="c-1">
+				<head>Introduction</head>
+				<p n="1">Uncertainties are a common challenge in scholarly work. It is fundamentally
+					important to point out uncertainties in order to make the research process and
+					the results transparent and comprehensible. In contrast to natural sciences
+					(e.g. mathematics), the humanities often miss the opportunity to model
+					uncertainties exactly. The handling of uncertainties, especially when working
+					with historical sources, is therefore usually explained descriptively—so far,
+					however, lacking a best practice regarding the retention of uncertainties or
+					decision-making in digital editions.<note n="1" xml:id="fn1">Regarding
+						graph-based modeling of uncertainties: Kuczera, Andreas, Wübbena, Thorsten,
+						and Thomas Kollatz (eds.). 2019. Die Modellierung des Zweifels —
+						Schlüsselideen und -konzepte zur graphbasierten Modellierung von
+						Unsicherheiten. Wolfenbüttel. (Zeitschrift für digitale
+						Geisteswissenschaften / Sonderbände, 4). DOI: 10.17175/sb004.</note></p>
+				<p n="2">Basically, editors face three challenges: First, uncertainties must be
+					identified, second, they must be modelled/made comprehensible, and third, they
+					must be commented on or interpreted by the editor. These steps must be taken
+					into account in the creation of editions—not only in the main text but also in
+					the metadata. The importance of metadata is significant for proof and
+					transparency of research, for findability, distribution and interlinking as well
+					as for their obvious potential for evaluation methods (e.g. network
+					visualizations).</p>
+				<p n="3">The core idea of metadata lies in having a simple and accurate data set that
+					summarizes the most important information about the particular information
+					resource. Metadata has been playing an increasingly important role in the
+					research process for some time, and also has become a subject of research in its
+					own right.</p>
+				<p n="4">Good metadata facilitates interoperability. Describing/mapping uncertainties in
+					metadata does not necessarily impede this. The goal must therefore be to
+					identify uncertainties but not to fall back to project- or case-specific
+					solutions or data models; otherwise, such an approach threatens the accuracy of
+					scientific research as well as the prospect of interoperability. Precision of
+					the metadata with regard to the disclosure of uncertainties is therefore
+					urgently needed.</p>
+			</div>
+			<div xml:id="c-2">
+				<head>Modelling uncertainties in the TEI</head>
+				<p n="5">In principle, the TEI guidelines take into account two types of uncertainties: On
+					the one hand, uncertainty regarding the use of the appropriate TEI element and,
+					on the other hand, uncertain ways of reading text passages/words or the
+					identification of entities like persons or places. Both areas offer
+					opportunities to highlight uncertainty regarding entities.</p>
+				<p n="6">This article concentrates on uncertain readings as well as dealing with various
+					forms of supplementary information.<note n="2" xml:id="fn2">The use of the
+						correct TEI element will need to be discussed elsewhere.</note> For the
+					encoding of insecure readings and related information, the chapters 11.3.3.2 and
+					21 of the TEI Guidelines are of relevance (Chapter 11.3.3.2 "Use of the
+						<gi>gap</gi>, <gi>del</gi>, <gi>damage</gi>, <gi>unclear</gi>, and
+						<gi>supplied</gi> Elements in Combination";<note n="3" xml:id="fn3"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHST">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHST</ref></note>
+					Chapter 21 "Certainty, Precision, and Responsibility"<note n="4" xml:id="fn4"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CE.html">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CE.html</ref></note>).
+					When modelling uncertainty, it is essential to specify the responsibility
+						(<att>resp</att> or <gi>respons</gi>), the degree of uncertainty
+						(<att>cert</att>, <att>precision</att>) and the reason (<att>reason</att> or
+					via <gi>note</gi>) in order to make the decisions comprehensible for readers.
+					For this purpose, a gradual encoding of uncertainty is possible using
+						<att>cert</att> with fixed values (high, medium, low, unknown). This area
+					seems to be well covered by the existing possibilities.</p>
+				<p n="7">However, problems arise when uncertainties in metadata are to be modelled and
+					these relate primarily to entities and datings. As we observe, there is a
+					certain arbitrariness in the encodings, which may be a signal of inadequate
+					documentation or uncertainty in dealing with the current guidelines. Certainly,
+					the described characteristics of metadata (see introduction) also play a
+					role.</p>
+				<p n="8">This impression was reinforced by the discussions and the examples presented in
+					the workshop preceding this handbook on encoding correspondence. The aim of this
+					contribution is to inform about existing possibilities, to give examples as well
+					as to address some existing gaps and to develop coding suggestions.</p>
+			</div>
+			<div xml:id="c-3">
+				<head>General challenges</head>
+				<p n="9">The challenges of modelling uncertainties of metadata are an integral part of
+					every modelling process in the humanities and accompany editorial projects as
+					well as database-driven development or cataloging projects. The fundamental
+					dilemma in this context is the requirement of metadata for information that is
+					as granular, structured and standardized as possible, and the widespread
+					approach of researchers to enter information that circumscribes uncertainty or
+					to restrict themselves to one of several possible entities. Typical forms are
+					"around 1700", "Late Middle Ages", or "located between Cologne and Dusseldorf".
+					Thus, regardless of the following recommendations, it is necessary to understand
+					the relevance of metadata for automated processing steps, i.e. for further
+					processing of the data in search portals or interfaces. Only if the researchers
+					become aware of this and are willing to engage in structured and standardized
+					information input in the metadata, also with respect to uncertainties, the
+					quality of metadata dealing with uncertainties may sustainably be improved.</p>
+				<p n="10">Another challenge is the often unsatisfactory authority data. The use of
+					authority data is a key factor in ensuring that metadata is reusable. In
+					particular, authority data can be used to identify entities in the metadata with
+					added value but there is often a lack of differentiating information in the
+					authority data. To give one example, authority datasets do not include
+					identifiers for all territorial units. While there is a GeoNames identifier for
+					today's state of Bavaria (2951839),<note n="5" xml:id="fn5"><ref target="http://www.geonames.org/2951839">http://www.geonames.org/2951839</ref></note> identifiers describing the
+					electorate, duchy, or the scale of the early modern Upper and Lower Bavaria are
+					missing. While authority data are used to uniquely identify an entity, they
+					cannot be seen in the same way as content-rich biographical reference works or
+					lexicons but the combination of an authority record with incomplete or
+					non-scientific information poses a problem here. The only remedy is the insight
+					that norm data serve primarily for identification and only secondarily for
+					description.</p>
+				<p n="11">Thus, in order to model uncertainties in metadata, one needs to be aware,
+					firstly, of the benefits of metadata and the fact that they are not suitable for
+					mapping all possible interpretive variants, and, secondly, the perspective on
+					norm data as a reliable means of identification and less as a resource for
+					further information.</p>
+			</div>
+			<div xml:id="c-4">
+				<head>Five recommendations for coding uncertainties</head>
+				<p n="12">In the metadata, uncertainties occur at almost any location where information
+					from the source is recorded. If a source document is undated, multi-dated, or
+					ambivalently dated, such as being ambiguous about the underlying calendar,
+					editors feel compelled to identify the most plausible date and assign it to the
+					source. Likewise, location information may be missing or may not be specified
+					with sufficient accuracy. For instance, the resolution of an abbreviation may
+					not be unique, the same place names may occur in different areas, or historical
+					places or field names are no longer common. Similar problems arise with regard
+					to the identification of senders and recipients.</p>
+				<p n="13">As general recommendations for the coding of uncertainties in metadata we suggest
+					the following general rules:<lb/>
+					<list>
+						<label>1)</label>
+						<item>Always identify uncertainties in the metadata; the recognition,
+							identification and interpretation of uncertainties is a scientific
+							achievement,</item>
+						<label>2)</label>
+						<item>Render the process of coding transparent by indicating who is
+							responsible for encoding the uncertainty,</item>
+						<label>3)</label>
+						<item>Distinguish whether the uncertainty is source-related (intrinsic) or
+							based on inaccurate or ambiguous identification options
+							(extrinsic),</item>
+						<label>4)</label>
+						<item>Name methods (<att>evidence</att> with recommended values "internal",
+							"external", and "conjecture") to make transparent in which way the
+							uncertainty was resolved,</item>
+						<label>5)</label>
+						<item>If possible, refer to external references (authority data,
+							prosopographic databases, etc.) in order to give researchers the
+							opportunity to familiarize themselves with the phenomenon at
+							hand,</item>
+						<label>6)</label>
+						<item>If possible, add indications on how to process the information for
+							analytical and indexing purposes.</item>
+					</list></p>
+			</div>
+			<div xml:id="c-5">
+				<head>What about degrees of uncertainty?</head>
+				<p n="14">Apart from these general recommendations, the question of whether the degree of
+					uncertainty should be encoded is a matter which researchers always have to
+					answer anew for each edition project as there are until now no common guidelines
+					or best practice models. The most straightforward answer to this question is the
+					statement that an indication is either certain or uncertain and therefore
+					establishing a degree of uncertainty is a far too subjective undertaking.<note n="6" xml:id="fn6">It is possible to encode the degree of uncertainty using
+						the values ​​"low", "medium" or "high". Some edition projects employ a more
+						specific indication using percentage.</note> In our opinion, it would be
+					advisable to dispense with the specification of granularity in the metadata and
+					to state only generally whether the information is secure or uncertain. The
+					(implicit) default specification reasonably being <att>cert</att>="true", the
+					statement <att>cert</att>="false" would only need to be set in cases of
+					uncertainty. However, this would require a corresponding change in the content
+					model of <hi>teidata.certainty</hi>, which introduces these Boolean values as
+					alternatives to the existing options (in order to allow for backward
+					compatibility). To remain in line with the current options offered by the TEI,
+					projects might provide an indication whether <att>cert</att>="medium" shall be
+					evaluated as certain or uncertain by applications that distinguish only these
+					two statuses (with "unknown" and "low" defaulting to uncertainty and "high"
+					defaulting to certainty).</p>
+			</div>
+			<div xml:id="c-6">
+				<head>Examples of uncertain information and proposed solutions</head>
+				<p n="15">Strategies for dealing with uncertainty often include the recording of different
+					options and their evaluation for plausibility and possibly mutual compatibility.
+					There is a need to record possible alternatives and to assign a priority to at
+					least one of them, pursuing the goal to maintain transparency and select a "best
+					option". This prioritised option may then be considered by default in the
+					processing of metadata (such as inclusion in registers, search indices, etc.).
+					In Chapter 16.8 "Alternation", the TEI offers several basic approaches on how to
+					capture and prioritise alternatives.<note n="7" xml:id="fn7"><ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAAT">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAAT</ref></note></p>
+				<p n="16">One such mechanism is the <hi>select</hi> attribute (see the following
+					explication), which allows one or more of the detected alternatives to be
+					specified starting from a hierarchically superior element (in the form of
+					space-separated <hi>tei.pointers</hi>). Because <att>select</att> mostly refers
+					to identifiers (<att>xml:id</att>), this procedure is well suited for the
+					recognition of named entities such as places or persons. For time units such as
+					dates or periods of time we are more reluctant to use <att>xml:id</att> and
+					prefer the use of <att>select</att> in combination with <att>n</att> or
+						<att>ana</att>. This offers the possibility to provide more detailed
+					descriptions. The evaluation of <att>select</att> would thus use not one
+					specific but two different reference schemes, which is not very elegant and
+					presents additional challenges for processing routines. The appropriate schema
+					would either need to depend on a <att>type</att> or be based on the syntactic
+					structure of the pointer.</p>
+				<p n="17">An alternative approach to referencing specific metadata is local tagging
+					directly at each element. This approach seems to be more consistent. At the same
+					time it facilitates clarity and data processing. This kind of marking can be
+					done explicitly (e.g. via <att>ana</att>) but it can also be done implicitly by
+					creating just one element of each type—carrying the information that is deemed
+					most precise or probable—directly within <gi>correspAction</gi> and specifying
+					all alternative places, persons and data only at a deeper level. Using this
+					approach, only one place of dispatch, address, recipient and sender as well as a
+					date of dispatch and date of receipt would be specified directly within
+						<gi>correspAction</gi> and more detailed and possibly alternative
+					information might be located in <gi>note</gi> elements, (partially) structured
+					or in prose. Given that letters may be written and sent by more than one person
+					from and to more than one place and at more than one date, it is hardly possible
+					to narrow the schema to allow only one element of each type directly within
+						<gi>correspAction</gi>.<note n="8" xml:id="fn8">For dates, it has been
+						suggested to narrow the CMIF schema to allow just one date. Cf. <ref target="https://github.com/TEI-Correspondence-SIG/CMIF/issues/19">https://github.com/TEI-Correspondence-SIG/CMIF/issues/19</ref>.</note>
+					Thus we can only suggest a best practice but not enforce it formally.</p>
+				<div xml:id="c-6-1">
+					<head>Dates</head>
+					<p n="18">The following examples of uncertain dating show how this kind of hierarchical
+						priorisation might be encoded. For each example, we present the nested way
+						that demotes alternatives to a lower level as well as a flat encoding where
+						alternatives are distinguished using <att>select</att>.</p>
+					<div xml:id="c-6-1-1">
+						<head>Dating by the editor</head>
+						<div xml:id="c-1-1-1">
+							<head>Phenomenon: Differing information in secondary literature</head>
+							<p n="19">Implementation:</p>
+							<figure>
+								<head>Example 1: Albrecht von Haller to Giovanni Battista Morgagni,
+									Bern, 20 April 1753 (Editions- und Forschungsplattform
+									hallerNet, <ref target="https://hallernet.org/letter_15556">https://hallernet.org/letter_15556</ref>).</head>
+								<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] 
+	<date resp="#editor-XY" when="1753-04-20"/>
+	<note>Bei <bibl>B2462</bibl> wird 1750 als Jahr angegeben,
+	was aber inhaltlich nicht stimmen kann (1750 AVH nicht
+	in Bern; die angekündigte Rückkehr nach Göttingen, falls
+	er in Bern kein Amt erhält, passt auf Ende April
+	1753).</note>
+</correspAction></egXML>
+							</figure>
+							<p n="20">Explication: A different date from secondary literature is rated as
+								implausible in a comment. Because there is no direct connection with
+								the source, the alternative date is not recorded in a structured
+								form.</p>
+							<p n="21">Alternative implementation (several <gi>date</gi> elements in
+									<gi>correspAction</gi>):</p>
+							<figure>
+								<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref"> [...] 
+	<date resp="#editor-XY" when="1753-04-20" n="date_pref"/>
+	<date resp="#author-B2462" when="1750" n="date_alt1">
+		<note>Bei <bibl>B2462</bibl> wird 1750 als Jahr
+		angegeben, was aber inhaltlich nicht stimmen kann
+		(1750 AVH nicht in Bern; die angekündigte Rückkehr
+		nach Göttingen, falls er in Bern kein Amt erhält,
+		passt auf Ende April 1753).</note>
+	</date>
+</correspAction>
+</egXML>
+							</figure>
+							<p n="22">Here and in the following examples, <att>ana</att>="date_alt1" might
+								be used instead of <att>n</att>="date_alt1".</p>
+						</div>
+						<div xml:id="c-1-1-2">
+							<head>Phenomena: Insecure reading and correction by the editor; multiple
+								dating (two calendars)</head>
+							<p n="23">Implementation:</p>
+							<figure>
+								<head>Example 2: Pierre-François Martin to Albrecht von Haller,
+									Lausanne, 21 April 1729 (Editions- und Forschungsplattform
+									hallerNet, <ref target="https://hallernet.org/letter_04933">https://hallernet.org/letter_04933</ref>).</head>
+								<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] 
+	<date resp="#editor-XY" evidence="conjecture" when="1729-04-21">
+		<note type="evidence">ohne Jahr, eindeutig 1729; Notiz
+		von AvH: "du 19 d'avril, reçu le 22"; AvH hat einen
+		Rechnungsfehler begangen, 11. ante Kal. Maij ist der
+		21.4.</note>
+	</date>
+	<note type="alternativeDate">
+		<date calendar="#roman">11. ante Kalend. Maij</date>
+		<p>Die Lesung II. ante Kal. Maij kann nicht stimmen.</p>
+	</note> [...] 
+</correspAction>
+</egXML>
+							</figure>
+							<p n="24">Explication: The letter date is Roman but was incorrectly converted
+								in a contemporary note. The editor has determined the appropriate
+								date and entered it as regular metadata. He assesses a possible but
+								incorrect reading of the Roman date in an additional remark.</p>
+							<p n="25">Alternative implementation (several <gi>date</gi> elements in
+									<gi>correspAction</gi>):</p>
+							<figure>
+								<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref"> [...] 
+	<date resp="#editor-XY" evidence="conjecture" when="1729-04-21" n="date_pref">
+		<note type="evidence">ohne Jahr, eindeutig 1729; Notiz
+		von AvH: "du 19 d'avril, reçu le 22"; AvH hat einen
+		Rechnungsfehler begangen, 11. ante Kal. Maij ist der
+		21.4.</note>
+	</date>
+	<date calendar="#roman" n="date_alt1">11. ante Kalend. Maij
+		<note>die Lesung II. ante Kal. Maij kann nicht
+		stimmen</note></date> [...]
+</correspAction>
+</egXML>
+							</figure>
+						</div>
+						<div xml:id="c-1-1-3">
+							<head>Phenomenon: Date determination from the letter content, intrinsic
+								and extrinsic; multiple dating (Julian and Gregorian
+								calendar)</head>
+							<p n="26">Implementation:</p>
+							<figure>
+								<head>Example 3: Pietro Orteschi to Albrecht von Haller, Venice, 1st
+									May 1768 (Editions- und Forschungsplattform hallerNet, <ref target="https://hallernet.org/letter_06362">https://hallernet.org/letter_06362</ref>).</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] 
+	<date resp="#editor-XY" evidence="internal external conjecture" when="1768-05-01">
+		<note type="evidence">Ohne Jahr; Jahr gemäss alter
+			Sign., <bibl>GEH</bibl> und Inhalt (O. schickt den
+			dritten, vierten und fünften Band seiner
+			Zeitschrift, die AvH dann ab dem 13.4.1769 in den
+			GGA rezensiert. Wie AvH dort schreibt, umfasst Bd. 5
+			die späten Monate von 1766 und den ersten von 1767.
+			Da er erwähnt, dass der 6. Band (der also die
+			späteren Monate von 1767 und den ersten von 1768
+			enthalten sollte) leider noch nicht fertig sei, muss
+			der Brief (wie auch bei Thormann angegeben) 1768 zu
+			datieren sein).</note>
+			<note type="alternativeDate">
+				<date calendar="roman">Cal.Maij</date>
+			</note>
+	</date> [...] 
+</correspAction>
+</egXML>
+							</figure>
+							<p n="27">The date of the incompletely dated letter was determined by the
+								editor from the letter content and in accordance with an old
+								signature, whereby the derivation of content is described relatively
+								extensively for better traceability. The absence of <att>cert</att>
+								indicates that the editor is safe in dating.</p>
+							<p n="28">Alternative implementation (several <gi>date</gi> elements in
+									<gi>correspAction</gi>):</p>
+							<figure>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref"> [...] 
+	<date resp="#editor-XY" evidence="internal external conjecture" when="1768-05-01" n="date_pref">
+		<note type="evidence">Ohne Jahr; Jahr gemäss alter
+			Sign., <bibl>GEH</bibl> und Inhalt (O. schickt den
+			dritten, vierten und fünften Band seiner
+			Zeitschrift, die AvH dann ab dem 13.4.1769 in den
+			GGA rezensiert. Wie AvH dort schreibt, umfasst Bd. 5
+			die späten Monate von 1766 und den ersten von 1767.
+			Da er erwähnt, dass der 6. Band (der also die
+			späteren Monate von 1767 und den ersten von 1768
+			enthalten sollte) leider noch nicht fertig sei, muss
+			der Brief (wie auch bei Thormann angegeben) 1768 zu
+			datieren sein).</note>
+	</date>
+	<date calendar="roman" n="date_alt1">Cal.Maij</date> [...]
+</correspAction>
+</egXML>
+							</figure>
+						</div>
+						<div xml:id="c-1-1-4">
+							<head>Factual corrections by the editor</head>
+							<p n="29">Implementation:</p>
+							<figure>
+								<head>Example 4: Jean-Chrysostome de Creyssent to Albrecht von
+									Haller, Paris, 24 December 1777 (Editions- und
+									Forschungsplattform hallerNet, <ref target="https://hallernet.org/letter_01214">https://hallernet.org/letter_01214</ref>).</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] <date resp="#editor-XY" cert="high" evidence="conjecture" when="1777-12-24">
+		<note type="evidence">Eindeutig als 1771 zu lesen. 1771
+			jedoch nicht möglich, da im Brief der
+			<bibl>Usong</bibl> (dt. 1771, frz. 1772) und der
+			<bibl>Alfrzed</bibl> (dt. 1773, frz. 1775) erwähnt
+			werden. Auch erhält C., der als Chan. de Brioude
+			unterschreibt, diese Funktion erst 1775. Also wohl
+			doch 1777 (wie bei <bibl>GEH</bibl>), dafür spricht
+			auch die alte Signatur. [hs/1/96]</note>
+	</date> [...] 
+</correspAction>
+</egXML>
+							</figure>
+							<p n="30">Explication: The example describes the content correction of a
+								factually wrong date by the editor. The evidence emerging from the
+								source and the historical context is described in a note.</p>
+							<p n="31">Alternative implementation (several <gi>date</gi> elements in
+									<gi>correspAction</gi>):</p>
+							<figure>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref"> [...] <date resp="#editor-XY" cert="true" evidence="conjecture" when="1777-12-24" n="date_pref">
+		<note type="evidence">Eindeutig als 1771 zu lesen. 1771
+			jedoch nicht möglich, da im Brief der
+			<bibl>Usong</bibl> (dt. 1771, frz. 1772) und der
+			<bibl>Alfrzed</bibl> (dt. 1773, frz. 1775) erwähnt
+			werden. Auch erhält C., der als Chan. de Brioude
+			unterschreibt, diese Funktion erst 1775. Also wohl
+			doch 1777 (wie bei <bibl>GEH</bibl>), dafür spricht
+			auch die alte Signatur. [hs/1/96]</note>
+	</date>
+	<date resp="#author-Creyssent" cert="false" evidence="internal" when="1771-12-24" n="date_alt1"/>
+	[...] 
+</correspAction>
+</egXML>
+							</figure>
+						</div>
+					</div>
+					<div xml:id="c-6-1-2">
+						<head>Alternative calendars</head>
+						<div xml:id="c-1-2-1">
+							<head>Phenomenon: Unclear conversion of a Roman letter date</head>
+							<p n="32">Implementation:</p>
+							<figure>
+								<head>Example 5: Giovanni Bianchi to Albrecht von Haller, Rimini, 23
+									June 1759 Brief (Editions- und Forschungsplattform hallerNet,
+										<ref target="https://hallernet.org/letter_00570">https://hallernet.org/letter_00570</ref>).</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] <date resp="#editor-XY" evidence="external" cert="false" when="1759-06-23">
+		<note type="evidence">Nach
+			<bibl>Grotefend</bibl>.</note>
+	</date>
+	<note type="alternativeDate">
+		<date calendar="roman">9.Cal.Quint.</date>
+		<date when="1759-04-23">
+			<note>Mit "Quint" könnte auch Mai gemeint sein, das
+			ergäbe den 23.4. als Briefdatum.</note>
+		</date>
+	</note> [...]
+</correspAction>
+</egXML>
+							</figure>
+							<p n="33">Explication: The editor identifies two ways to interpret the date. He
+								lends more credibility to the date calculated after Grotefend and
+								enters the corresponding date as the main metadata but he also
+								describes the alternative possibility.</p>
+							<p n="34">Alternative implementation (several <gi>date</gi> elements in
+									<gi>correspAction</gi>):</p>
+							<figure>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref"> [...] <date resp="#editor-XY" evidence="external" cert="false" when="1759-06-23" n="date_pref">
+		<note type="evidence">Nach <bibl>Grotefend</bibl>. Mit
+			"Quint" könnte auch Mai gemeint sein, das ergäbe den
+			23.4. als Briefdatum.</note>
+	</date>
+	<date resp="#editor-XY" evidence="external" cert="false" when="1759-04-23" n="date_alt1">
+		<note type="evidence">Wenn mit "Quint" Mai gemeint sein
+			soll, ergibt sich der 23.4. als Briefdatum.</note>
+	</date>
+	<date calendar="roman" n="date_alt2">9.Cal.Quint.</date>
+	[...] 
+</correspAction>
+</egXML>
+							</figure>
+							<p n="35">For all examples shown here, both variants allow processing routines
+								to select the preferred date and, depending on the application, e.g.
+								to be included in a register or search index or to be provided via
+								an interface. The nested approach seems better suited towards
+								interoperability as the prioritised date is reliably defined with a
+								simple XPath expression
+									(<hi>//correspAction[<att>type</att>="sent|received"]/date</hi>).</p>
+							<p n="36">It should be noted that this article covers the selection of a date
+								element but not yet the intended processing of the date attributes
+								from the <hi>datable</hi>- and <hi>duration</hi> classes such as
+									<att>notBefore</att>, <att>notAfter</att>, <att>from</att>,
+									<att>to</att>, or <att>dur</att> (with the respective
+									<hi>iso-</hi>, <hi>w3c-</hi> und <hi>custom</hi>-variants), as
+								they are often used to encode time spans and dates that cannot be
+								defined precisely.<note n="9" xml:id="fn9">Cf. e.g. section 5.1
+									("Dates") of the encoding guidelines of the edition <ref target="https://www.berliner-intellektuelle.eu/?en">Letters
+										and Texts. Intellectual Berlin around 1800</ref>, <ref target="https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf#page=53">https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf</ref>.</note>
+								The interpretation and processing of such attribute values ​​by
+								processing routines lies beyond the scope of this text.<note n="10" xml:id="fn10">Some of the challenges regarding the processing of
+									date attributes may be avoided by encouraging the use of
+									specific dates with <att>precision</att>="medium". See <ref target="https://www.stoa.org/epidoc/gl/latest/supp-historigdate.html">https://www.stoa.org/epidoc/gl/latest/supp-historigdate.html</ref>
+									and <ref target="https://lsv.uky.edu/scripts/wa.exe?A2=MARKUP;7412fa2e.1901">https://lsv.uky.edu/scripts/wa.exe?A2=MARKUP;7412fa2e.1901</ref>
+									for recommendations of the EpiDoc community. Another interesting
+									point of vantage is the Extended Date/Time Format (EDTF), cf.
+										<ref target="https://www.loc.gov/standards/datetime/edtf.html">https://www.loc.gov/standards/datetime/edtf.html</ref>.</note></p>
+						</div>
+					</div>
+				</div>
+				<div xml:id="c-6-2">
+					<head>Locations</head>
+					<div xml:id="c-6-2-1">
+						<head>Phenomenon: The location is missing in the original and is assigned by
+							the editor</head>
+						<p n="37">Implementation:</p>
+						<figure>
+							<head>Example 6: Heinrich Eberhard Balck to Albrecht von Haller,
+								Hanover, January 1746 (Editions- und Forschungsplattform hallerNet,
+									<ref target="https://hallernet.org/letter_00178">https://hallernet.org/letter_00178</ref>).</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] <placeName key="#place_00603" resp="#editor-XY" cert="true" evidence="conjecture">Hannover
+			<note>Ohne Ortsangabe im Original.</note>
+	</placeName> [...] </correspAction>
+</egXML>
+						</figure>
+						<p n="38">Explication: While no place of dispatch is given in the original, the
+							editor specifies Hanover. By specifying "conjecture" in
+								<att>evidence</att>, the editorial action is made transparent. The
+							degree of certainty provided by the use of <att>cert</att> is given here
+							according to the default value and therefore strictly speaking not
+							necessary.</p>
+						<p n="39">Alternative implementation:</p>
+						<figure>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref #place_00603"> […]
+		<placeName key="#place_00603" resp="#editor-XY" evidence="conjecture">Hannover</placeName>
+	<placeName evidence="internal"/> […] </correspAction>
+</egXML>
+						</figure>
+						<p n="40">This example shows two differing reference schemes used in
+								<att>select</att> to define which date and which location should be
+							considered for further processing (technical/analytical). This could be
+							remediated relatively easily by adding
+								<hi><att>ana</att>|<att>n</att>="place_pref"</hi> to the preferred
+								<gi>placeName</gi> element (or perhaps better yet by the
+							introduction of an <att>selection</att> to the TEI Guidelines as a
+							counterpart for <att>select</att>) but all of this falls back beyond the
+							less ambiguous hierarchical approach.</p>
+					</div>
+					<div xml:id="c-6-2-2">
+						<head>The location is unclear and is assigned by the editor</head>
+						<p n="41">Implementation:</p>
+						<figure>
+							<head>Example 6: Natale Giuseppe Pallucci to Albrecht von Haller,
+								Vienna, 2nd June 1763 (Editions- und Forschungsplattform hallerNet,
+									<ref target="https://hallernet.org/letter_13032">https://hallernet.org/letter_13032</ref>).</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent"> [...] <placeName key="#place_01130" source="#letter_13916" evidence="conjecture" resp="#editor-XY">Wien <note>Wien nach <rs key="#letter_13916">AvH.s Brief an S. Tissot [K] vom
+				16.6.1763</rs></note>
+	</placeName>
+</correspAction>
+</egXML>
+						</figure>
+						<p n="42">Explication: While no place of dispatch is given in the original, the
+							editor specifies Vienna. The fact that this conjecture is based on
+							another letter becomes apparent in <att>source</att> and its specifics
+							are explained in a note element. Notwithstanding the omission of
+								<att>cert</att>, this information is certain (default value
+							"true").</p>
+						<p n="43">Alternative implementation:</p>
+						<figure>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="sent" select="#date_pref #place_01130"> […]
+		<placeName key="#place_01130" source="#letter_13916" resp="#editor-XY" evidence="conjecture">Wien <note>Wien nach
+				<rs key="#letter_13916">AvH.s Brief an S. Tissot [K]
+				vom 16.6.1763</rs></note>
+	</placeName>
+	<placeName evidence="internal"/> […] </correspAction>
+</egXML>
+						</figure>
+					</div>
+				</div>
+				<div xml:id="c-6-3">
+					<head>Persons</head>
+					<div xml:id="c-6-3-1">
+						<head>Sender and/or recipient are uncertain</head>
+						<p n="44">The two strategies discussed and shown above are equally applicable to
+							uncertain senders and recipients. Again, a <gi>correspAction</gi> might
+							contain the most likely senders and recipients in <gi>persName</gi>
+							elements for the sent and received actions and record more precise
+							information in a note.</p>
+						<figure>
+							<head>Example 6: Theodor Fontane to Unknown (Anna von Hochenburger?), 23
+								January 1890 Vienna, 2nd June 1763 (Berbig, Roland. 2010. Theodor
+								Fontane Chronik, p. 3078).</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="received"> […] <persName ref="http://d-nb.info/gnd/118534262" resp="#editor-XY">Fontane, Theodor</persName> […] </correspAction>
+<correspAction type="received"> […] <persName ref="http://d-nb.info/gnd/1023503034" resp="#editor-XY" evidence="external" cert="medium">Hochenburger, Anna von
+			<note>Vgl. <bibl>Berbig, Theodor Fontane. Chronik, S.
+				3078</bibl>.</note>
+	</persName> […] </correspAction></egXML>
+						</figure>
+						<p n="45">Alternatively, all possible options could be encoded in <gi>persName</gi>
+							elements directly within <gi>correspAction</gi> and prioritised using
+								<att>select</att> on <gi>correspAction</gi> (using pointers such as
+								<hi>#sender_pref</hi> or <hi>#recipient_pref</hi>).</p>
+						<figure>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<correspAction type="received" select="#recipient_pref"> […]
+		<persName n="recipient_pref" ref="http://d-nb.info/gnd/1023503034" resp="#editor-XY" evidence="conjecture" cert="medium">Hochenburger, Anna
+		von</persName>
+	<persName n="pers_alt1">unknown</persName> […] </correspAction>
+</egXML>
+						</figure>
+					</div>
+				</div>
+			</div>
+			<!-- hier weiter -->
+			<div type="bibliography">
+				<head>Bibliography</head>
+				<listBibl>
+					<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/MFJ24FJR/"> Baillot, Anne, et al. 2013ff. Edition-specific TEI encoding guidelines for
+						the digital edition "Letters and texts. Intellectual Berlin around 1800"
+						["Briefe und Texte aus dem intellektuellen Berlin um 1800"] <ref target="https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf">https://www.berliner-intellektuelle.eu/encoding-guidelines.pdf</ref>
+						(last accessed: 7 August 2020).</bibl>
+					<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/B9FKUDZJ/"> Berbig, Roland. 2010. Theodor Fontane Chronik. Berlin/New York.</bibl>
+					<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/3FKUXPAN/">Kuczera, Andreas, Wübbena, Thorsten, and Thomas Kollatz (eds.). 2019. Die
+						Modellierung des Zweifels — Schlüsselideen und -konzepte zur graphbasierten
+						Modellierung von Unsicherheiten. Wolfenbüttel. (Zeitschrift für digitale
+						Geisteswissenschaften / Sonderbände, 4). DOI: 10.17175/sb004.</bibl>
+					<bibl sameAs="https://www.zotero.org/groups/2248469/encoding_correspondence/items/itemKey/A3F94BIQ">TEI Consortium, eds. TEI P5: Guidelines for Electronic Text Encoding and
+						Interchange. Version 3.6.0. Last updated on 16th July 2019. TEI Consortium.
+							<ref target="https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html">https://www.tei-c.org/Vault/P5/3.6.0/doc/tei-p5-doc/en/html</ref> (last
+						accessed: 7 August 2020).</bibl>
+				</listBibl>
+			</div>
+		</body>
+	</text>
+</TEI>

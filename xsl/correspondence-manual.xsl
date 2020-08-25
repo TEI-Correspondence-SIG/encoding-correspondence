@@ -573,9 +573,18 @@
     
     <xsl:template match="tei:list|tei:listBibl">
         <xsl:apply-templates select="tei:head"/>
-        <ul>
-            <xsl:apply-templates select="tei:item|tei:bibl"/>
-        </ul>
+        <xsl:choose>
+            <xsl:when test="@rend='numbered'">
+                <ol>
+                    <xsl:apply-templates select="tei:item|tei:bibl"/>
+                </ol>
+            </xsl:when>
+            <xsl:otherwise>
+                <ul>
+                    <xsl:apply-templates select="tei:item|tei:bibl"/>
+                </ul>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="tei:list/tei:head">
@@ -584,7 +593,7 @@
    
 
     <xsl:template match="tei:list/tei:item">
-        <li><xsl:apply-templates/></li>
+        <li><xsl:apply-templates/></li>        
     </xsl:template>
     
     <xsl:template match="tei:figure">

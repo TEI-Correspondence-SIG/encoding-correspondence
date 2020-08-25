@@ -171,6 +171,11 @@ ul#toc ul {
     font-family: 'Noto Sans', sans;
     list-style-type: none;
     padding-left: 20px;
+    line-height: 1.2;
+}
+
+ul#toc li {
+    margin-top: 5px;
 }
 
 ul#toc li.citation-link {

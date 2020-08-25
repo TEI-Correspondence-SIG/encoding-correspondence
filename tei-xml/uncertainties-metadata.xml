@@ -143,7 +143,7 @@
 					further information.</p>
 			</div>
 			<div xml:id="c-4">
-				<head>Five recommendations for coding uncertainties</head>
+				<head>Recommendations for coding uncertainties</head>
 				<p n="12">In the metadata, uncertainties occur at almost any location where information
 					from the source is recorded. If a source document is undated, multi-dated, or
 					ambivalently dated, such as being ambiguous about the underlying calendar,
@@ -155,29 +155,23 @@
 					to the identification of senders and recipients.</p>
 				<p n="13">As general recommendations for the coding of uncertainties in metadata we suggest
 					the following general rules:<lb/>
-					<list>
-						<label>1)</label>
-						<item>Always identify uncertainties in the metadata; the recognition,
+					<list rend="numbered">
+						<item n="1">Always identify uncertainties in the metadata; the recognition,
 							identification and interpretation of uncertainties is a scientific
 							achievement,</item>
-						<label>2)</label>
-						<item>Render the process of coding transparent by indicating who is
+						<item n="2">Render the process of coding transparent by indicating who is
 							responsible for encoding the uncertainty,</item>
-						<label>3)</label>
-						<item>Distinguish whether the uncertainty is source-related (intrinsic) or
+						<item n="3">Distinguish whether the uncertainty is source-related (intrinsic) or
 							based on inaccurate or ambiguous identification options
 							(extrinsic),</item>
-						<label>4)</label>
-						<item>Name methods (<att>evidence</att> with recommended values "internal",
+						<item n="4">Name methods (<att>evidence</att> with recommended values "internal",
 							"external", and "conjecture") to make transparent in which way the
 							uncertainty was resolved,</item>
-						<label>5)</label>
-						<item>If possible, refer to external references (authority data,
+						<item n="5">If possible, refer to external references (authority data,
 							prosopographic databases, etc.) in order to give researchers the
 							opportunity to familiarize themselves with the phenomenon at
 							hand,</item>
-						<label>6)</label>
-						<item>If possible, add indications on how to process the information for
+						<item n="6">If possible, add indications on how to process the information for
 							analytical and indexing purposes.</item>
 					</list></p>
 			</div>
@@ -555,7 +549,7 @@
 							less ambiguous hierarchical approach.</p>
 					</div>
 					<div xml:id="c-6-2-2">
-						<head>The location is unclear and is assigned by the editor</head>
+						<head>Phenomenon: The location is unclear and is assigned by the editor</head>
 						<p n="41">Implementation:</p>
 						<figure>
 							<head>Example 6: Natale Giuseppe Pallucci to Albrecht von Haller,
@@ -590,7 +584,7 @@
 				<div xml:id="c-6-3">
 					<head>Persons</head>
 					<div xml:id="c-6-3-1">
-						<head>Sender and/or recipient are uncertain</head>
+						<head>Phenomenon: Sender and/or recipient are uncertain</head>
 						<p n="44">The two strategies discussed and shown above are equally applicable to
 							uncertain senders and recipients. Again, a <gi>correspAction</gi> might
 							contain the most likely senders and recipients in <gi>persName</gi>

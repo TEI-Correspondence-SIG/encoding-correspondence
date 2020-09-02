@@ -41,8 +41,9 @@
                </persName>
                <note>Stefan Dumont is a researcher and developer at TELOTA, the Digital Humanities
                   working group of the Berlin-Brandenburg Academy of Sciences and Humanities. Since
-                  2017 he has also been the scientific coordinator of the DFG project <ref target="https://www.correspSearch.net">"correspSearch
-                  - Connecting Scholarly Editions of Letters"</ref>.</note>
+                  2017 he has also been the scientific coordinator of the DFG project <ref
+                     target="https://www.correspSearch.net">"correspSearch - Connecting Scholarly
+                     Editions of Letters"</ref>.</note>
             </person>
             <person xml:id="forney">
                <persName>
@@ -56,12 +57,14 @@
                   <forename>Susanne</forename>
                   <surname>Haaf</surname>
                </persName>
-               <note>
-                  Susanne Haaf has been working as a research assistant at the Berlin-Brandenburg Academy of Sciences and Humanities since 2010. 
-                  Here, she has been engaged in the projects <ref target="http://deutschestextarchiv.de/">»Deutsches Textarchiv« (German Text Archive, DTA)</ref>, 
-                  »CLARIN-D« and <ref target="http://www.upb.de/tevo">»t.evo«</ref>. 
-                  She has been mainly responsible for the development of the <ref target="http://deutschestextarchiv.de/doku/basisformat/">»DTA Base Format«</ref>, a TEI dialect for the encoding of historical texts. 
-               </note>
+               <note> Susanne Haaf has been working as a research assistant at the
+                  Berlin-Brandenburg Academy of Sciences and Humanities since 2010. Here, she has
+                  been engaged in the projects <ref target="http://deutschestextarchiv.de/"
+                     >»Deutsches Textarchiv« (German Text Archive, DTA)</ref>, »CLARIN-D« and <ref
+                     target="http://www.upb.de/tevo">»t.evo«</ref>. She has been mainly responsible
+                  for the development of the <ref
+                     target="http://deutschestextarchiv.de/doku/basisformat/">»DTA Base
+                     Format«</ref>, a TEI dialect for the encoding of historical texts. </note>
             </person>
             <person xml:id="hoedl-notter">
                <ptr
@@ -103,7 +106,8 @@
                </persName>
             </person>
             <person xml:id="schenk">
-               <ptr target="https://kompetenzzentrum.uni-trier.de/en/about-us/mitarbeiter/nicolas-schenk/"/>
+               <ptr
+                  target="https://kompetenzzentrum.uni-trier.de/en/about-us/mitarbeiter/nicolas-schenk/"/>
                <persName>
                   <forename>Nicolas</forename>
                   <surname>Schenk</surname>
@@ -145,17 +149,20 @@
                   <forename>Timo</forename>
                   <surname>Steyer</surname>
                </persName>
+               <note>Timo Steyer is the Head of the Information Literacy Department at the
+                  University Library Braunschweig. He has worked on several edition projects, for
+                  expample "Briefe der Fruchtbringenden Gesellschaft und Beilagen".</note>
             </person>
             <person xml:id="trautmann">
                <persName>
                   <forename>Marjam</forename>
                   <surname>Trautmann</surname>
                </persName>
-               <note>Marjam Trautmann is a research associate at the Digital Academy in
-                  Mainz, the department for Digital Humanities at the Academy of Sciences
-                  and Literature Mainz. She is co-publisher of the STURM-Edition
-                  (<ref target="https://sturm-edition.de">sturm-edition.de</ref>) and works on a
-                     doctoral thesis on networks of the historical avant-garde.</note>
+               <note>Marjam Trautmann is a research associate at the Digital Academy in Mainz, the
+                  department for Digital Humanities at the Academy of Sciences and Literature Mainz.
+                  She is co-publisher of the STURM-Edition (<ref target="https://sturm-edition.de"
+                     >sturm-edition.de</ref>) and works on a doctoral thesis on networks of the
+                  historical avant-garde.</note>
             </person>
          </listPerson>
       </body>

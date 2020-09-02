@@ -439,7 +439,7 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>tei-xml/uncertainties-metadata.xml</String>
+                                    <String>tei-xml/authors.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -460,6 +460,26 @@
                             <scenarioAssociation>
                                 <field name="url">
                                     <String>tei-xml/</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>correspondence-manual</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>tei-xml/uncertainties-metadata.xml</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>

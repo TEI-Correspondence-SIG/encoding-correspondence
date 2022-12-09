@@ -389,7 +389,7 @@
                 <h5 class="card-title">Status of this article</h5>
                 <xsl:choose>
                     <xsl:when test="//tei:change[last()]/@status='draft'">
-                        <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress until <xsl:value-of select="$review-deadline"/>.</p>
+                        <p class="status"><span class="dot dot-draft"></span>Draft. Public peer review in progress.</p>
                         <p>We kindly invite you to review and/or comment this article! Please do so via the web annotation service <a href="https://web.hypothes.is/">Hypothes.is</a> 
                             or with an e-mail to <a href="mailto:encoding-correspondence@bbaw.de">encoding-correspondence@bbaw.de</a>.</p>
                         <p>This article remains stable and <a href="#citation">citable</a> in the first version of this manual. The revised article will be published in the second edition of the manual.</p>
